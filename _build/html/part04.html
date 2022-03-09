@@ -755,9 +755,9 @@ Zuerst formulieren wir den gewünschten Text als Character Array und setzen Plat
 <p>Wenn Sie die obige Code-Zelle ausführen, sehen Sie, wie das Prozentzeichen mit dem f durch die Zahl 3.5 erzetzt wurde.</p>
 <p>Wenn Sie die Ausgabe kontrollieren wollen, können Sie das folgendermaßen:</p>
 <ul class="simple">
-<li></li>
-<li></li>
-<li></li>
+<li><p>%f - gibt eine Fließkommazahl (Float) aus.</p></li>
+<li><p>%.2f - gibt eine Fließkommazahl aus, nach dem Punkt steht die Anzahl der Nachkommastellen (hier also 2 Nachkommastellen), es wird gerundet,</p></li>
+<li><p>%e - gibt die wissenschaftliche (Exponential-) Notation aus.</p></li>
 </ul>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Dies ist ein Text mit Platzhalter %.2f !!!&#39;</span><span class="p">,</span> <span class="mf">0.056789</span><span class="p">);</span>
 <span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Dies ist ein Text mit Platzhalter %e !!!&#39;</span><span class="p">,</span> <span class="mf">0.056789</span><span class="p">);</span>
