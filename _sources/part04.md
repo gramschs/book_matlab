@@ -284,9 +284,9 @@ fprintf('Dies ist ein Text mit Platzhalter %f !!!', 3.5)
 Wenn Sie die obige Code-Zelle ausführen, sehen Sie, wie das Prozentzeichen mit dem f durch die Zahl 3.5 erzetzt wurde.
 
 Wenn Sie die Ausgabe kontrollieren wollen, können Sie das folgendermaßen:
-* %f - gibt eine Fließkommazahl (Float) aus.
-* %.2f - gibt eine Fließkommazahl aus, nach dem Punkt steht die Anzahl der Nachkommastellen (hier also 2 Nachkommastellen), es wird gerundet,
-* %e - gibt die wissenschaftliche (Exponential-) Notation aus.
+* \%f - gibt eine Fließkommazahl (Float) aus.
+* \%.2f - gibt eine Fließkommazahl aus, nach dem Punkt steht die Anzahl der Nachkommastellen (hier also 2 Nachkommastellen), es wird gerundet,
+* \%e - gibt die wissenschaftliche (Exponential-) Notation aus.
 
 ```octave
 fprintf('Dies ist ein Text mit Platzhalter %.2f !!!', 0.056789);
