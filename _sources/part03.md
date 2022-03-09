@@ -58,32 +58,23 @@ else
 end
 ```
 
-### Mini-Übung 1
+```{exercise}
+:label: part03_miniexercise01
 Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn das Alter der Person zwischen 6 und 10 liegt, soll das Programm ausgeben "Wahrscheinlich gehst Du in die Grundschule."
+````
 
-```octave
-% Hier Ihr Code
-
-```
-
-### Mini-Übung 2
+```{exercise}
+:label: part03_miniexercise02
 Schreiben Sie ein Skript und lassen Sie den MATLAB-Interpreter nach einem Monat fragen. Dabei soll für den Januar eine 1 eingegeben werden, für den Februar eine 2 usw. Danch soll der MATLAB-Interpreter folgendes ausgeben:
 * für Monate März, April, Mai: Frühling
 * für Monate Juni, Juli, August: Sommer
 * für Monate September, Oktober, November: Herbst
 * für Monate Dezember, Januar, Februar: Winter 
-
-```octave
-% Hier Ihr Code
-
 ```
 
-### Mini-Übung 3
+```{exercise}
+:label: part03_miniexercise03
 Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person 0 bis 17 ist, soll das Programm ausgeben: "Wahrscheinlich bist Du noch nicht berufstätig". Zwischen 18 und 67 soll ausgegeben werden "Wahrscheinlich sind Sie berufstätig." und bei Personen zwischen 68 und 120 "Wahrscheinlich sind Sie nicht mehr berufstätig."
-
-```octave
-% Hier Ihr Code
-
 ```
 
 ## Das logische ODER
@@ -115,20 +106,14 @@ else
 end
 ```
 
-### Mini-Übung 4
+```{exercise}
+:label: part03_miniexercise04
 Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person jünger als 18 ist oder älter als 67, soll das Programm ausgeben: "Wahrscheinlich sind Sie/bist Du nicht berufstätig."
-
-```octave
-% Hier Ihr Code
-
 ```
 
-### Mini-Übung 5
+```{exercise}
+:label: part03_miniexercise05
 Schreiben Sie ein Skript, das nach der Länge der beiden Seiten eines rechtwinkligen Dreiecks fragt, die am rechten Winkel anliegen (= Katheten). Wenn eine der beiden Seitenlängen oder beide negativ sind, soll das Programm ausgeben: "Fehler, negative Seitenlängen gibt es nicht!" und ansonsten soll das Skript die Länge der dritten Seite (= Hypotenuse) mit der Formel (= Satz des Pythagoras) $c=\sqrt{a^2+b^2}$ berechnen und das Ergebnis ausgeben.
-
-```octave
-% Hier Ihr Code
-
 ```
 
 ## Das logische NICHT
@@ -153,7 +138,8 @@ else
 end
 ```
 
-### Mini-Übung 6
+```{exercise}
+:label: part03_miniexercise06
 Überlegen Sie zunächst, was ist das Ergebnis der folgenden Verknüpfungen: wahr oder falsch?
 
 * wahr UND wahr
@@ -167,10 +153,6 @@ end
 
 Probieren Sie dann in der nächsten Code-Zelle aus, ob Sie die richtigen Ergebnisse hatten, indem Sie beispielsweise wahr und wahr in MATLAB ausprobieren, also beispielsweise 
 `true && true` eingeben:
-
-```octave
-% Hier Ihr Code:
-
 ````
 
 ## Schleifen: Wiederholung mit Bedingung "while"
@@ -209,20 +191,14 @@ while zaehler <= 10
 end
 ```
 
-### Mini-Übung 7
+```{exercise}
+:label: part03_miniexercise07
 Schreiben Sie ein Skript, das die Quadratzahlen für 10 bis 20 ausgibt, d.h. es sollen die Zahlen 100, 121, ... , 400 ausgegeben werden.
-
-```octave
-% Hier Ihr Code:
-
 ```
 
-### Mini-Übung 8
+```{exercise}
+:label: part03_miniexercise08
 Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin auffordert, eine positive Zahl einzugeben. Falls dabei jedoch fälschlicherweise eine negative Zahl oder die Null eingegeben wird, soll der Computer solange weiter fragen, bis endlich eine positive Zahl eingegeben wird.
-
-```octave
-% Hier Ihr Code
-
 ```
 
 ## Zusammenfassung
@@ -230,7 +206,9 @@ In diesem MATLAB Live Skript haben wir uns eingehend mit der Kombination von Bed
 
 ## Lösungen zu den Mini-Übungen
 
-### Lösung zu Mini-Übung 1
+````{solution} part03_miniexercise01
+:label: part03_minisolution01
+:class: dropdown
 Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn das Alter der Person zwischen 6 und 10 liegt, soll das Programm ausgeben "Wahrscheinlich gehst Du in die Grundschule."
 
 ```octave
@@ -242,8 +220,11 @@ if (6 <= alter) && (alter <= 10)
     disp('Wahrscheinlich gehst Du in die Gundschule.');
 end
 ```
+````
 
-### Lösung zu Mini-Übung 2
+````{solution} part03_miniexercise02
+:label: part03_minisolution02
+:class: dropdown
 Schreiben Sie ein Skript und lassen Sie den MATLAB-Interpreter nach einem Monat fragen. Dabei soll für den Januar eine 1 eingegeben werden, für den Februar eine 2 usw. Danch soll der MATLAB-Interpreter folgendes ausgeben:
 
 * für Monate März, April, Mai: Frühling
@@ -266,8 +247,11 @@ else
     disp('Winter');
 end
 ```
+````
 
-### Lösung zu Mini-Übung 3
+````{solution} part03_miniexercise03
+:label: part03_minisolution03
+:class: dropdown
 Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person 0 bis 17 ist, soll das Programm ausgeben: "Wahrscheinlich bist Du noch nicht berufstätig". Zwischen 18 und 67 soll ausgegeben werden "Wahrscheinlich sind Sie berufstätig." und bei Personen zwischen 68 und 120 "Wahrscheinlich sind Sie nicht mehr berufstätig."
 
 ```octave
@@ -285,8 +269,11 @@ if (68 <= alter) && (alter <= 120)
     disp('Wahrscheinlich sind Sie nicht mehr berufstätig.');
 end
 ```
+````
 
-### Lösung zu Mini-Übung 4
+````{solution} part03_miniexercise04
+:label: part03_minisolution04
+:class: dropdown
 Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person jünger als 18 ist oder älter als 67, soll das Programm ausgeben: "Wahrscheinlich sind Sie/bist Du nicht berufstätig."
 
 ```octave
@@ -298,8 +285,11 @@ if (alter < 18) || (67 < alter)
     disp('Wahrscheinlich sind Sie/bist Du nicht berufstätig.');
 end
 ``` 
+````
 
-### Lösung zu Mini-Übung 5
+````{solution} part03_miniexercise05
+:label: part03_minisolution05
+:class: dropdown
 Schreiben Sie ein Skript, das nach der Länge der beiden Seiten eines rechtwinkligen Dreiecks fragt, die am rechten Winkel anliegen (= Katheten). Wenn eine der beiden Seitenlängen oder beide negativ sind, soll das Programm ausgeben: "Fehler, negative Seitenlängen gibt es nicht!" und ansonsten soll das Skript die Länge der dritten Seite (= Hypotenuse) mit dem Satz des Pythagoras berechnen und das Ergebnis ausgeben.
 
 ```octave
@@ -314,8 +304,11 @@ else
     disp(sqrt(a^2+b^2));
 end
 ```
+````
 
-### Lösung zu Mini-Übung 6
+````{solution} part03_miniexercise06
+:label: part03_minisolution06
+:class: dropdown
 Überlegen Sie zunächst, was ist das Ergebnis der folgenden Verknüpfungen: wahr oder falsch?
 * wahr UND wahr
 * wahr ODER falsch
@@ -355,8 +348,11 @@ true || (~false)
 ```
 
 Anmerkung: Der MATLAB-Interpreter merkt, dass ein Vergleich wie beispielsweise `false && false` nicht komplett überprüft werden muss, da bereits das erste false dazu führt, dass das Ergebnis der Verknüpfung falsch ist. Daher wird hier in der Code-Zelle eine Warnung angezeigt. Um diese Warnungen im Skript zu vermeiden, ist der Code hier als Code Example und nicht in einer Code-Zelle eingefügt.
+````
 
-### Lösung zu Mini-Übung 7
+````{solution} part03_miniexercise07
+:label: part03_minisolution07
+:class: dropdown
 Schreiben Sie ein Skript, das die Quadratzahlen für 10 bis 20 ausgibt, d.h. es sollen die Zahlen 100, 121, ... , 400 ausgegeben werden.
 
 ```octave
@@ -369,8 +365,11 @@ while zahl <= 20
     zahl = zahl + 1;
 end
 ```
+````
 
-### Lösung zu Mini-Übung 8
+````{solution} part03_miniexercise08
+:label: part03_minisolution08
+:class: dropdown
 Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin auffordert, eine positive Zahl einzugeben. Falls dabei jedoch fälschlicherweise eine negative Zahl oder die Null eingegeben wird, soll der Computer solange weiter fragen, bis endlich eine positive Zahl eingegeben wird.
 
 ```octave
@@ -382,5 +381,6 @@ while x <= 0
     x = input('Bitte geben Sie eine POSITIVE ganze Zahl ein: ')
 end
 ```
+````
 
 

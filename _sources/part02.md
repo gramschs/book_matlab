@@ -16,8 +16,8 @@ Um den Wahrheitswert einer Bedingung zu speichern, hat MATLAB einen eigenen Date
 
 Intern speichert MATLAB false als 0 und true als 1, deswegen wird die Funktion `disp()` auch 0 und 1 anzeigen, wenn wir eine boolesche Variable anzeigen lassen.
 
-### Mini-Übung 1
-
+````{exercise}
+:label: part02_miniexercise01
 Verändern Sie in der nachfolgenden Code-Zelle den Wert der Variablen `a`. Setzen Sie einmal `a = false` und einmal `a = true`. Beobachten Sie, was der `disp()`-Befehl ausgibt.
 
 ```octave
@@ -25,6 +25,7 @@ Verändern Sie in der nachfolgenden Code-Zelle den Wert der Variablen `a`. Setze
 a = false;
 disp(a)
 ```
+````
 
 Aber wie kann man dann überprüfen, ob in einer Variablen der Datentyp Integer oder der Datentyp Boolean gespeichert ist? Dazu gibt es das Kommando `whos`. Führen Sie die nächste Code-Zelle aus.
 
@@ -109,17 +110,14 @@ Ist x größer gleich 30?
 ```octave
 x >= 30
 ```
-### Mini-Übung 2
+```{exercise}
+:label: part02_miniexercise02
 Wählen Sie sich eine Zahl. Testen Sie anschließend:
 * Ist Ihre Zahl kleiner gleich 5?
 * Ist Ihre Zahl genau 17?
 * Ist Ihre Zahl nicht gleich 17?
 * Ist Ihre Zahl positiv?
 * Ist Ihre Zahl kleiner als -17.7?
-
-```octave
-% Hier Ihr Code:
-
 ```
 
 ## Programmverzweigungen mit einen Zweig: if
@@ -152,25 +150,19 @@ end
 disp('Bananen dürfen Sie immer kaufen, egal wie alt Sie sind...');
 ```
 
-### Mini-Übung 3
+```{exercise}
+:label: part02_miniexercise03
 Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin nach der aktuellen Temperatur fragt. Wenn die Temperatur kleiner gleich 10 ˚C ist, soll ausgegeben werden: "Heute ist es aber kalt!"
-
-```octave
-% Hier Ihr Code:
-
 ```
 
-### Mini-Übung 4
+```{exercise}
+:label: part02_miniexercise04
 Schreiben Sie ein Skript, das eine Benutzerin oder einen Benutzer nach einer Zahl fragt. 
 Wenn die Zahl kleiner als 0 ist, soll ausgegeben werden: "Die Zahl ist negativ."
 Wenn die Zahl genau gleich 0 ist, soll ausgegeben werden: "Die Zahl ist Null."
 Wenn die Zahl größer als 0 ist, soll ausgegeben werden: "Die Zahl ist positiv."
 
 Wie viele if-Blöcke brauchen Sie für die Umsetzung dieser Mini-Übung?
-
-```octave
-% Hier Ihr Code:
-
 ```
 
 ## Programmverzweigungen mit zwei Zweigen: if – else
@@ -202,20 +194,14 @@ end
 disp('Jetzt haben wir aber genug über den Alkoholkauf geredet...')
 ```
 
-### Mini-Übung 5
+```{exercise}
+:label: part02_miniexercise05
 Schreiben Sie ein Skript, das nach dem aktuellen Monat fragt (1 für Januar, 2 für Februar, 3 für März, usw.). Wenn der aktuelle Monat Januar bis Juni ist, soll ausgegeben werden: "Dieser Monat gehört zur 1. Jahreshälfte." Ansonsten soll ausgegeben werden: "Dieser Monat gehört zur 2. Jahreshälfte."
-
-```octave
-% Hier Ihr Code:
-
 ```
 
-### Mini-Übung 6
+```{exercise}
+:label: part02_miniexercise06
 Schreiben Sie ein Skript, das nach der aktuellen Temperatur fragt. Wenn die aktuelle Temperatur kleiner gleich 3 ˚C ist, dann lassen Sie ausgeben: "Vorsicht, es besteht Glatteisgefahr!" und ansonsten "Kein Grund zur Sorge."
-
-```octave
-% Hier Ihr Code:
-
 ```
 
 ## Programmverzweigungen mit vielen Zweigen: if – elseif – else
@@ -353,20 +339,18 @@ else
 end
 ```
 
-### Mini-Übung 7
+````{exercise}
+:label: part02_miniexercise07
 Sie finden den aktuellen Bußgeldkatalog für Geschwindigkeitsüberschreitungen mit dem PKW im Internet auf der Seite: https://www.bussgeldkatalog.org/geschwindigkeitsueberschreitung/ 
 Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsüberschreitung ausgibt, welche Strafe in Euro verhängt wird. Die Tabelle für das Jahr 2022 lautet wie folgt:
 
 ```{image} pics/part02_bussgeldkatalog.png
 :name: part02_bussgeldkatalog
 ```
+````
 
-```octave
-% Hier Ihr Code:
-
-```
-
-### Mini-Übung 8
+```{exercise}
+:label: part02_miniexercise08
 Schreiben Sie ein Skript, das die aktuelle Temperatur von einem Benutzer oder einer Benutzerin abfragt. Wenn die Temperatur
 * <= - 10 ˚C ist, dann Ausgabe: "Es ist bitterkalt."
 * <= 0 ˚C ist, dann Ausgabe: "Es ist kalt."
@@ -374,10 +358,6 @@ Schreiben Sie ein Skript, das die aktuelle Temperatur von einem Benutzer oder ei
 * <= 20 ˚C ist, dann Ausgabe: "Es ist frühlingshaft."
 * <= 30 ˚C ist, dann Ausgabe: "Es ist heiß!"
 * \> 30 ˚C ist, dann Ausgabe: "Das ist ja nicht mehr auszuhalten heiß!!!"
-
-```octave
-% Hier Ihr Code
-
 ```
 
 ## Zusammenfassung
@@ -386,7 +366,9 @@ In diesem MATLAB Live Skript haben Sie die erste Kontrollstruktur kennengelernt,
 
 ## Lösungen zu den Mini-Übungen
 
-### Lösung zu Mini-Übung 1
+````{solution} part02_miniexercise01
+:label: part02_minisolution01
+:class: dropdown
 Verändern Sie in der nachfolgenden Code-Zelle den Wert der Variablen a. Setzen Sie einmal a = false und einmal a = true. Beobachten Sie, was der disp()-Befehl ausgibt.
 
 ```octave
@@ -398,8 +380,11 @@ disp(a);
 ```
 
 Wird die Variable auf falsch gesetzt (a = false), so gibt die disp()-Funktion eine 0 aus. Wird die Variable a jedoch auf wahr gesetzt (a = true), so gibt die disp()-Funktion eine 1 aus. 
+````
 
-### Lösung zu Mini-Übung 2
+````{solution} part02_miniexercise02
+:label: part02_minisolution02
+:class: dropdown
 Wählen Sie sich eine Zahl. Testen Sie anschließend:
 * Ist Ihre Zahl kleiner gleich 5?
 * Ist Ihre Zahl genau 17?
@@ -426,8 +411,11 @@ x > 0
 % kleiner als -17.7?
 x < -17.7
 ```
+````
 
-### Lösung zu Mini-Übung 3
+````{solution} part02_miniexercise03
+:label: part02_minisolution03
+:class: dropdown
 Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin nach der aktuellen Temperatur fragt. Wenn die Temperatur kleiner gleich 10 ˚C ist, soll ausgegeben werden: "Heute ist es aber kalt!"
 
 ```octave
@@ -439,8 +427,11 @@ if temperatur <= 10
     disp('Heute ist es aber kalt!')
 end
 ```
+````
 
-### Lösung zu Mini-Übung 4
+````{solution} part02_miniexercise04
+:label: part02_minisolution04
+:class: dropdown
 Schreiben Sie ein Skript, das eine Benutzerin oder einen Benutzer nach einer Zahl fragt. 
 * Wenn die Zahl kleiner als 0 ist, soll ausgegeben werden: "Die Zahl ist negativ."
 * Wenn die Zahl genau gleich 0 ist, soll ausgegeben werden: "Die Zahl ist Null."
@@ -464,8 +455,11 @@ end
 ```
 
 Der Code erfordert drei if-Blöcke.
+````
 
-### Lösung zu Mini-Übung 5
+````{solution} part02_miniexercise05
+:label: part02_minisolution05
+:class: dropdown
 Schreiben Sie ein Skript, das nach dem aktuellen Monat fragt (1 für Januar, 2 für Februar, 3 für März, usw.). Wenn der aktuelle Monat Januar bis Juni ist, soll ausgegeben werden: "Dieser Monat gehört zur 1. Jahreshälfte." Ansonsten soll ausgegeben werden: "Dieser Monat gehört zur 2. Jahreshälfte."
 
 ```octave
@@ -479,8 +473,11 @@ else
     disp('Dieser Monat gehört zur 2. Jahreshälfte.');
 end
 ```
+````
 
-### Lösung zu Mini-Übung 6
+````{solution} part02_miniexercise06
+:label: part02_minisolution06
+:class: dropdown
 Schreiben Sie ein Skript, das nach der aktuellen Temperatur fragt. Wenn die aktuelle Temperatur kleiner gleich 3 ˚C ist, dann lassen Sie ausgeben: "Vorsicht, es besteht Glatteisgefahr!" und ansonsten "Kein Grund zur Sorge."
 
 ```octave
@@ -494,8 +491,11 @@ else
     disp('Kein Grund zur Sorge.')
 end
 ```
+````
 
-### Lösung zu Mini-Übung 7
+````{solution} part02_miniexercise07
+:label: part02_minisolution07
+:class: dropdown
 Sie finden den aktuellen Bußgeldkatalog für Geschwindigkeitsüberschreitungen mit dem PKW im Internet auf der Seite: https://www.bussgeldkatalog.org/geschwindigkeitsueberschreitung/ 
 
 Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsüberschreitung ausgibt, welche Strafe in Euro verhängt wird. 
@@ -527,8 +527,11 @@ else
     disp('700 EUR');
 end
 ```
+````
 
-### Lösung zu Mini-Übung 8
+````{solution} part02_miniexercise08
+:label: part02_minisolution08
+:class: dropdown
 Schreiben Sie ein Skript, das die aktuelle Temperatur von einem Benutzer oder einer Benutzerin abfragt. Wenn die Temperatur
 * \<= - 10 ˚C ist, dann Ausgabe: "Es ist bitterkalt."
 * \<= 0 ˚C ist, dann Ausgabe: "Es ist kalt."
@@ -556,3 +559,4 @@ else
     disp('Das ist ja nicht mehr auszuhalten heiß!')
 end
 ```
+````

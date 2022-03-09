@@ -12,6 +12,7 @@ Damit können wir einzelne Objekte der realen Welt ganz gut abbilden. Mit einem 
 
 Daher werden wir uns in diesem MATLAB Live Skript mit komplexeren Datentypen beschäftigen. Wir werden zunächst den Datentyp **Array** behandeln. Nachdem wir Eigenschaften diesen Datentyps betrachtet haben, werden wir das Thema **String** erneut aufgreifen. Zuletzt beschäftigen wir uns noch mit **formatierten Ausgaben**, um Zahlen und Texte schöner bzw. spezifischer anzeigen zu lassen. 
 
+
 ## Datentyp Array
 
 In der Mathematik gibt es den Begriff des Vektors. Einen Vektor kann man als eine Zusammenfassung von Zahlen interpretieren. Beispielsweise fasst ein Vektor wie 
@@ -64,10 +65,10 @@ whos x
 ```
 Tatsächlich, `Size = 1x1` wird ausgegeben.
 
-### Mini-Übung 1
+```{exercise}
+:label: part04_miniexercise01
+
 Erzeugen Sie ein Array mit den Elementen 2, 4, 6, 8, 10. Lassen Sie anschließend die Dimension des Arrays ausgeben.
-```octave
-% Hier Ihr Code
 ```
 
 Ein Array speichert jedoch nicht nur Zahlen (Integer/Float), sondern man kann auch die anderen Datentypen in Form einer Sammlung speichern. Im nächsten Code-Beispiel sehen wir eine Namensliste und eine Liste mit dem Status "zur Klausur zugelassen?".
@@ -80,11 +81,10 @@ disp(namen)
 disp(zulassung)
 ```
 
-### Mini-Übung 2
+```{exercise}
+:label: part04_miniexercise02
 Erzeugen Sie ein Array mit Wochentagen. Erzeugen Sie dann ein zweites Array mit der Anzahl an Semesterwochenstunden (Schulstunden), die Sie an diesem Wochentag haben. Lassen Sie beides zur Kontrolle anzeigen.
-```octave
-% Hier Ihr Code
-```
+````
 
 ## Erzeugung von zweidimensionalen Arrays
 Bisher haben wir eindimensionale Arrays mit einer Zeile und mehreren Spalten erzeugt. Zur Trennung der Elemente in einem Array haben wir bei der Erzeugung das Komma benutzt. Probieren Sie aus, was passiert, wenn wir das Semikolon (= Strichpunkt) dazu benutzen.
@@ -115,10 +115,9 @@ whos M
 ```
 Das Resultat ist ein echtes zweidimensionales Array mit 3 Zeilen und 5 Spalten. 
 
-### Mini-Übung 3
+```{exercise}
+:label: part04_miniexercise03
 Erzeugen Sie ein 3x3-Array mit einer Eins auf der Hauptdiagonalen und lauter Nullen ansonsten. Lassen Sie Ihr Array anzeigen.
-```octave
-% Hier Ihr Code
 ```
 
 Kurze Arrays wie beispielsweise eine Auflistung der Wochentage mit sieben Elementen oder die 3x3-Einheitsmatrix können wir schnell händisch erzeugen. Wir werden aber auch noch MATLAB-Methoden kennenlernen, mit denen man nach einem bestimmten Muster Arrays erzeugen kann. 
@@ -137,10 +136,9 @@ disp(X)
 Weitere Details finden Sie in der MATLAB-Dokumentation: 
 https://de.mathworks.com/help/matlab/ref/randi.html
 
-### Mini-Übung 4
+```{exercise}
+:label: part04_miniexercise04
 Erzeugen Sie ein zweidimensionales Array mit sechs Zufallszahlen, die zwischen 1 und 49 liegen. Lassen Sie das Array auch anzeigen.
-```octave
-% Hier Ihr Code
 ```
 
 ## Zugriff auf Elemente eines Arrays
@@ -170,10 +168,9 @@ viertes_element = a(4);
 disp(viertes_element)
 ```
 
-### Mini-Übung 5
+```{exercise}
+:label: part04_miniexercise05
 Erzeugen Sie ein Array mit Schnapszahlen, also 11, 22, 33, ... , 99. Lassen Sie das dritte, sechste und siebte Element ausgeben.
-```octave
-% Hier Ihr Code
 ```
 
 Wenn wir auf Elemente eines zweidimensionalen Arrays zugreifen wollen, müssen wir wiederum die runden Klammern nutzten. Doch diesmal müssen wir zwei Indizes (=Hausnummern) angeben, nämlich die Zeile und die Spalte.
@@ -198,15 +195,13 @@ a_21 = A(2,1);
 disp(a_21)
 ```
 
-### Mini-Übung 6
+```{exercise}
+:label: part04_miniexercise06
 Erzeugen Sie ein zweidimensionales Array
 
 $\pmatrix{31 & 12 & 43 \cr 11 & 52 & 63\cr 21 & 32 & 13}$
 
 Lassen Sie alle Elemente der 1. Spalte ausgeben.
-
-```octave
-% Hier Ihr Code
 ```
 
 ## Datentyp Character Array und String
@@ -260,12 +255,10 @@ text(4) = 'L';
 disp(text);
 ```
 
-### Mini-Übung 7
+```{exercise}
+:label: part04_miniexercise07
 Erzeugen Sie eine Variable mit einem Character Array, in der Ihr Vor- und Ihr Nachname mit Leerzeichen getrennt steht. Geben Sie zur Kontrolle Ihren Namen aus. 
 In einigen Programmen sind Leerzeichen verboten. Ersetzen Sie daher in einem zweiten Schritt das Leerzeichen durch einen Unterstrich _ , indem Sie das Character Array manipulieren. Lassen Sie das manipulierte Array ausgeben.
-
-```octave
-% Hier Ihr Code
 ```
 
 Sobald wir mit MATLAB Text einlesen, verarbeiten und ausgeben wollen, stellt sich die Frage, ob man besser ein Character Array oder einen String verwenden sollte. Für kürzere Texte sollte man das Character Array nehmen. Für längere Texte und vor allem, wenn Teile des Textes manipuliert werden sollen, ist der Datentyp String die bessere Wahl. Eine Übersicht zu den Manipulationsmöglichkeiten von Texten finden Sie hier:
@@ -304,16 +297,14 @@ Mehr Informationen finden Sie in der MATLAB-Dokumentation unter
 https://de.mathworks.com/help/matlab/matlab_prog/formatting-strings.html
 im Abschnitt Special Characters.
 
-### Mini-Übung 8
+```{exercise}
+:label: part04_miniexercise08
 Geben Sie $\pi$ mit dem Text "Pi = ..." aus, wobei die Punkte durch $\pi$ ersetzt werden sollen.  Probieren Sie folgende Formatierungen aus:
 * wissenschaftliche Notation
 * Fließkommazahl 
 * Fließkommazahl mit 4 Nachkommastellen
 * Fließkommazahl mit 8 Nachkommastellen
 * Fließkommazahl mit 0 Nachkommastellen
-
-```octave
-% Hier Ihr Code
 ```
 
 ## Zusammenfassung
@@ -321,17 +312,23 @@ In diesem MATLAB Live Skript haben wir uns mit dem Datentyp Array beschäftigt. 
 
 ## Lösungen zu den Mini-Übungen
 
-### Lösung zu Mini-Übung 1
+````{solution} part04_miniexercise01
+:label: part04_minisolution01
+:class: dropdown
 Erzeugen Sie ein Array mit den Elementen 2, 4, 6, 8, 10. Lassen Sie anschließend die Dimension des Arrays ausgeben.
-```octave
+
+```{code-block} octave
 % Erzeugung Array
 m = [2,4,6,8,10];
 
 % Ausgabe der Eigenschaften
 whos m
 ```
+````
 
-### Lösung zu Mini-Übung 2
+````{solution} part04_miniexercise02
+:label: part04_minisolution02
+:class: dropdown
 Erzeugen Sie ein Array mit Wochentagen. Erzeugen Sie dann ein zweites Array mit der Anzahl an Semesterwochenstunden (Schulstunden), die Sie an diesem Wochentag haben. Lassen Sie beides zur Kontrolle anzeigen.
 ```octave
 % Eingabe: Array mit Wochentagen
@@ -344,8 +341,11 @@ unterricht = [4, 6, 8, 8, 6, 0, 0];
 disp(woche)
 disp(unterricht)
 ```
+````
 
-### Lösung zu Mini-Übung 3
+````{solution} part04_miniexercise03
+:label: part04_minisolution03
+:class: dropdown
 Erzeugen Sie ein 3x3-Array mit einer Eins auf der Hauptdiagonalen und lauter Nullen ansonsten. Lassen Sie Ihr Array anzeigen.
 
 ```octave
@@ -355,8 +355,11 @@ A = [1, 0, 0; 0, 1, 0; 0, 0, 1];
 % Ausgabe
 disp(A)
 ```
+````
 
-### Lösung zu Mini-Übung 4
+````{solution} part04_miniexercise04
+:label: part04_minisolution04
+:class: dropdown
 Erzeugen Sie ein Array mit sechs Zufallszahlen, die zwischen 1 und 49 liegen. Lassen Sie das Array auch anzeigen.
 
 ```octave
@@ -367,8 +370,11 @@ X = randi( [1,49], 1,6);
 % Ausgabe
 disp(X)
 ```
+````
 
-### Lösung zu Mini-Übung 5
+````{solution} part04_miniexercise05
+:label: part04_minisolution05
+:class: dropdown
 Erzeugen Sie ein Array mit Schnapszahlen, also 11, 22, 33, ... , 99. Lassen Sie das dritte, sechste und siebte Element ausgeben.
 
 ```octave
@@ -380,8 +386,11 @@ disp(a(3));
 disp(a(6));
 disp(a(7));
 ```
+````
 
-### Lösung zu Mini-Übung 6
+````{solution} part04_miniexercise06
+:label: part04_minisolution06
+:class: dropdown
 Erzeugen Sie ein zweidimensionales Array 
 
 $\pmatrix{31 & 12 & 43 \cr 11 & 52 & 63\cr 21 & 32 & 13}$.
@@ -396,8 +405,11 @@ disp(A(1,1))
 disp(A(2,1))
 disp(A(3,1))
 ```
+`````
 
-### Lösung zu Mini-Übung 7
+````{solution} part04_miniexercise07
+:label: part04_minisolution07
+:class: dropdown
 Erzeugen Sie eine Variable mit einem Character Array, in der Ihr Vor- und Ihr Nachname mit Leerzeichen getrennt steht. Geben Sie zur Kontrolle Ihren Namen aus. 
 In einigen Programmen sind Leerzeichen verboten. Ersetzen Sie daher in einem zweiten Schritt das Leerzeichen durch einen Unterstrich _ , indem Sie das Character Array manipulieren. Lassen Sie das manipulierte Array ausgeben.
 
@@ -412,8 +424,11 @@ name(7) = '_';
 % Ausgabe
 disp(name);
 ```
+````
 
-### Lösung zu Mini-Übung 8
+````{solution} part04_miniexercise08
+:label: part04_minisolution08
+:class: dropdown
 Geben Sie $\pi$ mit dem Text "Pi = ..." aus, wobei die Punkte durch $\pi$ ersetzt werden sollen. Probieren Sie folgende Formatierungen aus:
 * wissenschaftliche Notation
 * Fließkommazahl 
@@ -428,6 +443,7 @@ fprintf('Pi = %.4f', pi)
 fprintf('Pi = %.8f', pi)
 fprintf('Pi = %.0f', pi)
 ```
+````
 
 
 

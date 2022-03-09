@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -109,6 +110,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="part03.html">
    Digitale Logik und Schleifen mit Bedingungen (“while”)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="part04.html">
+   Komplexere Datentypen: Array, String und formatierte Ausgaben
   </a>
  </li>
 </ul>
@@ -207,76 +213,26 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#der-boolesche-datentyp">
    Der boolesche Datentyp
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-1">
-     Mini-Übung 1
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vergleiche-mit-zahlen">
    Vergleiche mit Zahlen
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-2">
-     Mini-Übung 2
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#programmverzweigungen-mit-einen-zweig-if">
    Programmverzweigungen mit einen Zweig: if
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-3">
-     Mini-Übung 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-4">
-     Mini-Übung 4
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#programmverzweigungen-mit-zwei-zweigen-if-else">
    Programmverzweigungen mit zwei Zweigen: if – else
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-5">
-     Mini-Übung 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-6">
-     Mini-Übung 6
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#programmverzweigungen-mit-vielen-zweigen-if-elseif-else">
    Programmverzweigungen mit vielen Zweigen: if – elseif – else
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-7">
-     Mini-Übung 7
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-8">
-     Mini-Übung 8
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#zusammenfassung">
@@ -287,48 +243,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#losungen-zu-den-mini-ubungen">
    Lösungen zu den Mini-Übungen
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-1">
-     Lösung zu Mini-Übung 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-2">
-     Lösung zu Mini-Übung 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-3">
-     Lösung zu Mini-Übung 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-4">
-     Lösung zu Mini-Übung 4
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-5">
-     Lösung zu Mini-Übung 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-6">
-     Lösung zu Mini-Übung 6
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-7">
-     Lösung zu Mini-Übung 7
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-8">
-     Lösung zu Mini-Übung 8
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -359,76 +273,26 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#der-boolesche-datentyp">
    Der boolesche Datentyp
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-1">
-     Mini-Übung 1
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vergleiche-mit-zahlen">
    Vergleiche mit Zahlen
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-2">
-     Mini-Übung 2
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#programmverzweigungen-mit-einen-zweig-if">
    Programmverzweigungen mit einen Zweig: if
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-3">
-     Mini-Übung 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-4">
-     Mini-Übung 4
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#programmverzweigungen-mit-zwei-zweigen-if-else">
    Programmverzweigungen mit zwei Zweigen: if – else
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-5">
-     Mini-Übung 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-6">
-     Mini-Übung 6
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#programmverzweigungen-mit-vielen-zweigen-if-elseif-else">
    Programmverzweigungen mit vielen Zweigen: if – elseif – else
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-7">
-     Mini-Übung 7
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-8">
-     Mini-Übung 8
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#zusammenfassung">
@@ -439,48 +303,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#losungen-zu-den-mini-ubungen">
    Lösungen zu den Mini-Übungen
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-1">
-     Lösung zu Mini-Übung 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-2">
-     Lösung zu Mini-Übung 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-3">
-     Lösung zu Mini-Übung 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-4">
-     Lösung zu Mini-Übung 4
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-5">
-     Lösung zu Mini-Übung 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-6">
-     Lösung zu Mini-Übung 6
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-7">
-     Lösung zu Mini-Übung 7
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-8">
-     Lösung zu Mini-Übung 8
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -507,13 +329,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>false: Wahrheitswert ist falsch.</p></li>
 </ul>
 <p>Intern speichert MATLAB false als 0 und true als 1, deswegen wird die Funktion <code class="docutils literal notranslate"><span class="pre">disp()</span></code> auch 0 und 1 anzeigen, wenn wir eine boolesche Variable anzeigen lassen.</p>
-<div class="section" id="mini-ubung-1">
-<h3>Mini-Übung 1<a class="headerlink" href="#mini-ubung-1" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part02_miniexercise01">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8 </span></p>
+<div class="section" id="exercise-content">
 <p>Verändern Sie in der nachfolgenden Code-Zelle den Wert der Variablen <code class="docutils literal notranslate"><span class="pre">a</span></code>. Setzen Sie einmal <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">false</span></code> und einmal <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">true</span></code>. Beobachten Sie, was der <code class="docutils literal notranslate"><span class="pre">disp()</span></code>-Befehl ausgibt.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code:</span>
 <span class="n">a</span> <span class="p">=</span> <span class="nb">false</span><span class="p">;</span>
 <span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Aber wie kann man dann überprüfen, ob in einer Variablen der Datentyp Integer oder der Datentyp Boolean gespeichert ist? Dazu gibt es das Kommando <code class="docutils literal notranslate"><span class="pre">whos</span></code>. Führen Sie die nächste Code-Zelle aus.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="p">=</span> <span class="nb">false</span><span class="p">;</span>
@@ -532,7 +358,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p>Weitere Details zu dem Kommando whos finden Sie in der MATLAB-Dokumentation
 <a class="reference external" href="https://de.mathworks.com/help/matlab/ref/whos.html">https://de.mathworks.com/help/matlab/ref/whos.html</a></p>
-</div>
 </div>
 <div class="section" id="vergleiche-mit-zahlen">
 <h2>Vergleiche mit Zahlen<a class="headerlink" href="#vergleiche-mit-zahlen" title="Permalink to this headline">¶</a></h2>
@@ -581,8 +406,10 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&gt;</span><span class="p">=</span> <span class="mi">30</span>
 </pre></div>
 </div>
-<div class="section" id="mini-ubung-2">
-<h3>Mini-Übung 2<a class="headerlink" href="#mini-ubung-2" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part02_miniexercise02">
+
+<p class="admonition-title"><span class="caption-number">Exercise 9 </span></p>
+<div class="section" id="exercise-content">
 <p>Wählen Sie sich eine Zahl. Testen Sie anschließend:</p>
 <ul class="simple">
 <li><p>Ist Ihre Zahl kleiner gleich 5?</p></li>
@@ -591,8 +418,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Ist Ihre Zahl positiv?</p></li>
 <li><p>Ist Ihre Zahl kleiner als -17.7?</p></li>
 </ul>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code:</span>
-</pre></div>
 </div>
 </div>
 </div>
@@ -621,22 +446,22 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Bananen dürfen Sie immer kaufen, egal wie alt Sie sind...&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="section" id="mini-ubung-3">
-<h3>Mini-Übung 3<a class="headerlink" href="#mini-ubung-3" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part02_miniexercise03">
+
+<p class="admonition-title"><span class="caption-number">Exercise 10 </span></p>
+<div class="section" id="exercise-content">
 <p>Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin nach der aktuellen Temperatur fragt. Wenn die Temperatur kleiner gleich 10 ˚C ist, soll ausgegeben werden: “Heute ist es aber kalt!”</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code:</span>
-</pre></div>
 </div>
 </div>
-<div class="section" id="mini-ubung-4">
-<h3>Mini-Übung 4<a class="headerlink" href="#mini-ubung-4" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part02_miniexercise04">
+
+<p class="admonition-title"><span class="caption-number">Exercise 11 </span></p>
+<div class="section" id="exercise-content">
 <p>Schreiben Sie ein Skript, das eine Benutzerin oder einen Benutzer nach einer Zahl fragt.
 Wenn die Zahl kleiner als 0 ist, soll ausgegeben werden: “Die Zahl ist negativ.”
 Wenn die Zahl genau gleich 0 ist, soll ausgegeben werden: “Die Zahl ist Null.”
 Wenn die Zahl größer als 0 ist, soll ausgegeben werden: “Die Zahl ist positiv.”</p>
 <p>Wie viele if-Blöcke brauchen Sie für die Umsetzung dieser Mini-Übung?</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code:</span>
-</pre></div>
 </div>
 </div>
 </div>
@@ -663,18 +488,18 @@ Wir erweitern die Syntax mit dem if-Block um ein neues Element, nämlich den sog
 <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Jetzt haben wir aber genug über den Alkoholkauf geredet...&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="section" id="mini-ubung-5">
-<h3>Mini-Übung 5<a class="headerlink" href="#mini-ubung-5" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part02_miniexercise05">
+
+<p class="admonition-title"><span class="caption-number">Exercise 12 </span></p>
+<div class="section" id="exercise-content">
 <p>Schreiben Sie ein Skript, das nach dem aktuellen Monat fragt (1 für Januar, 2 für Februar, 3 für März, usw.). Wenn der aktuelle Monat Januar bis Juni ist, soll ausgegeben werden: “Dieser Monat gehört zur 1. Jahreshälfte.” Ansonsten soll ausgegeben werden: “Dieser Monat gehört zur 2. Jahreshälfte.”</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code:</span>
-</pre></div>
 </div>
 </div>
-<div class="section" id="mini-ubung-6">
-<h3>Mini-Übung 6<a class="headerlink" href="#mini-ubung-6" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part02_miniexercise06">
+
+<p class="admonition-title"><span class="caption-number">Exercise 13 </span></p>
+<div class="section" id="exercise-content">
 <p>Schreiben Sie ein Skript, das nach der aktuellen Temperatur fragt. Wenn die aktuelle Temperatur kleiner gleich 3 ˚C ist, dann lassen Sie ausgeben: “Vorsicht, es besteht Glatteisgefahr!” und ansonsten “Kein Grund zur Sorge.”</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code:</span>
-</pre></div>
 </div>
 </div>
 </div>
@@ -789,17 +614,19 @@ Wir erweitern die Syntax mit dem if-Block um ein neues Element, nämlich den sog
 <span class="k">end</span>
 </pre></div>
 </div>
-<div class="section" id="mini-ubung-7">
-<h3>Mini-Übung 7<a class="headerlink" href="#mini-ubung-7" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part02_miniexercise07">
+
+<p class="admonition-title"><span class="caption-number">Exercise 14 </span></p>
+<div class="section" id="exercise-content">
 <p>Sie finden den aktuellen Bußgeldkatalog für Geschwindigkeitsüberschreitungen mit dem PKW im Internet auf der Seite: <a class="reference external" href="https://www.bussgeldkatalog.org/geschwindigkeitsueberschreitung/">https://www.bussgeldkatalog.org/geschwindigkeitsueberschreitung/</a>
 Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsüberschreitung ausgibt, welche Strafe in Euro verhängt wird. Die Tabelle für das Jahr 2022 lautet wie folgt:</p>
 <img alt="_images/part02_bussgeldkatalog.png" id="part02-bussgeldkatalog" src="_images/part02_bussgeldkatalog.png" />
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code:</span>
-</pre></div>
 </div>
 </div>
-<div class="section" id="mini-ubung-8">
-<h3>Mini-Übung 8<a class="headerlink" href="#mini-ubung-8" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part02_miniexercise08">
+
+<p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
+<div class="section" id="exercise-content">
 <p>Schreiben Sie ein Skript, das die aktuelle Temperatur von einem Benutzer oder einer Benutzerin abfragt. Wenn die Temperatur</p>
 <ul class="simple">
 <li><p>&lt;= - 10 ˚C ist, dann Ausgabe: “Es ist bitterkalt.”</p></li>
@@ -809,8 +636,6 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 <li><p>&lt;= 30 ˚C ist, dann Ausgabe: “Es ist heiß!”</p></li>
 <li><p>&gt; 30 ˚C ist, dann Ausgabe: “Das ist ja nicht mehr auszuhalten heiß!!!”</p></li>
 </ul>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code</span>
-</pre></div>
 </div>
 </div>
 </div>
@@ -820,8 +645,10 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 </div>
 <div class="section" id="losungen-zu-den-mini-ubungen">
 <h2>Lösungen zu den Mini-Übungen<a class="headerlink" href="#losungen-zu-den-mini-ubungen" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="losung-zu-mini-ubung-1">
-<h3>Lösung zu Mini-Übung 1<a class="headerlink" href="#losung-zu-mini-ubung-1" title="Permalink to this headline">¶</a></h3>
+<div class="solution dropdown admonition" id="part02_minisolution01">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise01"> Exercise 8</a></p>
+<div class="section" id="solution-content">
 <p>Verändern Sie in der nachfolgenden Code-Zelle den Wert der Variablen a. Setzen Sie einmal a = false und einmal a = true. Beobachten Sie, was der disp()-Befehl ausgibt.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="p">=</span> <span class="nb">false</span><span class="p">;</span>
 <span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
@@ -832,8 +659,11 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 </div>
 <p>Wird die Variable auf falsch gesetzt (a = false), so gibt die disp()-Funktion eine 0 aus. Wird die Variable a jedoch auf wahr gesetzt (a = true), so gibt die disp()-Funktion eine 1 aus.</p>
 </div>
-<div class="section" id="losung-zu-mini-ubung-2">
-<h3>Lösung zu Mini-Übung 2<a class="headerlink" href="#losung-zu-mini-ubung-2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part02_minisolution02">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise02"> Exercise 9</a></p>
+<div class="section" id="solution-content">
 <p>Wählen Sie sich eine Zahl. Testen Sie anschließend:</p>
 <ul class="simple">
 <li><p>Ist Ihre Zahl kleiner gleich 5?</p></li>
@@ -862,8 +692,11 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 </pre></div>
 </div>
 </div>
-<div class="section" id="losung-zu-mini-ubung-3">
-<h3>Lösung zu Mini-Übung 3<a class="headerlink" href="#losung-zu-mini-ubung-3" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part02_minisolution03">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise03"> Exercise 10</a></p>
+<div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin nach der aktuellen Temperatur fragt. Wenn die Temperatur kleiner gleich 10 ˚C ist, soll ausgegeben werden: “Heute ist es aber kalt!”</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
 <span class="n">temperatur</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Welche Temperatur haben wir aktuell?&#39;</span><span class="p">)</span>
@@ -875,8 +708,11 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 </pre></div>
 </div>
 </div>
-<div class="section" id="losung-zu-mini-ubung-4">
-<h3>Lösung zu Mini-Übung 4<a class="headerlink" href="#losung-zu-mini-ubung-4" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part02_minisolution04">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise04"> Exercise 11</a></p>
+<div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das eine Benutzerin oder einen Benutzer nach einer Zahl fragt.</p>
 <ul class="simple">
 <li><p>Wenn die Zahl kleiner als 0 ist, soll ausgegeben werden: “Die Zahl ist negativ.”</p></li>
@@ -901,8 +737,11 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 </div>
 <p>Der Code erfordert drei if-Blöcke.</p>
 </div>
-<div class="section" id="losung-zu-mini-ubung-5">
-<h3>Lösung zu Mini-Übung 5<a class="headerlink" href="#losung-zu-mini-ubung-5" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part02_minisolution05">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise05"> Exercise 12</a></p>
+<div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das nach dem aktuellen Monat fragt (1 für Januar, 2 für Februar, 3 für März, usw.). Wenn der aktuelle Monat Januar bis Juni ist, soll ausgegeben werden: “Dieser Monat gehört zur 1. Jahreshälfte.” Ansonsten soll ausgegeben werden: “Dieser Monat gehört zur 2. Jahreshälfte.”</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
 <span class="n">monat</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Geben Sie bitte den aktuellen Monat ein, 1 für Januar, 2 für Februar usw.&#39;</span><span class="p">);</span>
@@ -916,8 +755,11 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 </pre></div>
 </div>
 </div>
-<div class="section" id="losung-zu-mini-ubung-6">
-<h3>Lösung zu Mini-Übung 6<a class="headerlink" href="#losung-zu-mini-ubung-6" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part02_minisolution06">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise06"> Exercise 13</a></p>
+<div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das nach der aktuellen Temperatur fragt. Wenn die aktuelle Temperatur kleiner gleich 3 ˚C ist, dann lassen Sie ausgeben: “Vorsicht, es besteht Glatteisgefahr!” und ansonsten “Kein Grund zur Sorge.”</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
 <span class="n">temperatur</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Welche Temperatur haben wir aktuell?&#39;</span><span class="p">);</span>
@@ -931,8 +773,11 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 </pre></div>
 </div>
 </div>
-<div class="section" id="losung-zu-mini-ubung-7">
-<h3>Lösung zu Mini-Übung 7<a class="headerlink" href="#losung-zu-mini-ubung-7" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part02_minisolution07">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise07"> Exercise 14</a></p>
+<div class="section" id="solution-content">
 <p>Sie finden den aktuellen Bußgeldkatalog für Geschwindigkeitsüberschreitungen mit dem PKW im Internet auf der Seite: <a class="reference external" href="https://www.bussgeldkatalog.org/geschwindigkeitsueberschreitung/">https://www.bussgeldkatalog.org/geschwindigkeitsueberschreitung/</a></p>
 <p>Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsüberschreitung ausgibt, welche Strafe in Euro verhängt wird.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
@@ -963,8 +808,11 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 </pre></div>
 </div>
 </div>
-<div class="section" id="losung-zu-mini-ubung-8">
-<h3>Lösung zu Mini-Übung 8<a class="headerlink" href="#losung-zu-mini-ubung-8" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part02_minisolution08">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise08"> Exercise 15</a></p>
+<div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das die aktuelle Temperatur von einem Benutzer oder einer Benutzerin abfragt. Wenn die Temperatur</p>
 <ul class="simple">
 <li><p>&lt;= - 10 ˚C ist, dann Ausgabe: “Es ist bitterkalt.”</p></li>
@@ -992,6 +840,7 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
     <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Das ist ja nicht mehr auszuhalten heiß!&#39;</span><span class="p">)</span>
 <span class="k">end</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>

@@ -48,12 +48,9 @@ Selbstverständlich beherrscht MATLAB auch Klammerregeln. Gerne können Sie den 
 ```
 Alles was nach einem Prozentzeichen kommt, wird von MATLAB ignoriert. Die sogenannten Kommentare, die durch das Prozentzeichen eingeleitet werden, sind für uns Menschen bestimmt.
 
-### Mini-Übung 1
-
+```{exercise}
+:label: part01_miniexercise01
 Lassen Sie MATLAB den Term $3\cdot (7-10)+5$ berechnen.
-```octave
-% Hier Ihr Code
-
 ```
 
 ## MATLAB als Programmiersprache
@@ -74,10 +71,12 @@ Fangen wir erstmal von vorne an mit der grundlegen Bedeutung des Fachbegriffes S
 Computer, mobile Geräte wie Smartphones oder auch technische Systeme wie eine Anlagensteuerung bestehen aus zwei Komponenten: Hardware und Software. Dabei bezeichnen wir mit Hardware alle physischen Kompenten eines Systems, also die elektronischen und mechanischen Bauteile. Die Software dahingegen umfasst die Programme und deren Dokumentation sowie Daten. Man könnte auch sagen, dass Hardware die materiellen Teile eines Computersystems bezeichnet, während Software die nicht-materiellen Teile zusammenfasst.
 Bitte schauen Sie sich jetzt kurz um. Welche Hardware fällt Ihnen auf, wenn Sie den Blick schweifen lassen? Tragen Sie in die nächste Text-Zelle Ihre Hardware ein.
 
-### Mini-Übung 2
+```{exercise}
+:label: part01_miniexercise02
 Tragen Sie hier die Hardware ein, die Sie gerade sehen oder die Ihnen generell einfällt:
 * xxx
 * xxx
+```
 
 Nachdem Sie Ihre Komponenten notiert haben, können Sie den Begriff Hardware noch einmal bei Wikipedia nachlesen: 
 https://de.wikipedia.org/wiki/Hardware
@@ -112,19 +111,18 @@ In MATLAB ist dieser Programmcode wesentlich kürzer (in die Code-Zelle klicken 
 disp('Hallo Welt')
 ```
 
-### Mini-Übung 3
+```{exercise}
+:label: part01_miniexercise03
+Kopieren Sie die Zeile `disp('Hallo Welt')` in die nächste Code-Zelle unter die Kommentarzeile und ersetzen Sie Welt durch Ihren Namen. Ihr erstes Computerprogramm in MATLAB :-)
 
-Kopieren Sie die Zeile ```disp('Hallo Welt')``` in die nächste Code-Zelle unter die Kommentarzeile und ersetzen Sie Welt durch Ihren Namen. Ihr erstes Computerprogramm in MATLAB :-)
-
-```octave
-% Hier Ihr Code
 ```
 
 Heute werden nur noch die sogenannten höheren Programmiersprachen verwendet (wie Python, MATLAB oder C++), die für Menschen leichter verständlich sind. Dafür müssen dann Programme, die in höheren Programmiersprachen geschrieben sind, in **Maschinensprache** übersetzt werden. Verschiedene Programmiersprachen verwenden dazu unterschiedliche Prinzipien. Die beiden wichtigsten Vertreter sind **Compiler-Programmiersprachen** und **Interpreter-Programmiersprachen**. 
 
 Bei Compiler-Programmiersprachen wird der Programmcode vorab in Maschinensprache übersetzt und der Anwender erhält die Anwendungssoftware in Maschinensprache (bei Windows beispielsweise als exe-Datei). Den Vorgang des Übersetzens nennt man **Kompilieren**. Bei Interpreter-Sprachen wird der Code in dem Moment in Maschinensprache übersetzt, in dem das Programm läuft bzw. ausgeführt wird. Während also das Programm läuft, muss gleichzeitig – quasi im Hintergrund – der Übersetzer arbeiten und die höhere Programmiersprache in Maschinensprache **interpretieren**. Daher der Name Interpreter-Sprache. Manchmal wird Code, der kompiliert wurde und dann eigenständig lauffähig ist, als **Programm** bezeichnet. Dahingegen wird Code, der interpretiert wird und dringend auf einen gerade laufenden Interpreter angewiesen ist, oft als Skript bezeichnet. Im Alltag geht diese Unterscheidung meist unter und wir verwenden den Begriff Programm auch für MATLAB-Skripte.
 
-### Mini-Übung 4
+```{exercise}
+:label: part01_miniexercise04
 Recherchieren Sie im Internet und schreiben Sie Ihre Antworten in diese Text-Zelle.
 
 1. Ordnen Sie folgende Programmiersprachen den beiden Kategorien Compiler-Sprache oder Interpreter-Sprache zu: C, C++, Fortran, Java, Matlab und Python.
@@ -133,10 +131,13 @@ Recherchieren Sie im Internet und schreiben Sie Ihre Antworten in diese Text-Zel
 
 Antwort 1:
 * XXX
+
 Antwort 2:
 * XXX
+
 Antwort 3:
 * XXX
+```
 
 Die wichtigste Software eines jeden Computersystems ist das **Betriebssystem**. Das Betriebssystem umfasst alle Computerprogramme, die notwendig sind, um überhaupt den Computer zu betreiben, zu starten oder zu benutzen. Das Betriebssystem hat laut Wikipedia (siehe https://de.wikipedia.org/wiki/Betriebssystem) folgende Aufgaben: 
 > ... Benutzerkommunikation; Laden, Ausführen, Unterbrechen und Beenden von Programmen; Verwaltung und Zuteilung der Prozessorzeit; Verwaltung des internen Speicherplatzes für Anwendungen; Verwaltung und Betrieb der angeschlossenen Geräte; Schutzfunktionen z. B. durch Zugriffsbeschränkungen."
@@ -219,12 +220,9 @@ Wichtig ist, dass das = in der Informatik eine andere Bedeutung hat als in der M
 
 Variablen müssen initialisiert (erstmalig mit einem Wert versehen) werden, bevor sie verwendet werden können, sonst tritt ein Fehler auf. 
 
-### Mini-Übung 5
-Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben ```n``` unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit ```Run Section``` vom MATLAB-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung. 
-
-```octave
-% Hier Ihr Code
-
+```{exercise}
+:label: part01_miniexercise05
+Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben `n` unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit `Run Section` vom MATLAB-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung. 
 ```
 
 Sehr häufig findet man Code wie
@@ -274,11 +272,9 @@ bruttopreis = nettopreis + mehrwertsteuersatz * nettopreis
 
 Verwenden Sie für Variablennamen nur ASCII-Zeichen, also keine Umlaute wie ö, ü oder ß. Zahlen sind erlaubt, aber nicht am Anfang des Namens. Es ist sinnvoll, lange Variablen durch einen Unterstrich besser lesbar zu gestalten (sogenannte Snake-Case-Formatierung). Ich empfehle für Variablennamen beispielsweise `dateiname_alt` oder `dateiname_neu`, wenn beispielsweise eine Datei umbenannt wird. Sie sind frei in der Gestaltung der Variablennamen, verboten sind nur die sogannnten **Schlüsselwörter**. Schlüsselwörter sind beispielsweise eingebaute Kommandos an den MATLAB-Interpreter. Würden Sie diese als Variablennamen benutzen, wüsste der MATLAB-Interpreter nicht, ob das Kommando oder die Variable gemeint ist.
 
-### Mini-Übung 6
+```{exercise}
+:label: part01_miniexercise06
 Initialisieren Sie eine Variable namens alter mit Ihrem aktuellen Alter, eine Variable ``rentenalter`` mit dem Zahlenwert ``67`` und berechnen Sie dann, wie viele Jahre es noch bis zum Renteneintritt dauert. 
-```octave
-% Hier Ihr Code
-
 ```
 
 ## Ein- und Ausgabe sowie das EVA-Prinzip
@@ -323,8 +319,11 @@ disp(x);
 disp('Das Quadrat dieser Zahl ist: ');
 disp(x^2);
 ```
-### Mini-Übung 7
+
+````{exercise}
+:label: part01_miniexercise07
 Schreiben Sie ein Skript, das nach einer Zahl fragt. Anschließend gibt das Skript die 5. Potenz dieser Zahl aus. Hier ein Beispiel mit der Zahl 2:
+
 ```
 Bitte geben Sie eine Zahl ein: 
 2
@@ -333,11 +332,7 @@ Die von Ihnen gewählte Zahl ist:
 Die fünfte Potenz davon ist:
 32
 ```
-
-```octave
-% Ihr Code:
-
-```
+````
 
 ## Zusammenfassung und Ausblick
 
@@ -345,12 +340,17 @@ Der Einstieg in die wissenschaftliche Programmierung mit MATLAB ist zunächst th
 
 ## Lösungen zu den Mini-Übungen
 
-### Lösung zu Mini-Übung 1
+````{solution} part01_miniexercise01
+:label: part01_minisolution01
+:class: dropdown
 ```octave
 3 * (7-10) + 5
 ```
+````
 
-### Lösung zu Mini-Übung 2
+````{solution} part01_miniexercise02
+:label: part01_minisolution02
+:class: dropdown
 Tragen Sie hier die Hardware ein, die Sie gerade sehen oder die Ihnen generell einfällt:
 * Monitor
 * Maus
@@ -359,14 +359,20 @@ Tragen Sie hier die Hardware ein, die Sie gerade sehen oder die Ihnen generell e
 * Webcam (Kamera)
 * Headset
 * ...
+````
 
-### Lösung zu Mini-Übung 3
+````{solution} part01_miniexercise03
+:label: part01_minisolution03
+:class: dropdown
 Kopieren Sie die Zeile `disp('Hallo Welt')` in die nächste Code-Zelle unter die Kommentarzeile und ersetzen Sie Welt durch Ihren Namen. Ihr erstes Computerprogramm in MATLAB :-)
 ```octave
 disp('Hallo Simone')
 ```
+````
 
-### Lösung zu Mini-Übung 4
+````{solution} part01_miniexercise04
+:label: part01_minisolution04
+:class: dropdown
 Recherchieren Sie im Internet und schreiben Sie Ihre Antworten in diese Text-Zelle.
 Ordnen Sie folgende Programmiersprachen den beiden Kategorien Compiler-Sprache oder Interpreter-Sprache zu: C, C++, Fortran, Java, Matlab und Python.
 Stellen Sie eine Vermutung auf: in welcher Programmiersprache können die schnelleren Programme geschrieben werden?
@@ -378,24 +384,32 @@ Interpreter-Sprache: Java, Matlab, Python
 In der Regel sind Programme, die in einer Compiler-Sprache geschrieben wurden, schneller als interpretierte Programme. 
 * Antwort 3:
 In der Regel sind interpretierte Programmiersprachen leichter zu lernen, da beispielsweise Code zeilenweise auf seine Korrektheit hin überprüft werden kann.
+````
 
-### Lösung zu Mini-Übung 5
+````{solution} part01_miniexercise05
+:label: part01_minisolution05
+:class: dropdown
 Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben `n` unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit `Run Section` vom MATLAB-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung. 
 ```octave
 n
 ```
 Der MATLAB-Interpreter zeigt in rot eine Fehlermeldung an: "Unrecognized function or variable 'n'." Damit weist der MATLAB-Interpreter darauf hin, dass die Variable bisher nicht mit einem Wert versehen wurde, sie ist nicht intialisiert worden. Daher kann damit auch nicht gearbeitet werden.
+````
 
-### Lösung zu Mini-Übung 6
+````{solution} part01_miniexercise06
+:label: part01_minisolution06
+:class: dropdown
 Initialisieren Sie eine Variable namens `alter` mit Ihrem aktuellen Alter, eine Variable `rentenalter` mit dem Zahlenwert `67` und berechnen Sie dann, wie viele Jahre es noch bis zum Renteneintritt dauert. 
 ```octave
-% Hier Ihr Code
 alter = 21;
 rentenalter = 67;
 disp(rentenalter- alter);
+```
 ````
 
-#### Lösung zu Mini-Übung 7
+````{solution} part01_miniexercise07
+:label: part01_minisolution07
+:class: dropdown
 Schreiben Sie ein Skript, das nach einer Zahl fragt. Anschließend gibt das Skript die 5. Potenz dieser Zahl aus. 
 ```octave
 % Eingabe
@@ -407,3 +421,4 @@ disp(x);
 disp('Die fünfte Potenz davon ist: ');
 disp(x^5);
 ```
+````

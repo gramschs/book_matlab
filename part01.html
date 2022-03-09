@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -106,6 +107,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="part02.html">
    Kontrollstrukturen: die Programmverzweigung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="part03.html">
+   Digitale Logik und Schleifen mit Bedingungen (“while”)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="part04.html">
+   Komplexere Datentypen: Array, String und formatierte Ausgaben
   </a>
  </li>
 </ul>
@@ -204,13 +215,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#matlab-als-taschenrechner">
    MATLAB als Taschenrechner
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-1">
-     Mini-Übung 1
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#matlab-als-programmiersprache">
@@ -220,21 +224,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#hardware-und-software">
      Hardware und Software
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-2">
-     Mini-Übung 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-3">
-     Mini-Übung 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-4">
-     Mini-Übung 4
     </a>
    </li>
   </ul>
@@ -248,30 +237,11 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#variablen">
    Variablen
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-5">
-     Mini-Übung 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-6">
-     Mini-Übung 6
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ein-und-ausgabe-sowie-das-eva-prinzip">
    Ein- und Ausgabe sowie das EVA-Prinzip
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-7">
-     Mini-Übung 7
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">
@@ -282,45 +252,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#losungen-zu-den-mini-ubungen">
    Lösungen zu den Mini-Übungen
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-1">
-     Lösung zu Mini-Übung 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-2">
-     Lösung zu Mini-Übung 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-3">
-     Lösung zu Mini-Übung 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-4">
-     Lösung zu Mini-Übung 4
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-5">
-     Lösung zu Mini-Übung 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-6">
-     Lösung zu Mini-Übung 6
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#losung-zu-mini-ubung-7">
-       Lösung zu Mini-Übung 7
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -351,13 +282,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#matlab-als-taschenrechner">
    MATLAB als Taschenrechner
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-1">
-     Mini-Übung 1
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#matlab-als-programmiersprache">
@@ -367,21 +291,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#hardware-und-software">
      Hardware und Software
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-2">
-     Mini-Übung 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-3">
-     Mini-Übung 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-4">
-     Mini-Übung 4
     </a>
    </li>
   </ul>
@@ -395,30 +304,11 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#variablen">
    Variablen
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-5">
-     Mini-Übung 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-6">
-     Mini-Übung 6
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ein-und-ausgabe-sowie-das-eva-prinzip">
    Ein- und Ausgabe sowie das EVA-Prinzip
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-7">
-     Mini-Übung 7
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">
@@ -429,45 +319,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#losungen-zu-den-mini-ubungen">
    Lösungen zu den Mini-Übungen
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-1">
-     Lösung zu Mini-Übung 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-2">
-     Lösung zu Mini-Übung 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-3">
-     Lösung zu Mini-Übung 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-4">
-     Lösung zu Mini-Übung 4
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-5">
-     Lösung zu Mini-Übung 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-6">
-     Lösung zu Mini-Übung 6
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#losung-zu-mini-ubung-7">
-       Lösung zu Mini-Übung 7
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -525,11 +376,11 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <p>Alles was nach einem Prozentzeichen kommt, wird von MATLAB ignoriert. Die sogenannten Kommentare, die durch das Prozentzeichen eingeleitet werden, sind für uns Menschen bestimmt.</p>
-<div class="section" id="mini-ubung-1">
-<h3>Mini-Übung 1<a class="headerlink" href="#mini-ubung-1" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part01_miniexercise01">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1 </span></p>
+<div class="section" id="exercise-content">
 <p>Lassen Sie MATLAB den Term <span class="math notranslate nohighlight">\(3\cdot (7-10)+5\)</span> berechnen.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code</span>
-</pre></div>
 </div>
 </div>
 </div>
@@ -549,14 +400,17 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>Hardware und Software<a class="headerlink" href="#hardware-und-software" title="Permalink to this headline">¶</a></h3>
 <p>Computer, mobile Geräte wie Smartphones oder auch technische Systeme wie eine Anlagensteuerung bestehen aus zwei Komponenten: Hardware und Software. Dabei bezeichnen wir mit Hardware alle physischen Kompenten eines Systems, also die elektronischen und mechanischen Bauteile. Die Software dahingegen umfasst die Programme und deren Dokumentation sowie Daten. Man könnte auch sagen, dass Hardware die materiellen Teile eines Computersystems bezeichnet, während Software die nicht-materiellen Teile zusammenfasst.
 Bitte schauen Sie sich jetzt kurz um. Welche Hardware fällt Ihnen auf, wenn Sie den Blick schweifen lassen? Tragen Sie in die nächste Text-Zelle Ihre Hardware ein.</p>
-</div>
-<div class="section" id="mini-ubung-2">
-<h3>Mini-Übung 2<a class="headerlink" href="#mini-ubung-2" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part01_miniexercise02">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2 </span></p>
+<div class="section" id="exercise-content">
 <p>Tragen Sie hier die Hardware ein, die Sie gerade sehen oder die Ihnen generell einfällt:</p>
 <ul class="simple">
 <li><p>xxx</p></li>
 <li><p>xxx</p></li>
 </ul>
+</div>
+</div>
 <p>Nachdem Sie Ihre Komponenten notiert haben, können Sie den Begriff Hardware noch einmal bei Wikipedia nachlesen:
 <a class="reference external" href="https://de.wikipedia.org/wiki/Hardware">https://de.wikipedia.org/wiki/Hardware</a>
 Wikibooks bietet auch ein passendes Buch zu Computerhardware an: <a class="reference external" href="https://de.wikibooks.org/wiki/Computerhardware">https://de.wikibooks.org/wiki/Computerhardware</a> .</p>
@@ -582,18 +436,19 @@ Bleibt noch der Begriff Programm bzw. etwas präziser Computerprogramm übrig. E
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Hallo Welt&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="mini-ubung-3">
-<h3>Mini-Übung 3<a class="headerlink" href="#mini-ubung-3" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part01_miniexercise03">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3 </span></p>
+<div class="section" id="exercise-content">
 <p>Kopieren Sie die Zeile <code class="docutils literal notranslate"><span class="pre">disp('Hallo</span> <span class="pre">Welt')</span></code> in die nächste Code-Zelle unter die Kommentarzeile und ersetzen Sie Welt durch Ihren Namen. Ihr erstes Computerprogramm in MATLAB :-)</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code</span>
-</pre></div>
+</div>
 </div>
 <p>Heute werden nur noch die sogenannten höheren Programmiersprachen verwendet (wie Python, MATLAB oder C++), die für Menschen leichter verständlich sind. Dafür müssen dann Programme, die in höheren Programmiersprachen geschrieben sind, in <strong>Maschinensprache</strong> übersetzt werden. Verschiedene Programmiersprachen verwenden dazu unterschiedliche Prinzipien. Die beiden wichtigsten Vertreter sind <strong>Compiler-Programmiersprachen</strong> und <strong>Interpreter-Programmiersprachen</strong>.</p>
 <p>Bei Compiler-Programmiersprachen wird der Programmcode vorab in Maschinensprache übersetzt und der Anwender erhält die Anwendungssoftware in Maschinensprache (bei Windows beispielsweise als exe-Datei). Den Vorgang des Übersetzens nennt man <strong>Kompilieren</strong>. Bei Interpreter-Sprachen wird der Code in dem Moment in Maschinensprache übersetzt, in dem das Programm läuft bzw. ausgeführt wird. Während also das Programm läuft, muss gleichzeitig – quasi im Hintergrund – der Übersetzer arbeiten und die höhere Programmiersprache in Maschinensprache <strong>interpretieren</strong>. Daher der Name Interpreter-Sprache. Manchmal wird Code, der kompiliert wurde und dann eigenständig lauffähig ist, als <strong>Programm</strong> bezeichnet. Dahingegen wird Code, der interpretiert wird und dringend auf einen gerade laufenden Interpreter angewiesen ist, oft als Skript bezeichnet. Im Alltag geht diese Unterscheidung meist unter und wir verwenden den Begriff Programm auch für MATLAB-Skripte.</p>
-</div>
-<div class="section" id="mini-ubung-4">
-<h3>Mini-Übung 4<a class="headerlink" href="#mini-ubung-4" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part01_miniexercise04">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4 </span></p>
+<div class="section" id="exercise-content">
 <p>Recherchieren Sie im Internet und schreiben Sie Ihre Antworten in diese Text-Zelle.</p>
 <ol class="simple">
 <li><p>Ordnen Sie folgende Programmiersprachen den beiden Kategorien Compiler-Sprache oder Interpreter-Sprache zu: C, C++, Fortran, Java, Matlab und Python.</p></li>
@@ -602,12 +457,18 @@ Bleibt noch der Begriff Programm bzw. etwas präziser Computerprogramm übrig. E
 </ol>
 <p>Antwort 1:</p>
 <ul class="simple">
-<li><p>XXX
-Antwort 2:</p></li>
-<li><p>XXX
-Antwort 3:</p></li>
 <li><p>XXX</p></li>
 </ul>
+<p>Antwort 2:</p>
+<ul class="simple">
+<li><p>XXX</p></li>
+</ul>
+<p>Antwort 3:</p>
+<ul class="simple">
+<li><p>XXX</p></li>
+</ul>
+</div>
+</div>
 <p>Die wichtigste Software eines jeden Computersystems ist das <strong>Betriebssystem</strong>. Das Betriebssystem umfasst alle Computerprogramme, die notwendig sind, um überhaupt den Computer zu betreiben, zu starten oder zu benutzen. Das Betriebssystem hat laut Wikipedia (siehe <a class="reference external" href="https://de.wikipedia.org/wiki/Betriebssystem">https://de.wikipedia.org/wiki/Betriebssystem</a>) folgende Aufgaben:</p>
 <blockquote>
 <div><p>… Benutzerkommunikation; Laden, Ausführen, Unterbrechen und Beenden von Programmen; Verwaltung und Zuteilung der Prozessorzeit; Verwaltung des internen Speicherplatzes für Anwendungen; Verwaltung und Betrieb der angeschlossenen Geräte; Schutzfunktionen z. B. durch Zugriffsbeschränkungen.”</p>
@@ -674,11 +535,12 @@ Mit Integern können wir ganz normal rechnen, also Operationen ausführen. Einig
 </div>
 <p>Wichtig ist, dass das = in der Informatik eine andere Bedeutung hat als in der Mathematik. = meint nicht das Gleichheitszeichen, sondern den sogenannten Zuweisungsoperator. Das ist in der Programmierung ein Kommando, das eine Schublade befüllt oder technischer ausgedrückt, ein Objekt einer Variable zuweist.</p>
 <p>Variablen müssen initialisiert (erstmalig mit einem Wert versehen) werden, bevor sie verwendet werden können, sonst tritt ein Fehler auf.</p>
-<div class="section" id="mini-ubung-5">
-<h3>Mini-Übung 5<a class="headerlink" href="#mini-ubung-5" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part01_miniexercise05">
+
+<p class="admonition-title"><span class="caption-number">Exercise 5 </span></p>
+<div class="section" id="exercise-content">
 <p>Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben <code class="docutils literal notranslate"><span class="pre">n</span></code> unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Section</span></code> vom MATLAB-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code</span>
-</pre></div>
+</div>
 </div>
 <p>Sehr häufig findet man Code wie</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
@@ -715,12 +577,11 @@ Dagegen erahnt man bei diesem Code schon eher, was bezweckt wird:</p>
 </pre></div>
 </div>
 <p>Verwenden Sie für Variablennamen nur ASCII-Zeichen, also keine Umlaute wie ö, ü oder ß. Zahlen sind erlaubt, aber nicht am Anfang des Namens. Es ist sinnvoll, lange Variablen durch einen Unterstrich besser lesbar zu gestalten (sogenannte Snake-Case-Formatierung). Ich empfehle für Variablennamen beispielsweise <code class="docutils literal notranslate"><span class="pre">dateiname_alt</span></code> oder <code class="docutils literal notranslate"><span class="pre">dateiname_neu</span></code>, wenn beispielsweise eine Datei umbenannt wird. Sie sind frei in der Gestaltung der Variablennamen, verboten sind nur die sogannnten <strong>Schlüsselwörter</strong>. Schlüsselwörter sind beispielsweise eingebaute Kommandos an den MATLAB-Interpreter. Würden Sie diese als Variablennamen benutzen, wüsste der MATLAB-Interpreter nicht, ob das Kommando oder die Variable gemeint ist.</p>
-</div>
-<div class="section" id="mini-ubung-6">
-<h3>Mini-Übung 6<a class="headerlink" href="#mini-ubung-6" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part01_miniexercise06">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6 </span></p>
+<div class="section" id="exercise-content">
 <p>Initialisieren Sie eine Variable namens alter mit Ihrem aktuellen Alter, eine Variable <code class="docutils literal notranslate"><span class="pre">rentenalter</span></code> mit dem Zahlenwert <code class="docutils literal notranslate"><span class="pre">67</span></code> und berechnen Sie dann, wie viele Jahre es noch bis zum Renteneintritt dauert.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code</span>
-</pre></div>
 </div>
 </div>
 </div>
@@ -762,8 +623,10 @@ Wikipedia beschreibt das EVA-Prinzip (siehe <a class="reference external" href="
 <span class="nb">disp</span><span class="p">(</span><span class="n">x</span>^<span class="mi">2</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="section" id="mini-ubung-7">
-<h3>Mini-Übung 7<a class="headerlink" href="#mini-ubung-7" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part01_miniexercise07">
+
+<p class="admonition-title"><span class="caption-number">Exercise 7 </span></p>
+<div class="section" id="exercise-content">
 <p>Schreiben Sie ein Skript, das nach einer Zahl fragt. Anschließend gibt das Skript die 5. Potenz dieser Zahl aus. Hier ein Beispiel mit der Zahl 2:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Bitte</span> <span class="n">geben</span> <span class="n">Sie</span> <span class="n">eine</span> <span class="n">Zahl</span> <span class="n">ein</span><span class="p">:</span> 
 <span class="mi">2</span>
@@ -773,8 +636,6 @@ Wikipedia beschreibt das EVA-Prinzip (siehe <a class="reference external" href="
 <span class="mi">32</span>
 </pre></div>
 </div>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Ihr Code:</span>
-</pre></div>
 </div>
 </div>
 </div>
@@ -784,14 +645,19 @@ Wikipedia beschreibt das EVA-Prinzip (siehe <a class="reference external" href="
 </div>
 <div class="section" id="losungen-zu-den-mini-ubungen">
 <h2>Lösungen zu den Mini-Übungen<a class="headerlink" href="#losungen-zu-den-mini-ubungen" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="losung-zu-mini-ubung-1">
-<h3>Lösung zu Mini-Übung 1<a class="headerlink" href="#losung-zu-mini-ubung-1" title="Permalink to this headline">¶</a></h3>
+<div class="solution dropdown admonition" id="part01_minisolution01">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise01"> Exercise 1</a></p>
+<div class="section" id="solution-content">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">7</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="losung-zu-mini-ubung-2">
-<h3>Lösung zu Mini-Übung 2<a class="headerlink" href="#losung-zu-mini-ubung-2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part01_minisolution02">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise02"> Exercise 2</a></p>
+<div class="section" id="solution-content">
 <p>Tragen Sie hier die Hardware ein, die Sie gerade sehen oder die Ihnen generell einfällt:</p>
 <ul class="simple">
 <li><p>Monitor</p></li>
@@ -803,15 +669,21 @@ Wikipedia beschreibt das EVA-Prinzip (siehe <a class="reference external" href="
 <li><p>…</p></li>
 </ul>
 </div>
-<div class="section" id="losung-zu-mini-ubung-3">
-<h3>Lösung zu Mini-Übung 3<a class="headerlink" href="#losung-zu-mini-ubung-3" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part01_minisolution03">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise03"> Exercise 3</a></p>
+<div class="section" id="solution-content">
 <p>Kopieren Sie die Zeile <code class="docutils literal notranslate"><span class="pre">disp('Hallo</span> <span class="pre">Welt')</span></code> in die nächste Code-Zelle unter die Kommentarzeile und ersetzen Sie Welt durch Ihren Namen. Ihr erstes Computerprogramm in MATLAB :-)</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Hallo Simone&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="losung-zu-mini-ubung-4">
-<h3>Lösung zu Mini-Übung 4<a class="headerlink" href="#losung-zu-mini-ubung-4" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part01_minisolution04">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise04"> Exercise 4</a></p>
+<div class="section" id="solution-content">
 <p>Recherchieren Sie im Internet und schreiben Sie Ihre Antworten in diese Text-Zelle.
 Ordnen Sie folgende Programmiersprachen den beiden Kategorien Compiler-Sprache oder Interpreter-Sprache zu: C, C++, Fortran, Java, Matlab und Python.
 Stellen Sie eine Vermutung auf: in welcher Programmiersprache können die schnelleren Programme geschrieben werden?
@@ -826,25 +698,34 @@ In der Regel sind Programme, die in einer Compiler-Sprache geschrieben wurden, s
 In der Regel sind interpretierte Programmiersprachen leichter zu lernen, da beispielsweise Code zeilenweise auf seine Korrektheit hin überprüft werden kann.</p></li>
 </ul>
 </div>
-<div class="section" id="losung-zu-mini-ubung-5">
-<h3>Lösung zu Mini-Übung 5<a class="headerlink" href="#losung-zu-mini-ubung-5" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part01_minisolution05">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise05"> Exercise 5</a></p>
+<div class="section" id="solution-content">
 <p>Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben <code class="docutils literal notranslate"><span class="pre">n</span></code> unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Section</span></code> vom MATLAB-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">n</span>
 </pre></div>
 </div>
 <p>Der MATLAB-Interpreter zeigt in rot eine Fehlermeldung an: “Unrecognized function or variable ‘n’.” Damit weist der MATLAB-Interpreter darauf hin, dass die Variable bisher nicht mit einem Wert versehen wurde, sie ist nicht intialisiert worden. Daher kann damit auch nicht gearbeitet werden.</p>
 </div>
-<div class="section" id="losung-zu-mini-ubung-6">
-<h3>Lösung zu Mini-Übung 6<a class="headerlink" href="#losung-zu-mini-ubung-6" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part01_minisolution06">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise06"> Exercise 6</a></p>
+<div class="section" id="solution-content">
 <p>Initialisieren Sie eine Variable namens <code class="docutils literal notranslate"><span class="pre">alter</span></code> mit Ihrem aktuellen Alter, eine Variable <code class="docutils literal notranslate"><span class="pre">rentenalter</span></code> mit dem Zahlenwert <code class="docutils literal notranslate"><span class="pre">67</span></code> und berechnen Sie dann, wie viele Jahre es noch bis zum Renteneintritt dauert.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code</span>
-<span class="n">alter</span> <span class="p">=</span> <span class="mi">21</span><span class="p">;</span>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="p">=</span> <span class="mi">21</span><span class="p">;</span>
 <span class="n">rentenalter</span> <span class="p">=</span> <span class="mi">67</span><span class="p">;</span>
 <span class="nb">disp</span><span class="p">(</span><span class="n">rentenalter</span><span class="o">-</span> <span class="n">alter</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="section" id="losung-zu-mini-ubung-7">
-<h4>Lösung zu Mini-Übung 7<a class="headerlink" href="#losung-zu-mini-ubung-7" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part01_minisolution07">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise07"> Exercise 7</a></p>
+<div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das nach einer Zahl fragt. Anschließend gibt das Skript die 5. Potenz dieser Zahl aus.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
 <span class="n">x</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie eine Zahl ein: &#39;</span><span class="p">);</span>

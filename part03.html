@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -52,6 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Komplexere Datentypen: Array, String und formatierte Ausgaben" href="part04.html" />
     <link rel="prev" title="Kontrollstrukturen: die Programmverzweigung" href="part02.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -110,6 +112,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Digitale Logik und Schleifen mit Bedingungen (“while”)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="part04.html">
+   Komplexere Datentypen: Array, String und formatierte Ausgaben
   </a>
  </li>
 </ul>
@@ -213,69 +220,21 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#das-logische-und">
    Das logische UND
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-1">
-     Mini-Übung 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-2">
-     Mini-Übung 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-3">
-     Mini-Übung 3
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#das-logische-oder">
    Das logische ODER
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-4">
-     Mini-Übung 4
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-5">
-     Mini-Übung 5
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#das-logische-nicht">
    Das logische NICHT
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-6">
-     Mini-Übung 6
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#schleifen-wiederholung-mit-bedingung-while">
    Schleifen: Wiederholung mit Bedingung “while”
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-7">
-     Mini-Übung 7
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-8">
-     Mini-Übung 8
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#zusammenfassung">
@@ -286,48 +245,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#losungen-zu-den-mini-ubungen">
    Lösungen zu den Mini-Übungen
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-1">
-     Lösung zu Mini-Übung 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-2">
-     Lösung zu Mini-Übung 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-3">
-     Lösung zu Mini-Übung 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-4">
-     Lösung zu Mini-Übung 4
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-5">
-     Lösung zu Mini-Übung 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-6">
-     Lösung zu Mini-Übung 6
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-7">
-     Lösung zu Mini-Übung 7
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-8">
-     Lösung zu Mini-Übung 8
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -363,69 +280,21 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#das-logische-und">
    Das logische UND
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-1">
-     Mini-Übung 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-2">
-     Mini-Übung 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-3">
-     Mini-Übung 3
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#das-logische-oder">
    Das logische ODER
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-4">
-     Mini-Übung 4
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-5">
-     Mini-Übung 5
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#das-logische-nicht">
    Das logische NICHT
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-6">
-     Mini-Übung 6
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#schleifen-wiederholung-mit-bedingung-while">
    Schleifen: Wiederholung mit Bedingung “while”
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-7">
-     Mini-Übung 7
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mini-ubung-8">
-     Mini-Übung 8
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#zusammenfassung">
@@ -436,48 +305,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#losungen-zu-den-mini-ubungen">
    Lösungen zu den Mini-Übungen
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-1">
-     Lösung zu Mini-Übung 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-2">
-     Lösung zu Mini-Übung 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-3">
-     Lösung zu Mini-Übung 3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-4">
-     Lösung zu Mini-Übung 4
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-5">
-     Lösung zu Mini-Übung 5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-6">
-     Lösung zu Mini-Übung 6
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-7">
-     Lösung zu Mini-Übung 7
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#losung-zu-mini-ubung-8">
-     Lösung zu Mini-Übung 8
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -558,15 +385,17 @@ beschränken.</p></li>
 <span class="k">end</span>
 </pre></div>
 </div>
-<div class="section" id="mini-ubung-1">
-<h3>Mini-Übung 1<a class="headerlink" href="#mini-ubung-1" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part03_miniexercise01">
+
+<p class="admonition-title"><span class="caption-number">Exercise 16 </span></p>
+<div class="section" id="exercise-content">
 <p>Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn das Alter der Person zwischen 6 und 10 liegt, soll das Programm ausgeben “Wahrscheinlich gehst Du in die Grundschule.”</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code</span>
-</pre></div>
 </div>
 </div>
-<div class="section" id="mini-ubung-2">
-<h3>Mini-Übung 2<a class="headerlink" href="#mini-ubung-2" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part03_miniexercise02">
+
+<p class="admonition-title"><span class="caption-number">Exercise 17 </span></p>
+<div class="section" id="exercise-content">
 <p>Schreiben Sie ein Skript und lassen Sie den MATLAB-Interpreter nach einem Monat fragen. Dabei soll für den Januar eine 1 eingegeben werden, für den Februar eine 2 usw. Danch soll der MATLAB-Interpreter folgendes ausgeben:</p>
 <ul class="simple">
 <li><p>für Monate März, April, Mai: Frühling</p></li>
@@ -574,15 +403,13 @@ beschränken.</p></li>
 <li><p>für Monate September, Oktober, November: Herbst</p></li>
 <li><p>für Monate Dezember, Januar, Februar: Winter</p></li>
 </ul>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code</span>
-</pre></div>
 </div>
 </div>
-<div class="section" id="mini-ubung-3">
-<h3>Mini-Übung 3<a class="headerlink" href="#mini-ubung-3" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part03_miniexercise03">
+
+<p class="admonition-title"><span class="caption-number">Exercise 18 </span></p>
+<div class="section" id="exercise-content">
 <p>Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person 0 bis 17 ist, soll das Programm ausgeben: “Wahrscheinlich bist Du noch nicht berufstätig”. Zwischen 18 und 67 soll ausgegeben werden “Wahrscheinlich sind Sie berufstätig.” und bei Personen zwischen 68 und 120 “Wahrscheinlich sind Sie nicht mehr berufstätig.”</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code</span>
-</pre></div>
 </div>
 </div>
 </div>
@@ -629,18 +456,18 @@ beschränken.</p></li>
 <span class="k">end</span>
 </pre></div>
 </div>
-<div class="section" id="mini-ubung-4">
-<h3>Mini-Übung 4<a class="headerlink" href="#mini-ubung-4" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part03_miniexercise04">
+
+<p class="admonition-title"><span class="caption-number">Exercise 19 </span></p>
+<div class="section" id="exercise-content">
 <p>Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person jünger als 18 ist oder älter als 67, soll das Programm ausgeben: “Wahrscheinlich sind Sie/bist Du nicht berufstätig.”</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code</span>
-</pre></div>
 </div>
 </div>
-<div class="section" id="mini-ubung-5">
-<h3>Mini-Übung 5<a class="headerlink" href="#mini-ubung-5" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part03_miniexercise05">
+
+<p class="admonition-title"><span class="caption-number">Exercise 20 </span></p>
+<div class="section" id="exercise-content">
 <p>Schreiben Sie ein Skript, das nach der Länge der beiden Seiten eines rechtwinkligen Dreiecks fragt, die am rechten Winkel anliegen (= Katheten). Wenn eine der beiden Seitenlängen oder beide negativ sind, soll das Programm ausgeben: “Fehler, negative Seitenlängen gibt es nicht!” und ansonsten soll das Skript die Länge der dritten Seite (= Hypotenuse) mit der Formel (= Satz des Pythagoras) <span class="math notranslate nohighlight">\(c=\sqrt{a^2+b^2}\)</span> berechnen und das Ergebnis ausgeben.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code</span>
-</pre></div>
 </div>
 </div>
 </div>
@@ -673,8 +500,10 @@ beschränken.</p></li>
 <span class="k">end</span>
 </pre></div>
 </div>
-<div class="section" id="mini-ubung-6">
-<h3>Mini-Übung 6<a class="headerlink" href="#mini-ubung-6" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part03_miniexercise06">
+
+<p class="admonition-title"><span class="caption-number">Exercise 21 </span></p>
+<div class="section" id="exercise-content">
 <p>Überlegen Sie zunächst, was ist das Ergebnis der folgenden Verknüpfungen: wahr oder falsch?</p>
 <ul class="simple">
 <li><p>wahr UND wahr</p></li>
@@ -688,8 +517,6 @@ beschränken.</p></li>
 </ul>
 <p>Probieren Sie dann in der nächsten Code-Zelle aus, ob Sie die richtigen Ergebnisse hatten, indem Sie beispielsweise wahr und wahr in MATLAB ausprobieren, also beispielsweise
 <code class="docutils literal notranslate"><span class="pre">true</span> <span class="pre">&amp;&amp;</span> <span class="pre">true</span></code> eingeben:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code:</span>
-</pre></div>
 </div>
 </div>
 </div>
@@ -722,18 +549,18 @@ beschränken.</p></li>
 <span class="k">end</span>
 </pre></div>
 </div>
-<div class="section" id="mini-ubung-7">
-<h3>Mini-Übung 7<a class="headerlink" href="#mini-ubung-7" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part03_miniexercise07">
+
+<p class="admonition-title"><span class="caption-number">Exercise 22 </span></p>
+<div class="section" id="exercise-content">
 <p>Schreiben Sie ein Skript, das die Quadratzahlen für 10 bis 20 ausgibt, d.h. es sollen die Zahlen 100, 121, … , 400 ausgegeben werden.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code:</span>
-</pre></div>
 </div>
 </div>
-<div class="section" id="mini-ubung-8">
-<h3>Mini-Übung 8<a class="headerlink" href="#mini-ubung-8" title="Permalink to this headline">¶</a></h3>
+<div class="exercise admonition" id="part03_miniexercise08">
+
+<p class="admonition-title"><span class="caption-number">Exercise 23 </span></p>
+<div class="section" id="exercise-content">
 <p>Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin auffordert, eine positive Zahl einzugeben. Falls dabei jedoch fälschlicherweise eine negative Zahl oder die Null eingegeben wird, soll der Computer solange weiter fragen, bis endlich eine positive Zahl eingegeben wird.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code</span>
-</pre></div>
 </div>
 </div>
 </div>
@@ -743,8 +570,10 @@ beschränken.</p></li>
 </div>
 <div class="section" id="losungen-zu-den-mini-ubungen">
 <h2>Lösungen zu den Mini-Übungen<a class="headerlink" href="#losungen-zu-den-mini-ubungen" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="losung-zu-mini-ubung-1">
-<h3>Lösung zu Mini-Übung 1<a class="headerlink" href="#losung-zu-mini-ubung-1" title="Permalink to this headline">¶</a></h3>
+<div class="solution dropdown admonition" id="part03_minisolution01">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part03_miniexercise01"> Exercise 16</a></p>
+<div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn das Alter der Person zwischen 6 und 10 liegt, soll das Programm ausgeben “Wahrscheinlich gehst Du in die Grundschule.”</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
 <span class="n">alter</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Wie alt sind Sie?&#39;</span><span class="p">);</span>
@@ -756,8 +585,11 @@ beschränken.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="section" id="losung-zu-mini-ubung-2">
-<h3>Lösung zu Mini-Übung 2<a class="headerlink" href="#losung-zu-mini-ubung-2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part03_minisolution02">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part03_miniexercise02"> Exercise 17</a></p>
+<div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript und lassen Sie den MATLAB-Interpreter nach einem Monat fragen. Dabei soll für den Januar eine 1 eingegeben werden, für den Februar eine 2 usw. Danch soll der MATLAB-Interpreter folgendes ausgeben:</p>
 <ul class="simple">
 <li><p>für Monate März, April, Mai: Frühling</p></li>
@@ -781,8 +613,11 @@ beschränken.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="section" id="losung-zu-mini-ubung-3">
-<h3>Lösung zu Mini-Übung 3<a class="headerlink" href="#losung-zu-mini-ubung-3" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part03_minisolution03">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part03_miniexercise03"> Exercise 18</a></p>
+<div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person 0 bis 17 ist, soll das Programm ausgeben: “Wahrscheinlich bist Du noch nicht berufstätig”. Zwischen 18 und 67 soll ausgegeben werden “Wahrscheinlich sind Sie berufstätig.” und bei Personen zwischen 68 und 120 “Wahrscheinlich sind Sie nicht mehr berufstätig.”</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
 <span class="n">alter</span> <span class="p">=</span>  <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Alter: &#39;</span><span class="p">);</span>
@@ -800,8 +635,11 @@ beschränken.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="section" id="losung-zu-mini-ubung-4">
-<h3>Lösung zu Mini-Übung 4<a class="headerlink" href="#losung-zu-mini-ubung-4" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part03_minisolution04">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part03_miniexercise04"> Exercise 19</a></p>
+<div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person jünger als 18 ist oder älter als 67, soll das Programm ausgeben: “Wahrscheinlich sind Sie/bist Du nicht berufstätig.”</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
 <span class="n">alter</span> <span class="p">=</span>  <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Alter: &#39;</span><span class="p">);</span>
@@ -813,8 +651,11 @@ beschränken.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="section" id="losung-zu-mini-ubung-5">
-<h3>Lösung zu Mini-Übung 5<a class="headerlink" href="#losung-zu-mini-ubung-5" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part03_minisolution05">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part03_miniexercise05"> Exercise 20</a></p>
+<div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das nach der Länge der beiden Seiten eines rechtwinkligen Dreiecks fragt, die am rechten Winkel anliegen (= Katheten). Wenn eine der beiden Seitenlängen oder beide negativ sind, soll das Programm ausgeben: “Fehler, negative Seitenlängen gibt es nicht!” und ansonsten soll das Skript die Länge der dritten Seite (= Hypotenuse) mit dem Satz des Pythagoras berechnen und das Ergebnis ausgeben.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe </span>
 <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie die Längen der Katheten eines rechtwinkligen Dreiecks ein:&#39;</span><span class="p">);</span>
@@ -829,8 +670,11 @@ beschränken.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="section" id="losung-zu-mini-ubung-6">
-<h3>Lösung zu Mini-Übung 6<a class="headerlink" href="#losung-zu-mini-ubung-6" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part03_minisolution06">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part03_miniexercise06"> Exercise 21</a></p>
+<div class="section" id="solution-content">
 <p>Überlegen Sie zunächst, was ist das Ergebnis der folgenden Verknüpfungen: wahr oder falsch?</p>
 <ul class="simple">
 <li><p>wahr UND wahr</p></li>
@@ -870,8 +714,11 @@ beschränken.</p></li>
 </div>
 <p>Anmerkung: Der MATLAB-Interpreter merkt, dass ein Vergleich wie beispielsweise <code class="docutils literal notranslate"><span class="pre">false</span> <span class="pre">&amp;&amp;</span> <span class="pre">false</span></code> nicht komplett überprüft werden muss, da bereits das erste false dazu führt, dass das Ergebnis der Verknüpfung falsch ist. Daher wird hier in der Code-Zelle eine Warnung angezeigt. Um diese Warnungen im Skript zu vermeiden, ist der Code hier als Code Example und nicht in einer Code-Zelle eingefügt.</p>
 </div>
-<div class="section" id="losung-zu-mini-ubung-7">
-<h3>Lösung zu Mini-Übung 7<a class="headerlink" href="#losung-zu-mini-ubung-7" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part03_minisolution07">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part03_miniexercise07"> Exercise 22</a></p>
+<div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das die Quadratzahlen für 10 bis 20 ausgibt, d.h. es sollen die Zahlen 100, 121, … , 400 ausgegeben werden.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe Startzahl</span>
 <span class="n">zahl</span> <span class="p">=</span> <span class="mi">10</span><span class="p">;</span>
@@ -884,8 +731,11 @@ beschränken.</p></li>
 </pre></div>
 </div>
 </div>
-<div class="section" id="losung-zu-mini-ubung-8">
-<h3>Lösung zu Mini-Übung 8<a class="headerlink" href="#losung-zu-mini-ubung-8" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="solution dropdown admonition" id="part03_minisolution08">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part03_miniexercise08"> Exercise 23</a></p>
+<div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin auffordert, eine positive Zahl einzugeben. Falls dabei jedoch fälschlicherweise eine negative Zahl oder die Null eingegeben wird, soll der Computer solange weiter fragen, bis endlich eine positive Zahl eingegeben wird.</p>
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
 <span class="n">x</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie eine positive ganze Zahl ein: &#39;</span><span class="p">);</span>
@@ -895,6 +745,7 @@ beschränken.</p></li>
     <span class="n">x</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie eine POSITIVE ganze Zahl ein: &#39;</span><span class="p">)</span>
 <span class="k">end</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -931,6 +782,13 @@ beschränken.</p></li>
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Kontrollstrukturen: die Programmverzweigung</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="part04.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Komplexere Datentypen: Array, String und formatierte Ausgaben</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
