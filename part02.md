@@ -20,7 +20,7 @@ Intern speichert MATLAB false als 0 und true als 1, deswegen wird die Funktion `
 :label: part02_miniexercise01
 Verändern Sie in der nachfolgenden Code-Zelle den Wert der Variablen `a`. Setzen Sie einmal `a = false` und einmal `a = true`. Beobachten Sie, was der `disp()`-Befehl ausgibt.
 
-```octave
+```matlab
 % Hier Ihr Code:
 a = false;
 disp(a)
@@ -29,7 +29,7 @@ disp(a)
 
 Aber wie kann man dann überprüfen, ob in einer Variablen der Datentyp Integer oder der Datentyp Boolean gespeichert ist? Dazu gibt es das Kommando `whos`. Führen Sie die nächste Code-Zelle aus.
 
-```octave
+```matlab
 a = false;
 whos a
 ```
@@ -76,38 +76,38 @@ Tipp: Das Zeichen `~` heißt übrigens Tilde und befindet sich bei einer deutsch
 ```
 
 Im interaktiven Modus von MATLAB können wir leicht den Wahrheitsgehalt von Vergleichen überprüfen. Wir setzen eine Variable auf den Wert 7:
-```octave
+```matlab
 x = 7;
 ```
 Jetzt probieren wir in den nachfolgenden Code-Zellen verschiedene Vergleichsoperatoren aus. Zur Erinnerung, 0 steht dabei für false (falsch) und 1 für wahr (true).
 
 Ist x genau gleich 15?
-```octave
+```matlab
 x == 15    
 ```
 
 Ist x kleiner als 42?
-```octave
+```matlab
 x < 42
 ```
 
 Ist x genau 30?
-```octave
+```matlab
 x == 30
 ```
 
 Ist x ungleich 42?
-```octave
+```matlab
 x ~= 42 
 ```
 
 Ist x größer als 30?
-```octave
+```matlab
 x > 30
 ```
 
 Ist x größer gleich 30?
-```octave
+```matlab
 x >= 30
 ```
 ```{exercise}
@@ -124,7 +124,7 @@ Wählen Sie sich eine Zahl. Testen Sie anschließend:
 
 Bei einer Programmverzweigung wird Code abhängig von einer Bedingung ausgeführt. Im einfachsten Fall liegt ein if-Block vor. Die Syntax lautet wie folgt:
 
-```octave
+```matlab
 if bedingung
     anweisungsblock
 end
@@ -133,7 +133,7 @@ Ist die Bedingung erfüllt, also "true", so wird der eingerückte Anweisungsbloc
 
 Wir betrachten nun ein Beispiel:
 
-```octave
+```matlab
 alter = 17;
 if alter >= 18
     disp('Sie dürfen Alkohol kaufen.');
@@ -142,7 +142,7 @@ disp('Bananen dürfen Sie immer kaufen, egal wie alt Sie sind ...');
 ```
 
 Und jetzt mit einer Benutzerabfrage kombiniert:
-```octave
+```matlab
 alter = input('Wie alt sind Sie?');
 if (alter >= 18)
     disp('Sie dürfen Alkohol kaufen.');
@@ -170,7 +170,7 @@ Wie viele if-Blöcke brauchen Sie für die Umsetzung dieser Mini-Übung?
 In unserem Alltag kommen häufig Entscheidungen zwischen zwei Möglichkeiten vor. Wenn ich an eine T-Kreuzung komme, muss ich mich entscheiden: links oder rechts? Betrete ich ein Gebäude entscheide ich zwischen Treppe oder Fahrstuhl. Mein Alter entscheidet darüber, ob ich etwas darf oder nicht darf. Für diese Wahl zwischen zwei Möglichkeiten gibt es **zweiteilige Programmverzweigungen**. 
 Wir erweitern die Syntax mit dem if-Block um ein neues Element, nämlich den sogenannten **else-Block**:
 
-```octave
+```matlab
 if bedingung
     anweisungsblock 1
 else
@@ -184,7 +184,7 @@ Falls die Bedingung erfüllt ist, wird der 1. Anweisungsblock ausgeführt, anson
 
 Hier wieder das Beispiel mit dem Alter:  
 
-```octave
+```matlab
 alter = input('Wie alt sind Sie? ');
 if alter >= 18
     disp('Sie sind volljährig, Sie dürfen Alkohol kaufen.');
@@ -210,7 +210,7 @@ Eins, zwei, drei, viele ... häufig müssen mehr als zwei Fälle unterschieden w
 
 Probieren wir es einfach:
 
-```octave
+```matlab
 alter = 8;
 if alter < 6
     disp('keine Fahrkarte notwendig');
@@ -225,7 +225,7 @@ end
 
 Sieht zunächst einmal gut aus. Für ein Alter von 8 Jahren wird tatsächlich Schülerfahrkarte ausgegeben. Wenn wir jetzt aber das Alter auf 5 Jahre setzen, so bekommen wir zwei Ausgaben:
 
-```octave
+```matlab
 alter = 5;
 if alter < 6
     disp('keine Fahrkarte notwendig');
@@ -242,7 +242,7 @@ Wir erhalten die Ausgabe `"keine Fahrkarte notwendig"`, weil die Bedingung des 1
 
 Probieren wir es mit einem zusätzlichen if-else-Konstrukt für die Unterscheidung der Kinder.
 
-```octave
+```matlab
 alter = 5;
 
 if alter < 6
@@ -258,7 +258,7 @@ end
 
 Jetzt sind aber Erwachsene problematisch:
 
-```octave
+```matlab
 alter = 27;
 
 if alter < 6
@@ -276,7 +276,7 @@ Tatsächlich läuft unser Programm-Code nur korrekt, wenn wir in den else-Zweig 
 
 Führen Sie die folgende Code-Zelle mehrfach aus. Ändern Sie dabei das Alter. Probieren Sie beispielsweise 5, 8, 11, 16, 21 und Ihr Alter aus. 
 
-```octave
+```matlab
 alter = 27;
 
 if alter < 6
@@ -299,7 +299,7 @@ Um den obigen Code besser zu verstehen, zeichen wir den Ablauf schematisch:
 Es wäre schöner, wenn es für solche Mehrfachverzweigungen etwas übersichtlicheren Code gäbe. Und in der Tat, den gibt es. Man könnte sozusagen den Start des else-Konstruktes mit dem nachfolgenden if-Konstrukt verschmelzen. Das Ergebnis davon ist die if-elseif-else-Syntax. Allgemein sieht das **if-elseif-else-Konstrukt** so aus:
 
 
-```octave
+```matlab
 if bedingung 1
     anweisungsblock 1
 elseif bedingung 2
@@ -314,7 +314,7 @@ end
 
 Hier die besser lesbare Version der Unterscheidung von Zahlen in negative Zahlen, 0 und positive Zahlen aus Mini-Übung 4:
 
-```octave
+```matlab
 a = 17
 if a == 0
     disp("a ist Null.")
@@ -327,7 +327,7 @@ end
 
 Und jetzt noch einmal eine besser lesbare Version des Fahrkartenautomaten:
 
-```octave
+```matlab
 alter = 27;
 
 if alter < 6
@@ -371,7 +371,7 @@ In diesem MATLAB Live Skript haben Sie die erste Kontrollstruktur kennengelernt,
 :class: dropdown
 Verändern Sie in der nachfolgenden Code-Zelle den Wert der Variablen a. Setzen Sie einmal a = false und einmal a = true. Beobachten Sie, was der disp()-Befehl ausgibt.
 
-```octave
+```matlab
 a = false;
 disp(a);
 
@@ -392,7 +392,7 @@ Wählen Sie sich eine Zahl. Testen Sie anschließend:
 * Ist Ihre Zahl positiv?
 * Ist Ihre Zahl kleiner als -17.7?
 
-```octave
+```matlab
 % Eingabe: Wahl meiner Zahl
 x = 33;
 
@@ -418,7 +418,7 @@ x < -17.7
 :class: dropdown
 Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin nach der aktuellen Temperatur fragt. Wenn die Temperatur kleiner gleich 10 ˚C ist, soll ausgegeben werden: "Heute ist es aber kalt!"
 
-```octave
+```matlab
 % Eingabe
 temperatur = input('Welche Temperatur haben wir aktuell?')
 
@@ -438,7 +438,7 @@ Schreiben Sie ein Skript, das eine Benutzerin oder einen Benutzer nach einer Zah
 * Wenn die Zahl größer als 0 ist, soll ausgegeben werden: "Die Zahl ist positiv."
 * Wie viele if-Blöcke brauchen Sie für die Umsetzung dieser Mini-Übung?
 
-```octave
+```matlab
 % Eingabe
 zahl = input('Geben Sie bitte eine Zahl ein: ');
 
@@ -462,7 +462,7 @@ Der Code erfordert drei if-Blöcke.
 :class: dropdown
 Schreiben Sie ein Skript, das nach dem aktuellen Monat fragt (1 für Januar, 2 für Februar, 3 für März, usw.). Wenn der aktuelle Monat Januar bis Juni ist, soll ausgegeben werden: "Dieser Monat gehört zur 1. Jahreshälfte." Ansonsten soll ausgegeben werden: "Dieser Monat gehört zur 2. Jahreshälfte."
 
-```octave
+```matlab
 % Eingabe
 monat = input('Geben Sie bitte den aktuellen Monat ein, 1 für Januar, 2 für Februar usw.');
 
@@ -480,7 +480,7 @@ end
 :class: dropdown
 Schreiben Sie ein Skript, das nach der aktuellen Temperatur fragt. Wenn die aktuelle Temperatur kleiner gleich 3 ˚C ist, dann lassen Sie ausgeben: "Vorsicht, es besteht Glatteisgefahr!" und ansonsten "Kein Grund zur Sorge."
 
-```octave
+```matlab
 % Eingabe
 temperatur = input('Welche Temperatur haben wir aktuell?');
 
@@ -500,7 +500,7 @@ Sie finden den aktuellen Bußgeldkatalog für Geschwindigkeitsüberschreitungen 
 
 Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsüberschreitung ausgibt, welche Strafe in Euro verhängt wird. 
 
-```octave
+```matlab
 % Eingabe
 verstoss = input('Wieviel zu schnell ist die Person gefahren? ')
 
@@ -540,7 +540,7 @@ Schreiben Sie ein Skript, das die aktuelle Temperatur von einem Benutzer oder ei
 * \<= 30 ˚C ist, dann Ausgabe: "Es ist heiß!"
 * < 30 ˚C ist, dann Ausgabe: "Das ist ja nicht mehr auszuhalten heiß!!!"
 
-```octave
+```matlab
 % Eingabe
 temperatur = input('Welche Temperatur haben wir aktuell? ');
 

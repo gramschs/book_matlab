@@ -39,14 +39,14 @@ Ein Array wird in MATLAB durch eckige Klammern `[  ]` erzeugt. Sie finden das Ze
 
 Betrachten wir ein Beispiel. Hier wird ein Array mit den Elementen 1, 2, 3, 4, 5 (die Gemeinsamkeit ist, dass alles ganze Zahlen, also Integer sind) erzeugt und dann anschließend in der Variablen array_beispiel gespeichert. Mit der Funktion `disp()` lassen wir den Inhalt des Arrays ausgeben.
 
-```octave
+```matlab
 array_beispiel = [1, 2, 3, 4, 5];
 disp(array_beispiel);
 ```
 
 Mit dem Befehl `whos` können wir den Datentyp anzeigen lassen.
 
-```octave
+```matlab
 whos array_beispiel
 ```
 Sie sollten in der Ausgabe jetzt Folgendes sehen:
@@ -59,7 +59,7 @@ Interessant ist dabei die Eigenschaft Size, die 1x5 anzeigt.
 Aber warum zeigt MATLAB eine Size von 1x5 an und was ist das überhaupt? MATLAB ist die Abkürzung für Matrix Laboratory, also Matrix-Labor auf deutsch. Daher speichert intern MATLAB alles als eine Matrix. Sogar eine simple Zahl wie beispielsweise 3 wird von MATLAB als eine Matrix abgespeichert, mit einer Zeile und einer Spalte. Size gibt dabei die Dimension der Matrix an. Die erste Zahl steht für die Anzahl der Zeilen und die zweite Zahl für die Anzahl der Spalten. Zusammengefasst hat unser `array_beispiel` also eine Zeile und fünf Spalten.
 
 Vergewissern wir uns noch einmal mit der simplen Zahl 3, die ja dann als Matrix mit einer Zeile und einer Spalte abgespeichert werden müsste, was das `whos` Kommando anzeigt:
-```octave
+```matlab
 x = 3;
 whos x
 ```
@@ -73,7 +73,7 @@ Erzeugen Sie ein Array mit den Elementen 2, 4, 6, 8, 10. Lassen Sie anschließen
 
 Ein Array speichert jedoch nicht nur Zahlen (Integer/Float), sondern man kann auch die anderen Datentypen in Form einer Sammlung speichern. Im nächsten Code-Beispiel sehen wir eine Namensliste und eine Liste mit dem Status "zur Klausur zugelassen?".
 
-```octave
+```matlab
 namen = ["Alice", "Bob", "Charlie", "Dora", "Emil"];
 zulassung = [false, true, true, true, false];
 
@@ -89,12 +89,12 @@ Erzeugen Sie ein Array mit Wochentagen. Erzeugen Sie dann ein zweites Array mit 
 ## Erzeugung von zweidimensionalen Arrays
 Bisher haben wir eindimensionale Arrays mit einer Zeile und mehreren Spalten erzeugt. Zur Trennung der Elemente in einem Array haben wir bei der Erzeugung das Komma benutzt. Probieren Sie aus, was passiert, wenn wir das Semikolon (= Strichpunkt) dazu benutzen.
 
-```octave
+```matlab
 array = [1; 2; 3; 4; 5];
 disp(array)
 ```
 Kurze Kontrolle mit dem whos-Kommando:
-```octave
+```matlab
 whos array
 ```
 Jetzt haben wir ein Array mit 5 Zeilen und 1 Spalte erzeugt!
@@ -105,12 +105,12 @@ Halten wir fest:
 
 Damit können wir auch ein echtes zweidimensionales Array erzeugen. Achten Sie darauf, wie zuerst Kommas kommenund dann immer wieder ein Semikolon.
 
-```octave
+```matlab
 M = [1, 2, 3, 4, 5; 6, 7, 8, 9, 10; 11, 12, 13, 14, 15];
 disp(M)
 ```
 Und wieder kontrollieren wir mit whos: 
-```octave
+```matlab
 whos M
 ```
 Das Resultat ist ein echtes zweidimensionales Array mit 3 Zeilen und 5 Spalten. 
@@ -129,7 +129,7 @@ Die MATLAB-Funktion `randi()` erzeugt ganzzahlige Zufallszahlen. Dabei gibt es m
 
 Also produziert `X = randi( [1, 100], 1, 3)` Zufallszahlen zwischen 1 und 100 in einer Zeile und mit 3 Elementen (Spalten).
 
-```octave
+```matlab
 X = randi( [1,100], 1,3 );
 disp(X)
 ```
@@ -149,7 +149,7 @@ Mit dem Index können wir sozusagen nachsehen, welches Element an dieser Index-P
 
 Um auf ein Element eines Arrays zugreifen zu können (egal ob lesend oder schreibend), verwenden wir runde Klammern und den Index. Wenn wir also beispielsweise das erste Element nachschlagen, also lesen wollen, dann sieht der Lesezugriff für ein eindimensionales Array also so aus: 
 
-```octave
+```matlab
 % Erzeugung des Arrays
 a = [11, 22, 33, 44, 55];
 
@@ -158,11 +158,11 @@ a(1)
 ```
  Oder auf das dritte Element greifen wir folgendermaßen zu:
 
- ```octave
+ ```matlab
 a(3)
  ```
 Natürlich können wir die Elemente eines Arrays wieder in einer Variablen speichern oder sie anzeigen lassen.
-```octave
+```matlab
 a = [11, 22, 33, -77, 55];
 viertes_element = a(4);
 disp(viertes_element)
@@ -179,18 +179,18 @@ Bemerkung: es heißt ein Index im Sinular und viele Indizes im Plural.
 
 Erzeugen wir erst einmal eine zweidimensionale Matrix mit zwei Zeilen und vier Spalten, also Dimension/Size 2x4.
 
-```octave
+```matlab
 A = [11, 22, 33, 44; 
      66, 77, 88, 99];
 disp(A)
 ```
 Das Element in der ersten Zeile und in der zweiten Spalte ist 22.
-```octave
+```matlab
 a_12 = A(1,2);
 disp(a_12)
 ```
 Dahingegen ist das Element der zweiten Zeile und der ersten Spalte 66:
-```octave
+```matlab
 a_21 = A(2,1);
 disp(a_21)
 ```
@@ -208,24 +208,24 @@ Lassen Sie alle Elemente der 1. Spalte ausgeben.
 Es wäre schön, die Ausgabe noch etwas schöner zu machen. Bisher haben wir nur die Möglichkeit, den Wert einer Variablen oder einen String mit der `disp()` Funktion anzeigen zu lassen.
 So lassen wir den Wert von Pi ausgeben:
 
-```octave
+```matlab
 disp(pi)
 ```
 Einen String geben wir folgendermaßen aus:
 
-```octave
+```matlab
 disp("Hallo!")
 ```
 
 Sicherlich ist Ihnen schon aufgefallen, dass die `input()`-Funktion oder die `disp()`-Funktion auch Texte anzeigen, die zwischen zwei einfachen Hochkommata stehen und nicht durch Gänßefüßchen eingeschlossen sind.
 
-```octave
+```matlab
 disp('Hallo!')
 ```
 Was ist denn eigentlich der Unterschied zwischen einfachen und doppelten Hochkommas?
 Wenn wir doppelte Hochkommata verwenden, so handelt es sich um den Datentyp String. Das andere Konstrukt mit einfachen Hochkommas ist jedoch ein anderer Datentyp, ein Array von Einzelzeichen, ein sogenanntes **Character Array**. Den Unterschied sehen wir, wenn wir das `whos` Kommando anwenden:
 
-```octave
+```matlab
 string = "Hallo";
 character_array = 'Hallo';
 
@@ -235,7 +235,7 @@ whos character_array
 
 Der String "Hallo"hat die Dimension 1x1, das Character Array 'Hallo' hat jedoch die Dimension 1x5 (eine Zeile, fünf Spalten), weil es eine Aneinanderreihung von Zeichen ist. Damit haben wir jetzt auch relativ einfach die Möglichkeit, Texte zu manipulieren. Zuerst greifen wir auf einzelne Zeichen zu:
 
-```octave
+```matlab
 % Erzeugung Character Array mit Hallo
 text = 'Hallo';
 
@@ -243,7 +243,7 @@ text = 'Hallo';
 text(3)
 ```
 Nun ersetzen wir das kleine l durch ein großes L:
-```octave
+```matlab
 % Erzeugung Character Array mit Hallo
 text = 'Hallo';
 
@@ -271,7 +271,7 @@ Nun können wir eine Alternative zu disp() betrachten, die sogenannte fprintf()-
 Der wesentliche Unterschied zu `disp()` ist, dass wir Text und Zahlen mischen können. Die Basis dafür ist, dass der eigentliche Text ein Array ist und die Aneinanderreihung der einzelnen Zeichen manipuliert wird. Die wichtigste Manipulation ist dabei die Ersetzung von Platzhaltern.
 Zuerst formulieren wir den gewünschten Text als Character Array und setzen Platzhalter mit einem Prozentzeichen ein, die dann durch Zahlen ersetzt werden.
 
-```octave
+```matlab
 fprintf('Dies ist ein Text mit Platzhalter %f !!!', 3.5)
 ```
 Wenn Sie die obige Code-Zelle ausführen, sehen Sie, wie das Prozentzeichen mit dem f durch die Zahl 3.5 erzetzt wurde.
@@ -281,7 +281,7 @@ Wenn Sie die Ausgabe kontrollieren wollen, können Sie das folgendermaßen:
 * \%.2f - gibt eine Fließkommazahl aus, nach dem Punkt steht die Anzahl der Nachkommastellen (hier also 2 Nachkommastellen), es wird gerundet,
 * \%e - gibt die wissenschaftliche (Exponential-) Notation aus.
 
-```octave
+```matlab
 fprintf('Dies ist ein Text mit Platzhalter %.2f !!!', 0.056789);
 fprintf('Dies ist ein Text mit Platzhalter %e !!!', 0.056789);
 ```
@@ -289,7 +289,7 @@ Gerade wenn man mehrere fprintf()-Anweisungen hintereinander ausführt, stellt m
 * `\n` steht für newline und lässt den Cursor nach der Ausgabe in eine neue Zeile springen
 * `\t` steht für horizontaler Tabulator und lässt den Cursor zum nächsten Tab-Stopp springen. 
 
-```octave
+```matlab
 fprintf('Liebe Studierende, \nin diesem Text ist ein newline versteckt.')
 fprintf('Und außerdem ist hier\tein Sprung zum nächsten Tab-Stopp!')
 ```
@@ -317,7 +317,7 @@ In diesem MATLAB Live Skript haben wir uns mit dem Datentyp Array beschäftigt. 
 :class: dropdown
 Erzeugen Sie ein Array mit den Elementen 2, 4, 6, 8, 10. Lassen Sie anschließend die Dimension des Arrays ausgeben.
 
-```{code-block} octave
+```{code-block} matlab
 % Erzeugung Array
 m = [2,4,6,8,10];
 
@@ -330,7 +330,7 @@ whos m
 :label: part04_minisolution02
 :class: dropdown
 Erzeugen Sie ein Array mit Wochentagen. Erzeugen Sie dann ein zweites Array mit der Anzahl an Semesterwochenstunden (Schulstunden), die Sie an diesem Wochentag haben. Lassen Sie beides zur Kontrolle anzeigen.
-```octave
+```matlab
 % Eingabe: Array mit Wochentagen
 woche = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
 
@@ -348,7 +348,7 @@ disp(unterricht)
 :class: dropdown
 Erzeugen Sie ein 3x3-Array mit einer Eins auf der Hauptdiagonalen und lauter Nullen ansonsten. Lassen Sie Ihr Array anzeigen.
 
-```octave
+```matlab
 % Erzeugung
 A = [1, 0, 0; 0, 1, 0; 0, 0, 1];
 
@@ -362,7 +362,7 @@ disp(A)
 :class: dropdown
 Erzeugen Sie ein Array mit sechs Zufallszahlen, die zwischen 1 und 49 liegen. Lassen Sie das Array auch anzeigen.
 
-```octave
+```matlab
 % Erzeugung Array mit Zufallszahlen
 % Anmerkung: es gibt zwei Möglichkeiten, ein 1x6-Array oder ein 6x1-Array
 X = randi( [1,49], 1,6);
@@ -377,7 +377,7 @@ disp(X)
 :class: dropdown
 Erzeugen Sie ein Array mit Schnapszahlen, also 11, 22, 33, ... , 99. Lassen Sie das dritte, sechste und siebte Element ausgeben.
 
-```octave
+```matlab
 % Erzeugung des Arrays mit den Schnapszahlen
 a = [11, 22, 33, 44, 55, 66, 77, 88, 99];
 
@@ -396,7 +396,7 @@ Erzeugen Sie ein zweidimensionales Array
 $\pmatrix{31 & 12 & 43 \cr 11 & 52 & 63\cr 21 & 32 & 13}$.
 
 Lassen Sie alle Elemente der 1. Spalte ausgeben.
-```octave
+```matlab
 % Erzeugung
 A = [31, 12, 43; 11, 52, 63; 21, 32, 13];
 
@@ -413,7 +413,7 @@ disp(A(3,1))
 Erzeugen Sie eine Variable mit einem Character Array, in der Ihr Vor- und Ihr Nachname mit Leerzeichen getrennt steht. Geben Sie zur Kontrolle Ihren Namen aus. 
 In einigen Programmen sind Leerzeichen verboten. Ersetzen Sie daher in einem zweiten Schritt das Leerzeichen durch einen Unterstrich _ , indem Sie das Character Array manipulieren. Lassen Sie das manipulierte Array ausgeben.
 
-```octave
+```matlab
 % Eingabe Character Array mit Namen 
 name = 'Simone Gramsch';
 disp(name);
@@ -436,7 +436,7 @@ Geben Sie $\pi$ mit dem Text "Pi = ..." aus, wobei die Punkte durch $\pi$ ersetz
 * Fließkommazahl mit 8 Nachkommastellen
 * Fließkommazahl mit 0 Nachkommastellen
 
-```octave
+```matlab
 fprintf('Pi = %e', pi)
 fprintf('Pi = %f', pi)
 fprintf('Pi = %.4f', pi)
