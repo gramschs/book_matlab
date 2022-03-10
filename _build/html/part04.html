@@ -53,6 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Schleifen zum Zählen (“for”)" href="part05.html" />
     <link rel="prev" title="Digitale Logik und Schleifen mit Bedingungen (“while”)" href="part03.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -116,6 +117,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Komplexere Datentypen: Array, String und formatierte Ausgaben
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="part05.html">
+   Schleifen zum Zählen (“for”)
   </a>
  </li>
 </ul>
@@ -355,12 +361,12 @@ die Koordinaten eines Punktes zusammen. Oder in der Farbenlehre wird mit mit dem
 <h2>Erzeugung von eindimensionalen Arrays<a class="headerlink" href="#erzeugung-von-eindimensionalen-arrays" title="Permalink to this headline">¶</a></h2>
 <p>Ein Array wird in MATLAB durch eckige Klammern <code class="docutils literal notranslate"><span class="pre">[</span>&#160; <span class="pre">]</span></code> erzeugt. Sie finden das Zeichen für die eckige Klammer auf der Taste mit der 8, das Zeichen für die eckige Klammer auf der Taste mit der 9. Zusätzlich müssen Sie die Taste Alt Gr drücken, um die eckigen Klammern auf der Tastatur einzugeben.</p>
 <p>Betrachten wir ein Beispiel. Hier wird ein Array mit den Elementen 1, 2, 3, 4, 5 (die Gemeinsamkeit ist, dass alles ganze Zahlen, also Integer sind) erzeugt und dann anschließend in der Variablen array_beispiel gespeichert. Mit der Funktion <code class="docutils literal notranslate"><span class="pre">disp()</span></code> lassen wir den Inhalt des Arrays ausgeben.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">array_beispiel</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">array_beispiel</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">array_beispiel</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">];</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">array_beispiel</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Mit dem Befehl <code class="docutils literal notranslate"><span class="pre">whos</span></code> können wir den Datentyp anzeigen lassen.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">whos</span> <span class="n">array_beispiel</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">whos</span><span class="w"> </span><span class="n">array_beispiel</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Sie sollten in der Ausgabe jetzt Folgendes sehen:</p>
@@ -368,8 +374,8 @@ die Koordinaten eines Punktes zusammen. Oder in der Farbenlehre wird mit mit dem
 <p>Interessant ist dabei die Eigenschaft Size, die 1x5 anzeigt.</p>
 <p>Aber warum zeigt MATLAB eine Size von 1x5 an und was ist das überhaupt? MATLAB ist die Abkürzung für Matrix Laboratory, also Matrix-Labor auf deutsch. Daher speichert intern MATLAB alles als eine Matrix. Sogar eine simple Zahl wie beispielsweise 3 wird von MATLAB als eine Matrix abgespeichert, mit einer Zeile und einer Spalte. Size gibt dabei die Dimension der Matrix an. Die erste Zahl steht für die Anzahl der Zeilen und die zweite Zahl für die Anzahl der Spalten. Zusammengefasst hat unser <code class="docutils literal notranslate"><span class="pre">array_beispiel</span></code> also eine Zeile und fünf Spalten.</p>
 <p>Vergewissern wir uns noch einmal mit der simplen Zahl 3, die ja dann als Matrix mit einer Zeile und einer Spalte abgespeichert werden müsste, was das <code class="docutils literal notranslate"><span class="pre">whos</span></code> Kommando anzeigt:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="mi">3</span><span class="p">;</span>
-<span class="nb">whos</span> <span class="n">x</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="n">whos</span><span class="w"> </span><span class="s">x</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Tatsächlich, <code class="docutils literal notranslate"><span class="pre">Size</span> <span class="pre">=</span> <span class="pre">1x1</span></code> wird ausgegeben.</p>
@@ -381,11 +387,11 @@ die Koordinaten eines Punktes zusammen. Oder in der Farbenlehre wird mit mit dem
 </div>
 </div>
 <p>Ein Array speichert jedoch nicht nur Zahlen (Integer/Float), sondern man kann auch die anderen Datentypen in Form einer Sammlung speichern. Im nächsten Code-Beispiel sehen wir eine Namensliste und eine Liste mit dem Status “zur Klausur zugelassen?”.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">namen</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span> <span class="s">&quot;Bob&quot;</span><span class="p">,</span> <span class="s">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s">&quot;Dora&quot;</span><span class="p">,</span> <span class="s">&quot;Emil&quot;</span><span class="p">];</span>
-<span class="n">zulassung</span> <span class="p">=</span> <span class="p">[</span><span class="nb">false</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="nb">false</span><span class="p">];</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">namen</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Charlie&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Dora&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Emil&quot;</span><span class="p">];</span><span class="w"></span>
+<span class="n">zulassung</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">];</span><span class="w"></span>
 
-<span class="nb">disp</span><span class="p">(</span><span class="n">namen</span><span class="p">)</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">zulassung</span><span class="p">)</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">namen</span><span class="p">)</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">zulassung</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="exercise admonition" id="part04_miniexercise02">
@@ -399,12 +405,12 @@ die Koordinaten eines Punktes zusammen. Oder in der Farbenlehre wird mit mit dem
 <div class="section" id="erzeugung-von-zweidimensionalen-arrays">
 <h2>Erzeugung von zweidimensionalen Arrays<a class="headerlink" href="#erzeugung-von-zweidimensionalen-arrays" title="Permalink to this headline">¶</a></h2>
 <p>Bisher haben wir eindimensionale Arrays mit einer Zeile und mehreren Spalten erzeugt. Zur Trennung der Elemente in einem Array haben wir bei der Erzeugung das Komma benutzt. Probieren Sie aus, was passiert, wenn wir das Semikolon (= Strichpunkt) dazu benutzen.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">array</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">;</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span><span class="p">;</span> <span class="mi">5</span><span class="p">];</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="mi">5</span><span class="p">];</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">array</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Kurze Kontrolle mit dem whos-Kommando:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">whos</span> <span class="n">array</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">whos</span><span class="w"> </span><span class="n">array</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Jetzt haben wir ein Array mit 5 Zeilen und 1 Spalte erzeugt!</p>
@@ -414,12 +420,12 @@ die Koordinaten eines Punktes zusammen. Oder in der Farbenlehre wird mit mit dem
 <li><p>Semikolon/Strichpunkt trennt Zeilen</p></li>
 </ul>
 <p>Damit können wir auch ein echtes zweidimensionales Array erzeugen. Achten Sie darauf, wie zuerst Kommas kommenund dann immer wieder ein Semikolon.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">;</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">;</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">];</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">];</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">M</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Und wieder kontrollieren wir mit whos:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">whos</span> <span class="n">M</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">whos</span><span class="w"> </span><span class="n">M</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Das Resultat ist ein echtes zweidimensionales Array mit 3 Zeilen und 5 Spalten.</p>
@@ -435,8 +441,8 @@ die Koordinaten eines Punktes zusammen. Oder in der Farbenlehre wird mit mit dem
 Die MATLAB-Funktion <code class="docutils literal notranslate"><span class="pre">randi()</span></code> erzeugt ganzzahlige Zufallszahlen. Dabei gibt es mehrere Argumente:</p>
 <p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">=</span> <span class="pre">randi(</span> <span class="pre">[min,</span> <span class="pre">max],</span> <span class="pre">zeilenanzahl,</span> <span class="pre">spaltenanzahl</span> <span class="pre">)</span></code></p>
 <p>Also produziert <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">=</span> <span class="pre">randi(</span> <span class="pre">[1,</span> <span class="pre">100],</span> <span class="pre">1,</span> <span class="pre">3)</span></code> Zufallszahlen zwischen 1 und 100 in einer Zeile und mit 3 Elementen (Spalten).</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="p">=</span> <span class="nb">randi</span><span class="p">(</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span><span class="mi">3</span> <span class="p">);</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">randi</span><span class="p">(</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Weitere Details finden Sie in der MATLAB-Dokumentation:
@@ -454,21 +460,21 @@ Die MATLAB-Funktion <code class="docutils literal notranslate"><span class="pre"
 <p>Jedes Array hat einen Index. Man kann sich ein Array mit einer Sammlung von Daten wie eine Straße mit einer Sammlung von Häusern vorstellen. Um ein Haus in der Straße zu finden, hat es eine Hausnummer. Und das ist in der Informatik der <strong>Index</strong>, also die Position im Array, an der ein Element zu finden ist.</p>
 <p>Mit dem Index können wir sozusagen nachsehen, welches Element an dieser Index-Position gespeichert ist. Das nennt man in der Informatik <strong>Lesezugriff</strong>. Oder wir können das Element an einer bestimmten Index-Position gegen ein neues Element austauschen. Das nennt man dann <strong>Schreibzugriff</strong>.</p>
 <p>Um auf ein Element eines Arrays zugreifen zu können (egal ob lesend oder schreibend), verwenden wir runde Klammern und den Index. Wenn wir also beispielsweise das erste Element nachschlagen, also lesen wollen, dann sieht der Lesezugriff für ein eindimensionales Array also so aus:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung des Arrays</span>
-<span class="n">a</span> <span class="p">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">55</span><span class="p">];</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung des Arrays</span><span class="w"></span>
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w"> </span><span class="mi">55</span><span class="p">];</span><span class="w"></span>
 
-<span class="c">% Lesezugriff mit Index 1, also 1. Position</span>
-<span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c">% Lesezugriff mit Index 1, also 1. Position</span><span class="w"></span>
+<span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Oder auf das dritte Element greifen wir folgendermaßen zu:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Natürlich können wir die Elemente eines Arrays wieder in einer Variablen speichern oder sie anzeigen lassen.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="p">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="o">-</span><span class="mi">77</span><span class="p">,</span> <span class="mi">55</span><span class="p">];</span>
-<span class="n">viertes_element</span> <span class="p">=</span> <span class="n">a</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">viertes_element</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">77</span><span class="p">,</span><span class="w"> </span><span class="mi">55</span><span class="p">];</span><span class="w"></span>
+<span class="n">viertes_element</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">viertes_element</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="exercise admonition" id="part04_miniexercise05">
@@ -481,19 +487,19 @@ Die MATLAB-Funktion <code class="docutils literal notranslate"><span class="pre"
 <p>Wenn wir auf Elemente eines zweidimensionalen Arrays zugreifen wollen, müssen wir wiederum die runden Klammern nutzten. Doch diesmal müssen wir zwei Indizes (=Hausnummern) angeben, nämlich die Zeile und die Spalte.</p>
 <p>Bemerkung: es heißt ein Index im Sinular und viele Indizes im Plural.</p>
 <p>Erzeugen wir erst einmal eine zweidimensionale Matrix mit zwei Zeilen und vier Spalten, also Dimension/Size 2x4.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">44</span><span class="p">;</span> 
-     <span class="mi">66</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">99</span><span class="p">];</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">44</span><span class="p">;</span><span class="w"> </span>
+<span class="w">     </span><span class="mi">66</span><span class="p">,</span><span class="w"> </span><span class="mi">77</span><span class="p">,</span><span class="w"> </span><span class="mi">88</span><span class="p">,</span><span class="w"> </span><span class="mi">99</span><span class="p">];</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Das Element in der ersten Zeile und in der zweiten Spalte ist 22.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">a_12</span> <span class="p">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">a_12</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a_12</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">a_12</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Dahingegen ist das Element der zweiten Zeile und der ersten Spalte 66:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">a_21</span> <span class="p">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">a_21</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a_21</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">a_21</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="exercise admonition" id="part04_miniexercise06">
@@ -510,44 +516,44 @@ Die MATLAB-Funktion <code class="docutils literal notranslate"><span class="pre"
 <h2>Datentyp Character Array und String<a class="headerlink" href="#datentyp-character-array-und-string" title="Permalink to this headline">¶</a></h2>
 <p>Es wäre schön, die Ausgabe noch etwas schöner zu machen. Bisher haben wir nur die Möglichkeit, den Wert einer Variablen oder einen String mit der <code class="docutils literal notranslate"><span class="pre">disp()</span></code> Funktion anzeigen zu lassen.
 So lassen wir den Wert von Pi ausgeben:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="nb">pi</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="nb">pi</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Einen String geben wir folgendermaßen aus:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="s">&quot;Hallo!&quot;</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="s">&quot;Hallo!&quot;</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Sicherlich ist Ihnen schon aufgefallen, dass die <code class="docutils literal notranslate"><span class="pre">input()</span></code>-Funktion oder die <code class="docutils literal notranslate"><span class="pre">disp()</span></code>-Funktion auch Texte anzeigen, die zwischen zwei einfachen Hochkommata stehen und nicht durch Gänßefüßchen eingeschlossen sind.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Hallo!&#39;</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Hallo!&#39;</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Was ist denn eigentlich der Unterschied zwischen einfachen und doppelten Hochkommas?
 Wenn wir doppelte Hochkommata verwenden, so handelt es sich um den Datentyp String. Das andere Konstrukt mit einfachen Hochkommas ist jedoch ein anderer Datentyp, ein Array von Einzelzeichen, ein sogenanntes <strong>Character Array</strong>. Den Unterschied sehen wir, wenn wir das <code class="docutils literal notranslate"><span class="pre">whos</span></code> Kommando anwenden:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="p">=</span> <span class="s">&quot;Hallo&quot;</span><span class="p">;</span>
-<span class="n">character_array</span> <span class="p">=</span> <span class="s">&#39;Hallo&#39;</span><span class="p">;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Hallo&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">character_array</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Hallo&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="nb">whos</span> <span class="n">string</span>
-<span class="nb">whos</span> <span class="n">character_array</span>
+<span class="n">whos</span><span class="w"> </span><span class="s">string</span><span class="w"></span>
+<span class="nb">whos</span><span class="w"> </span><span class="n">character_array</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Der String “Hallo”hat die Dimension 1x1, das Character Array ‘Hallo’ hat jedoch die Dimension 1x5 (eine Zeile, fünf Spalten), weil es eine Aneinanderreihung von Zeichen ist. Damit haben wir jetzt auch relativ einfach die Möglichkeit, Texte zu manipulieren. Zuerst greifen wir auf einzelne Zeichen zu:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Character Array mit Hallo</span>
-<span class="nb">text</span> <span class="p">=</span> <span class="s">&#39;Hallo&#39;</span><span class="p">;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Character Array mit Hallo</span><span class="w"></span>
+<span class="nb">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Hallo&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="c">% Anzeige 3. Zeichen</span>
-<span class="nb">text</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="c">% Anzeige 3. Zeichen</span><span class="w"></span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Nun ersetzen wir das kleine l durch ein großes L:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Character Array mit Hallo</span>
-<span class="nb">text</span> <span class="p">=</span> <span class="s">&#39;Hallo&#39;</span><span class="p">;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Character Array mit Hallo</span><span class="w"></span>
+<span class="nb">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Hallo&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="c">% Manipulation 3. und 4. Zeichen</span>
-<span class="nb">text</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">=</span> <span class="s">&#39;L&#39;</span><span class="p">;</span>
-<span class="nb">text</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="p">=</span> <span class="s">&#39;L&#39;</span><span class="p">;</span>
+<span class="c">% Manipulation 3. und 4. Zeichen</span><span class="w"></span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;L&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;L&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="c">% Anzeige gesamter Text</span>
-<span class="nb">disp</span><span class="p">(</span><span class="nb">text</span><span class="p">);</span>
+<span class="c">% Anzeige gesamter Text</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="nb">text</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="exercise admonition" id="part04_miniexercise07">
@@ -566,7 +572,7 @@ In einigen Programmen sind Leerzeichen verboten. Ersetzen Sie daher in einem zwe
 <p>Nun können wir eine Alternative zu disp() betrachten, die sogenannte fprintf()-Funktion. Die Dokumentation finden Sie hier: <a class="reference external" href="https://de.mathworks.com/help/matlab/ref/fprintf.html">https://de.mathworks.com/help/matlab/ref/fprintf.html</a></p>
 <p>Der wesentliche Unterschied zu <code class="docutils literal notranslate"><span class="pre">disp()</span></code> ist, dass wir Text und Zahlen mischen können. Die Basis dafür ist, dass der eigentliche Text ein Array ist und die Aneinanderreihung der einzelnen Zeichen manipuliert wird. Die wichtigste Manipulation ist dabei die Ersetzung von Platzhaltern.
 Zuerst formulieren wir den gewünschten Text als Character Array und setzen Platzhalter mit einem Prozentzeichen ein, die dann durch Zahlen ersetzt werden.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Dies ist ein Text mit Platzhalter %f !!!&#39;</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Dies ist ein Text mit Platzhalter %f !!!&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">3.5</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Wenn Sie die obige Code-Zelle ausführen, sehen Sie, wie das Prozentzeichen mit dem f durch die Zahl 3.5 erzetzt wurde.</p>
@@ -576,8 +582,8 @@ Zuerst formulieren wir den gewünschten Text als Character Array und setzen Plat
 <li><p>%.2f - gibt eine Fließkommazahl aus, nach dem Punkt steht die Anzahl der Nachkommastellen (hier also 2 Nachkommastellen), es wird gerundet,</p></li>
 <li><p>%e - gibt die wissenschaftliche (Exponential-) Notation aus.</p></li>
 </ul>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Dies ist ein Text mit Platzhalter %.2f !!!&#39;</span><span class="p">,</span> <span class="mf">0.056789</span><span class="p">);</span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Dies ist ein Text mit Platzhalter %e !!!&#39;</span><span class="p">,</span> <span class="mf">0.056789</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Dies ist ein Text mit Platzhalter %.2f !!!&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.056789</span><span class="p">);</span><span class="w"></span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Dies ist ein Text mit Platzhalter %e !!!&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.056789</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Gerade wenn man mehrere fprintf()-Anweisungen hintereinander ausführt, stellt man schnell fest, dass auch zusätzliche Formatierungsanweisungen wünschenswert sind.</p>
@@ -585,8 +591,8 @@ Zuerst formulieren wir den gewünschten Text als Character Array und setzen Plat
 <li><p><code class="docutils literal notranslate"><span class="pre">\n</span></code> steht für newline und lässt den Cursor nach der Ausgabe in eine neue Zeile springen</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">\t</span></code> steht für horizontaler Tabulator und lässt den Cursor zum nächsten Tab-Stopp springen.</p></li>
 </ul>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Liebe Studierende, \nin diesem Text ist ein newline versteckt.&#39;</span><span class="p">)</span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Und außerdem ist hier\tein Sprung zum nächsten Tab-Stopp!&#39;</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Liebe Studierende, \nin diesem Text ist ein newline versteckt.&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Und außerdem ist hier\tein Sprung zum nächsten Tab-Stopp!&#39;</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Mehr Informationen finden Sie in der MATLAB-Dokumentation unter
@@ -618,11 +624,11 @@ im Abschnitt Special Characters.</p>
 <p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise01"> Exercise 24</a></p>
 <div class="section" id="solution-content">
 <p>Erzeugen Sie ein Array mit den Elementen 2, 4, 6, 8, 10. Lassen Sie anschließend die Dimension des Arrays ausgeben.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Array</span>
-<span class="n">m</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">];</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Array</span><span class="w"></span>
+<span class="n">m</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">];</span><span class="w"></span>
 
-<span class="c">% Ausgabe der Eigenschaften</span>
-<span class="nb">whos</span> <span class="n">m</span>
+<span class="c">% Ausgabe der Eigenschaften</span><span class="w"></span>
+<span class="nb">whos</span><span class="w"> </span><span class="n">m</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -632,15 +638,15 @@ im Abschnitt Special Characters.</p>
 <p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise02"> Exercise 25</a></p>
 <div class="section" id="solution-content">
 <p>Erzeugen Sie ein Array mit Wochentagen. Erzeugen Sie dann ein zweites Array mit der Anzahl an Semesterwochenstunden (Schulstunden), die Sie an diesem Wochentag haben. Lassen Sie beides zur Kontrolle anzeigen.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe: Array mit Wochentagen</span>
-<span class="n">woche</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;Montag&quot;</span><span class="p">,</span> <span class="s">&quot;Dienstag&quot;</span><span class="p">,</span> <span class="s">&quot;Mittwoch&quot;</span><span class="p">,</span> <span class="s">&quot;Donnerstag&quot;</span><span class="p">,</span> <span class="s">&quot;Freitag&quot;</span><span class="p">,</span> <span class="s">&quot;Samstag&quot;</span><span class="p">,</span> <span class="s">&quot;Sonntag&quot;</span><span class="p">];</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe: Array mit Wochentagen</span><span class="w"></span>
+<span class="n">woche</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;Montag&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Dienstag&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mittwoch&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Donnerstag&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Freitag&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Samstag&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sonntag&quot;</span><span class="p">];</span><span class="w"></span>
 
-<span class="c">% Eingabe: Array mit Stundenanzahl pro Tag</span>
-<span class="n">unterricht</span> <span class="p">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
+<span class="c">% Eingabe: Array mit Stundenanzahl pro Tag</span><span class="w"></span>
+<span class="n">unterricht</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">];</span><span class="w"></span>
 
-<span class="c">% Ausgabe</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">woche</span><span class="p">)</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">unterricht</span><span class="p">)</span>
+<span class="c">% Ausgabe</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">woche</span><span class="p">)</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">unterricht</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -650,11 +656,11 @@ im Abschnitt Special Characters.</p>
 <p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise03"> Exercise 26</a></p>
 <div class="section" id="solution-content">
 <p>Erzeugen Sie ein 3x3-Array mit einer Eins auf der Hauptdiagonalen und lauter Nullen ansonsten. Lassen Sie Ihr Array anzeigen.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung</span>
-<span class="n">A</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">];</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung</span><span class="w"></span>
+<span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
 
-<span class="c">% Ausgabe</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="c">% Ausgabe</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -664,12 +670,12 @@ im Abschnitt Special Characters.</p>
 <p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise04"> Exercise 27</a></p>
 <div class="section" id="solution-content">
 <p>Erzeugen Sie ein Array mit sechs Zufallszahlen, die zwischen 1 und 49 liegen. Lassen Sie das Array auch anzeigen.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Array mit Zufallszahlen</span>
-<span class="c">% Anmerkung: es gibt zwei Möglichkeiten, ein 1x6-Array oder ein 6x1-Array</span>
-<span class="n">X</span> <span class="p">=</span> <span class="nb">randi</span><span class="p">(</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">49</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Array mit Zufallszahlen</span><span class="w"></span>
+<span class="c">% Anmerkung: es gibt zwei Möglichkeiten, ein 1x6-Array oder ein 6x1-Array</span><span class="w"></span>
+<span class="n">X</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">randi</span><span class="p">(</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">49</span><span class="p">],</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% Ausgabe</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="c">% Ausgabe</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -679,13 +685,13 @@ im Abschnitt Special Characters.</p>
 <p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise05"> Exercise 28</a></p>
 <div class="section" id="solution-content">
 <p>Erzeugen Sie ein Array mit Schnapszahlen, also 11, 22, 33, … , 99. Lassen Sie das dritte, sechste und siebte Element ausgeben.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung des Arrays mit den Schnapszahlen</span>
-<span class="n">a</span> <span class="p">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">99</span><span class="p">];</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung des Arrays mit den Schnapszahlen</span><span class="w"></span>
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w"> </span><span class="mi">66</span><span class="p">,</span><span class="w"> </span><span class="mi">77</span><span class="p">,</span><span class="w"> </span><span class="mi">88</span><span class="p">,</span><span class="w"> </span><span class="mi">99</span><span class="p">];</span><span class="w"></span>
 
-<span class="c">% Ausgabe des 3., 6. und 7. Elements</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="mi">6</span><span class="p">));</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="mi">7</span><span class="p">));</span>
+<span class="c">% Ausgabe des 3., 6. und 7. Elements</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="mi">6</span><span class="p">));</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="mi">7</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -697,13 +703,13 @@ im Abschnitt Special Characters.</p>
 <p>Erzeugen Sie ein zweidimensionales Array</p>
 <p><span class="math notranslate nohighlight">\(\pmatrix{31 &amp; 12 &amp; 43 \cr 11 &amp; 52 &amp; 63\cr 21 &amp; 32 &amp; 13}\)</span>.</p>
 <p>Lassen Sie alle Elemente der 1. Spalte ausgeben.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung</span>
-<span class="n">A</span> <span class="p">=</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">43</span><span class="p">;</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">63</span><span class="p">;</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">13</span><span class="p">];</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung</span><span class="w"></span>
+<span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">43</span><span class="p">;</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w"> </span><span class="mi">63</span><span class="p">;</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">];</span><span class="w"></span>
 
-<span class="c">% Ausgabe</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="c">% Ausgabe</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -714,15 +720,15 @@ im Abschnitt Special Characters.</p>
 <div class="section" id="solution-content">
 <p>Erzeugen Sie eine Variable mit einem Character Array, in der Ihr Vor- und Ihr Nachname mit Leerzeichen getrennt steht. Geben Sie zur Kontrolle Ihren Namen aus.
 In einigen Programmen sind Leerzeichen verboten. Ersetzen Sie daher in einem zweiten Schritt das Leerzeichen durch einen Unterstrich _ , indem Sie das Character Array manipulieren. Lassen Sie das manipulierte Array ausgeben.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe Character Array mit Namen </span>
-<span class="n">name</span> <span class="p">=</span> <span class="s">&#39;Simone Gramsch&#39;</span><span class="p">;</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe Character Array mit Namen </span><span class="w"></span>
+<span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Simone Gramsch&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% Verarbeitung: ersetze Leerzeichen durch Unterstrich</span>
-<span class="n">name</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="p">=</span> <span class="s">&#39;_&#39;</span><span class="p">;</span>
+<span class="c">% Verarbeitung: ersetze Leerzeichen durch Unterstrich</span><span class="w"></span>
+<span class="n">name</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;_&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="c">% Ausgabe</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="c">% Ausgabe</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -739,11 +745,11 @@ In einigen Programmen sind Leerzeichen verboten. Ersetzen Sie daher in einem zwe
 <li><p>Fließkommazahl mit 8 Nachkommastellen</p></li>
 <li><p>Fließkommazahl mit 0 Nachkommastellen</p></li>
 </ul>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Pi = %e&#39;</span><span class="p">,</span> <span class="nb">pi</span><span class="p">)</span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Pi = %f&#39;</span><span class="p">,</span> <span class="nb">pi</span><span class="p">)</span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Pi = %.4f&#39;</span><span class="p">,</span> <span class="nb">pi</span><span class="p">)</span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Pi = %.8f&#39;</span><span class="p">,</span> <span class="nb">pi</span><span class="p">)</span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Pi = %.0f&#39;</span><span class="p">,</span> <span class="nb">pi</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Pi = %e&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">pi</span><span class="p">)</span><span class="w"></span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Pi = %f&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">pi</span><span class="p">)</span><span class="w"></span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Pi = %.4f&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">pi</span><span class="p">)</span><span class="w"></span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Pi = %.8f&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">pi</span><span class="p">)</span><span class="w"></span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Pi = %.0f&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">pi</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -782,6 +788,13 @@ In einigen Programmen sind Leerzeichen verboten. Ersetzen Sie daher in einem zwe
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Digitale Logik und Schleifen mit Bedingungen (“while”)</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="part05.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Schleifen zum Zählen (“for”)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

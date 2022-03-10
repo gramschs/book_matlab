@@ -23,27 +23,27 @@ Wenn Sie das dazugehörige MATLAB Live Skript in MATLAB öffnen, können Sie Cod
 Ansonsten kopieren Sie bitte den Inhalt der Code-Zellen in Ihr MATLAB-Programm, um die nachfolgenden Ausführungen direkt nachvollziehen zu können.
 
 Addition:
-```octave
+```matlab
 2+3
 ```
 Subtraktion:
-```octave
+```matlab
 2-3
 ```
 Multiplikation:
-```octave
+```matlab
 2*4
 ```
 Division:
-```octave
+```matlab
 8/2
 ```
 Potenzierung:
-```octave
+```matlab
 3^2
 ```
 Selbstverständlich beherrscht MATLAB auch Klammerregeln. Gerne können Sie den Term  durch MATLAB berechnen lassen, probieren Sie es doch einmal selbst aus! In der folgenden Code-Zelle ist Platz für Ihren MATLAB-Code. Die Code-Zelle ist zunächst mit einem Kommentar beschriftet, in diese Fall mit dem Kommentar
-```octave
+```matlab
 % Hier Ihr Code
 ```
 Alles was nach einem Prozentzeichen kommt, wird von MATLAB ignoriert. Die sogenannten Kommentare, die durch das Prozentzeichen eingeleitet werden, sind für uns Menschen bestimmt.
@@ -107,7 +107,7 @@ In der Anfangszeit der Computer waren Programmiersprachen noch sehr nahe am Comp
 
 In MATLAB ist dieser Programmcode wesentlich kürzer (in die Code-Zelle klicken und Run Section ausführen):
 
-```octave
+```matlab
 disp('Hallo Welt')
 ```
 
@@ -169,20 +169,20 @@ Mehr Details zu Datentypen finden Sie auf der Hilfeseite von MathWorks: https://
 In der Programmierung unterscheidet man grundsätzlich zwischen zwei Zahlenarten, den **Ganzzahlen** und den Gleitkommazahlen/**Fließkommazahlen**. Die Ganzzahlen werden in der Mathematik als ganze Zahlen bezeichnet. In der Informatik wird meist der englische Begriff **Integer** verwendet. 
 Mit Integern können wir ganz normal rechnen, also Operationen ausführen. Einige davon haben wir ja bereits ausprobiert, als wir MATLAB als Taschenrechner benutzt haben:
 
-```octave
+```matlab
 23 + 4
 2 * (3 + 4)
 ```
 
 Sobald wir eine Division vorliegen haben, die nicht aufgeht, verlassen wir den Bereich der ganzen Zahlen und kommen automatisch zu den Fließkommazahlen. In der Informatik wird eine Fließkommazahl als Float bezeichnet. MATLAB rechnet automatisch mit dem richtigen Datentyp, wie Sie hier sehen:
 
-```octave
+```matlab
 2/5
 ```
 
 Beachten Sie bitte: Das Dezimaltrennzeichen ist ein Punkt, nicht ein Komma wie im Deutschen. Aber ansonsten funktioniert alles wie erwartet:
 
-```octave
+```matlab
 2.3 + 4.6
 1.4 - 5.2
 (-3.8) * 3.1
@@ -194,7 +194,7 @@ Daten sind aber sehr oft keine Zahlen. Beispielsweise könnte man sich vorstelle
 
 Strings werden in MATLAB durch doppelte Anführungszeichen definiert:
 
-```octave
+```matlab
 "Dies ist ein String!"
 ```
 Auf Strings und ihre Anwendungen kommen wir später noch zurück.
@@ -205,13 +205,13 @@ Auf Strings und ihre Anwendungen kommen wir später noch zurück.
 
 Wir verwenden Variablen, um bestimmte Werte oder ein bestimmtes Objekt zu speichern. Eine Variable wird durch **Zuweisung** erzeugt. Damit meinen wir, dass eine Schublade angelegt wird und die Schublade dann erstmalig gefüllt wird. Das erstmalige Füllen der Schublade nennt man in der Informatik auch **Initialisieren**.
 
-```octave
+```matlab
 x = 0.5
 ```
 
 Sobald die Variable x in diesem Beispiel durch eine Zuweisung von 0.5 erstellt wurde, können wir sie verwenden:
 
-```octave
+```matlab
 x * 3
 x + 17.8
 ```
@@ -227,7 +227,7 @@ Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben `n` unter die Ko
 
 Sehr häufig findet man Code wie
 
-```octave
+```matlab
 x = x + 1
 ```
 
@@ -237,7 +237,7 @@ In MATLAB sind "Gleichungen" keine mathematischen Gleichungen, sondern Zuweisung
 1. Berechne den Wert auf der rechten Seite (also $x+1$).
 2. Weise den Wert auf der rechten Seite dem auf der linken Seite stehenden Variablennamen zu.
 
-```octave
+```matlab
 x = 4     
 x = x + 1
 x
@@ -245,7 +245,7 @@ x
 
 MATLAB gibt automatisch den Variablennamen mit seinen Inhalt aus, wenn wir die Code-Zelle ausführen. Gerade wenn man ein Programm entwickelt, ist dies sehr praktisch, weil man schnell sieht, welchen Inhalt Variablen haben. Im fertigen Programm kann das aber auch stören. Wenn wir hinter die Programmzeile ein Semikolon – manche sagen auch Strichpunkt dazu – setzen, werden Variable und Inhalt nicht angezeigt.
 
-```octave
+```matlab
 x = 4;
 ```
 
@@ -255,7 +255,7 @@ Richtlinien für Variablennamen:
 
 Früher war der Speicherplatz von Computern klein, daher wurden häufig nur kurze Variablennamen wie beispielsweise i oder N verwendet. Heutzutage ist es Standard, nur in Ausnahmefällen (z.B. in Schleifen, dazu kommen wir noch) kurze Variablennamen zu nehmen. Stattdessen werden Namen benutzt, bei denen man erraten kann, was die Variable für einen Einsatzzweck hat. Beispielsweise lässt der Code
 
-```octave
+```matlab
 m = 0.19;
 n = 80;
 b = n + m * n
@@ -264,7 +264,7 @@ b = n + m * n
 nur schwer vermuten, was damit bezweckt wird. Oder können Sie erahnen, was dort passieren soll?
 Dagegen erahnt man bei diesem Code schon eher, was bezweckt wird:
 
-```octave
+```matlab
 mehrwertsteuersatz = 19/100;
 nettopreis = 80;
 bruttopreis = nettopreis + mehrwertsteuersatz * nettopreis
@@ -293,26 +293,26 @@ Häufige Ausgabe-Operationen sind
 
 Die einfachste und häufigste **Eingabe** erfolgt über die Tastatur. Die Funktion `input()` stoppt das laufende Skript und erwartet eine Eingabe über die Tastatur. Dabei wird der Text zwischen den einfachen Hochkommata im Command Window angezeigt. Dort muss auch der Text eingegeben werden. Bei MATLAB wird die Eingabe als Zahl interpretiert, in vielen anderen Programmiersprachen als String. Die Eingabe wird mit der Taste Return/Enter abgeschlossen. Probieren wir es aus:
 
-```octave
+```matlab
 input('Bitte geben Sie eine Zahl ein: ')
 ```
 
 Wir haben zwar jetzt auf Aufforderung eine Zahl eingegeben, aber verarbeitet wurde diese Eingabe nicht. Es passierte einfach nichts. Um die Eingabe verarbeiten zu können, speichern wir sie zunächst in einer Variablen ab. Danach quadrieren wir die eingegebene Zahl.
 
-```octave
+```matlab
 x = input('Bitte geben Sie eine Zahl ein: ');
 x^2
 ```
 
 Jetzt wäre es noch schön, wenn wir dem Benutzer oder der Benuzerin unseres Skripts mitteilen können, dass das Ergebnis das Quadrat der Zahl ist. Dazu gibt es in MATLAB das Kommando `disp()`. Damit wird - ähnlich wie bei der Funktion `input()` - der Text zwischen den einfachen Hochkommata ausgegeben.
 
-```octave
+```matlab
 disp('Quadrat: ')
 ```
 
 Jetzt können wir alles zusammensetzen.
 
-```octave
+```matlab
 x = input('Bitte geben Sie eine Zahl ein: ');
 disp('Sie haben folgende Zahl eingegeben: ');
 disp(x);
@@ -343,7 +343,7 @@ Der Einstieg in die wissenschaftliche Programmierung mit MATLAB ist zunächst th
 ````{solution} part01_miniexercise01
 :label: part01_minisolution01
 :class: dropdown
-```octave
+```matlab
 3 * (7-10) + 5
 ```
 ````
@@ -365,7 +365,7 @@ Tragen Sie hier die Hardware ein, die Sie gerade sehen oder die Ihnen generell e
 :label: part01_minisolution03
 :class: dropdown
 Kopieren Sie die Zeile `disp('Hallo Welt')` in die nächste Code-Zelle unter die Kommentarzeile und ersetzen Sie Welt durch Ihren Namen. Ihr erstes Computerprogramm in MATLAB :-)
-```octave
+```matlab
 disp('Hallo Simone')
 ```
 ````
@@ -390,7 +390,7 @@ In der Regel sind interpretierte Programmiersprachen leichter zu lernen, da beis
 :label: part01_minisolution05
 :class: dropdown
 Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben `n` unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit `Run Section` vom MATLAB-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung. 
-```octave
+```matlab
 n
 ```
 Der MATLAB-Interpreter zeigt in rot eine Fehlermeldung an: "Unrecognized function or variable 'n'." Damit weist der MATLAB-Interpreter darauf hin, dass die Variable bisher nicht mit einem Wert versehen wurde, sie ist nicht intialisiert worden. Daher kann damit auch nicht gearbeitet werden.
@@ -400,7 +400,7 @@ Der MATLAB-Interpreter zeigt in rot eine Fehlermeldung an: "Unrecognized functio
 :label: part01_minisolution06
 :class: dropdown
 Initialisieren Sie eine Variable namens `alter` mit Ihrem aktuellen Alter, eine Variable `rentenalter` mit dem Zahlenwert `67` und berechnen Sie dann, wie viele Jahre es noch bis zum Renteneintritt dauert. 
-```octave
+```matlab
 alter = 21;
 rentenalter = 67;
 disp(rentenalter- alter);
@@ -411,7 +411,7 @@ disp(rentenalter- alter);
 :label: part01_minisolution07
 :class: dropdown
 Schreiben Sie ein Skript, das nach einer Zahl fragt. Anschließend gibt das Skript die 5. Potenz dieser Zahl aus. 
-```octave
+```matlab
 % Eingabe
 x = input('Bitte geben Sie eine Zahl ein: ');
 

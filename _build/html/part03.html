@@ -119,6 +119,11 @@ const thebe_selector_output = ".output, .cell_output"
    Komplexere Datentypen: Array, String und formatierte Ausgaben
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="part05.html">
+   Schleifen zum Zählen (“for”)
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -326,10 +331,10 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Digitale Logik: und, oder, nicht<a class="headerlink" href="#digitale-logik-und-oder-nicht" title="Permalink to this headline">¶</a></h2>
 <p>In der letzten Vorlesung haben wir den boolschen Datentyp kennengelernt: wahr oder falsch. Man kann solche Ausdrücke auch kombinieren, z.B. könnte man fordern, dass zwei Bedingungen gleichzeitg erfüllt sein sollen.</p>
 <p>Beispiel beim Busfahren: Kinder unter 6 Jahren können kostenlos Bus fahren. Ab 6 Jahren braucht man eine Fahrkarte. Bis 14 Jahre zahlt man den Kinderpreis, ab 15 Jahren den Erwachsenenpreis:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="p">=</span> <span class="mi">12</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span><span class="mi">6</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">alter</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">14</span><span class="p">)</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Du musst eine Kinderfahrkarte kaufen.&#39;</span><span class="p">);</span>
-<span class="k">end</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">6</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">alter</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">alter</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">14</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Du musst eine Kinderfahrkarte kaufen.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Im Folgenden beschäftigen wir uns daher mit der Verknüpfung von booleschen Ausdrücken. Dieses Fachgebiet nennt man auch boolsche Algebra oder digitale Logik. Wikipedia fasst hier die wichtigsten Regeln zur booleschen Algebra zusammen:
@@ -376,13 +381,13 @@ beschränken.</p></li>
 </table>
 <p>In MATLAB wird die Kombination oder die sogeannte Verknüpfung zweier Bedingungen mit dem <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>-Operator umgesetzt. Dabei wird das Symbol <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> kaufmännisches Und-Zeichen oder Et-Zeichen genannt. Auf einer deutschen Tastatur liegt das kaufmännische Und-Zeichen auf der oberen Tastenreihe über der Ziffer 6.</p>
 <p>Beispiel: Zwei Personen wollen einen Kinofilm sehen, der erst ab 18 erlaubt ist. Nur wenn beide volljährig sind, können sie den Film gemeinsam besuchen:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">alter_person1</span> <span class="p">=</span> <span class="mi">19</span><span class="p">;</span>
-<span class="n">alter_person2</span> <span class="p">=</span> <span class="mi">22</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">alter_person1</span> <span class="o">&gt;</span><span class="p">=</span> <span class="mi">18</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">alter_person2</span> <span class="o">&gt;</span><span class="p">=</span> <span class="mi">18</span><span class="p">)</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sie duerfen beide den Film sehen.&#39;</span><span class="p">);</span>
-<span class="k">else</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Vielleicht darf einer von Ihnen den Film sehen, aber nicht beide.&#39;</span><span class="p">);</span>
-<span class="k">end</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">alter_person1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">19</span><span class="p">;</span><span class="w"></span>
+<span class="n">alter_person2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">22</span><span class="p">;</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">alter_person1</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">alter_person2</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sie duerfen beide den Film sehen.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Vielleicht darf einer von Ihnen den Film sehen, aber nicht beide.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="exercise admonition" id="part03_miniexercise01">
@@ -446,14 +451,14 @@ beschränken.</p></li>
 </table>
 <p>In MATLAB wird dies mit dem ||-Operator umgesetzt. Der senkrechte Strich findet sich auf einer deutschen Tastatur auf der Taste mit den spitzen Klammern <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">&gt;</span></code> und wird gesetzt, indem man die Alt Gr Taste gleichzeitig drückt.</p>
 <p>Beispiel: Zwei Personen wollen ein Auto mieten, dazu muss aber mindestens einer von den beiden den Führerschein besitzen.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">person1_hat_fuehrerschein</span> <span class="p">=</span> <span class="nb">true</span><span class="p">;</span>
-<span class="n">person2_hat_fuehrerschein</span> <span class="p">=</span> <span class="nb">false</span><span class="p">;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">person1_hat_fuehrerschein</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="n">person2_hat_fuehrerschein</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
 
-<span class="k">if</span> <span class="p">(</span><span class="n">person1_hat_fuehrerschein</span> <span class="o">==</span> <span class="nb">true</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">person2_hat_fuehrerschein</span> <span class="o">==</span> <span class="nb">true</span><span class="p">)</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sie duerfen das Auto mieten.&#39;</span><span class="p">)</span>
-<span class="k">else</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Keiner von beiden hat einen Fuehrerschein, geht nicht.&#39;</span><span class="p">)</span>
-<span class="k">end</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">person1_hat_fuehrerschein</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">person2_hat_fuehrerschein</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sie duerfen das Auto mieten.&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Keiner von beiden hat einen Fuehrerschein, geht nicht.&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="exercise admonition" id="part03_miniexercise04">
@@ -491,13 +496,13 @@ beschränken.</p></li>
 </table>
 <p>In MATLAB wird dies mit dem <code class="docutils literal notranslate"><span class="pre">~</span></code>-Operator umgesetzt. Das Zeichen <code class="docutils literal notranslate"><span class="pre">~</span></code> wird Tilde genannt. Die Tilde finden Sie auf einer deutschen Tastatur zwischen der Ü-Taste und der Return-Taste auf der Taste mit + und *. Um das Tilde-Zeichen einzugeben, müssen Sie gleichzeitig die Alt Gr-Taste drücken.</p>
 <p>Beispiel: Wenn eine Person keinen Führerschein hat, muss sie den Bus nehmen.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">person_hat_fuehrerschein</span> <span class="p">=</span> <span class="nb">false</span><span class="p">;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">person_hat_fuehrerschein</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
 
-<span class="k">if</span> <span class="o">~</span><span class="n">person_hat_fuehrerschein</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sie muessen Bus fahren.&#39;</span><span class="p">);</span>
-<span class="k">else</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sie duerfen Auto fahren.&#39;</span><span class="p">);</span>
-<span class="k">end</span>
+<span class="k">if</span><span class="w"> </span><span class="o">~</span><span class="n">person_hat_fuehrerschein</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sie muessen Bus fahren.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sie duerfen Auto fahren.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="exercise admonition" id="part03_miniexercise06">
@@ -523,30 +528,30 @@ beschränken.</p></li>
 <div class="section" id="schleifen-wiederholung-mit-bedingung-while">
 <h2>Schleifen: Wiederholung mit Bedingung “while”<a class="headerlink" href="#schleifen-wiederholung-mit-bedingung-while" title="Permalink to this headline">¶</a></h2>
 <p>Bei einer Wiederholung mit Bedingung wird eine Anweisung solange wiederholt, bis die Bedingung erfüllt wird. Sie hat folgende Struktur:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">Bedingung</span>
-    <span class="n">anweisungsblock</span>
-<span class="k">end</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="n">Bedingung</span><span class="w"></span>
+<span class="w">    </span><span class="n">anweisungsblock</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Die bedingte Wiederholung wird mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">while</span></code> eingeleitet. Dann folgt die Bedingung. Alle Anweisungen, die wiederholt werden sollen, kommen nach der Bedingung. Diesen Teil nennt man das Schleifeninnere, die Zeile “while Bedingung” nennt man den Schleifenkopf.</p>
 <p>Beispiel: Wir möchten ein Programm schreiben, bei dem der Benutzer solange Zahlen eingeben darf, die quadriert werden, bis die Null eingegeben wird. Dies würde in MATLAB wie folgt umgesetzt:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Dieses Programm quadriert ganze Zahlen solange, &#39;</span><span class="p">);</span>
-<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;bis Sie die 0 eingeben.&#39;</span><span class="p">);</span>
-<span class="n">zahl</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie die 1. Zahl ein: &#39;</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Dieses Programm quadriert ganze Zahlen solange, &#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;bis Sie die 0 eingeben.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">zahl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie die 1. Zahl ein: &#39;</span><span class="p">);</span><span class="w"></span>
 
-<span class="k">while</span> <span class="n">zahl</span> <span class="o">~=</span> <span class="mi">0</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="n">zahl</span>^<span class="mi">2</span><span class="p">);</span>
-    <span class="n">zahl</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie eine weitere Zahl ein (0 für Ende): &#39;</span><span class="p">);</span>
-<span class="k">end</span>
-<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sie haben die 0 eingegeben. Hiermit wird das Programm beendet.&#39;</span><span class="p">)</span>
+<span class="k">while</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl</span>^<span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">zahl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie eine weitere Zahl ein (0 für Ende): &#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sie haben die 0 eingegeben. Hiermit wird das Programm beendet.&#39;</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Ein anderes Beispiel, das oft in der Programmierung vorkommt ist, dass eine Variable gezählt wird. Dafür werden wir in einer späteren Vorlesung noch eine Alternative kennenlernen. Hier ein Beispiel, bei der eine Variable “hochgezählt” wird:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">zaehler</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="k">while</span> <span class="n">zaehler</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">10</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="n">zaehler</span><span class="p">);</span>
-    <span class="n">zaehler</span> <span class="p">=</span> <span class="n">zaehler</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="k">end</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">zaehler</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="k">while</span><span class="w"> </span><span class="n">zaehler</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zaehler</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">zaehler</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">zaehler</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="exercise admonition" id="part03_miniexercise07">
@@ -575,13 +580,13 @@ beschränken.</p></li>
 <p class="admonition-title">Solution to<a class="reference internal" href="#part03_miniexercise01"> Exercise 16</a></p>
 <div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn das Alter der Person zwischen 6 und 10 liegt, soll das Programm ausgeben “Wahrscheinlich gehst Du in die Grundschule.”</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
-<span class="n">alter</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Wie alt sind Sie?&#39;</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
+<span class="n">alter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Wie alt sind Sie?&#39;</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% Verarbeitung und Ausgabe</span>
-<span class="k">if</span> <span class="p">(</span><span class="mi">6</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">alter</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">10</span><span class="p">)</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Wahrscheinlich gehst Du in die Gundschule.&#39;</span><span class="p">);</span>
-<span class="k">end</span>
+<span class="c">% Verarbeitung und Ausgabe</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">6</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">alter</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">alter</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Wahrscheinlich gehst Du in die Gundschule.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -597,19 +602,19 @@ beschränken.</p></li>
 <li><p>für Monate September, Oktober, November: Herbst</p></li>
 <li><p>für Monate Dezember, Januar, Februar: Winter</p></li>
 </ul>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
-<span class="n">monat</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Geben Sie den aktuellen Monat ein, 1 für Januar, 2 für Februar, usw.&#39;</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
+<span class="n">monat</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Geben Sie den aktuellen Monat ein, 1 für Januar, 2 für Februar, usw.&#39;</span><span class="p">)</span><span class="w"></span>
 
-<span class="c">% Verarbeitung und Ausgabe</span>
-<span class="k">if</span> <span class="mi">3</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">monat</span> <span class="o">&amp;&amp;</span> <span class="n">monat</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">5</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Frühling&#39;</span><span class="p">);</span>
-<span class="k">elseif</span> <span class="mi">6</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">monat</span> <span class="o">&amp;&amp;</span> <span class="n">monat</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">8</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sommer&#39;</span><span class="p">);</span>
-<span class="k">elseif</span> <span class="mi">9</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">monat</span> <span class="o">&amp;&amp;</span> <span class="n">monat</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">11</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Herbst&#39;</span><span class="p">);</span>
-<span class="k">else</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Winter&#39;</span><span class="p">);</span>
-<span class="k">end</span>
+<span class="c">% Verarbeitung und Ausgabe</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">monat</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">monat</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Frühling&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">elseif</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">monat</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">monat</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">8</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sommer&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">elseif</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">monat</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">monat</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">11</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Herbst&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Winter&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -619,19 +624,19 @@ beschränken.</p></li>
 <p class="admonition-title">Solution to<a class="reference internal" href="#part03_miniexercise03"> Exercise 18</a></p>
 <div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person 0 bis 17 ist, soll das Programm ausgeben: “Wahrscheinlich bist Du noch nicht berufstätig”. Zwischen 18 und 67 soll ausgegeben werden “Wahrscheinlich sind Sie berufstätig.” und bei Personen zwischen 68 und 120 “Wahrscheinlich sind Sie nicht mehr berufstätig.”</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
-<span class="n">alter</span> <span class="p">=</span>  <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Alter: &#39;</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
+<span class="n">alter</span><span class="w"> </span><span class="p">=</span><span class="w">  </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Alter: &#39;</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% Verarbeitung und Ausgabe</span>
-<span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">alter</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">17</span><span class="p">)</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Wahrscheinlich bist Du noch nicht berufstätig.&#39;</span><span class="p">);</span>
-<span class="k">end</span>
-<span class="k">if</span> <span class="p">(</span><span class="mi">18</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">alter</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">67</span><span class="p">)</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Wahrscheinlich sind Sie berufstätig.&#39;</span><span class="p">);</span>
-<span class="k">end</span>
-<span class="k">if</span> <span class="p">(</span><span class="mi">68</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">alter</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">120</span><span class="p">)</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Wahrscheinlich sind Sie nicht mehr berufstätig.&#39;</span><span class="p">);</span>
-<span class="k">end</span>
+<span class="c">% Verarbeitung und Ausgabe</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">alter</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">alter</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">17</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Wahrscheinlich bist Du noch nicht berufstätig.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">18</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">alter</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">alter</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">67</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Wahrscheinlich sind Sie berufstätig.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">68</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">alter</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">alter</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">120</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Wahrscheinlich sind Sie nicht mehr berufstätig.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -641,13 +646,13 @@ beschränken.</p></li>
 <p class="admonition-title">Solution to<a class="reference internal" href="#part03_miniexercise04"> Exercise 19</a></p>
 <div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person jünger als 18 ist oder älter als 67, soll das Programm ausgeben: “Wahrscheinlich sind Sie/bist Du nicht berufstätig.”</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
-<span class="n">alter</span> <span class="p">=</span>  <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Alter: &#39;</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
+<span class="n">alter</span><span class="w"> </span><span class="p">=</span><span class="w">  </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Alter: &#39;</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% verarbeitung und Ausgabe</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="mi">67</span> <span class="o">&lt;</span> <span class="n">alter</span><span class="p">)</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Wahrscheinlich sind Sie/bist Du nicht berufstätig.&#39;</span><span class="p">);</span>
-<span class="k">end</span>
+<span class="c">% verarbeitung und Ausgabe</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">alter</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="mi">67</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">alter</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Wahrscheinlich sind Sie/bist Du nicht berufstätig.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -657,16 +662,16 @@ beschränken.</p></li>
 <p class="admonition-title">Solution to<a class="reference internal" href="#part03_miniexercise05"> Exercise 20</a></p>
 <div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das nach der Länge der beiden Seiten eines rechtwinkligen Dreiecks fragt, die am rechten Winkel anliegen (= Katheten). Wenn eine der beiden Seitenlängen oder beide negativ sind, soll das Programm ausgeben: “Fehler, negative Seitenlängen gibt es nicht!” und ansonsten soll das Skript die Länge der dritten Seite (= Hypotenuse) mit dem Satz des Pythagoras berechnen und das Ergebnis ausgeben.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe </span>
-<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie die Längen der Katheten eines rechtwinkligen Dreiecks ein:&#39;</span><span class="p">);</span>
-<span class="n">a</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Länge Seite a: &#39;</span><span class="p">);</span>
-<span class="n">b</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Länge Seite b: &#39;</span><span class="p">);</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">b</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Fehler, negative Seitenlängen gibt es nicht!&#39;</span><span class="p">);</span>
-<span class="k">else</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Länge der Seite c (= Hypotenuse) ist: &#39;</span><span class="p">);</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">a</span>^<span class="mi">2</span><span class="o">+</span><span class="n">b</span>^<span class="mi">2</span><span class="p">));</span>
-<span class="k">end</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe </span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie die Längen der Katheten eines rechtwinkligen Dreiecks ein:&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Länge Seite a: &#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Länge Seite b: &#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Fehler, negative Seitenlängen gibt es nicht!&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Länge der Seite c (= Hypotenuse) ist: &#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">a</span>^<span class="mi">2</span><span class="o">+</span><span class="n">b</span>^<span class="mi">2</span><span class="p">));</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -687,29 +692,29 @@ beschränken.</p></li>
 <li><p>(NICHT falsch) ODER (falsch UND falsch)</p></li>
 </ul>
 <p>Probieren Sie dann in der nächsten Code-Zelle aus, ob Sie die richtigen Ergebnisse hatten, indem Sie beispielsweise wahr und wahr in MATLAB ausprobieren, also beispielsweise <code class="docutils literal notranslate"><span class="pre">true</span> <span class="pre">&amp;&amp;</span> <span class="pre">true</span></code> eingeben:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% wahr UND wahr</span>
-<span class="nb">true</span> <span class="o">&amp;&amp;</span> <span class="nb">true</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% wahr UND wahr</span><span class="w"></span>
+<span class="nb">true</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">true</span><span class="w"></span>
 
-<span class="c">% wahr ODER falsch</span>
-<span class="nb">true</span> <span class="o">||</span> <span class="nb">false</span>
+<span class="c">% wahr ODER falsch</span><span class="w"></span>
+<span class="nb">true</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">false</span><span class="w"></span>
 
-<span class="c">% NICHT wahr</span>
-<span class="o">~</span><span class="nb">true</span>
+<span class="c">% NICHT wahr</span><span class="w"></span>
+<span class="o">~</span><span class="nb">true</span><span class="w"></span>
 
-<span class="c">% falsch ODER wahr</span>
-<span class="nb">false</span> <span class="o">||</span> <span class="nb">true</span>
+<span class="c">% falsch ODER wahr</span><span class="w"></span>
+<span class="nb">false</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span><span class="w"></span>
 
-<span class="c">% wahr ODER (NICHT falsch)</span>
-<span class="nb">true</span> <span class="o">||</span> <span class="p">(</span><span class="o">~</span><span class="nb">false</span><span class="p">)</span>
+<span class="c">% wahr ODER (NICHT falsch)</span><span class="w"></span>
+<span class="nb">true</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="o">~</span><span class="nb">false</span><span class="p">)</span><span class="w"></span>
 
-<span class="c">% (NICHT wahr) UND falsch</span>
-<span class="p">(</span><span class="o">~</span><span class="nb">true</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nb">false</span>
+<span class="c">% (NICHT wahr) UND falsch</span><span class="w"></span>
+<span class="p">(</span><span class="o">~</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">false</span><span class="w"></span>
 
-<span class="c">% NICHT (wahr ODER falsch)</span>
-<span class="o">~</span><span class="p">(</span><span class="nb">true</span> <span class="o">||</span> <span class="nb">false</span><span class="p">)</span>
+<span class="c">% NICHT (wahr ODER falsch)</span><span class="w"></span>
+<span class="o">~</span><span class="p">(</span><span class="nb">true</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">false</span><span class="p">)</span><span class="w"></span>
 
-<span class="c">% (NICHT falsch) ODER (falsch UND falsch)</span>
-<span class="p">(</span><span class="o">~</span><span class="nb">false</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nb">false</span> <span class="o">&amp;&amp;</span> <span class="nb">false</span><span class="p">)</span>
+<span class="c">% (NICHT falsch) ODER (falsch UND falsch)</span><span class="w"></span>
+<span class="p">(</span><span class="o">~</span><span class="nb">false</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="nb">false</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">false</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Anmerkung: Der MATLAB-Interpreter merkt, dass ein Vergleich wie beispielsweise <code class="docutils literal notranslate"><span class="pre">false</span> <span class="pre">&amp;&amp;</span> <span class="pre">false</span></code> nicht komplett überprüft werden muss, da bereits das erste false dazu führt, dass das Ergebnis der Verknüpfung falsch ist. Daher wird hier in der Code-Zelle eine Warnung angezeigt. Um diese Warnungen im Skript zu vermeiden, ist der Code hier als Code Example und nicht in einer Code-Zelle eingefügt.</p>
@@ -720,14 +725,14 @@ beschränken.</p></li>
 <p class="admonition-title">Solution to<a class="reference internal" href="#part03_miniexercise07"> Exercise 22</a></p>
 <div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das die Quadratzahlen für 10 bis 20 ausgibt, d.h. es sollen die Zahlen 100, 121, … , 400 ausgegeben werden.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe Startzahl</span>
-<span class="n">zahl</span> <span class="p">=</span> <span class="mi">10</span><span class="p">;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe Startzahl</span><span class="w"></span>
+<span class="n">zahl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
 
-<span class="c">% Verarbeitung und Ausgabe</span>
-<span class="k">while</span> <span class="n">zahl</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">20</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="n">zahl</span>^<span class="mi">2</span><span class="p">);</span>
-    <span class="n">zahl</span> <span class="p">=</span> <span class="n">zahl</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="k">end</span>
+<span class="c">% Verarbeitung und Ausgabe</span><span class="w"></span>
+<span class="k">while</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">20</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl</span>^<span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">zahl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -737,13 +742,13 @@ beschränken.</p></li>
 <p class="admonition-title">Solution to<a class="reference internal" href="#part03_miniexercise08"> Exercise 23</a></p>
 <div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin auffordert, eine positive Zahl einzugeben. Falls dabei jedoch fälschlicherweise eine negative Zahl oder die Null eingegeben wird, soll der Computer solange weiter fragen, bis endlich eine positive Zahl eingegeben wird.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
-<span class="n">x</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie eine positive ganze Zahl ein: &#39;</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie eine positive ganze Zahl ein: &#39;</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% Fehlerbehandlung: Verarbeitung und Ausgabe</span>
-<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">0</span>
-    <span class="n">x</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie eine POSITIVE ganze Zahl ein: &#39;</span><span class="p">)</span>
-<span class="k">end</span>
+<span class="c">% Fehlerbehandlung: Verarbeitung und Ausgabe</span><span class="w"></span>
+<span class="k">while</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie eine POSITIVE ganze Zahl ein: &#39;</span><span class="p">)</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
