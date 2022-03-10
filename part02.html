@@ -117,6 +117,11 @@ const thebe_selector_output = ".output, .cell_output"
    Komplexere Datentypen: Array, String und formatierte Ausgaben
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="part05.html">
+   Schleifen zum Zählen (“for”)
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -334,16 +339,16 @@ const thebe_selector_output = ".output, .cell_output"
 <p class="admonition-title"><span class="caption-number">Exercise 8 </span></p>
 <div class="section" id="exercise-content">
 <p>Verändern Sie in der nachfolgenden Code-Zelle den Wert der Variablen <code class="docutils literal notranslate"><span class="pre">a</span></code>. Setzen Sie einmal <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">false</span></code> und einmal <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">true</span></code>. Beobachten Sie, was der <code class="docutils literal notranslate"><span class="pre">disp()</span></code>-Befehl ausgibt.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code:</span>
-<span class="n">a</span> <span class="p">=</span> <span class="nb">false</span><span class="p">;</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Hier Ihr Code:</span><span class="w"></span>
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Aber wie kann man dann überprüfen, ob in einer Variablen der Datentyp Integer oder der Datentyp Boolean gespeichert ist? Dazu gibt es das Kommando <code class="docutils literal notranslate"><span class="pre">whos</span></code>. Führen Sie die nächste Code-Zelle aus.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="p">=</span> <span class="nb">false</span><span class="p">;</span>
-<span class="nb">whos</span> <span class="n">a</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="n">whos</span><span class="w"> </span><span class="s">a</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Sie sollten jetzt in der Ausgabe Folgendes sehen:</p>
@@ -378,32 +383,32 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Tipp: Das Zeichen <code class="docutils literal notranslate"><span class="pre">~</span></code> heißt übrigens Tilde und befindet sich bei einer deutschen Tastatur neben der Return-Taste, siehe gelb markierte Taste im nachfolgenden Bild:</p>
 <img alt="_images/part02_german_keyboard.png" id="part02-german-keyboard" src="_images/part02_german_keyboard.png" />
 <p>Im interaktiven Modus von MATLAB können wir leicht den Wahrheitsgehalt von Vergleichen überprüfen. Wir setzen eine Variable auf den Wert 7:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="mi">7</span><span class="p">;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Jetzt probieren wir in den nachfolgenden Code-Zellen verschiedene Vergleichsoperatoren aus. Zur Erinnerung, 0 steht dabei für false (falsch) und 1 für wahr (true).</p>
 <p>Ist x genau gleich 15?</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">==</span> <span class="mi">15</span>    
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">15</span><span class="w">    </span>
 </pre></div>
 </div>
 <p>Ist x kleiner als 42?</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">42</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">42</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Ist x genau 30?</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">==</span> <span class="mi">30</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">30</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Ist x ungleich 42?</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">~=</span> <span class="mi">42</span> 
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span>
 </pre></div>
 </div>
 <p>Ist x größer als 30?</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">30</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">30</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Ist x größer gleich 30?</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">&gt;</span><span class="p">=</span> <span class="mi">30</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">30</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="exercise admonition" id="part02_miniexercise02">
@@ -424,26 +429,26 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="programmverzweigungen-mit-einen-zweig-if">
 <h2>Programmverzweigungen mit einen Zweig: if<a class="headerlink" href="#programmverzweigungen-mit-einen-zweig-if" title="Permalink to this headline">¶</a></h2>
 <p>Bei einer Programmverzweigung wird Code abhängig von einer Bedingung ausgeführt. Im einfachsten Fall liegt ein if-Block vor. Die Syntax lautet wie folgt:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">bedingung</span>
-    <span class="n">anweisungsblock</span>
-<span class="k">end</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="n">bedingung</span><span class="w"></span>
+<span class="w">    </span><span class="n">anweisungsblock</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Ist die Bedingung erfüllt, also “true”, so wird der eingerückte Anweisungsblock ausgeführt, ansonsten übersprungen. Damit ist gemeint, dass der MATLAB-Interpreter nach dem <code class="docutils literal notranslate"><span class="pre">end</span></code> des if-Blocks weiter macht, falls die Bedingung nicht erfüllt (= false) wird.</p>
 <p>Wir betrachten nun ein Beispiel:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="p">=</span> <span class="mi">17</span><span class="p">;</span>
-<span class="k">if</span> <span class="n">alter</span> <span class="o">&gt;</span><span class="p">=</span> <span class="mi">18</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sie dürfen Alkohol kaufen.&#39;</span><span class="p">);</span>
-<span class="k">end</span>
-<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Bananen dürfen Sie immer kaufen, egal wie alt Sie sind ...&#39;</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">17</span><span class="p">;</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sie dürfen Alkohol kaufen.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Bananen dürfen Sie immer kaufen, egal wie alt Sie sind ...&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Und jetzt mit einer Benutzerabfrage kombiniert:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Wie alt sind Sie?&#39;</span><span class="p">);</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">alter</span> <span class="o">&gt;</span><span class="p">=</span> <span class="mi">18</span><span class="p">)</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sie dürfen Alkohol kaufen.&#39;</span><span class="p">);</span>
-<span class="k">end</span>
-<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Bananen dürfen Sie immer kaufen, egal wie alt Sie sind...&#39;</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Wie alt sind Sie?&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">alter</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sie dürfen Alkohol kaufen.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Bananen dürfen Sie immer kaufen, egal wie alt Sie sind...&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="exercise admonition" id="part02_miniexercise03">
@@ -469,23 +474,23 @@ Wenn die Zahl größer als 0 ist, soll ausgegeben werden: “Die Zahl ist positi
 <h2>Programmverzweigungen mit zwei Zweigen: if – else<a class="headerlink" href="#programmverzweigungen-mit-zwei-zweigen-if-else" title="Permalink to this headline">¶</a></h2>
 <p>In unserem Alltag kommen häufig Entscheidungen zwischen zwei Möglichkeiten vor. Wenn ich an eine T-Kreuzung komme, muss ich mich entscheiden: links oder rechts? Betrete ich ein Gebäude entscheide ich zwischen Treppe oder Fahrstuhl. Mein Alter entscheidet darüber, ob ich etwas darf oder nicht darf. Für diese Wahl zwischen zwei Möglichkeiten gibt es <strong>zweiteilige Programmverzweigungen</strong>.
 Wir erweitern die Syntax mit dem if-Block um ein neues Element, nämlich den sogenannten <strong>else-Block</strong>:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">bedingung</span>
-    <span class="n">anweisungsblock</span> <span class="mi">1</span>
-<span class="k">else</span>
-    <span class="n">anweisungsblock</span> <span class="mi">2</span>
-<span class="k">end</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="n">bedingung</span><span class="w"></span>
+<span class="w">    </span><span class="n">anweisungsblock</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="n">anweisungsblock</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Wichtig ist, dass das komplette if-else-Konstrukt mit einem gemeinsamen <code class="docutils literal notranslate"><span class="pre">end</span></code> beendet wird. Würden wir das end wie ursprünglich vor dem Beginn des else-Blocks stehen lassen, so hätten wir ungültigen Code.</p>
 <p>Falls die Bedingung erfüllt ist, wird der 1. Anweisungsblock ausgeführt, ansonsten der 2. Anweisungsblock. Danach führt der MATLAB-Interpreter alles nach dem if-else-Konstrukt aus, d.h. der Interpreter macht mit dem normalen Programmablauf weiter.</p>
 <p>Hier wieder das Beispiel mit dem Alter:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Wie alt sind Sie? &#39;</span><span class="p">);</span>
-<span class="k">if</span> <span class="n">alter</span> <span class="o">&gt;</span><span class="p">=</span> <span class="mi">18</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sie sind volljährig, Sie dürfen Alkohol kaufen.&#39;</span><span class="p">);</span>
-<span class="k">else</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sie sind noch nicht volljährig und dürfen daher keinen Alkohol kaufen.&#39;</span><span class="p">);</span>
-<span class="k">end</span>
-<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Jetzt haben wir aber genug über den Alkoholkauf geredet...&#39;</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Wie alt sind Sie? &#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sie sind volljährig, Sie dürfen Alkohol kaufen.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sie sind noch nicht volljährig und dürfen daher keinen Alkohol kaufen.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Jetzt haben wir aber genug über den Alkoholkauf geredet...&#39;</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="exercise admonition" id="part02_miniexercise05">
@@ -507,111 +512,111 @@ Wir erweitern die Syntax mit dem if-Block um ein neues Element, nämlich den sog
 <h2>Programmverzweigungen mit vielen Zweigen: if – elseif – else<a class="headerlink" href="#programmverzweigungen-mit-vielen-zweigen-if-elseif-else" title="Permalink to this headline">¶</a></h2>
 <p>Eins, zwei, drei, viele … häufig müssen mehr als zwei Fälle unterschieden werden. In Mini-Übung 4 haben wir beispielsweise überprüft, ob eine Zahl negativ oder positiv oder Null ist. Ein Beispiel aus dem Alltag ist der Kauf einer Fahrkarte für den ÖPNV. Meist wird beim Ticketpreis unterschieden, ob die Person jünger als 6 ist (keine Fahrkarte notwendig), zwischen 6 und 14 ist (Schülerfahrkarte) oder älter als 14 (Erwachsenenfahrkarte). Da es jetzt drei Altersklassen gibt, können wir kein if-else-Konstrukt benutzen, denn nur weil die Person beispielsweise nicht jünger als 6 ist wissen wir noch lange nicht, ob die Person eine Schülerfahrkarte oder eine Erwachsenenfahrkarte braucht.</p>
 <p>Probieren wir es einfach:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="p">=</span> <span class="mi">8</span><span class="p">;</span>
-<span class="k">if</span> <span class="n">alter</span> <span class="o">&lt;</span> <span class="mi">6</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;keine Fahrkarte notwendig&#39;</span><span class="p">);</span>
-<span class="k">end</span>
-<span class="k">if</span> <span class="n">alter</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">14</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Schülerfahrkarte&#39;</span><span class="p">);</span>
-<span class="k">end</span>
-<span class="k">if</span> <span class="n">alter</span> <span class="o">&gt;</span> <span class="mi">14</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Erwachsenenfahrkarte&#39;</span><span class="p">);</span>
-<span class="k">end</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">6</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;keine Fahrkarte notwendig&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">14</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Schülerfahrkarte&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">14</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Erwachsenenfahrkarte&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Sieht zunächst einmal gut aus. Für ein Alter von 8 Jahren wird tatsächlich Schülerfahrkarte ausgegeben. Wenn wir jetzt aber das Alter auf 5 Jahre setzen, so bekommen wir zwei Ausgaben:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="k">if</span> <span class="n">alter</span> <span class="o">&lt;</span> <span class="mi">6</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;keine Fahrkarte notwendig&#39;</span><span class="p">);</span>
-<span class="k">end</span>
-<span class="k">if</span> <span class="n">alter</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">14</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Schülerfahrkarte&#39;</span><span class="p">);</span>
-<span class="k">end</span>
-<span class="k">if</span> <span class="n">alter</span> <span class="o">&gt;</span> <span class="mi">14</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Erwachsenenfahrkarte&#39;</span><span class="p">);</span>
-<span class="k">end</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">6</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;keine Fahrkarte notwendig&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">14</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Schülerfahrkarte&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">14</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Erwachsenenfahrkarte&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Wir erhalten die Ausgabe <code class="docutils literal notranslate"><span class="pre">&quot;keine</span> <span class="pre">Fahrkarte</span> <span class="pre">notwendig&quot;</span></code>, weil die Bedingung des 1. if-Konstrukts erfüllt ist (<code class="docutils literal notranslate"><span class="pre">alter</span> <span class="pre">&lt;</span> <span class="pre">6</span></code>). Danach wird aber auch noch die Ausgabe <code class="docutils literal notranslate"><span class="pre">&quot;Schülerfahrkarte&quot;</span></code> angezeigt, weil auch die Bedingung des 2. if-Konstrukts (<code class="docutils literal notranslate"><span class="pre">alter</span> <span class="pre">&lt;=</span> <span class="pre">14</span></code>) erfüllt ist. So geht es also nicht, zwischen drei Bedingungen zu unterscheiden.</p>
 <p>Probieren wir es mit einem zusätzlichen if-else-Konstrukt für die Unterscheidung der Kinder.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
 
-<span class="k">if</span> <span class="n">alter</span> <span class="o">&lt;</span> <span class="mi">6</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;keine Fahrkarte notwendig&#39;</span><span class="p">);</span>
-<span class="k">else</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Schülerfahrkarte&#39;</span><span class="p">);</span>
-<span class="k">end</span>
+<span class="k">if</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">6</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;keine Fahrkarte notwendig&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Schülerfahrkarte&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 
-<span class="k">if</span> <span class="n">alter</span> <span class="o">&gt;</span> <span class="mi">14</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Erwachsenenfahrkarte&#39;</span><span class="p">);</span>
-<span class="k">end</span>
+<span class="k">if</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">14</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Erwachsenenfahrkarte&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Jetzt sind aber Erwachsene problematisch:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="p">=</span> <span class="mi">27</span><span class="p">;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">27</span><span class="p">;</span><span class="w"></span>
 
-<span class="k">if</span> <span class="n">alter</span> <span class="o">&lt;</span> <span class="mi">6</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;keine Fahrkarte notwendig&#39;</span><span class="p">);</span>
-<span class="k">else</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Schülerfahrkarte&#39;</span><span class="p">);</span>
-<span class="k">end</span>
+<span class="k">if</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">6</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;keine Fahrkarte notwendig&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Schülerfahrkarte&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 
-<span class="k">if</span> <span class="n">alter</span> <span class="o">&gt;</span> <span class="mi">14</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Erwachsenenfahrkarte&#39;</span><span class="p">);</span>
-<span class="k">end</span>
+<span class="k">if</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">14</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Erwachsenenfahrkarte&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Tatsächlich läuft unser Programm-Code nur korrekt, wenn wir in den else-Zweig noch zusätzlich zwischen “jünger als 14” und “älter als 14” unterscheiden.</p>
 <p>Führen Sie die folgende Code-Zelle mehrfach aus. Ändern Sie dabei das Alter. Probieren Sie beispielsweise 5, 8, 11, 16, 21 und Ihr Alter aus.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="p">=</span> <span class="mi">27</span><span class="p">;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">27</span><span class="p">;</span><span class="w"></span>
 
-<span class="k">if</span> <span class="n">alter</span> <span class="o">&lt;</span> <span class="mi">6</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;keine Fahrkarte notwendig&#39;</span><span class="p">);</span>
-<span class="k">else</span>
-    <span class="k">if</span> <span class="n">alter</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">14</span>
-        <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Schülerfahrkarte&#39;</span><span class="p">);</span>
-    <span class="k">else</span>
-        <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Erwachsenenfahrkarte&#39;</span><span class="p">);</span>
-    <span class="k">end</span>
-<span class="k">end</span>
+<span class="k">if</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">6</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;keine Fahrkarte notwendig&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">14</span><span class="w"></span>
+<span class="w">        </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Schülerfahrkarte&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="w"></span>
+<span class="w">        </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Erwachsenenfahrkarte&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">end</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Um den obigen Code besser zu verstehen, zeichen wir den Ablauf schematisch:</p>
 <img alt="_images/part02_fahrkarte.png" id="part02-fahrkarte" src="_images/part02_fahrkarte.png" />
 <p>Es wäre schöner, wenn es für solche Mehrfachverzweigungen etwas übersichtlicheren Code gäbe. Und in der Tat, den gibt es. Man könnte sozusagen den Start des else-Konstruktes mit dem nachfolgenden if-Konstrukt verschmelzen. Das Ergebnis davon ist die if-elseif-else-Syntax. Allgemein sieht das <strong>if-elseif-else-Konstrukt</strong> so aus:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">bedingung</span> <span class="mi">1</span>
-    <span class="n">anweisungsblock</span> <span class="mi">1</span>
-<span class="k">elseif</span> <span class="n">bedingung</span> <span class="mi">2</span>
-    <span class="n">anweisungsblock</span> <span class="mi">2</span>
-<span class="k">elseif</span> <span class="n">bedingung</span> <span class="mi">3</span>
-    <span class="n">anweisungsblock</span> <span class="mi">3</span>   
-<span class="p">...</span>
-<span class="k">else</span>
-    <span class="n">anweisungsblock</span> <span class="n">n</span>
-<span class="k">end</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="n">bedingung</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">    </span><span class="n">anweisungsblock</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">bedingung</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
+<span class="w">    </span><span class="n">anweisungsblock</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">bedingung</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<span class="w">    </span><span class="n">anweisungsblock</span><span class="w"> </span><span class="mi">3</span><span class="w">   </span>
+<span class="k">...</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="n">anweisungsblock</span><span class="w"> </span><span class="n">n</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Hier die besser lesbare Version der Unterscheidung von Zahlen in negative Zahlen, 0 und positive Zahlen aus Mini-Übung 4:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="p">=</span> <span class="mi">17</span>
-<span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&quot;a ist Null.&quot;</span><span class="p">)</span>
-<span class="k">elseif</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&quot;a ist negativ.&quot;</span><span class="p">)</span>
-<span class="k">else</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&quot;a ist positiv.&quot;</span><span class="p">)</span>
-<span class="k">end</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">17</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&quot;a ist Null.&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&quot;a ist negativ.&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&quot;a ist positiv.&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Und jetzt noch einmal eine besser lesbare Version des Fahrkartenautomaten:</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span> <span class="p">=</span> <span class="mi">27</span><span class="p">;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">27</span><span class="p">;</span><span class="w"></span>
 
-<span class="k">if</span> <span class="n">alter</span> <span class="o">&lt;</span> <span class="mi">6</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;keine Fahrkarte notwendig&#39;</span><span class="p">);</span>
-<span class="k">elseif</span> <span class="n">alter</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">14</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Schülerfahrkarte&#39;</span><span class="p">);</span>
-<span class="k">else</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Erwachsenenfahrkarte&#39;</span><span class="p">);</span>
-<span class="k">end</span>
+<span class="k">if</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">6</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;keine Fahrkarte notwendig&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">alter</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">14</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Schülerfahrkarte&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Erwachsenenfahrkarte&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="exercise admonition" id="part02_miniexercise07">
@@ -650,11 +655,11 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 <p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise01"> Exercise 8</a></p>
 <div class="section" id="solution-content">
 <p>Verändern Sie in der nachfolgenden Code-Zelle den Wert der Variablen a. Setzen Sie einmal a = false und einmal a = true. Beobachten Sie, was der disp()-Befehl ausgibt.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="p">=</span> <span class="nb">false</span><span class="p">;</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">a</span> <span class="p">=</span> <span class="nb">true</span><span class="p">;</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Wird die Variable auf falsch gesetzt (a = false), so gibt die disp()-Funktion eine 0 aus. Wird die Variable a jedoch auf wahr gesetzt (a = true), so gibt die disp()-Funktion eine 1 aus.</p>
@@ -672,23 +677,23 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 <li><p>Ist Ihre Zahl positiv?</p></li>
 <li><p>Ist Ihre Zahl kleiner als -17.7?</p></li>
 </ul>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe: Wahl meiner Zahl</span>
-<span class="n">x</span> <span class="p">=</span> <span class="mi">33</span><span class="p">;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe: Wahl meiner Zahl</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">33</span><span class="p">;</span><span class="w"></span>
 
-<span class="c">% kleiner gleich 5?</span>
-<span class="n">x</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">5</span>
+<span class="c">% kleiner gleich 5?</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
 
-<span class="c">% genau gleich 17?</span>
-<span class="n">x</span> <span class="o">==</span> <span class="mi">17</span>
+<span class="c">% genau gleich 17?</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">17</span><span class="w"></span>
 
-<span class="c">% nicht gleich 17?</span>
-<span class="n">x</span> <span class="o">~=</span> <span class="mi">17</span>
+<span class="c">% nicht gleich 17?</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="mi">17</span><span class="w"></span>
 
-<span class="c">% positiv?</span>
-<span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="c">% positiv?</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
 
-<span class="c">% kleiner als -17.7?</span>
-<span class="n">x</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">17.7</span>
+<span class="c">% kleiner als -17.7?</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="o">-</span><span class="mf">17.7</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -698,13 +703,13 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 <p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise03"> Exercise 10</a></p>
 <div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin nach der aktuellen Temperatur fragt. Wenn die Temperatur kleiner gleich 10 ˚C ist, soll ausgegeben werden: “Heute ist es aber kalt!”</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
-<span class="n">temperatur</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Welche Temperatur haben wir aktuell?&#39;</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
+<span class="n">temperatur</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Welche Temperatur haben wir aktuell?&#39;</span><span class="p">)</span><span class="w"></span>
 
-<span class="c">% Verarbeitung und Ausgabe</span>
-<span class="k">if</span> <span class="n">temperatur</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">10</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Heute ist es aber kalt!&#39;</span><span class="p">)</span>
-<span class="k">end</span>
+<span class="c">% Verarbeitung und Ausgabe</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">temperatur</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Heute ist es aber kalt!&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -720,19 +725,19 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 <li><p>Wenn die Zahl größer als 0 ist, soll ausgegeben werden: “Die Zahl ist positiv.”</p></li>
 <li><p>Wie viele if-Blöcke brauchen Sie für die Umsetzung dieser Mini-Übung?</p></li>
 </ul>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
-<span class="n">zahl</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Geben Sie bitte eine Zahl ein: &#39;</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
+<span class="n">zahl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Geben Sie bitte eine Zahl ein: &#39;</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% Verarbeitung und Ausgabe</span>
-<span class="k">if</span> <span class="n">zahl</span> <span class="o">&lt;</span> <span class="mi">0</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist negativ.&#39;</span><span class="p">);</span>
-<span class="k">end</span>
-<span class="k">if</span> <span class="n">zahl</span> <span class="o">==</span> <span class="mi">0</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist Null.&#39;</span><span class="p">);</span>
-<span class="k">end</span>
-<span class="k">if</span> <span class="n">zahl</span> <span class="o">&gt;</span> <span class="mi">0</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist positiv.&#39;</span><span class="p">);</span>
-<span class="k">end</span>
+<span class="c">% Verarbeitung und Ausgabe</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist negativ.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist Null.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist positiv.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Der Code erfordert drei if-Blöcke.</p>
@@ -743,15 +748,15 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 <p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise05"> Exercise 12</a></p>
 <div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das nach dem aktuellen Monat fragt (1 für Januar, 2 für Februar, 3 für März, usw.). Wenn der aktuelle Monat Januar bis Juni ist, soll ausgegeben werden: “Dieser Monat gehört zur 1. Jahreshälfte.” Ansonsten soll ausgegeben werden: “Dieser Monat gehört zur 2. Jahreshälfte.”</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
-<span class="n">monat</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Geben Sie bitte den aktuellen Monat ein, 1 für Januar, 2 für Februar usw.&#39;</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
+<span class="n">monat</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Geben Sie bitte den aktuellen Monat ein, 1 für Januar, 2 für Februar usw.&#39;</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% Verarbeitung und Ausgabe</span>
-<span class="k">if</span> <span class="n">monat</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">6</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Dieser Monat gehört zur 1. Jahreshälfte.&#39;</span><span class="p">);</span>
-<span class="k">else</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Dieser Monat gehört zur 2. Jahreshälfte.&#39;</span><span class="p">);</span>
-<span class="k">end</span>
+<span class="c">% Verarbeitung und Ausgabe</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">monat</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">6</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Dieser Monat gehört zur 1. Jahreshälfte.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Dieser Monat gehört zur 2. Jahreshälfte.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -761,15 +766,15 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 <p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise06"> Exercise 13</a></p>
 <div class="section" id="solution-content">
 <p>Schreiben Sie ein Skript, das nach der aktuellen Temperatur fragt. Wenn die aktuelle Temperatur kleiner gleich 3 ˚C ist, dann lassen Sie ausgeben: “Vorsicht, es besteht Glatteisgefahr!” und ansonsten “Kein Grund zur Sorge.”</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
-<span class="n">temperatur</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Welche Temperatur haben wir aktuell?&#39;</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
+<span class="n">temperatur</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Welche Temperatur haben wir aktuell?&#39;</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% Verarbeitung und Ausgabe</span>
-<span class="k">if</span> <span class="n">temperatur</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">3</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Vorsicht, es besteht Glatteisgefahr!&#39;</span><span class="p">);</span>
-<span class="k">else</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Kein Grund zur Sorge.&#39;</span><span class="p">)</span>
-<span class="k">end</span>
+<span class="c">% Verarbeitung und Ausgabe</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">temperatur</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Vorsicht, es besteht Glatteisgefahr!&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Kein Grund zur Sorge.&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -780,31 +785,31 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 <div class="section" id="solution-content">
 <p>Sie finden den aktuellen Bußgeldkatalog für Geschwindigkeitsüberschreitungen mit dem PKW im Internet auf der Seite: <a class="reference external" href="https://www.bussgeldkatalog.org/geschwindigkeitsueberschreitung/">https://www.bussgeldkatalog.org/geschwindigkeitsueberschreitung/</a></p>
 <p>Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsüberschreitung ausgibt, welche Strafe in Euro verhängt wird.</p>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
-<span class="n">verstoss</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Wieviel zu schnell ist die Person gefahren? &#39;</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
+<span class="n">verstoss</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Wieviel zu schnell ist die Person gefahren? &#39;</span><span class="p">)</span><span class="w"></span>
 
-<span class="c">% Verarbeitung und Ausgabe</span>
-<span class="k">if</span> <span class="n">verstoss</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">10</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;20 EUR&#39;</span><span class="p">);</span>
-<span class="k">elseif</span> <span class="n">verstoss</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">15</span> 
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;40 EUR&#39;</span><span class="p">);</span>
-<span class="k">elseif</span> <span class="n">verstoss</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">20</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;60 EUR&#39;</span><span class="p">);</span>
-<span class="k">elseif</span> <span class="n">verstoss</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">25</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;100 EUR&#39;</span><span class="p">);</span>
-<span class="k">elseif</span> <span class="n">verstoss</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">30</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;150 EUR&#39;</span><span class="p">);</span>
-<span class="k">elseif</span> <span class="n">verstoss</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">40</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;200 EUR&#39;</span><span class="p">);</span>
-<span class="k">elseif</span> <span class="n">verstoss</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">50</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;320 EUR&#39;</span><span class="p">);</span>
-<span class="k">elseif</span> <span class="n">verstoss</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">60</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;480 EUR&#39;</span><span class="p">);</span>
-<span class="k">elseif</span> <span class="n">verstoss</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">70</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;600 EUR&#39;</span><span class="p">);</span>
-<span class="k">else</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;700 EUR&#39;</span><span class="p">);</span>
-<span class="k">end</span>
+<span class="c">% Verarbeitung und Ausgabe</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">verstoss</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;20 EUR&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">verstoss</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;40 EUR&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">verstoss</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">20</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;60 EUR&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">verstoss</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">25</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;100 EUR&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">verstoss</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">30</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;150 EUR&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">verstoss</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">40</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;200 EUR&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">verstoss</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">50</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;320 EUR&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">verstoss</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">60</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;480 EUR&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">verstoss</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">70</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;600 EUR&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;700 EUR&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -822,23 +827,23 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 <li><p>&lt;= 30 ˚C ist, dann Ausgabe: “Es ist heiß!”</p></li>
 <li><p>&lt; 30 ˚C ist, dann Ausgabe: “Das ist ja nicht mehr auszuhalten heiß!!!”</p></li>
 </ul>
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span>
-<span class="n">temperatur</span> <span class="p">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Welche Temperatur haben wir aktuell? &#39;</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
+<span class="n">temperatur</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Welche Temperatur haben wir aktuell? &#39;</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% Verarbeitung und Ausgabe</span>
-<span class="k">if</span> <span class="n">temperatur</span> <span class="o">&lt;</span><span class="p">=</span> <span class="o">-</span> <span class="mi">10</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Es ist bitterkalt.&#39;</span><span class="p">);</span>
-<span class="k">elseif</span> <span class="n">temperatur</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">0</span> 
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Es ist kalt.&#39;</span><span class="p">);</span>
-<span class="k">elseif</span> <span class="n">temperatur</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">10</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Es ist kühl, aber OK.&#39;</span><span class="p">);</span>
-<span class="k">elseif</span> <span class="n">temperatur</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">20</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Es ist frühlingshaft.&#39;</span><span class="p">);</span>
-<span class="k">elseif</span> <span class="n">temperatur</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">30</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Es ist heiß!&#39;</span><span class="p">);</span>
-<span class="k">else</span>
-    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Das ist ja nicht mehr auszuhalten heiß!&#39;</span><span class="p">)</span>
-<span class="k">end</span>
+<span class="c">% Verarbeitung und Ausgabe</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">temperatur</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Es ist bitterkalt.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">temperatur</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Es ist kalt.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">temperatur</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Es ist kühl, aber OK.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">temperatur</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">20</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Es ist frühlingshaft.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">elseif</span><span class="w"> </span><span class="n">temperatur</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">30</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Es ist heiß!&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Das ist ja nicht mehr auszuhalten heiß!&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

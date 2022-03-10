@@ -12,7 +12,7 @@ In der letzten Vorlesung haben wir den boolschen Datentyp kennengelernt: wahr od
 
 Beispiel beim Busfahren: Kinder unter 6 Jahren können kostenlos Bus fahren. Ab 6 Jahren braucht man eine Fahrkarte. Bis 14 Jahre zahlt man den Kinderpreis, ab 15 Jahren den Erwachsenenpreis: 
 
-```octave
+```matlab
 alter = 12;
 if (6 <= alter) && (alter <= 14)
     disp('Du musst eine Kinderfahrkarte kaufen.');
@@ -48,7 +48,7 @@ In MATLAB wird die Kombination oder die sogeannte Verknüpfung zweier Bedingunge
 
 Beispiel: Zwei Personen wollen einen Kinofilm sehen, der erst ab 18 erlaubt ist. Nur wenn beide volljährig sind, können sie den Film gemeinsam besuchen:
 
-```octave
+```matlab
 alter_person1 = 19;
 alter_person2 = 22;
 if (alter_person1 >= 18) && (alter_person2 >= 18)
@@ -95,7 +95,7 @@ In MATLAB wird dies mit dem ||-Operator umgesetzt. Der senkrechte Strich findet 
 
 Beispiel: Zwei Personen wollen ein Auto mieten, dazu muss aber mindestens einer von den beiden den Führerschein besitzen.
 
-```octave
+```matlab
 person1_hat_fuehrerschein = true;
 person2_hat_fuehrerschein = false;
 
@@ -128,7 +128,7 @@ In MATLAB wird dies mit dem `~`-Operator umgesetzt. Das Zeichen `~` wird Tilde g
 
 Beispiel: Wenn eine Person keinen Führerschein hat, muss sie den Bus nehmen.
 
-```octave
+```matlab
 person_hat_fuehrerschein = false;
 
 if ~person_hat_fuehrerschein
@@ -159,7 +159,7 @@ Probieren Sie dann in der nächsten Code-Zelle aus, ob Sie die richtigen Ergebni
 
 Bei einer Wiederholung mit Bedingung wird eine Anweisung solange wiederholt, bis die Bedingung erfüllt wird. Sie hat folgende Struktur:
 
-```octave
+```matlab
 while Bedingung
     anweisungsblock
 end
@@ -169,7 +169,7 @@ Die bedingte Wiederholung wird mit dem Schlüsselwort `while` eingeleitet. Dann 
 
 Beispiel: Wir möchten ein Programm schreiben, bei dem der Benutzer solange Zahlen eingeben darf, die quadriert werden, bis die Null eingegeben wird. Dies würde in MATLAB wie folgt umgesetzt:
 
-```octave
+```matlab
 disp('Dieses Programm quadriert ganze Zahlen solange, ');
 disp('bis Sie die 0 eingeben.');
 zahl = input('Bitte geben Sie die 1. Zahl ein: ');
@@ -183,7 +183,7 @@ disp('Sie haben die 0 eingegeben. Hiermit wird das Programm beendet.')
 
 Ein anderes Beispiel, das oft in der Programmierung vorkommt ist, dass eine Variable gezählt wird. Dafür werden wir in einer späteren Vorlesung noch eine Alternative kennenlernen. Hier ein Beispiel, bei der eine Variable "hochgezählt" wird:
 
-```octave
+```matlab
 zaehler = 1;
 while zaehler <= 10
     disp(zaehler);
@@ -211,7 +211,7 @@ In diesem MATLAB Live Skript haben wir uns eingehend mit der Kombination von Bed
 :class: dropdown
 Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn das Alter der Person zwischen 6 und 10 liegt, soll das Programm ausgeben "Wahrscheinlich gehst Du in die Grundschule."
 
-```octave
+```matlab
 % Eingabe
 alter = input('Wie alt sind Sie?');
 
@@ -232,7 +232,7 @@ Schreiben Sie ein Skript und lassen Sie den MATLAB-Interpreter nach einem Monat 
 * für Monate September, Oktober, November: Herbst
 * für Monate Dezember, Januar, Februar: Winter 
 
-```octave
+```matlab
 % Eingabe
 monat = input('Geben Sie den aktuellen Monat ein, 1 für Januar, 2 für Februar, usw.')
 
@@ -254,7 +254,7 @@ end
 :class: dropdown
 Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person 0 bis 17 ist, soll das Programm ausgeben: "Wahrscheinlich bist Du noch nicht berufstätig". Zwischen 18 und 67 soll ausgegeben werden "Wahrscheinlich sind Sie berufstätig." und bei Personen zwischen 68 und 120 "Wahrscheinlich sind Sie nicht mehr berufstätig."
 
-```octave
+```matlab
 % Eingabe
 alter =  input('Alter: ');
 
@@ -276,7 +276,7 @@ end
 :class: dropdown
 Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person jünger als 18 ist oder älter als 67, soll das Programm ausgeben: "Wahrscheinlich sind Sie/bist Du nicht berufstätig."
 
-```octave
+```matlab
 % Eingabe
 alter =  input('Alter: ');
 
@@ -292,7 +292,7 @@ end
 :class: dropdown
 Schreiben Sie ein Skript, das nach der Länge der beiden Seiten eines rechtwinkligen Dreiecks fragt, die am rechten Winkel anliegen (= Katheten). Wenn eine der beiden Seitenlängen oder beide negativ sind, soll das Programm ausgeben: "Fehler, negative Seitenlängen gibt es nicht!" und ansonsten soll das Skript die Länge der dritten Seite (= Hypotenuse) mit dem Satz des Pythagoras berechnen und das Ergebnis ausgeben.
 
-```octave
+```matlab
 % Eingabe 
 disp('Bitte geben Sie die Längen der Katheten eines rechtwinkligen Dreiecks ein:');
 a = input('Länge Seite a: ');
@@ -321,7 +321,7 @@ end
 
 Probieren Sie dann in der nächsten Code-Zelle aus, ob Sie die richtigen Ergebnisse hatten, indem Sie beispielsweise wahr und wahr in MATLAB ausprobieren, also beispielsweise `true && true` eingeben:
 
-```octave
+```matlab
 % wahr UND wahr
 true && true
 
@@ -355,7 +355,7 @@ Anmerkung: Der MATLAB-Interpreter merkt, dass ein Vergleich wie beispielsweise `
 :class: dropdown
 Schreiben Sie ein Skript, das die Quadratzahlen für 10 bis 20 ausgibt, d.h. es sollen die Zahlen 100, 121, ... , 400 ausgegeben werden.
 
-```octave
+```matlab
 % Eingabe Startzahl
 zahl = 10;
 
@@ -372,7 +372,7 @@ end
 :class: dropdown
 Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin auffordert, eine positive Zahl einzugeben. Falls dabei jedoch fälschlicherweise eine negative Zahl oder die Null eingegeben wird, soll der Computer solange weiter fragen, bis endlich eine positive Zahl eingegeben wird.
 
-```octave
+```matlab
 % Eingabe
 x = input('Bitte geben Sie eine positive ganze Zahl ein: ');
 
