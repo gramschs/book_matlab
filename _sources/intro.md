@@ -1,11 +1,15 @@
-# Welcome to your Jupyter Book
+# Willkommen zum Lernkurs MATLAB für Studierende der Ingenieurwissenschaften
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+Die Digitalisierung in den Ingenieurwissenschaften nimmt immer stärker zu. Daher bietet dieser MATLAB-Kurs zukünftigen Ingenieur:innen einen Einstieg in die grundlegenden Programmiertechniken mit MATLAB. Jedes Kapitel entspricht dabei einer Vorlesung von 90 min Dauer. 
 
-Check out the content pages bundled with this sample book to see more.
+```{tip}
+Programmieren lernt man nur durch Programmieren!
+```
 
+Starten Sie parallel zum Durcharbeiten der Kursmaterialien MATLAB. Gerne können Sie sich jedes Kapitel dieses Kurses als **interaktives MATLAB Live Skript** herunterladen. Der Inhalt des interaktiven MATLAB Live Skripts ist mit dieser Buchansicht identisch, bietet Ihnen aber die Möglichkeit, Code zu verändern und direkt das Gelernte auszuprobieren. Daher sind auch in jedem Kapitel kleine Mini-Übungen von ca. 5 min Dauer integriert, die den dort behandelten Stoff aufgreifen. **Nehmen Sie sich die Zeit, sofort die Mini-Übungen zu probieren, bevor Sie weiterlesen!** Musterlösungen zu diesen Mini-Übungen befinden sich jeweils am Ende jedes Kapitels.
+
+Zwei Kapitel über Visualisierung von Daten und lineare Regression mit MATLAB runden den Lernkurs ab, um Ihnen einen ersten Einstieg in die Welt des Data Science zu bieten.
+
+Inhaltsverzeichnis:
 ```{tableofcontents}
 ```
