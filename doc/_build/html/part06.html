@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Part 6 &#8212; MATLAB für Studierende der Ingenieurwissenschaften</title>
+    <title>Funktionen &#8212; MATLAB für Studierende der Ingenieurwissenschaften</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -48,8 +49,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Schleifen zum Zählen (“for”)" href="part05.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -89,11 +93,11 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   Welcome to your Jupyter Book
+   Willkommen zum Lernkurs MATLAB für Studierende der Ingenieurwissenschaften
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="part01.html">
    Einstieg in die Programmierung mit MATLAB
@@ -106,7 +110,22 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="part03.html">
-   Part 3
+   Digitale Logik und Schleifen mit Bedingungen (“while”)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="part04.html">
+   Komplexere Datentypen: Array, String und formatierte Ausgaben
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="part05.html">
+   Schleifen zum Zählen (“for”)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Funktionen
   </a>
  </li>
 </ul>
@@ -166,13 +185,10 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/gramschs/book_matlab"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpart06.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
         
     </div>
 </div>
@@ -191,6 +207,49 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#einfuhrung-und-lernziele">
+   Einführung und Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#die-benutzung-von-funktionen-aufruf">
+   Die Benutzung von Funktionen (= Aufruf)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#einfache-funktionen-ohne-parameter">
+   Einfache Funktionen ohne Parameter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionen-mit-eingabeparametern">
+   Funktionen mit Eingabeparametern
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionen-mit-ruckgabewerten">
+   Funktionen mit Rückgabewerten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zusammenfassung">
+   Zusammenfassung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#losungen-zu-den-mini-ubungen">
+   Lösungen zu den Mini-Übungen
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -198,19 +257,450 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Part 6</h1>
+                <h1>Funktionen</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#einfuhrung-und-lernziele">
+   Einführung und Lernziele
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#die-benutzung-von-funktionen-aufruf">
+   Die Benutzung von Funktionen (= Aufruf)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#einfache-funktionen-ohne-parameter">
+   Einfache Funktionen ohne Parameter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionen-mit-eingabeparametern">
+   Funktionen mit Eingabeparametern
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionen-mit-ruckgabewerten">
+   Funktionen mit Rückgabewerten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zusammenfassung">
+   Zusammenfassung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#losungen-zu-den-mini-ubungen">
+   Lösungen zu den Mini-Übungen
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="part-6">
-<h1>Part 6<a class="headerlink" href="#part-6" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="funktionen">
+<h1>Funktionen<a class="headerlink" href="#funktionen" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="einfuhrung-und-lernziele">
+<h2>Einführung und Lernziele<a class="headerlink" href="#einfuhrung-und-lernziele" title="Permalink to this headline">¶</a></h2>
+<p>Eine Funktion in der Informatik ist eine Zusammenfassung von Code, der eine
+bestimmte Teilaufgabe löst. Dabei arbeitet die Funktion nach dem EVA-Prinzip.
+Die Funktion übernimmt Objekte als Eingabe, verarbeitet diese und liefert
+Objekte als Ergebnis zurück. Wie die Funktion dabei im Inneren genau
+funktioniert (Verarbeitung), ist unwichtig.</p>
+<p>Beispielsweise gibt es die Funktion <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code>. Wir wissen, dass wir der Funktion
+eine Zahl übergeben müssen (Eingabe), z.B. <code class="docutils literal notranslate"><span class="pre">sqrt(5)</span></code>. Die Funktion liefert dann
+als Ergebnis <span class="math notranslate nohighlight">\(\sqrt{5}\)</span>  zurück (Ausgabe). Welches Verfahren zur Berechnung der
+Wurzel verwendet wurde, wissen wir nicht.</p>
+<p>Insbesondere muss die Teilaufgabe, die die Funktion löst, nichts mit Mathematik
+zu tun haben. Eine Funktion in der Informatik hat nichts mit einer
+mathematischen Funktion zu tun, auch wenn oft mathematische Funktionen als
+Beispiel verwendet werden. Ein Beispiel für eine nicht-mathematische Funktion
+haben Sie mit <code class="docutils literal notranslate"><span class="pre">disp()</span></code> bereits kennengelernt. In diesem MATLAB Live Script
+werden wir uns damit beschäftigen, wie eigene Funktionen in MATLAB implementiert
+werden. Zuerst werden wir uns nochmal den <strong>Aufruf einer Funktion</strong> genauer
+ansehen. Danach geht es an das Schreiben eigener <strong>einfacher Funktionen</strong>, die
+noch keinen Input und keinen Output haben. Zuletzt wenden wir uns den
+<strong>erweiterten Funktionen</strong> mit Input und Output zu.</p>
+</div>
+<div class="section" id="die-benutzung-von-funktionen-aufruf">
+<h2>Die Benutzung von Funktionen (= Aufruf)<a class="headerlink" href="#die-benutzung-von-funktionen-aufruf" title="Permalink to this headline">¶</a></h2>
+<p>Wenn eine Funktion im Code eingesetzt bzw. benutzt wird, so nennt man das in der
+Informatik einen <strong>Aufruf der Funktion</strong> oder man sagt auch: “Die Funktion wird
+aufgerufen.”</p>
+<p>Der einfachste Aufruf einer Funktion ohne eine direkte Rückgabe hat folgende
+Syntax:</p>
+<p><code class="docutils literal notranslate"><span class="pre">funktion(</span> <span class="pre">argument1,</span> <span class="pre">argument2,</span> <span class="pre">...)</span></code></p>
+<p>Eine Funktion wird benutzt, indem man den Namen der Funktion hinschreibt und
+dann in runden Klammern ihre <strong>Eingabeparameter</strong>, die sogenannten <strong>Argumente</strong>
+der Funktion, angibt. Welche Argumente für eine Funktion verwendet werden
+dürfen, hängt von der Implementierung der Funktion ab.</p>
+<p>Beispielsweise kann als Argument für die <code class="docutils literal notranslate"><span class="pre">size()</span></code>-Funktion ein String übergeben
+werden oder ein Array:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">size</span><span class="p">(</span><span class="s">&quot;Hallo&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="nb">size</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">])</span><span class="w"></span>
+</pre></div>
+</div>
+<p>In der Regel geben Funktionen aber wieder Ergebnisse zurück. Diese können einer
+Variable zugewiesen werden, um mit dem Ergebnis weiter zu arbeiten. Die Syntax
+sieht dann folgendermaßen aus:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[output1,</span> <span class="pre">output2,</span> <span class="pre">...]</span> <span class="pre">=</span> <span class="pre">funktion(</span> <span class="pre">argument1,</span> <span class="pre">argument2,</span> <span class="pre">...)</span></code></p>
+<p>Das Ergebnis, das eine Funktion ausspuckt, wird <strong>Rückgabewert</strong> oder manchmal
+kurz <strong>Rückgabe</strong> genannt.</p>
+<p>Als in der obigen Code-Zelle die MATLAB-Funktion <code class="docutils literal notranslate"><span class="pre">size()</span></code> aufgerufen wurde,
+wurde der Rückgabewert direkt angezeigt. Das liegt daran, dass wir das Semikolon
+am Ende der Zeile nicht gesetzt haben. Anders als mit dem Kommando <code class="docutils literal notranslate"><span class="pre">whos</span></code>, das
+die Dimension nur anzeigen kann, können wir uns nun aber die Dimension auch für
+die spätere Verwendung in Variablen abspeichern. Dazu speichern wir mit der oben
+angegebenen Syntax die Rückgabewerte der <code class="docutils literal notranslate"><span class="pre">size()</span></code>-Funktion in zwei Variablen
+namens <code class="docutils literal notranslate"><span class="pre">zeilen</span></code> und <code class="docutils literal notranslate"><span class="pre">spalten</span></code>.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Array</span><span class="w"></span>
+<span class="n">array</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">];</span><span class="w"></span>
+
+<span class="c">% Bestimmung der Dimension</span><span class="w"></span>
+<span class="p">[</span><span class="n">zeilen</span><span class="p">,</span><span class="w"> </span><span class="n">spalten</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">array</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Ausgabe</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">zeilen</span><span class="p">)</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">spalten</span><span class="p">)</span><span class="w"></span>
+
+<span class="c">% Gegenkontrolle mit whos</span><span class="w"></span>
+<span class="nb">whos</span><span class="w"> </span><span class="n">array</span><span class="w"></span>
+
+<span class="c">% Beispiel für weitere Verarbeitung</span><span class="w"></span>
+<span class="n">anzahl_elemente</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">zeilen</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">spalten</span><span class="p">;</span><span class="w"></span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Das Array hat %d Zeilen und %d Spalten, also insgesamt %d Elemente.\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="n">zeilen</span><span class="p">,</span><span class="w"> </span><span class="n">spalten</span><span class="p">,</span><span class="w"> </span><span class="n">anzahl_elemente</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Wenn der Rückgabewert einer Funktion kein Array ist, sondern nur ein einfacher
+Datentyp wie beispielsweise ein Integer oder ein Float, so können wir die
+eckigen Klammern auch weglassen und die Rückgabe direkt in einer Variablen
+abspeichern.</p>
+<p>Schauen wir uns beispielweise die Wurzel aus 7 an:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">wurzel</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">wurzel</span><span class="p">)</span><span class="w"></span>
+
+<span class="c">% zur Kontrolle quadrieren wir die Wurzel aus 7 wieder</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">wurzel</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">wurzel</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="einfache-funktionen-ohne-parameter">
+<h2>Einfache Funktionen ohne Parameter<a class="headerlink" href="#einfache-funktionen-ohne-parameter" title="Permalink to this headline">¶</a></h2>
+<p>Die allgemeine Syntax zur Definition einer eigenen Funktion sieht wie folgt aus:</p>
+<p><code class="docutils literal notranslate"><span class="pre">function</span> <span class="pre">funktionsname():</span></code></p>
+<p><code class="docutils literal notranslate">&#160;&#160;&#160; <span class="pre">anweisung01</span></code></p>
+<p><code class="docutils literal notranslate">&#160;&#160;&#160; <span class="pre">anweisung02</span></code></p>
+<p><code class="docutils literal notranslate">&#160;&#160;&#160;&#160; <span class="pre">...</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">end</span></code></p>
+<p>Zuerst signalisiert man dem MATLAB-Interpreter, dass eine Funktion definiert
+werden soll, indem man das Schlüsselwort <code class="docutils literal notranslate"><span class="pre">function</span></code> verwendet. Danach wählt man
+den Namen der Funktion. Der Name darf weder Leerzeichen noch andere
+Sonderzeichen. Auch ist es verboten, einen Namen zu benutzen, der schon als
+Schlüsselwort existiert. Sie dürfen eine Funktion also nicht <code class="docutils literal notranslate"><span class="pre">if</span></code> oder <code class="docutils literal notranslate"><span class="pre">while</span></code>
+nennen. Beendet wird die Implementierung der Funktion mit dem Schlüsselwort
+<code class="docutils literal notranslate"><span class="pre">end</span></code>.</p>
+<p>Leider müssen Funktionen bei MATLAB in eine eigene Datei geschrieben werden, die
+den gleichen Namen hat, wie der Funktionsname oder alternativ ganz am Ende eines
+MATLAB Live Scripts stehen. Schauen Sie sich daher am Ende dieses Live Scripts
+die Funktion gruesse_ausrichten() an. Wenn Sie diesen MATLAB-Kurs im Buchformat
+im Browser lesen, können Sie die Implementierung auch hier nachsehen:</p>
+<div class="toggle docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">gruesse_ausrichten</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Ich grüße Sie!&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<p>Hier wird die Funktion gruesse_ausrichten() verwendet.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">gruesse_ausrichten</span><span class="p">()</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Und natürlich kann man die Funktion in Programmverzweigungen und Schleifen
+einbauen. Hier eine Schleife:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="w"></span>
+<span class="w">    </span><span class="n">gruesse_ausrichten</span><span class="p">()</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Hier ein Beispiel, bei dem die Funktion in eine Programmverzweigung eingebaut
+wurde (denken Sie daran, die Antwort auf die Frage muss im Command Window
+eingegeben werden):</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">soll_gegruesst_werden</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Soll gegrüßt werden? Geben Sie bitte 1 ein für ja und ansonsten 0: &#39;</span><span class="p">)</span><span class="w"></span>
+
+<span class="k">if</span><span class="w"> </span><span class="n">soll_gegruesst_werden</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">    </span><span class="n">gruesse_ausrichten</span><span class="p">()</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Auf Wiedersehen!&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="exercise admonition" id="part06_miniexercise01">
+
+<p class="admonition-title"><span class="caption-number">Exercise 40 </span></p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie eine Funktion mit dem Namen <code class="docutils literal notranslate"><span class="pre">gruessen()</span></code>, die 5x hintereinander
+das Wort “Hallo!” schreibt. Fügen Sie die Funktion ganz am Ende in das MATLAB
+Live Script in die letzte Code-Zelle ein, aber testen Sie die Funktion dann
+hier, indem Sie die folgende Code-Zelle ausführen:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Test der Funktion gruessen() </span><span class="w"></span>
+<span class="n">gruessen</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition" id="part06_miniexercise02">
+
+<p class="admonition-title"><span class="caption-number">Exercise 41 </span></p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie eine Funktion mit dem Namen <code class="docutils literal notranslate"><span class="pre">lotto()</span></code>, die sechs Zufallszahlen
+zwischen 1 und 49 erzeugt und anzeigt. Fügen Sie die Funktion ganz am Ende in
+das MATLAB Live Script in die letzte Code-Zelle ein, aber testen Sie die
+Funktion dann hier, indem Sie die folgende Code-Zelle ausführen:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Test der Funktion lotto()</span><span class="w"></span>
+<span class="n">lotto</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="funktionen-mit-eingabeparametern">
+<h2>Funktionen mit Eingabeparametern<a class="headerlink" href="#funktionen-mit-eingabeparametern" title="Permalink to this headline">¶</a></h2>
+<p>Meistens haben Funktionen <strong>Eingabeparameter</strong> oder <strong>Argumente</strong>, um <strong>Input</strong>
+entgegennehmen und verarbeiten zu können. Bei der Definitin der Funktion
+erhalten die verschiedenen Argumente jeweils einen eigenen Namen, so dass dann
+im Inneren der Funktion mit diesen Variablennamen weitergearbeitet werden kann.</p>
+<p>Die allgemeine Syntax zur Definition einer eigenen Funktion mit Parametern sieht
+wie folgt aus:</p>
+<p><code class="docutils literal notranslate"><span class="pre">function</span> <span class="pre">funktionsname(argument1,</span> <span class="pre">argument2,</span> <span class="pre">...,</span> <span class="pre">argumentN):</span></code></p>
+<p><code class="docutils literal notranslate">&#160;&#160;&#160; <span class="pre">anweisung01</span></code></p>
+<p><code class="docutils literal notranslate">&#160;&#160;&#160; <span class="pre">anweisung02</span></code></p>
+<p><code class="docutils literal notranslate">&#160;&#160;&#160;&#160; <span class="pre">...</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">end</span></code></p>
+<p>In unserem erste Beispiel schauen wir uns eine Funktion an, die nur ein Argument
+also einen Eingabeparameter hat.</p>
+<p>Beispiel: Wenn Sie das MATLAB  Live Skript benutzten, schauen Sie bitte wieder
+ganz unten nach der Funktion gruesse_ausrichten_mit_parameter(). Wenn Sie dieses
+Buch im Browser lesen, klappen Sie hier den Code auf.</p>
+<div class="toggle docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">gruesse_ausrichten_mit_parameter</span><span class="p">(</span>name<span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Ich grüße %s&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">gruesse_ausrichten_mit_parameter</span><span class="p">(</span><span class="s">&#39;Alice&#39;</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Sind Funktionen ohne Rückgabewert sinnvoll?</p>
+<p>Ja, denn so können Codeblöcke vereinfacht werden. Sollte in einem Programm Code
+mehrmals ausgeführt werden, lohnt es sich, diesen in eine Funktion auszulagern,
+um diese einfach aufrufen zu können.</p>
+<div class="exercise admonition" id="part06_miniexercise03">
+
+<p class="admonition-title"><span class="caption-number">Exercise 42 </span></p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie eine Funktion, die das Wort Hallo mehrfach ausgibt. Dabei soll die
+Funktion als Parameter eine ganze Zahl entgegennehmen. Dann wird das Wort Hallo
+so oft wiederholt ausgegeben, wie in dem Argument angegeben wurde.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Testen Sie Ihre Funktion hier, Funktionscode separat </span><span class="w"></span>
+<span class="n">wiederholtes_hallo</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition" id="part06_miniexercise04">
+
+<p class="admonition-title"><span class="caption-number">Exercise 43 </span></p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie eine Funktion, die als Parameter eine Zahl entgegennimmt. Dann
+produziert diese Funktion die folgende Ausgabe: Das Quadrat der Zahl xx ist xx.
+(Natürlich soll anstatt xx hier jeweils die richtige Zahl und die richtige
+Quadratzahl stehen.)</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Testen Sie Ihre Funktion hier, Funktionscode separat</span><span class="w"></span>
+<span class="n">quadratzahlen</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="funktionen-mit-ruckgabewerten">
+<h2>Funktionen mit Rückgabewerten<a class="headerlink" href="#funktionen-mit-ruckgabewerten" title="Permalink to this headline">¶</a></h2>
+<p>Aus didaktischen Gründen haben wir zunächst nur Funktionen selbst geschrieben,
+die zwar Eingabeparameter bzw. Argumente haben, aber keine Rückgaben liefern.
+Solche Funktionen sind sinnvoll, wenn es darum geht, bestimmte Code-Abschnitte
+auszulagern, um den Programmfluss übersichtlicher zu gestalten. Häufiger kommen
+jedoch in der Praxis Funktionen vor, die auch einen oder mehrere Rückgabewerte
+liefern.</p>
+<p>Eine Funktion mit Eingabeparametern und Rückgabewerten wird wie folgt
+implementiert:</p>
+<p><code class="docutils literal notranslate"><span class="pre">function</span> <span class="pre">[output1,</span> <span class="pre">output2,</span> <span class="pre">...,</span> <span class="pre">outputN]</span> <span class="pre">=</span> <span class="pre">funktionsname(argument1,</span> <span class="pre">argument2,</span> <span class="pre">...,</span> <span class="pre">argumentN)</span></code></p>
+<p><code class="docutils literal notranslate">&#160;&#160;&#160; <span class="pre">anweisung01</span></code></p>
+<p><code class="docutils literal notranslate">&#160;&#160;&#160; <span class="pre">anweisung02</span></code></p>
+<p><code class="docutils literal notranslate">&#160;&#160;&#160;&#160; <span class="pre">...</span></code></p>
+<p><code class="docutils literal notranslate">&#160;&#160;&#160; <span class="pre">output1</span> <span class="pre">=</span> <span class="pre">...</span></code></p>
+<p><code class="docutils literal notranslate">&#160;&#160;&#160; <span class="pre">output2</span> <span class="pre">=</span> <span class="pre">...</span></code></p>
+<p><code class="docutils literal notranslate">&#160;&#160;&#160;&#160; <span class="pre">....</span></code></p>
+<p><code class="docutils literal notranslate">&#160;&#160;&#160; <span class="pre">outputN</span> <span class="pre">=</span> <span class="pre">...</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">end</span></code></p>
+<p>Die Definition der Funktion startet mit dem Schlüsselwort <code class="docutils literal notranslate"><span class="pre">function</span></code>. Danach
+werden die Variablennamen der Rückgabewerte in eckigen Klammern aufgelistet.
+Nach dem Zuweisungsoperator kommt der Name der Funktion und in runden Klammern
+die Eingabeparameter/Argumente. Im Inneren der Funktion können verschiedenste
+Anweisungen stehen. Die Rückgabewerte müssen aber im Laufe der Verarbeitung im
+Inneren der Funktion auch Werte erhalten, sonst können sie am Ende nichts
+zurückliefern.</p>
+<p>Im folgenden Beispiel soll aus den beiden Seitenlängen <span class="math notranslate nohighlight">\(a\)</span> und <span class="math notranslate nohighlight">\(b\)</span> eines
+Rechtsecks der Flächeninhalt <span class="math notranslate nohighlight">\(A\)</span> des Rechtsecks und der Umfang <span class="math notranslate nohighlight">\(U\)</span> des Rechtecks
+berechnet und zurückgegeben werden. Sehen Sie sich bitte die Implementierung der
+Funktion <code class="docutils literal notranslate"><span class="pre">berechne_rechteck()</span></code> am Ende dieses Live Skripts an (oder alternativ
+klappen Sie den Code auf, wenn Sie dieses Buch im Browser lesen):</p>
+<div class="toggle docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[flaeche, umfang] = berechne_rechteck</span><span class="p">(</span>seite1, seite2<span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">flaeche</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">seite1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">seite2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">umfang</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">seite1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">seite2</span><span class="p">;</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% a = 3, b = 4</span><span class="w"></span>
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
+
+<span class="c">% Ergebnis sollte sein: Fläche A = a * b = 12 und Umfang U = 2 * a + 2 * b = 14</span><span class="w"></span>
+<span class="p">[</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">U</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">berechne_rechteck</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span><span class="w"></span>
+
+<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="exercise admonition" id="part06_miniexercise05">
+
+<p class="admonition-title"><span class="caption-number">Exercise 44 </span></p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie eine Funktion, die vier Zahlen als Argument entgegennimmt und dann
+die Summe der vier Zahlen und den Mittelwert der vier Zahlen zurückgibt. Testen
+Sie anschließend Ihre Funktion hier mit den Beispielzahlen 3.5, 6.3, -17.7 und 2
+(Ergebnis sollte sein: Summe -5.900 und Mittelwert -1.475).</p>
+</div>
+</div>
+<div class="exercise admonition" id="part06_miniexercise06">
+
+<p class="admonition-title"><span class="caption-number">Exercise 45 </span></p>
+<div class="section" id="exercise-content">
+<p>Schreiben Sie eine Funktion, die den Radius eines Kreises als Argument
+entgegennimmt und dann den Umfang und die Fläche des Kreises zurückgibt. Testen
+Sie anschließend Ihre Funktion hier mit dem Beispielradius r = 5 (Ergebnis
+sollte sein: Umfang 31.4159, Fläche 78.5398).</p>
+</div>
+</div>
+</div>
+<div class="section" id="zusammenfassung">
+<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">¶</a></h2>
+<p>Mit der Implementierung eigener Funktionen haben wir nun eine fortgeschrittene
+Programmiertechnik kennengelernt. Das Ziel von Funktionen ist es, Code
+zusammenzufassen, der eine bestimmte Teilaufgabe innerhalb des Programms lösen
+soll. Dadurch gelingt es Programmiererinnen und Programmierern, das
+Hauptprogramm strukturierter und übersichtlicher zu halten. Auch kann man eine
+große Programmieraufgabe in kleinere Teilaufgaben zerlegen und zunächst die
+Teilaufgaben lösen und vor allem testen. Zuletzt setzt man die Lösung der
+kompletten Programmieraufgabe aus den Lösungen der Teilaufgaben, also den
+Funktionen zusammen.</p>
+<p>Funktionen sind der erste Schritt zur Modularisierung von Code.
+Objektorientierte Programmierung mit Klassen wäre der nächste Schritt, den wir
+in diesen Skripten jedoch nicht mehr gehen werden.</p>
+</div>
+<div class="section" id="losungen-zu-den-mini-ubungen">
+<h2>Lösungen zu den Mini-Übungen<a class="headerlink" href="#losungen-zu-den-mini-ubungen" title="Permalink to this headline">¶</a></h2>
+<div class="solution dropdown admonition" id="part06_minisolution01">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part06_miniexercise01"> Exercise 40</a></p>
+<div class="section" id="solution-content">
+<p>Schreiben Sie eine Funktion mit dem Namen <code class="docutils literal notranslate"><span class="pre">gruessen()</span></code>, die 5x hintereinander
+das Wort “Hallo!” schreibt. Fügen Sie die Funktion ganz am Ende in das MATLAB
+Live Script in die letzte Code-Zelle ein, aber testen Sie die Funktion dann
+hier, indem Sie die folgende Code-Zelle ausführen:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Test der Funktion gruessen() </span><span class="w"></span>
+<span class="n">gruessen</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part06_minisolution02">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part06_miniexercise02"> Exercise 41</a></p>
+<div class="section" id="solution-content">
+<p>Schreiben Sie eine Funktion mit dem Namen <code class="docutils literal notranslate"><span class="pre">lotto()</span></code>, die sechs Zufallszahlen
+zwischen 1 und 49 erzeugt und anzeigt. Fügen Sie die Funktion ganz am Ende in
+das MATLAB Live Script in die letzte Code-Zelle ein, aber testen Sie die
+Funktion dann hier, indem Sie die folgende Code-Zelle ausführen:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Test der Funktion lotto()</span><span class="w"></span>
+<span class="n">lotto</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part06_minisolution03">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part06_miniexercise03"> Exercise 42</a></p>
+<div class="section" id="solution-content">
+<p>Schreiben Sie eine Funktion, die das Wort Hallo mehrfach ausgibt. Dabei soll die
+Funktion als Parameter eine ganze Zahl entgegennehmen. Dann wird das Wort Hallo
+so oft wiederholt ausgegeben, wie in dem Argument angegeben wurde.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Testen Sie Ihre Funktion hier, Funktionscode separat </span><span class="w"></span>
+<span class="n">wiederholtes_hallo</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part06_minisolution04">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part06_miniexercise04"> Exercise 43</a></p>
+<div class="section" id="solution-content">
+<p>Schreiben Sie eine Funktion, die als Parameter eine Zahl entgegennimmt. Dann
+produziert diese Funktion die folgende Ausgabe: Das Quadrat der Zahl xx ist xx.
+(Natürlich soll anstatt xx hier jeweils die richtige Zahl und die richtige
+Quadratzahl stehen.)</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Testen Sie Ihre Funktion hier, Funktionscode separat</span><span class="w"></span>
+<span class="n">quadratzahlen</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part06_minisolution05">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part06_miniexercise05"> Exercise 44</a></p>
+<div class="section" id="solution-content">
+<p>Schreiben Sie eine Funktion, die vier Zahlen als Argument entgegennimmt und dann
+die Summe der vier Zahlen und den Mittelwert der vier Zahlen zurückgibt. Testen
+Sie anschließend Ihre Funktion hier mit den Beispielzahlen 3.5, 6.3, -17.7 und 2
+(Ergebnis sollte sein: Summe -5.900 und Mittelwert -1.475).</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part06_minisolution06">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part06_miniexercise06"> Exercise 45</a></p>
+<div class="section" id="solution-content">
+<p>Schreiben Sie eine Funktion, die den Radius eines Kreises als Argument
+entgegennimmt und dann den Umfang und die Fläche des Kreises zurückgibt. Testen
+Sie anschließend Ihre Funktion hier mit dem Beispielradius r = 5 (Ergebnis
+sollte sein: Umfang 31.4159, Fläche 78.5398).</p>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -237,7 +727,14 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="part05.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Schleifen zum Zählen (“for”)</p>
+        </div>
+    </a>
 </div>
             
         </div>
