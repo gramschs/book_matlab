@@ -3,11 +3,19 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: part01
-- file: part02
-- file: part03
-- file: part04
-- file: part05
-- file: part06
+parts:
+- caption: Programmierung
+  chapters:
+  - file: part01
+    title: 1. Einstieg in die Programmierung
+  - file: part02
+    title: 2. Programmverzweigung (if - elseif - else)
+  - file: part03
+    title: 3. Digitale Logik und Schleifen mit Bedingungen (while)
+  - file: part04
+    title: 4. Array, String und formatierte Ausgaben (fprintf)
+  - file: part05
+    title: 5. Schleifen zum Zählen (for)
+  - file: part06
+    title: 6. Funktionen
 
