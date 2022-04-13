@@ -251,11 +251,6 @@ const thebe_selector_output = ".output, .cell_output"
    Zusammenfassung
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#losungen-zu-den-mini-ubungen">
-   Lösungen zu den Mini-Übungen
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -311,11 +306,6 @@ const thebe_selector_output = ".output, .cell_output"
    Zusammenfassung
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#losungen-zu-den-mini-ubungen">
-   Lösungen zu den Mini-Übungen
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -351,6 +341,20 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part02_minisolution01">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise01"> Exercise 8</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Wird die Variable auf falsch gesetzt (a = false), so gibt die disp()-Funktion eine 0 aus. Wird die Variable a jedoch auf wahr gesetzt (a = true), so gibt die disp()-Funktion eine 1 aus.</p>
 </div>
 </div>
 <p>Aber wie kann man dann überprüfen, ob in einer Variablen der Datentyp Integer oder der Datentyp Boolean gespeichert ist? Dazu gibt es das Kommando <code class="docutils literal notranslate"><span class="pre">whos</span></code>. Führen Sie die nächste Code-Zelle aus.</p>
@@ -432,6 +436,31 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 </div>
+<div class="solution dropdown admonition" id="part02_minisolution02">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise02"> Exercise 9</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe: Wahl meiner Zahl</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">33</span><span class="p">;</span><span class="w"></span>
+
+<span class="c">% kleiner gleich 5?</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
+
+<span class="c">% genau gleich 17?</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">17</span><span class="w"></span>
+
+<span class="c">% nicht gleich 17?</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="mi">17</span><span class="w"></span>
+
+<span class="c">% positiv?</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="c">% kleiner als -17.7?</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="o">-</span><span class="mf">17.7</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="programmverzweigungen-mit-einen-zweig-if">
 <h2>Programmverzweigungen mit einen Zweig: if<a class="headerlink" href="#programmverzweigungen-mit-einen-zweig-if" title="Permalink to this headline">¶</a></h2>
@@ -465,6 +494,21 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin nach der aktuellen Temperatur fragt. Wenn die Temperatur kleiner gleich 10 ˚C ist, soll ausgegeben werden: “Heute ist es aber kalt!”</p>
 </div>
 </div>
+<div class="solution dropdown admonition" id="part02_minisolution03">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise03"> Exercise 10</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
+<span class="n">temperatur</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Welche Temperatur haben wir aktuell?&#39;</span><span class="p">)</span><span class="w"></span>
+
+<span class="c">% Verarbeitung und Ausgabe</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">temperatur</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Heute ist es aber kalt!&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="exercise admonition" id="part02_miniexercise04">
 
 <p class="admonition-title"><span class="caption-number">Exercise 11 </span></p>
@@ -474,6 +518,28 @@ Wenn die Zahl kleiner als 0 ist, soll ausgegeben werden: “Die Zahl ist negativ
 Wenn die Zahl genau gleich 0 ist, soll ausgegeben werden: “Die Zahl ist Null.”
 Wenn die Zahl größer als 0 ist, soll ausgegeben werden: “Die Zahl ist positiv.”</p>
 <p>Wie viele if-Blöcke brauchen Sie für die Umsetzung dieser Mini-Übung?</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part02_minisolution04">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise04"> Exercise 11</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
+<span class="n">zahl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Geben Sie bitte eine Zahl ein: &#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Verarbeitung und Ausgabe</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist negativ.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist Null.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist positiv.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Der Code erfordert drei if-Blöcke.</p>
 </div>
 </div>
 </div>
@@ -507,11 +573,45 @@ Wir erweitern die Syntax mit dem if-Block um ein neues Element, nämlich den sog
 <p>Schreiben Sie ein Skript, das nach dem aktuellen Monat fragt (1 für Januar, 2 für Februar, 3 für März, usw.). Wenn der aktuelle Monat Januar bis Juni ist, soll ausgegeben werden: “Dieser Monat gehört zur 1. Jahreshälfte.” Ansonsten soll ausgegeben werden: “Dieser Monat gehört zur 2. Jahreshälfte.”</p>
 </div>
 </div>
+<div class="solution dropdown admonition" id="part02_minisolution05">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise05"> Exercise 12</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
+<span class="n">monat</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Geben Sie bitte den aktuellen Monat ein, 1 für Januar, 2 für Februar usw.&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Verarbeitung und Ausgabe</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">monat</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">6</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Dieser Monat gehört zur 1. Jahreshälfte.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Dieser Monat gehört zur 2. Jahreshälfte.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="exercise admonition" id="part02_miniexercise06">
 
 <p class="admonition-title"><span class="caption-number">Exercise 13 </span></p>
 <div class="section" id="exercise-content">
 <p>Schreiben Sie ein Skript, das nach der aktuellen Temperatur fragt. Wenn die aktuelle Temperatur kleiner gleich 3 ˚C ist, dann lassen Sie ausgeben: “Vorsicht, es besteht Glatteisgefahr!” und ansonsten “Kein Grund zur Sorge.”</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part02_minisolution06">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise06"> Exercise 13</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
+<span class="n">temperatur</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Welche Temperatur haben wir aktuell?&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Verarbeitung und Ausgabe</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="n">temperatur</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Vorsicht, es besteht Glatteisgefahr!&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Kein Grund zur Sorge.&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -635,163 +735,10 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 <img alt="_images/part02_bussgeldkatalog.png" id="part02-bussgeldkatalog" src="_images/part02_bussgeldkatalog.png" />
 </div>
 </div>
-<div class="exercise admonition" id="part02_miniexercise08">
-
-<p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
-<div class="section" id="exercise-content">
-<p>Schreiben Sie ein Skript, das die aktuelle Temperatur von einem Benutzer oder einer Benutzerin abfragt. Wenn die Temperatur</p>
-<ul class="simple">
-<li><p>&lt;= - 10 ˚C ist, dann Ausgabe: “Es ist bitterkalt.”</p></li>
-<li><p>&lt;= 0 ˚C ist, dann Ausgabe: “Es ist kalt.”</p></li>
-<li><p>&lt;= 10 ˚C ist, dann Ausgabe: “Es ist kühl, aber OK.”</p></li>
-<li><p>&lt;= 20 ˚C ist, dann Ausgabe: “Es ist frühlingshaft.”</p></li>
-<li><p>&lt;= 30 ˚C ist, dann Ausgabe: “Es ist heiß!”</p></li>
-<li><p>&gt; 30 ˚C ist, dann Ausgabe: “Das ist ja nicht mehr auszuhalten heiß!!!”</p></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="section" id="zusammenfassung">
-<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">¶</a></h2>
-<p>In diesem MATLAB Live Skript haben Sie die erste Kontrollstruktur kennengelernt, um ein lineares MATLAB-Programm in ein nicht-lineares MATLAB-Programm zu verwandeln, das auf Eingaben von Benutzer:innen oder Zustände von Variablen reagiert. Mit Hilfe von if, elseif und else können Sie nun beliebig viele Verzweigungen programmieren. Damit der MATLAB-Interpreter den Programm-Code in einer Verzweigung ausführt, muss die Bedingung für diese Verzweigung erfült sein. Bedingungen sind entweder wahr oder falsch, was MATLAB in einem booleschen Datentyp abspeichert. Für die Auswertung der Bedingung haben wir bisher Vergleiche von Zahlen betrachtet. Andere Bedingungen beispielsweise auch für Texte werden wir noch kennenlernen.</p>
-</div>
-<div class="section" id="losungen-zu-den-mini-ubungen">
-<h2>Lösungen zu den Mini-Übungen<a class="headerlink" href="#losungen-zu-den-mini-ubungen" title="Permalink to this headline">¶</a></h2>
-<div class="solution dropdown admonition" id="part02_minisolution01">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise01"> Exercise 8</a></p>
-<div class="section" id="solution-content">
-<p>Verändern Sie in der nachfolgenden Code-Zelle den Wert der Variablen a. Setzen Sie einmal a = false und einmal a = true. Beobachten Sie, was der disp()-Befehl ausgibt.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
-
-<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-<p>Wird die Variable auf falsch gesetzt (a = false), so gibt die disp()-Funktion eine 0 aus. Wird die Variable a jedoch auf wahr gesetzt (a = true), so gibt die disp()-Funktion eine 1 aus.</p>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part02_minisolution02">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise02"> Exercise 9</a></p>
-<div class="section" id="solution-content">
-<p>Wählen Sie sich eine Zahl. Testen Sie anschließend:</p>
-<ul class="simple">
-<li><p>Ist Ihre Zahl kleiner gleich 5?</p></li>
-<li><p>Ist Ihre Zahl genau 17?</p></li>
-<li><p>Ist Ihre Zahl nicht gleich 17?</p></li>
-<li><p>Ist Ihre Zahl positiv?</p></li>
-<li><p>Ist Ihre Zahl kleiner als -17.7?</p></li>
-</ul>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe: Wahl meiner Zahl</span><span class="w"></span>
-<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">33</span><span class="p">;</span><span class="w"></span>
-
-<span class="c">% kleiner gleich 5?</span><span class="w"></span>
-<span class="n">x</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
-
-<span class="c">% genau gleich 17?</span><span class="w"></span>
-<span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">17</span><span class="w"></span>
-
-<span class="c">% nicht gleich 17?</span><span class="w"></span>
-<span class="n">x</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="mi">17</span><span class="w"></span>
-
-<span class="c">% positiv?</span><span class="w"></span>
-<span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-
-<span class="c">% kleiner als -17.7?</span><span class="w"></span>
-<span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="o">-</span><span class="mf">17.7</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part02_minisolution03">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise03"> Exercise 10</a></p>
-<div class="section" id="solution-content">
-<p>Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin nach der aktuellen Temperatur fragt. Wenn die Temperatur kleiner gleich 10 ˚C ist, soll ausgegeben werden: “Heute ist es aber kalt!”</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
-<span class="n">temperatur</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Welche Temperatur haben wir aktuell?&#39;</span><span class="p">)</span><span class="w"></span>
-
-<span class="c">% Verarbeitung und Ausgabe</span><span class="w"></span>
-<span class="k">if</span><span class="w"> </span><span class="n">temperatur</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Heute ist es aber kalt!&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part02_minisolution04">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise04"> Exercise 11</a></p>
-<div class="section" id="solution-content">
-<p>Schreiben Sie ein Skript, das eine Benutzerin oder einen Benutzer nach einer Zahl fragt.</p>
-<ul class="simple">
-<li><p>Wenn die Zahl kleiner als 0 ist, soll ausgegeben werden: “Die Zahl ist negativ.”</p></li>
-<li><p>Wenn die Zahl genau gleich 0 ist, soll ausgegeben werden: “Die Zahl ist Null.”</p></li>
-<li><p>Wenn die Zahl größer als 0 ist, soll ausgegeben werden: “Die Zahl ist positiv.”</p></li>
-<li><p>Wie viele if-Blöcke brauchen Sie für die Umsetzung dieser Mini-Übung?</p></li>
-</ul>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
-<span class="n">zahl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Geben Sie bitte eine Zahl ein: &#39;</span><span class="p">);</span><span class="w"></span>
-
-<span class="c">% Verarbeitung und Ausgabe</span><span class="w"></span>
-<span class="k">if</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist negativ.&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-<span class="k">if</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist Null.&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-<span class="k">if</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Die Zahl ist positiv.&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-</pre></div>
-</div>
-<p>Der Code erfordert drei if-Blöcke.</p>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part02_minisolution05">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise05"> Exercise 12</a></p>
-<div class="section" id="solution-content">
-<p>Schreiben Sie ein Skript, das nach dem aktuellen Monat fragt (1 für Januar, 2 für Februar, 3 für März, usw.). Wenn der aktuelle Monat Januar bis Juni ist, soll ausgegeben werden: “Dieser Monat gehört zur 1. Jahreshälfte.” Ansonsten soll ausgegeben werden: “Dieser Monat gehört zur 2. Jahreshälfte.”</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
-<span class="n">monat</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Geben Sie bitte den aktuellen Monat ein, 1 für Januar, 2 für Februar usw.&#39;</span><span class="p">);</span><span class="w"></span>
-
-<span class="c">% Verarbeitung und Ausgabe</span><span class="w"></span>
-<span class="k">if</span><span class="w"> </span><span class="n">monat</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">6</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Dieser Monat gehört zur 1. Jahreshälfte.&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="k">else</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Dieser Monat gehört zur 2. Jahreshälfte.&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part02_minisolution06">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise06"> Exercise 13</a></p>
-<div class="section" id="solution-content">
-<p>Schreiben Sie ein Skript, das nach der aktuellen Temperatur fragt. Wenn die aktuelle Temperatur kleiner gleich 3 ˚C ist, dann lassen Sie ausgeben: “Vorsicht, es besteht Glatteisgefahr!” und ansonsten “Kein Grund zur Sorge.”</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
-<span class="n">temperatur</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Welche Temperatur haben wir aktuell?&#39;</span><span class="p">);</span><span class="w"></span>
-
-<span class="c">% Verarbeitung und Ausgabe</span><span class="w"></span>
-<span class="k">if</span><span class="w"> </span><span class="n">temperatur</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Vorsicht, es besteht Glatteisgefahr!&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="k">else</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Kein Grund zur Sorge.&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="solution dropdown admonition" id="part02_minisolution07">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise07"> Exercise 14</a></p>
 <div class="section" id="solution-content">
-<p>Sie finden den aktuellen Bußgeldkatalog für Geschwindigkeitsüberschreitungen mit dem PKW im Internet auf der Seite: <a class="reference external" href="https://www.bussgeldkatalog.org/geschwindigkeitsueberschreitung/">https://www.bussgeldkatalog.org/geschwindigkeitsueberschreitung/</a></p>
-<p>Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsüberschreitung ausgibt, welche Strafe in Euro verhängt wird.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
 <span class="n">verstoss</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Wieviel zu schnell ist die Person gefahren? &#39;</span><span class="p">)</span><span class="w"></span>
 
@@ -821,10 +768,10 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 </div>
 </div>
 </div>
-<div class="solution dropdown admonition" id="part02_minisolution08">
+<div class="exercise admonition" id="part02_miniexercise08">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise08"> Exercise 15</a></p>
-<div class="section" id="solution-content">
+<p class="admonition-title"><span class="caption-number">Exercise 15 </span></p>
+<div class="section" id="exercise-content">
 <p>Schreiben Sie ein Skript, das die aktuelle Temperatur von einem Benutzer oder einer Benutzerin abfragt. Wenn die Temperatur</p>
 <ul class="simple">
 <li><p>&lt;= - 10 ˚C ist, dann Ausgabe: “Es ist bitterkalt.”</p></li>
@@ -832,8 +779,14 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 <li><p>&lt;= 10 ˚C ist, dann Ausgabe: “Es ist kühl, aber OK.”</p></li>
 <li><p>&lt;= 20 ˚C ist, dann Ausgabe: “Es ist frühlingshaft.”</p></li>
 <li><p>&lt;= 30 ˚C ist, dann Ausgabe: “Es ist heiß!”</p></li>
-<li><p>&lt; 30 ˚C ist, dann Ausgabe: “Das ist ja nicht mehr auszuhalten heiß!!!”</p></li>
+<li><p>&gt; 30 ˚C ist, dann Ausgabe: “Das ist ja nicht mehr auszuhalten heiß!!!”</p></li>
 </ul>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part02_minisolution08">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part02_miniexercise08"> Exercise 15</a></p>
+<div class="section" id="solution-content">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
 <span class="n">temperatur</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Welche Temperatur haben wir aktuell? &#39;</span><span class="p">);</span><span class="w"></span>
 
@@ -855,6 +808,10 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="zusammenfassung">
+<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">¶</a></h2>
+<p>In diesem MATLAB Live Skript haben Sie die erste Kontrollstruktur kennengelernt, um ein lineares MATLAB-Programm in ein nicht-lineares MATLAB-Programm zu verwandeln, das auf Eingaben von Benutzer:innen oder Zustände von Variablen reagiert. Mit Hilfe von if, elseif und else können Sie nun beliebig viele Verzweigungen programmieren. Damit der MATLAB-Interpreter den Programm-Code in einer Verzweigung ausführt, muss die Bedingung für diese Verzweigung erfült sein. Bedingungen sind entweder wahr oder falsch, was MATLAB in einem booleschen Datentyp abspeichert. Für die Auswertung der Bedingung haben wir bisher Vergleiche von Zahlen betrachtet. Andere Bedingungen beispielsweise auch für Texte werden wir noch kennenlernen.</p>
 </div>
 </div>
 

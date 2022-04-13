@@ -49,8 +49,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Kontrollstrukturen: die Programmverzweigung" href="part02.html" />
@@ -260,11 +260,6 @@ const thebe_selector_output = ".output, .cell_output"
    Zusammenfassung und Ausblick
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#losungen-zu-den-mini-ubungen">
-   Lösungen zu den Mini-Übungen
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -325,11 +320,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#zusammenfassung-und-ausblick">
    Zusammenfassung und Ausblick
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#losungen-zu-den-mini-ubungen">
-   Lösungen zu den Mini-Übungen
   </a>
  </li>
 </ul>
@@ -395,6 +385,15 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Lassen Sie MATLAB den Term <span class="math notranslate nohighlight">\(3\cdot (7-10)+5\)</span> berechnen.</p>
 </div>
 </div>
+<div class="solution dropdown admonition" id="part01_minisolution01">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise01"> Exercise 1</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">7</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="matlab-als-programmiersprache">
 <h2>MATLAB als Programmiersprache<a class="headerlink" href="#matlab-als-programmiersprache" title="Permalink to this headline">¶</a></h2>
@@ -420,6 +419,21 @@ Bitte schauen Sie sich jetzt kurz um. Welche Hardware fällt Ihnen auf, wenn Sie
 <ul class="simple">
 <li><p>xxx</p></li>
 <li><p>xxx</p></li>
+</ul>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part01_minisolution02">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise02"> Exercise 2</a></p>
+<div class="section" id="solution-content">
+<ul class="simple">
+<li><p>Monitor</p></li>
+<li><p>Maus</p></li>
+<li><p>Tastatur</p></li>
+<li><p>PC</p></li>
+<li><p>Webcam (Kamera)</p></li>
+<li><p>Headset</p></li>
+<li><p>…</p></li>
 </ul>
 </div>
 </div>
@@ -455,6 +469,15 @@ Bleibt noch der Begriff Programm bzw. etwas präziser Computerprogramm übrig. E
 <p>Kopieren Sie die Zeile <code class="docutils literal notranslate"><span class="pre">disp('Hallo</span> <span class="pre">Welt')</span></code> in die nächste Code-Zelle unter die Kommentarzeile und ersetzen Sie Welt durch Ihren Namen. Ihr erstes Computerprogramm in MATLAB :-)</p>
 </div>
 </div>
+<div class="solution dropdown admonition" id="part01_minisolution03">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise03"> Exercise 3</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Hallo Simone&#39;</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Heute werden nur noch die sogenannten höheren Programmiersprachen verwendet (wie Python, MATLAB oder C++), die für Menschen leichter verständlich sind. Dafür müssen dann Programme, die in höheren Programmiersprachen geschrieben sind, in <strong>Maschinensprache</strong> übersetzt werden. Verschiedene Programmiersprachen verwenden dazu unterschiedliche Prinzipien. Die beiden wichtigsten Vertreter sind <strong>Compiler-Programmiersprachen</strong> und <strong>Interpreter-Programmiersprachen</strong>.</p>
 <p>Bei Compiler-Programmiersprachen wird der Programmcode vorab in Maschinensprache übersetzt und der Anwender erhält die Anwendungssoftware in Maschinensprache (bei Windows beispielsweise als exe-Datei). Den Vorgang des Übersetzens nennt man <strong>Kompilieren</strong>. Bei Interpreter-Sprachen wird der Code in dem Moment in Maschinensprache übersetzt, in dem das Programm läuft bzw. ausgeführt wird. Während also das Programm läuft, muss gleichzeitig – quasi im Hintergrund – der Übersetzer arbeiten und die höhere Programmiersprache in Maschinensprache <strong>interpretieren</strong>. Daher der Name Interpreter-Sprache. Manchmal wird Code, der kompiliert wurde und dann eigenständig lauffähig ist, als <strong>Programm</strong> bezeichnet. Dahingegen wird Code, der interpretiert wird und dringend auf einen gerade laufenden Interpreter angewiesen ist, oft als Skript bezeichnet. Im Alltag geht diese Unterscheidung meist unter und wir verwenden den Begriff Programm auch für MATLAB-Skripte.</p>
 <div class="exercise admonition" id="part01_miniexercise04">
@@ -478,6 +501,21 @@ Bleibt noch der Begriff Programm bzw. etwas präziser Computerprogramm übrig. E
 <p>Antwort 3:</p>
 <ul class="simple">
 <li><p>XXX</p></li>
+</ul>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part01_minisolution04">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise04"> Exercise 4</a></p>
+<div class="section" id="solution-content">
+<ul class="simple">
+<li><p>Antwort 1:
+Compiler-Sprache: C, C++, Fortran
+Interpreter-Sprache: Java, Matlab, Python</p></li>
+<li><p>Antwort 2:
+In der Regel sind Programme, die in einer Compiler-Sprache geschrieben wurden, schneller als interpretierte Programme.</p></li>
+<li><p>Antwort 3:
+In der Regel sind interpretierte Programmiersprachen leichter zu lernen, da beispielsweise Code zeilenweise auf seine Korrektheit hin überprüft werden kann.</p></li>
 </ul>
 </div>
 </div>
@@ -554,6 +592,16 @@ Mit Integern können wir ganz normal rechnen, also Operationen ausführen. Einig
 <p>Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben <code class="docutils literal notranslate"><span class="pre">n</span></code> unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Section</span></code> vom MATLAB-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung.</p>
 </div>
 </div>
+<div class="solution dropdown admonition" id="part01_minisolution05">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise05"> Exercise 5</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Der MATLAB-Interpreter zeigt in rot eine Fehlermeldung an: “Unrecognized function or variable ‘n’.” Damit weist der MATLAB-Interpreter darauf hin, dass die Variable bisher nicht mit einem Wert versehen wurde, sie ist nicht intialisiert worden. Daher kann damit auch nicht gearbeitet werden.</p>
+</div>
+</div>
 <p>Sehr häufig findet man Code wie</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 </pre></div>
@@ -594,6 +642,17 @@ Dagegen erahnt man bei diesem Code schon eher, was bezweckt wird:</p>
 <p class="admonition-title"><span class="caption-number">Exercise 6 </span></p>
 <div class="section" id="exercise-content">
 <p>Initialisieren Sie eine Variable namens alter mit Ihrem aktuellen Alter, eine Variable <code class="docutils literal notranslate"><span class="pre">rentenalter</span></code> mit dem Zahlenwert <code class="docutils literal notranslate"><span class="pre">67</span></code> und berechnen Sie dann, wie viele Jahre es noch bis zum Renteneintritt dauert.</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part01_minisolution06">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise06"> Exercise 6</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">21</span><span class="p">;</span><span class="w"></span>
+<span class="n">rentenalter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">67</span><span class="p">;</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">rentenalter</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">alter</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -650,95 +709,10 @@ Wikipedia beschreibt das EVA-Prinzip (siehe <a class="reference external" href="
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="zusammenfassung-und-ausblick">
-<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Permalink to this headline">¶</a></h2>
-<p>Der Einstieg in die wissenschaftliche Programmierung mit MATLAB ist zunächst theoretisch. Zuerst haben wir uns mit grundlegenden Fachbegriffen der theoretischen Informatik und dem EVA-Prinzip beschäftigt. Aber bereits mit den ersten Kommandos in MATLAB wie <code class="docutils literal notranslate"><span class="pre">input()</span></code> und <code class="docutils literal notranslate"><span class="pre">disp()</span></code> sowie der Benutzung von Variablen können wir erste MATLAB-Skripte programmieren.</p>
-</div>
-<div class="section" id="losungen-zu-den-mini-ubungen">
-<h2>Lösungen zu den Mini-Übungen<a class="headerlink" href="#losungen-zu-den-mini-ubungen" title="Permalink to this headline">¶</a></h2>
-<div class="solution dropdown admonition" id="part01_minisolution01">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise01"> Exercise 1</a></p>
-<div class="section" id="solution-content">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">7</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part01_minisolution02">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise02"> Exercise 2</a></p>
-<div class="section" id="solution-content">
-<p>Tragen Sie hier die Hardware ein, die Sie gerade sehen oder die Ihnen generell einfällt:</p>
-<ul class="simple">
-<li><p>Monitor</p></li>
-<li><p>Maus</p></li>
-<li><p>Tastatur</p></li>
-<li><p>PC</p></li>
-<li><p>Webcam (Kamera)</p></li>
-<li><p>Headset</p></li>
-<li><p>…</p></li>
-</ul>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part01_minisolution03">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise03"> Exercise 3</a></p>
-<div class="section" id="solution-content">
-<p>Kopieren Sie die Zeile <code class="docutils literal notranslate"><span class="pre">disp('Hallo</span> <span class="pre">Welt')</span></code> in die nächste Code-Zelle unter die Kommentarzeile und ersetzen Sie Welt durch Ihren Namen. Ihr erstes Computerprogramm in MATLAB :-)</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Hallo Simone&#39;</span><span class="p">)</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part01_minisolution04">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise04"> Exercise 4</a></p>
-<div class="section" id="solution-content">
-<p>Recherchieren Sie im Internet und schreiben Sie Ihre Antworten in diese Text-Zelle.
-Ordnen Sie folgende Programmiersprachen den beiden Kategorien Compiler-Sprache oder Interpreter-Sprache zu: C, C++, Fortran, Java, Matlab und Python.
-Stellen Sie eine Vermutung auf: in welcher Programmiersprache können die schnelleren Programme geschrieben werden?
-Raten Sie: welche Programmiersprachen sind leichter zu lernen und warum?</p>
-<ul class="simple">
-<li><p>Antwort 1:
-Compiler-Sprache: C, C++, Fortran
-Interpreter-Sprache: Java, Matlab, Python</p></li>
-<li><p>Antwort 2:
-In der Regel sind Programme, die in einer Compiler-Sprache geschrieben wurden, schneller als interpretierte Programme.</p></li>
-<li><p>Antwort 3:
-In der Regel sind interpretierte Programmiersprachen leichter zu lernen, da beispielsweise Code zeilenweise auf seine Korrektheit hin überprüft werden kann.</p></li>
-</ul>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part01_minisolution05">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise05"> Exercise 5</a></p>
-<div class="section" id="solution-content">
-<p>Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben <code class="docutils literal notranslate"><span class="pre">n</span></code> unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Section</span></code> vom MATLAB-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="w"></span>
-</pre></div>
-</div>
-<p>Der MATLAB-Interpreter zeigt in rot eine Fehlermeldung an: “Unrecognized function or variable ‘n’.” Damit weist der MATLAB-Interpreter darauf hin, dass die Variable bisher nicht mit einem Wert versehen wurde, sie ist nicht intialisiert worden. Daher kann damit auch nicht gearbeitet werden.</p>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part01_minisolution06">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise06"> Exercise 6</a></p>
-<div class="section" id="solution-content">
-<p>Initialisieren Sie eine Variable namens <code class="docutils literal notranslate"><span class="pre">alter</span></code> mit Ihrem aktuellen Alter, eine Variable <code class="docutils literal notranslate"><span class="pre">rentenalter</span></code> mit dem Zahlenwert <code class="docutils literal notranslate"><span class="pre">67</span></code> und berechnen Sie dann, wie viele Jahre es noch bis zum Renteneintritt dauert.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">alter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">21</span><span class="p">;</span><span class="w"></span>
-<span class="n">rentenalter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">67</span><span class="p">;</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">rentenalter</span><span class="o">-</span><span class="w"> </span><span class="n">alter</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="solution dropdown admonition" id="part01_minisolution07">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#part01_miniexercise07"> Exercise 7</a></p>
 <div class="section" id="solution-content">
-<p>Schreiben Sie ein Skript, das nach einer Zahl fragt. Anschließend gibt das Skript die 5. Potenz dieser Zahl aus.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe</span><span class="w"></span>
 <span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;Bitte geben Sie eine Zahl ein: &#39;</span><span class="p">);</span><span class="w"></span>
 
@@ -751,6 +725,10 @@ In der Regel sind interpretierte Programmiersprachen leichter zu lernen, da beis
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Permalink to this headline">¶</a></h2>
+<p>Der Einstieg in die wissenschaftliche Programmierung mit MATLAB ist zunächst theoretisch. Zuerst haben wir uns mit grundlegenden Fachbegriffen der theoretischen Informatik und dem EVA-Prinzip beschäftigt. Aber bereits mit den ersten Kommandos in MATLAB wie <code class="docutils literal notranslate"><span class="pre">input()</span></code> und <code class="docutils literal notranslate"><span class="pre">disp()</span></code> sowie der Benutzung von Variablen können wir erste MATLAB-Skripte programmieren.</p>
 </div>
 </div>
 
