@@ -62,6 +62,19 @@ end
 :label: part03_miniexercise01
 Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn das Alter der Person zwischen 6 und 10 liegt, soll das Programm ausgeben "Wahrscheinlich gehst Du in die Grundschule."
 ````
+````{solution} part03_miniexercise01
+:label: part03_minisolution01
+:class: dropdown
+```matlab
+% Eingabe
+alter = input('Wie alt sind Sie?');
+
+% Verarbeitung und Ausgabe
+if (6 <= alter) && (alter <= 10)
+    disp('Wahrscheinlich gehst Du in die Gundschule.');
+end
+```
+````
 
 ```{exercise}
 :label: part03_miniexercise02
@@ -71,11 +84,49 @@ Schreiben Sie ein Skript und lassen Sie den MATLAB-Interpreter nach einem Monat 
 * für Monate September, Oktober, November: Herbst
 * für Monate Dezember, Januar, Februar: Winter 
 ```
+````{solution} part03_miniexercise02
+:label: part03_minisolution02
+:class: dropdown
+```matlab
+% Eingabe
+monat = input('Geben Sie den aktuellen Monat ein, 1 für Januar, 2 für Februar, usw.')
+
+% Verarbeitung und Ausgabe
+if 3 <= monat && monat <= 5
+    disp('Frühling');
+elseif 6 <= monat && monat <= 8
+    disp('Sommer');
+elseif 9 <= monat && monat <= 11
+    disp('Herbst');
+else
+    disp('Winter');
+end
+```
+````
 
 ```{exercise}
 :label: part03_miniexercise03
 Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person 0 bis 17 ist, soll das Programm ausgeben: "Wahrscheinlich bist Du noch nicht berufstätig". Zwischen 18 und 67 soll ausgegeben werden "Wahrscheinlich sind Sie berufstätig." und bei Personen zwischen 68 und 120 "Wahrscheinlich sind Sie nicht mehr berufstätig."
 ```
+````{solution} part03_miniexercise03
+:label: part03_minisolution03
+:class: dropdown
+```matlab
+% Eingabe
+alter =  input('Alter: ');
+
+% Verarbeitung und Ausgabe
+if (0 <= alter) && (alter <= 17)
+    disp('Wahrscheinlich bist Du noch nicht berufstätig.');
+end
+if (18 <= alter) && (alter <= 67)
+    disp('Wahrscheinlich sind Sie berufstätig.');
+end
+if (68 <= alter) && (alter <= 120)
+    disp('Wahrscheinlich sind Sie nicht mehr berufstätig.');
+end
+```
+````
 
 ## Das logische ODER
 Beim logischen ODER muss nur eine der beiden Bedingungen erfüllt sein, damit insgesamt die kombinierte Bedingung erfüllt ist. Damit ist natürlich die Bedingung insgesamt auch erfüllt, wenn beide Bedingungen wahr sind. Vergleichbar ist dies mit einer Parallelschaltung in der Elektrotechnik. Es reicht, wenn einer der beiden Schalter eingeschaltet sind, damit der Strom fließen kann. Auch wenn beide Schalter eingeschaltet sind, fließt Strom. 
@@ -111,10 +162,41 @@ end
 Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person jünger als 18 ist oder älter als 67, soll das Programm ausgeben: "Wahrscheinlich sind Sie/bist Du nicht berufstätig."
 ```
 
+````{solution} part03_miniexercise04
+:label: part03_minisolution04
+:class: dropdown
+```matlab
+% Eingabe
+alter =  input('Alter: ');
+
+% Verarbeitung und Ausgabe
+if (alter < 18) || (67 < alter)
+    disp('Wahrscheinlich sind Sie/bist Du nicht berufstätig.');
+end
+``` 
+````
+
 ```{exercise}
 :label: part03_miniexercise05
 Schreiben Sie ein Skript, das nach der Länge der beiden Seiten eines rechtwinkligen Dreiecks fragt, die am rechten Winkel anliegen (= Katheten). Wenn eine der beiden Seitenlängen oder beide negativ sind, soll das Programm ausgeben: "Fehler, negative Seitenlängen gibt es nicht!" und ansonsten soll das Skript die Länge der dritten Seite (= Hypotenuse) mit der Formel (= Satz des Pythagoras) $c=\sqrt{a^2+b^2}$ berechnen und das Ergebnis ausgeben.
 ```
+````{solution} part03_miniexercise05
+:label: part03_minisolution05
+:class: dropdown
+```matlab
+% Eingabe 
+disp('Bitte geben Sie die Längen der Katheten eines rechtwinkligen Dreiecks ein:');
+a = input('Länge Seite a: ');
+b = input('Länge Seite b: ');
+
+if (a<0) || (b<0)
+    disp('Fehler, negative Seitenlängen gibt es nicht!');
+else
+    disp('Die Länge der Seite c (= Hypotenuse) ist: ');
+    disp(sqrt(a^2+b^2));
+end
+```
+````
 
 ## Das logische NICHT
 Das logische NICHT kehrt eine Aussage um. Wenn eine Bedingung wahr war, wird sie falsch. War jedoch die Bedingung vorher wahr, wird sie nach Anwendung des logischen NICHT falsch. Man auch diese Operation normalerweise als Tabelle auf:
@@ -153,6 +235,38 @@ end
 
 Probieren Sie dann in der nächsten Code-Zelle aus, ob Sie die richtigen Ergebnisse hatten, indem Sie beispielsweise wahr und wahr in MATLAB ausprobieren, also beispielsweise 
 `true && true` eingeben:
+````
+
+````{solution} part03_miniexercise06
+:label: part03_minisolution06
+:class: dropdown
+```matlab
+% wahr UND wahr
+true && true
+
+% wahr ODER falsch
+true || false
+
+% NICHT wahr
+~true
+
+% falsch ODER wahr
+false || true
+
+% wahr ODER (NICHT falsch)
+true || (~false)
+
+% (NICHT wahr) UND falsch
+(~true) && false
+
+% NICHT (wahr ODER falsch)
+~(true || false)
+
+% (NICHT falsch) ODER (falsch UND falsch)
+(~false) || (false && false)
+```
+
+Anmerkung: Der MATLAB-Interpreter merkt, dass ein Vergleich wie beispielsweise `false && false` nicht komplett überprüft werden muss, da bereits das erste false dazu führt, dass das Ergebnis der Verknüpfung falsch ist. Daher wird hier in der Code-Zelle eine Warnung angezeigt. 
 ````
 
 ## Schleifen: Wiederholung mit Bedingung "while"
@@ -195,166 +309,9 @@ end
 :label: part03_miniexercise07
 Schreiben Sie ein Skript, das die Quadratzahlen für 10 bis 20 ausgibt, d.h. es sollen die Zahlen 100, 121, ... , 400 ausgegeben werden.
 ```
-
-```{exercise}
-:label: part03_miniexercise08
-Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin auffordert, eine positive Zahl einzugeben. Falls dabei jedoch fälschlicherweise eine negative Zahl oder die Null eingegeben wird, soll der Computer solange weiter fragen, bis endlich eine positive Zahl eingegeben wird.
-```
-
-## Zusammenfassung
-In diesem MATLAB Live Skript haben wir uns eingehend mit der Kombination von Bedingungen beschäftigt, um zukünftig realistischere Alltagsszenarien auch in Code umsetzen zu können. Dabei haben wir die drei wichtigsten Verknüpfungen der digitalen Logik kennengelernt: UND, ODER und NICHT. In den nächsten MATLAB Live Skripten werden wir die kombinierten Bedingungen nicht nur für Programmverzweigungen, sondern auch für wiederholte Ausführungen von Code-Abschnitten einsetzen. Dazu haben wir in diesem Skript die while-Schleife eingeführt, die Code solange wiederholt, wie die Bedingung im Schleifenkopf erfüllt ist. Auch das Thema Schleifen werden wir im nächsten MATLAB Live Skript weiter vertiefen und als Alternative für eine while-Schleife mit einer Zählbedingung die sogenannte for-Schleife kennenlernen. 
-
-## Lösungen zu den Mini-Übungen
-
-````{solution} part03_miniexercise01
-:label: part03_minisolution01
-:class: dropdown
-Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn das Alter der Person zwischen 6 und 10 liegt, soll das Programm ausgeben "Wahrscheinlich gehst Du in die Grundschule."
-
-```matlab
-% Eingabe
-alter = input('Wie alt sind Sie?');
-
-% Verarbeitung und Ausgabe
-if (6 <= alter) && (alter <= 10)
-    disp('Wahrscheinlich gehst Du in die Gundschule.');
-end
-```
-````
-
-````{solution} part03_miniexercise02
-:label: part03_minisolution02
-:class: dropdown
-Schreiben Sie ein Skript und lassen Sie den MATLAB-Interpreter nach einem Monat fragen. Dabei soll für den Januar eine 1 eingegeben werden, für den Februar eine 2 usw. Danch soll der MATLAB-Interpreter folgendes ausgeben:
-
-* für Monate März, April, Mai: Frühling
-* für Monate Juni, Juli, August: Sommer
-* für Monate September, Oktober, November: Herbst
-* für Monate Dezember, Januar, Februar: Winter 
-
-```matlab
-% Eingabe
-monat = input('Geben Sie den aktuellen Monat ein, 1 für Januar, 2 für Februar, usw.')
-
-% Verarbeitung und Ausgabe
-if 3 <= monat && monat <= 5
-    disp('Frühling');
-elseif 6 <= monat && monat <= 8
-    disp('Sommer');
-elseif 9 <= monat && monat <= 11
-    disp('Herbst');
-else
-    disp('Winter');
-end
-```
-````
-
-````{solution} part03_miniexercise03
-:label: part03_minisolution03
-:class: dropdown
-Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person 0 bis 17 ist, soll das Programm ausgeben: "Wahrscheinlich bist Du noch nicht berufstätig". Zwischen 18 und 67 soll ausgegeben werden "Wahrscheinlich sind Sie berufstätig." und bei Personen zwischen 68 und 120 "Wahrscheinlich sind Sie nicht mehr berufstätig."
-
-```matlab
-% Eingabe
-alter =  input('Alter: ');
-
-% Verarbeitung und Ausgabe
-if (0 <= alter) && (alter <= 17)
-    disp('Wahrscheinlich bist Du noch nicht berufstätig.');
-end
-if (18 <= alter) && (alter <= 67)
-    disp('Wahrscheinlich sind Sie berufstätig.');
-end
-if (68 <= alter) && (alter <= 120)
-    disp('Wahrscheinlich sind Sie nicht mehr berufstätig.');
-end
-```
-````
-
-````{solution} part03_miniexercise04
-:label: part03_minisolution04
-:class: dropdown
-Schreiben Sie ein Skript, das nach dem Alter einer Person fragt. Wenn die Person jünger als 18 ist oder älter als 67, soll das Programm ausgeben: "Wahrscheinlich sind Sie/bist Du nicht berufstätig."
-
-```matlab
-% Eingabe
-alter =  input('Alter: ');
-
-% verarbeitung und Ausgabe
-if (alter < 18) || (67 < alter)
-    disp('Wahrscheinlich sind Sie/bist Du nicht berufstätig.');
-end
-``` 
-````
-
-````{solution} part03_miniexercise05
-:label: part03_minisolution05
-:class: dropdown
-Schreiben Sie ein Skript, das nach der Länge der beiden Seiten eines rechtwinkligen Dreiecks fragt, die am rechten Winkel anliegen (= Katheten). Wenn eine der beiden Seitenlängen oder beide negativ sind, soll das Programm ausgeben: "Fehler, negative Seitenlängen gibt es nicht!" und ansonsten soll das Skript die Länge der dritten Seite (= Hypotenuse) mit dem Satz des Pythagoras berechnen und das Ergebnis ausgeben.
-
-```matlab
-% Eingabe 
-disp('Bitte geben Sie die Längen der Katheten eines rechtwinkligen Dreiecks ein:');
-a = input('Länge Seite a: ');
-b = input('Länge Seite b: ');
-if (a<0) || (b<0)
-    disp('Fehler, negative Seitenlängen gibt es nicht!');
-else
-    disp('Die Länge der Seite c (= Hypotenuse) ist: ');
-    disp(sqrt(a^2+b^2));
-end
-```
-````
-
-````{solution} part03_miniexercise06
-:label: part03_minisolution06
-:class: dropdown
-Überlegen Sie zunächst, was ist das Ergebnis der folgenden Verknüpfungen: wahr oder falsch?
-* wahr UND wahr
-* wahr ODER falsch
-* NICHT wahr
-* falsch ODER wahr
-* wahr ODER (NICHT falsch)
-* (NICHT wahr) UND falsch
-* NICHT (wahr ODER falsch)
-* (NICHT falsch) ODER (falsch UND falsch)
-
-Probieren Sie dann in der nächsten Code-Zelle aus, ob Sie die richtigen Ergebnisse hatten, indem Sie beispielsweise wahr und wahr in MATLAB ausprobieren, also beispielsweise `true && true` eingeben:
-
-```matlab
-% wahr UND wahr
-true && true
-
-% wahr ODER falsch
-true || false
-
-% NICHT wahr
-~true
-
-% falsch ODER wahr
-false || true
-
-% wahr ODER (NICHT falsch)
-true || (~false)
-
-% (NICHT wahr) UND falsch
-(~true) && false
-
-% NICHT (wahr ODER falsch)
-~(true || false)
-
-% (NICHT falsch) ODER (falsch UND falsch)
-(~false) || (false && false)
-```
-
-Anmerkung: Der MATLAB-Interpreter merkt, dass ein Vergleich wie beispielsweise `false && false` nicht komplett überprüft werden muss, da bereits das erste false dazu führt, dass das Ergebnis der Verknüpfung falsch ist. Daher wird hier in der Code-Zelle eine Warnung angezeigt. Um diese Warnungen im Skript zu vermeiden, ist der Code hier als Code Example und nicht in einer Code-Zelle eingefügt.
-````
-
 ````{solution} part03_miniexercise07
 :label: part03_minisolution07
 :class: dropdown
-Schreiben Sie ein Skript, das die Quadratzahlen für 10 bis 20 ausgibt, d.h. es sollen die Zahlen 100, 121, ... , 400 ausgegeben werden.
-
 ```matlab
 % Eingabe Startzahl
 zahl = 10;
@@ -367,11 +324,13 @@ end
 ```
 ````
 
+```{exercise}
+:label: part03_miniexercise08
+Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin auffordert, eine positive Zahl einzugeben. Falls dabei jedoch fälschlicherweise eine negative Zahl oder die Null eingegeben wird, soll der Computer solange weiter fragen, bis endlich eine positive Zahl eingegeben wird.
+```
 ````{solution} part03_miniexercise08
 :label: part03_minisolution08
 :class: dropdown
-Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin auffordert, eine positive Zahl einzugeben. Falls dabei jedoch fälschlicherweise eine negative Zahl oder die Null eingegeben wird, soll der Computer solange weiter fragen, bis endlich eine positive Zahl eingegeben wird.
-
 ```matlab
 % Eingabe
 x = input('Bitte geben Sie eine positive ganze Zahl ein: ');
@@ -383,4 +342,5 @@ end
 ```
 ````
 
-
+## Zusammenfassung
+In diesem MATLAB Live Skript haben wir uns eingehend mit der Kombination von Bedingungen beschäftigt, um zukünftig realistischere Alltagsszenarien auch in Code umsetzen zu können. Dabei haben wir die drei wichtigsten Verknüpfungen der digitalen Logik kennengelernt: UND, ODER und NICHT. In den nächsten MATLAB Live Skripten werden wir die kombinierten Bedingungen nicht nur für Programmverzweigungen, sondern auch für wiederholte Ausführungen von Code-Abschnitten einsetzen. Dazu haben wir in diesem Skript die while-Schleife eingeführt, die Code solange wiederholt, wie die Bedingung im Schleifenkopf erfüllt ist. Auch das Thema Schleifen werden wir im nächsten MATLAB Live Skript weiter vertiefen und als Alternative für eine while-Schleife mit einer Zählbedingung die sogenannte for-Schleife kennenlernen. 
