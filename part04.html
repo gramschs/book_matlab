@@ -687,6 +687,11 @@ Zuerst formulieren wir den gewünschten Text als Character Array und setzen Plat
 <span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Dies ist ein Text mit Platzhalter %e !!!&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.056789</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
+<p>Es kann aber auch sein, dass für den Platzhalter ein String eingesetzt werden soll.
+Dann muss der Platzhalter durch <code class="docutils literal notranslate"><span class="pre">%s</span></code> gekennzeichnet werden.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Hallo %s, schoen, dass es Dich gibt!&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Gegenueber&quot;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
 <p>Gerade wenn man mehrere fprintf()-Anweisungen hintereinander ausführt, stellt man schnell fest, dass auch zusätzliche Formatierungsanweisungen wünschenswert sind.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">\n</span></code> steht für newline und lässt den Cursor nach der Ausgabe in eine neue Zeile springen</p></li>

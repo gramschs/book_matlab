@@ -376,6 +376,13 @@ Wenn Sie die Ausgabe kontrollieren wollen, können Sie das folgendermaßen:
 fprintf('Dies ist ein Text mit Platzhalter %.2f !!!', 0.056789);
 fprintf('Dies ist ein Text mit Platzhalter %e !!!', 0.056789);
 ```
+
+Es kann aber auch sein, dass für den Platzhalter ein String eingesetzt werden soll. 
+Dann muss der Platzhalter durch `%s` gekennzeichnet werden.
+```matlab
+fprintf('Hallo %s, schoen, dass es Dich gibt!', "Gegenueber");
+```
+
 Gerade wenn man mehrere fprintf()-Anweisungen hintereinander ausführt, stellt man schnell fest, dass auch zusätzliche Formatierungsanweisungen wünschenswert sind.
 * `\n` steht für newline und lässt den Cursor nach der Ausgabe in eine neue Zeile springen
 * `\t` steht für horizontaler Tabulator und lässt den Cursor zum nächsten Tab-Stopp springen. 
@@ -413,12 +420,6 @@ fprintf('Pi = %.0f', pi)
 
 ## Zusammenfassung
 In diesem MATLAB Live Skript haben wir uns mit dem Datentyp Array beschäftigt. Tatsächlich ist das nur ein kleiner Einstieg in die Welt der Arrays gewesen, da MATLAB wesentlich auf der Verarbeitung von Arrays basiert. Wir werden in den folgenden Skripten auch immer wieder auf diesen Datentyp zurückgreifen. Aber zunächst vervollständigen wir im nächsten MATLAB Live Skript das Thema Kontrollstrukturen, indem wir die sogenannten Zählschleifen einführen. Die Zählschleifen wiederum bauen auf Arrays auf.    
-
-
-
-
-
-
 
 
 
