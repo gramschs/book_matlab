@@ -71,6 +71,18 @@ Tatsächlich, `Size = 1x1` wird ausgegeben.
 Erzeugen Sie ein Array mit den Elementen 2, 4, 6, 8, 10. Lassen Sie anschließend die Dimension des Arrays ausgeben.
 ```
 
+````{solution} part04_miniexercise01
+:label: part04_minisolution01
+:class: dropdown
+```{code-block} matlab
+% Erzeugung Array
+m = [2,4,6,8,10];
+
+% Ausgabe der Eigenschaften
+whos m
+```
+````
+
 Ein Array speichert jedoch nicht nur Zahlen (Integer/Float), sondern man kann auch die anderen Datentypen in Form einer Sammlung speichern. Im nächsten Code-Beispiel sehen wir eine Namensliste und eine Liste mit dem Status "zur Klausur zugelassen?".
 
 ```matlab
@@ -83,7 +95,22 @@ disp(zulassung)
 
 ```{exercise}
 :label: part04_miniexercise02
-Erzeugen Sie ein Array mit Wochentagen. Erzeugen Sie dann ein zweites Array mit der Anzahl an Semesterwochenstunden (Schulstunden), die Sie an diesem Wochentag haben. Lassen Sie beides zur Kontrolle anzeigen.
+Erzeugen Sie ein Array mit den Namen der Wochentage. Erzeugen Sie dann ein zweites Array mit der Anzahl an Semesterwochenstunden (Schulstunden), die Sie an diesem Wochentag haben. Lassen Sie beides zur Kontrolle anzeigen.
+````
+````{solution} part04_miniexercise02
+:label: part04_minisolution02
+:class: dropdown
+```matlab
+% Eingabe: Array mit Wochentagen
+woche = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
+
+% Eingabe: Array mit Stundenanzahl pro Tag
+unterricht = [4, 6, 8, 8, 6, 0, 0];
+
+% Ausgabe
+disp(woche);
+disp(unterricht);
+```
 ````
 
 ## Erzeugung von zweidimensionalen Arrays
@@ -119,6 +146,17 @@ Das Resultat ist ein echtes zweidimensionales Array mit 3 Zeilen und 5 Spalten.
 :label: part04_miniexercise03
 Erzeugen Sie ein 3x3-Array mit einer Eins auf der Hauptdiagonalen und lauter Nullen ansonsten. Lassen Sie Ihr Array anzeigen.
 ```
+````{solution} part04_miniexercise03
+:label: part04_minisolution03
+:class: dropdown
+```matlab
+% Erzeugung
+A = [1, 0, 0; 0, 1, 0; 0, 0, 1];
+
+% Ausgabe
+disp(A);
+```
+````
 
 Kurze Arrays wie beispielsweise eine Auflistung der Wochentage mit sieben Elementen oder die 3x3-Einheitsmatrix können wir schnell händisch erzeugen. Wir werden aber auch noch MATLAB-Methoden kennenlernen, mit denen man nach einem bestimmten Muster Arrays erzeugen kann. 
 
@@ -140,6 +178,18 @@ https://de.mathworks.com/help/matlab/ref/randi.html
 :label: part04_miniexercise04
 Erzeugen Sie ein zweidimensionales Array mit sechs Zufallszahlen, die zwischen 1 und 49 liegen. Lassen Sie das Array auch anzeigen.
 ```
+````{solution} part04_miniexercise04
+:label: part04_minisolution04
+:class: dropdown
+```matlab
+% Erzeugung Array mit Zufallszahlen
+% Anmerkung: es gibt zwei Möglichkeiten, ein 1x6-Array oder ein 6x1-Array
+X = randi( [1,49], 1,6);
+
+% Ausgabe
+disp(X);
+```
+````
 
 ## Zugriff auf Elemente eines Arrays
 
@@ -172,6 +222,19 @@ disp(viertes_element)
 :label: part04_miniexercise05
 Erzeugen Sie ein Array mit Schnapszahlen, also 11, 22, 33, ... , 99. Lassen Sie das dritte, sechste und siebte Element ausgeben.
 ```
+````{solution} part04_miniexercise05
+:label: part04_minisolution05
+:class: dropdown
+```matlab
+% Erzeugung des Arrays mit den Schnapszahlen
+a = [11, 22, 33, 44, 55, 66, 77, 88, 99];
+
+% Ausgabe des 3., 6. und 7. Elements
+disp(a(3));
+disp(a(6));
+disp(a(7));
+```
+````
 
 Wenn wir auf Elemente eines zweidimensionalen Arrays zugreifen wollen, müssen wir wiederum die runden Klammern nutzten. Doch diesmal müssen wir zwei Indizes (=Hausnummern) angeben, nämlich die Zeile und die Spalte.
 
@@ -203,6 +266,19 @@ $\pmatrix{31 & 12 & 43 \cr 11 & 52 & 63\cr 21 & 32 & 13}$
 
 Lassen Sie alle Elemente der 1. Spalte ausgeben.
 ```
+````{solution} part04_miniexercise06
+:label: part04_minisolution06
+:class: dropdown
+```matlab
+% Erzeugung
+A = [31, 12, 43; 11, 52, 63; 21, 32, 13];
+
+% Ausgabe
+disp(A(1,1))
+disp(A(2,1))
+disp(A(3,1))
+```
+````
 
 ## Datentyp Character Array und String
 Es wäre schön, die Ausgabe noch etwas schöner zu machen. Bisher haben wir nur die Möglichkeit, den Wert einer Variablen oder einen String mit der `disp()` Funktion anzeigen zu lassen.
@@ -260,6 +336,21 @@ disp(text);
 Erzeugen Sie eine Variable mit einem Character Array, in der Ihr Vor- und Ihr Nachname mit Leerzeichen getrennt steht. Geben Sie zur Kontrolle Ihren Namen aus. 
 In einigen Programmen sind Leerzeichen verboten. Ersetzen Sie daher in einem zweiten Schritt das Leerzeichen durch einen Unterstrich _ , indem Sie das Character Array manipulieren. Lassen Sie das manipulierte Array ausgeben.
 ```
+````{solution} part04_miniexercise07
+:label: part04_minisolution07
+:class: dropdown
+```matlab
+% Eingabe Character Array mit Namen 
+name = 'Simone Gramsch';
+disp(name);
+
+% Verarbeitung: ersetze Leerzeichen durch Unterstrich
+name(7) = '_';
+
+% Ausgabe
+disp(name);
+```
+````
 
 Sobald wir mit MATLAB Text einlesen, verarbeiten und ausgeben wollen, stellt sich die Frage, ob man besser ein Character Array oder einen String verwenden sollte. Für kürzere Texte sollte man das Character Array nehmen. Für längere Texte und vor allem, wenn Teile des Textes manipuliert werden sollen, ist der Datentyp String die bessere Wahl. Eine Übersicht zu den Manipulationsmöglichkeiten von Texten finden Sie hier:
 https://de.mathworks.com/help/matlab/characters-and-strings.html 
@@ -306,136 +397,9 @@ Geben Sie $\pi$ mit dem Text "Pi = ..." aus, wobei die Punkte durch $\pi$ ersetz
 * Fließkommazahl mit 8 Nachkommastellen
 * Fließkommazahl mit 0 Nachkommastellen
 ```
-
-## Zusammenfassung
-In diesem MATLAB Live Skript haben wir uns mit dem Datentyp Array beschäftigt. Tatsächlich ist das nur ein kleiner Einstieg in die Welt der Arrays gewesen, da MATLAB wesentlich auf der Verarbeitung von Arrays basiert. Wir werden in den folgenden Skripten auch immer wieder auf diesen Datentyp zurückgreifen. Aber zunächst vervollständigen wir im nächsten MATLAB Live Skript das Thema Kontrollstrukturen, indem wir die sogenannten Zählschleifen einführen. Die Zählschleifen wiederum bauen auf Arrays auf.    
-
-## Lösungen zu den Mini-Übungen
-
-````{solution} part04_miniexercise01
-:label: part04_minisolution01
-:class: dropdown
-Erzeugen Sie ein Array mit den Elementen 2, 4, 6, 8, 10. Lassen Sie anschließend die Dimension des Arrays ausgeben.
-
-```{code-block} matlab
-% Erzeugung Array
-m = [2,4,6,8,10];
-
-% Ausgabe der Eigenschaften
-whos m
-```
-````
-
-````{solution} part04_miniexercise02
-:label: part04_minisolution02
-:class: dropdown
-Erzeugen Sie ein Array mit Wochentagen. Erzeugen Sie dann ein zweites Array mit der Anzahl an Semesterwochenstunden (Schulstunden), die Sie an diesem Wochentag haben. Lassen Sie beides zur Kontrolle anzeigen.
-```matlab
-% Eingabe: Array mit Wochentagen
-woche = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
-
-% Eingabe: Array mit Stundenanzahl pro Tag
-unterricht = [4, 6, 8, 8, 6, 0, 0];
-
-% Ausgabe
-disp(woche)
-disp(unterricht)
-```
-````
-
-````{solution} part04_miniexercise03
-:label: part04_minisolution03
-:class: dropdown
-Erzeugen Sie ein 3x3-Array mit einer Eins auf der Hauptdiagonalen und lauter Nullen ansonsten. Lassen Sie Ihr Array anzeigen.
-
-```matlab
-% Erzeugung
-A = [1, 0, 0; 0, 1, 0; 0, 0, 1];
-
-% Ausgabe
-disp(A)
-```
-````
-
-````{solution} part04_miniexercise04
-:label: part04_minisolution04
-:class: dropdown
-Erzeugen Sie ein Array mit sechs Zufallszahlen, die zwischen 1 und 49 liegen. Lassen Sie das Array auch anzeigen.
-
-```matlab
-% Erzeugung Array mit Zufallszahlen
-% Anmerkung: es gibt zwei Möglichkeiten, ein 1x6-Array oder ein 6x1-Array
-X = randi( [1,49], 1,6);
-
-% Ausgabe
-disp(X)
-```
-````
-
-````{solution} part04_miniexercise05
-:label: part04_minisolution05
-:class: dropdown
-Erzeugen Sie ein Array mit Schnapszahlen, also 11, 22, 33, ... , 99. Lassen Sie das dritte, sechste und siebte Element ausgeben.
-
-```matlab
-% Erzeugung des Arrays mit den Schnapszahlen
-a = [11, 22, 33, 44, 55, 66, 77, 88, 99];
-
-% Ausgabe des 3., 6. und 7. Elements
-disp(a(3));
-disp(a(6));
-disp(a(7));
-```
-````
-
-````{solution} part04_miniexercise06
-:label: part04_minisolution06
-:class: dropdown
-Erzeugen Sie ein zweidimensionales Array 
-
-$\pmatrix{31 & 12 & 43 \cr 11 & 52 & 63\cr 21 & 32 & 13}$.
-
-Lassen Sie alle Elemente der 1. Spalte ausgeben.
-```matlab
-% Erzeugung
-A = [31, 12, 43; 11, 52, 63; 21, 32, 13];
-
-% Ausgabe
-disp(A(1,1))
-disp(A(2,1))
-disp(A(3,1))
-```
-`````
-
-````{solution} part04_miniexercise07
-:label: part04_minisolution07
-:class: dropdown
-Erzeugen Sie eine Variable mit einem Character Array, in der Ihr Vor- und Ihr Nachname mit Leerzeichen getrennt steht. Geben Sie zur Kontrolle Ihren Namen aus. 
-In einigen Programmen sind Leerzeichen verboten. Ersetzen Sie daher in einem zweiten Schritt das Leerzeichen durch einen Unterstrich _ , indem Sie das Character Array manipulieren. Lassen Sie das manipulierte Array ausgeben.
-
-```matlab
-% Eingabe Character Array mit Namen 
-name = 'Simone Gramsch';
-disp(name);
-
-% Verarbeitung: ersetze Leerzeichen durch Unterstrich
-name(7) = '_';
-
-% Ausgabe
-disp(name);
-```
-````
-
 ````{solution} part04_miniexercise08
 :label: part04_minisolution08
 :class: dropdown
-Geben Sie $\pi$ mit dem Text "Pi = ..." aus, wobei die Punkte durch $\pi$ ersetzt werden sollen. Probieren Sie folgende Formatierungen aus:
-* wissenschaftliche Notation
-* Fließkommazahl 
-* Fließkommazahl mit 4 Nachkommastellen
-* Fließkommazahl mit 8 Nachkommastellen
-* Fließkommazahl mit 0 Nachkommastellen
-
 ```matlab
 fprintf('Pi = %e', pi)
 fprintf('Pi = %f', pi)
@@ -444,6 +408,14 @@ fprintf('Pi = %.8f', pi)
 fprintf('Pi = %.0f', pi)
 ```
 ````
+
+
+
+## Zusammenfassung
+In diesem MATLAB Live Skript haben wir uns mit dem Datentyp Array beschäftigt. Tatsächlich ist das nur ein kleiner Einstieg in die Welt der Arrays gewesen, da MATLAB wesentlich auf der Verarbeitung von Arrays basiert. Wir werden in den folgenden Skripten auch immer wieder auf diesen Datentyp zurückgreifen. Aber zunächst vervollständigen wir im nächsten MATLAB Live Skript das Thema Kontrollstrukturen, indem wir die sogenannten Zählschleifen einführen. Die Zählschleifen wiederum bauen auf Arrays auf.    
+
+
+
 
 
 
