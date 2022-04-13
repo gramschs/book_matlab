@@ -258,11 +258,6 @@ const thebe_selector_output = ".output, .cell_output"
    Zusammenfassung
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#losungen-zu-den-mini-ubungen">
-   Lösungen zu den Mini-Übungen
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -321,11 +316,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#zusammenfassung">
    Zusammenfassung
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#losungen-zu-den-mini-ubungen">
-   Lösungen zu den Mini-Übungen
   </a>
  </li>
 </ul>
@@ -393,6 +383,19 @@ die Koordinaten eines Punktes zusammen. Oder in der Farbenlehre wird mit mit dem
 <p>Erzeugen Sie ein Array mit den Elementen 2, 4, 6, 8, 10. Lassen Sie anschließend die Dimension des Arrays ausgeben.</p>
 </div>
 </div>
+<div class="solution dropdown admonition" id="part04_minisolution01">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise01"> Exercise 24</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Array</span><span class="w"></span>
+<span class="n">m</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">];</span><span class="w"></span>
+
+<span class="c">% Ausgabe der Eigenschaften</span><span class="w"></span>
+<span class="nb">whos</span><span class="w"> </span><span class="n">m</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Ein Array speichert jedoch nicht nur Zahlen (Integer/Float), sondern man kann auch die anderen Datentypen in Form einer Sammlung speichern. Im nächsten Code-Beispiel sehen wir eine Namensliste und eine Liste mit dem Status “zur Klausur zugelassen?”.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">namen</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Charlie&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Dora&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Emil&quot;</span><span class="p">];</span><span class="w"></span>
 <span class="n">zulassung</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">];</span><span class="w"></span>
@@ -405,7 +408,24 @@ die Koordinaten eines Punktes zusammen. Oder in der Farbenlehre wird mit mit dem
 
 <p class="admonition-title"><span class="caption-number">Exercise 25 </span></p>
 <div class="section" id="exercise-content">
-<p>Erzeugen Sie ein Array mit Wochentagen. Erzeugen Sie dann ein zweites Array mit der Anzahl an Semesterwochenstunden (Schulstunden), die Sie an diesem Wochentag haben. Lassen Sie beides zur Kontrolle anzeigen.</p>
+<p>Erzeugen Sie ein Array mit den Namen der Wochentage. Erzeugen Sie dann ein zweites Array mit der Anzahl an Semesterwochenstunden (Schulstunden), die Sie an diesem Wochentag haben. Lassen Sie beides zur Kontrolle anzeigen.</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part04_minisolution02">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise02"> Exercise 25</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe: Array mit Wochentagen</span><span class="w"></span>
+<span class="n">woche</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;Montag&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Dienstag&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mittwoch&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Donnerstag&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Freitag&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Samstag&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sonntag&quot;</span><span class="p">];</span><span class="w"></span>
+
+<span class="c">% Eingabe: Array mit Stundenanzahl pro Tag</span><span class="w"></span>
+<span class="n">unterricht</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">];</span><span class="w"></span>
+
+<span class="c">% Ausgabe</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">woche</span><span class="p">);</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">unterricht</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -443,6 +463,19 @@ die Koordinaten eines Punktes zusammen. Oder in der Farbenlehre wird mit mit dem
 <p>Erzeugen Sie ein 3x3-Array mit einer Eins auf der Hauptdiagonalen und lauter Nullen ansonsten. Lassen Sie Ihr Array anzeigen.</p>
 </div>
 </div>
+<div class="solution dropdown admonition" id="part04_minisolution03">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise03"> Exercise 26</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung</span><span class="w"></span>
+<span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+
+<span class="c">% Ausgabe</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Kurze Arrays wie beispielsweise eine Auflistung der Wochentage mit sieben Elementen oder die 3x3-Einheitsmatrix können wir schnell händisch erzeugen. Wir werden aber auch noch MATLAB-Methoden kennenlernen, mit denen man nach einem bestimmten Muster Arrays erzeugen kann.</p>
 <p>Um Ihnen ein erstes Beispiel zu geben, schauen wir uns jetzt die Funktion <code class="docutils literal notranslate"><span class="pre">randi()</span></code> an.
 Die MATLAB-Funktion <code class="docutils literal notranslate"><span class="pre">randi()</span></code> erzeugt ganzzahlige Zufallszahlen. Dabei gibt es mehrere Argumente:</p>
@@ -459,6 +492,20 @@ Die MATLAB-Funktion <code class="docutils literal notranslate"><span class="pre"
 <p class="admonition-title"><span class="caption-number">Exercise 27 </span></p>
 <div class="section" id="exercise-content">
 <p>Erzeugen Sie ein zweidimensionales Array mit sechs Zufallszahlen, die zwischen 1 und 49 liegen. Lassen Sie das Array auch anzeigen.</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part04_minisolution04">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise04"> Exercise 27</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Array mit Zufallszahlen</span><span class="w"></span>
+<span class="c">% Anmerkung: es gibt zwei Möglichkeiten, ein 1x6-Array oder ein 6x1-Array</span><span class="w"></span>
+<span class="n">X</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">randi</span><span class="p">(</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">49</span><span class="p">],</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Ausgabe</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">X</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -491,6 +538,21 @@ Die MATLAB-Funktion <code class="docutils literal notranslate"><span class="pre"
 <p>Erzeugen Sie ein Array mit Schnapszahlen, also 11, 22, 33, … , 99. Lassen Sie das dritte, sechste und siebte Element ausgeben.</p>
 </div>
 </div>
+<div class="solution dropdown admonition" id="part04_minisolution05">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise05"> Exercise 28</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung des Arrays mit den Schnapszahlen</span><span class="w"></span>
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w"> </span><span class="mi">66</span><span class="p">,</span><span class="w"> </span><span class="mi">77</span><span class="p">,</span><span class="w"> </span><span class="mi">88</span><span class="p">,</span><span class="w"> </span><span class="mi">99</span><span class="p">];</span><span class="w"></span>
+
+<span class="c">% Ausgabe des 3., 6. und 7. Elements</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="mi">6</span><span class="p">));</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="mi">7</span><span class="p">));</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Wenn wir auf Elemente eines zweidimensionalen Arrays zugreifen wollen, müssen wir wiederum die runden Klammern nutzten. Doch diesmal müssen wir zwei Indizes (=Hausnummern) angeben, nämlich die Zeile und die Spalte.</p>
 <p>Bemerkung: es heißt ein Index im Sinular und viele Indizes im Plural.</p>
 <p>Erzeugen wir erst einmal eine zweidimensionale Matrix mit zwei Zeilen und vier Spalten, also Dimension/Size 2x4.</p>
@@ -516,6 +578,21 @@ Die MATLAB-Funktion <code class="docutils literal notranslate"><span class="pre"
 <p>Erzeugen Sie ein zweidimensionales Array</p>
 <p><span class="math notranslate nohighlight">\(\pmatrix{31 &amp; 12 &amp; 43 \cr 11 &amp; 52 &amp; 63\cr 21 &amp; 32 &amp; 13}\)</span></p>
 <p>Lassen Sie alle Elemente der 1. Spalte ausgeben.</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part04_minisolution06">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise06"> Exercise 29</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung</span><span class="w"></span>
+<span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">43</span><span class="p">;</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w"> </span><span class="mi">63</span><span class="p">;</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">];</span><span class="w"></span>
+
+<span class="c">% Ausgabe</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="w"></span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -571,6 +648,23 @@ Wenn wir doppelte Hochkommata verwenden, so handelt es sich um den Datentyp Stri
 In einigen Programmen sind Leerzeichen verboten. Ersetzen Sie daher in einem zweiten Schritt das Leerzeichen durch einen Unterstrich _ , indem Sie das Character Array manipulieren. Lassen Sie das manipulierte Array ausgeben.</p>
 </div>
 </div>
+<div class="solution dropdown admonition" id="part04_minisolution07">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise07"> Exercise 30</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe Character Array mit Namen </span><span class="w"></span>
+<span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Simone Gramsch&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Verarbeitung: ersetze Leerzeichen durch Unterstrich</span><span class="w"></span>
+<span class="n">name</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;_&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="c">% Ausgabe</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Sobald wir mit MATLAB Text einlesen, verarbeiten und ausgeben wollen, stellt sich die Frage, ob man besser ein Character Array oder einen String verwenden sollte. Für kürzere Texte sollte man das Character Array nehmen. Für längere Texte und vor allem, wenn Teile des Textes manipuliert werden sollen, ist der Datentyp String die bessere Wahl. Eine Übersicht zu den Manipulationsmöglichkeiten von Texten finden Sie hier:
 <a class="reference external" href="https://de.mathworks.com/help/matlab/characters-and-strings.html">https://de.mathworks.com/help/matlab/characters-and-strings.html</a></p>
 </div>
@@ -619,139 +713,10 @@ im Abschnitt Special Characters.</p>
 </ul>
 </div>
 </div>
-</div>
-<div class="section" id="zusammenfassung">
-<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">¶</a></h2>
-<p>In diesem MATLAB Live Skript haben wir uns mit dem Datentyp Array beschäftigt. Tatsächlich ist das nur ein kleiner Einstieg in die Welt der Arrays gewesen, da MATLAB wesentlich auf der Verarbeitung von Arrays basiert. Wir werden in den folgenden Skripten auch immer wieder auf diesen Datentyp zurückgreifen. Aber zunächst vervollständigen wir im nächsten MATLAB Live Skript das Thema Kontrollstrukturen, indem wir die sogenannten Zählschleifen einführen. Die Zählschleifen wiederum bauen auf Arrays auf.</p>
-</div>
-<div class="section" id="losungen-zu-den-mini-ubungen">
-<h2>Lösungen zu den Mini-Übungen<a class="headerlink" href="#losungen-zu-den-mini-ubungen" title="Permalink to this headline">¶</a></h2>
-<div class="solution dropdown admonition" id="part04_minisolution01">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise01"> Exercise 24</a></p>
-<div class="section" id="solution-content">
-<p>Erzeugen Sie ein Array mit den Elementen 2, 4, 6, 8, 10. Lassen Sie anschließend die Dimension des Arrays ausgeben.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Array</span><span class="w"></span>
-<span class="n">m</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">];</span><span class="w"></span>
-
-<span class="c">% Ausgabe der Eigenschaften</span><span class="w"></span>
-<span class="nb">whos</span><span class="w"> </span><span class="n">m</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part04_minisolution02">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise02"> Exercise 25</a></p>
-<div class="section" id="solution-content">
-<p>Erzeugen Sie ein Array mit Wochentagen. Erzeugen Sie dann ein zweites Array mit der Anzahl an Semesterwochenstunden (Schulstunden), die Sie an diesem Wochentag haben. Lassen Sie beides zur Kontrolle anzeigen.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe: Array mit Wochentagen</span><span class="w"></span>
-<span class="n">woche</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;Montag&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Dienstag&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mittwoch&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Donnerstag&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Freitag&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Samstag&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sonntag&quot;</span><span class="p">];</span><span class="w"></span>
-
-<span class="c">% Eingabe: Array mit Stundenanzahl pro Tag</span><span class="w"></span>
-<span class="n">unterricht</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">];</span><span class="w"></span>
-
-<span class="c">% Ausgabe</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">woche</span><span class="p">)</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">unterricht</span><span class="p">)</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part04_minisolution03">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise03"> Exercise 26</a></p>
-<div class="section" id="solution-content">
-<p>Erzeugen Sie ein 3x3-Array mit einer Eins auf der Hauptdiagonalen und lauter Nullen ansonsten. Lassen Sie Ihr Array anzeigen.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung</span><span class="w"></span>
-<span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
-
-<span class="c">% Ausgabe</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part04_minisolution04">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise04"> Exercise 27</a></p>
-<div class="section" id="solution-content">
-<p>Erzeugen Sie ein Array mit sechs Zufallszahlen, die zwischen 1 und 49 liegen. Lassen Sie das Array auch anzeigen.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Array mit Zufallszahlen</span><span class="w"></span>
-<span class="c">% Anmerkung: es gibt zwei Möglichkeiten, ein 1x6-Array oder ein 6x1-Array</span><span class="w"></span>
-<span class="n">X</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">randi</span><span class="p">(</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">49</span><span class="p">],</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">);</span><span class="w"></span>
-
-<span class="c">% Ausgabe</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part04_minisolution05">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise05"> Exercise 28</a></p>
-<div class="section" id="solution-content">
-<p>Erzeugen Sie ein Array mit Schnapszahlen, also 11, 22, 33, … , 99. Lassen Sie das dritte, sechste und siebte Element ausgeben.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung des Arrays mit den Schnapszahlen</span><span class="w"></span>
-<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w"> </span><span class="mi">66</span><span class="p">,</span><span class="w"> </span><span class="mi">77</span><span class="p">,</span><span class="w"> </span><span class="mi">88</span><span class="p">,</span><span class="w"> </span><span class="mi">99</span><span class="p">];</span><span class="w"></span>
-
-<span class="c">% Ausgabe des 3., 6. und 7. Elements</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="mi">6</span><span class="p">));</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="mi">7</span><span class="p">));</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part04_minisolution06">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise06"> Exercise 29</a></p>
-<div class="section" id="solution-content">
-<p>Erzeugen Sie ein zweidimensionales Array</p>
-<p><span class="math notranslate nohighlight">\(\pmatrix{31 &amp; 12 &amp; 43 \cr 11 &amp; 52 &amp; 63\cr 21 &amp; 32 &amp; 13}\)</span>.</p>
-<p>Lassen Sie alle Elemente der 1. Spalte ausgeben.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung</span><span class="w"></span>
-<span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">43</span><span class="p">;</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w"> </span><span class="mi">63</span><span class="p">;</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">];</span><span class="w"></span>
-
-<span class="c">% Ausgabe</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part04_minisolution07">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise07"> Exercise 30</a></p>
-<div class="section" id="solution-content">
-<p>Erzeugen Sie eine Variable mit einem Character Array, in der Ihr Vor- und Ihr Nachname mit Leerzeichen getrennt steht. Geben Sie zur Kontrolle Ihren Namen aus.
-In einigen Programmen sind Leerzeichen verboten. Ersetzen Sie daher in einem zweiten Schritt das Leerzeichen durch einen Unterstrich _ , indem Sie das Character Array manipulieren. Lassen Sie das manipulierte Array ausgeben.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe Character Array mit Namen </span><span class="w"></span>
-<span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Simone Gramsch&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w"></span>
-
-<span class="c">% Verarbeitung: ersetze Leerzeichen durch Unterstrich</span><span class="w"></span>
-<span class="n">name</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;_&#39;</span><span class="p">;</span><span class="w"></span>
-
-<span class="c">% Ausgabe</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="solution dropdown admonition" id="part04_minisolution08">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#part04_miniexercise08"> Exercise 31</a></p>
 <div class="section" id="solution-content">
-<p>Geben Sie <span class="math notranslate nohighlight">\(\pi\)</span> mit dem Text “Pi = …” aus, wobei die Punkte durch <span class="math notranslate nohighlight">\(\pi\)</span> ersetzt werden sollen. Probieren Sie folgende Formatierungen aus:</p>
-<ul class="simple">
-<li><p>wissenschaftliche Notation</p></li>
-<li><p>Fließkommazahl</p></li>
-<li><p>Fließkommazahl mit 4 Nachkommastellen</p></li>
-<li><p>Fließkommazahl mit 8 Nachkommastellen</p></li>
-<li><p>Fließkommazahl mit 0 Nachkommastellen</p></li>
-</ul>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Pi = %e&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">pi</span><span class="p">)</span><span class="w"></span>
 <span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Pi = %f&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">pi</span><span class="p">)</span><span class="w"></span>
 <span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Pi = %.4f&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">pi</span><span class="p">)</span><span class="w"></span>
@@ -761,6 +726,10 @@ In einigen Programmen sind Leerzeichen verboten. Ersetzen Sie daher in einem zwe
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="zusammenfassung">
+<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">¶</a></h2>
+<p>In diesem MATLAB Live Skript haben wir uns mit dem Datentyp Array beschäftigt. Tatsächlich ist das nur ein kleiner Einstieg in die Welt der Arrays gewesen, da MATLAB wesentlich auf der Verarbeitung von Arrays basiert. Wir werden in den folgenden Skripten auch immer wieder auf diesen Datentyp zurückgreifen. Aber zunächst vervollständigen wir im nächsten MATLAB Live Skript das Thema Kontrollstrukturen, indem wir die sogenannten Zählschleifen einführen. Die Zählschleifen wiederum bauen auf Arrays auf.</p>
 </div>
 </div>
 
