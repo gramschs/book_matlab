@@ -26,6 +26,19 @@ a = false;
 disp(a)
 ```
 ````
+````{solution} part02_miniexercise01
+:label: part02_minisolution01
+:class: dropdown
+```matlab
+a = false;
+disp(a);
+
+a = true;
+disp(a);
+```
+
+Wird die Variable auf falsch gesetzt (a = false), so gibt die disp()-Funktion eine 0 aus. Wird die Variable a jedoch auf wahr gesetzt (a = true), so gibt die disp()-Funktion eine 1 aus. 
+````
 
 Aber wie kann man dann überprüfen, ob in einer Variablen der Datentyp Integer oder der Datentyp Boolean gespeichert ist? Dazu gibt es das Kommando `whos`. Führen Sie die nächste Code-Zelle aus.
 
@@ -119,6 +132,29 @@ Wählen Sie sich eine Zahl. Testen Sie anschließend:
 * Ist Ihre Zahl positiv?
 * Ist Ihre Zahl kleiner als -17.7?
 ```
+````{solution} part02_miniexercise02
+:label: part02_minisolution02
+:class: dropdown
+```matlab
+% Eingabe: Wahl meiner Zahl
+x = 33;
+
+% kleiner gleich 5?
+x <= 5
+
+% genau gleich 17?
+x == 17
+
+% nicht gleich 17?
+x ~= 17
+
+% positiv?
+x > 0
+
+% kleiner als -17.7?
+x < -17.7
+```
+````
 
 ## Programmverzweigungen mit einen Zweig: if
 
@@ -154,6 +190,19 @@ disp('Bananen dürfen Sie immer kaufen, egal wie alt Sie sind...');
 :label: part02_miniexercise03
 Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin nach der aktuellen Temperatur fragt. Wenn die Temperatur kleiner gleich 10 ˚C ist, soll ausgegeben werden: "Heute ist es aber kalt!"
 ```
+````{solution} part02_miniexercise03
+:label: part02_minisolution03
+:class: dropdown
+```matlab
+% Eingabe
+temperatur = input('Welche Temperatur haben wir aktuell?')
+
+% Verarbeitung und Ausgabe
+if temperatur <= 10
+    disp('Heute ist es aber kalt!')
+end
+```
+````
 
 ```{exercise}
 :label: part02_miniexercise04
@@ -164,6 +213,27 @@ Wenn die Zahl größer als 0 ist, soll ausgegeben werden: "Die Zahl ist positiv.
 
 Wie viele if-Blöcke brauchen Sie für die Umsetzung dieser Mini-Übung?
 ```
+````{solution} part02_miniexercise04
+:label: part02_minisolution04
+:class: dropdown
+```matlab
+% Eingabe
+zahl = input('Geben Sie bitte eine Zahl ein: ');
+
+% Verarbeitung und Ausgabe
+if zahl < 0
+    disp('Die Zahl ist negativ.');
+end
+if zahl == 0
+    disp('Die Zahl ist Null.');
+end
+if zahl > 0
+    disp('Die Zahl ist positiv.');
+end
+```
+
+Der Code erfordert drei if-Blöcke.
+````
 
 ## Programmverzweigungen mit zwei Zweigen: if – else
 
@@ -199,10 +269,43 @@ disp('Jetzt haben wir aber genug über den Alkoholkauf geredet...')
 Schreiben Sie ein Skript, das nach dem aktuellen Monat fragt (1 für Januar, 2 für Februar, 3 für März, usw.). Wenn der aktuelle Monat Januar bis Juni ist, soll ausgegeben werden: "Dieser Monat gehört zur 1. Jahreshälfte." Ansonsten soll ausgegeben werden: "Dieser Monat gehört zur 2. Jahreshälfte."
 ```
 
+````{solution} part02_miniexercise05
+:label: part02_minisolution05
+:class: dropdown
+```matlab
+% Eingabe
+monat = input('Geben Sie bitte den aktuellen Monat ein, 1 für Januar, 2 für Februar usw.');
+
+% Verarbeitung und Ausgabe
+if monat <= 6
+    disp('Dieser Monat gehört zur 1. Jahreshälfte.');
+else
+    disp('Dieser Monat gehört zur 2. Jahreshälfte.');
+end
+```
+````
+
+
 ```{exercise}
 :label: part02_miniexercise06
 Schreiben Sie ein Skript, das nach der aktuellen Temperatur fragt. Wenn die aktuelle Temperatur kleiner gleich 3 ˚C ist, dann lassen Sie ausgeben: "Vorsicht, es besteht Glatteisgefahr!" und ansonsten "Kein Grund zur Sorge."
 ```
+
+````{solution} part02_miniexercise06
+:label: part02_minisolution06
+:class: dropdown
+```matlab
+% Eingabe
+temperatur = input('Welche Temperatur haben wir aktuell?');
+
+% Verarbeitung und Ausgabe
+if temperatur <= 3
+    disp('Vorsicht, es besteht Glatteisgefahr!');
+else
+    disp('Kein Grund zur Sorge.')
+end
+```
+````
 
 ## Programmverzweigungen mit vielen Zweigen: if – elseif – else
 
@@ -348,158 +451,9 @@ Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsübersch
 :name: part02_bussgeldkatalog
 ```
 ````
-
-```{exercise}
-:label: part02_miniexercise08
-Schreiben Sie ein Skript, das die aktuelle Temperatur von einem Benutzer oder einer Benutzerin abfragt. Wenn die Temperatur
-* <= - 10 ˚C ist, dann Ausgabe: "Es ist bitterkalt."
-* <= 0 ˚C ist, dann Ausgabe: "Es ist kalt."
-* <= 10 ˚C ist, dann Ausgabe: "Es ist kühl, aber OK."
-* <= 20 ˚C ist, dann Ausgabe: "Es ist frühlingshaft."
-* <= 30 ˚C ist, dann Ausgabe: "Es ist heiß!"
-* \> 30 ˚C ist, dann Ausgabe: "Das ist ja nicht mehr auszuhalten heiß!!!"
-```
-
-## Zusammenfassung
-
-In diesem MATLAB Live Skript haben Sie die erste Kontrollstruktur kennengelernt, um ein lineares MATLAB-Programm in ein nicht-lineares MATLAB-Programm zu verwandeln, das auf Eingaben von Benutzer:innen oder Zustände von Variablen reagiert. Mit Hilfe von if, elseif und else können Sie nun beliebig viele Verzweigungen programmieren. Damit der MATLAB-Interpreter den Programm-Code in einer Verzweigung ausführt, muss die Bedingung für diese Verzweigung erfült sein. Bedingungen sind entweder wahr oder falsch, was MATLAB in einem booleschen Datentyp abspeichert. Für die Auswertung der Bedingung haben wir bisher Vergleiche von Zahlen betrachtet. Andere Bedingungen beispielsweise auch für Texte werden wir noch kennenlernen.
-
-## Lösungen zu den Mini-Übungen
-
-````{solution} part02_miniexercise01
-:label: part02_minisolution01
-:class: dropdown
-Verändern Sie in der nachfolgenden Code-Zelle den Wert der Variablen a. Setzen Sie einmal a = false und einmal a = true. Beobachten Sie, was der disp()-Befehl ausgibt.
-
-```matlab
-a = false;
-disp(a);
-
-a = true;
-disp(a);
-```
-
-Wird die Variable auf falsch gesetzt (a = false), so gibt die disp()-Funktion eine 0 aus. Wird die Variable a jedoch auf wahr gesetzt (a = true), so gibt die disp()-Funktion eine 1 aus. 
-````
-
-````{solution} part02_miniexercise02
-:label: part02_minisolution02
-:class: dropdown
-Wählen Sie sich eine Zahl. Testen Sie anschließend:
-* Ist Ihre Zahl kleiner gleich 5?
-* Ist Ihre Zahl genau 17?
-* Ist Ihre Zahl nicht gleich 17?
-* Ist Ihre Zahl positiv?
-* Ist Ihre Zahl kleiner als -17.7?
-
-```matlab
-% Eingabe: Wahl meiner Zahl
-x = 33;
-
-% kleiner gleich 5?
-x <= 5
-
-% genau gleich 17?
-x == 17
-
-% nicht gleich 17?
-x ~= 17
-
-% positiv?
-x > 0
-
-% kleiner als -17.7?
-x < -17.7
-```
-````
-
-````{solution} part02_miniexercise03
-:label: part02_minisolution03
-:class: dropdown
-Schreiben Sie ein Skript, das einen Benutzer oder eine Benutzerin nach der aktuellen Temperatur fragt. Wenn die Temperatur kleiner gleich 10 ˚C ist, soll ausgegeben werden: "Heute ist es aber kalt!"
-
-```matlab
-% Eingabe
-temperatur = input('Welche Temperatur haben wir aktuell?')
-
-% Verarbeitung und Ausgabe
-if temperatur <= 10
-    disp('Heute ist es aber kalt!')
-end
-```
-````
-
-````{solution} part02_miniexercise04
-:label: part02_minisolution04
-:class: dropdown
-Schreiben Sie ein Skript, das eine Benutzerin oder einen Benutzer nach einer Zahl fragt. 
-* Wenn die Zahl kleiner als 0 ist, soll ausgegeben werden: "Die Zahl ist negativ."
-* Wenn die Zahl genau gleich 0 ist, soll ausgegeben werden: "Die Zahl ist Null."
-* Wenn die Zahl größer als 0 ist, soll ausgegeben werden: "Die Zahl ist positiv."
-* Wie viele if-Blöcke brauchen Sie für die Umsetzung dieser Mini-Übung?
-
-```matlab
-% Eingabe
-zahl = input('Geben Sie bitte eine Zahl ein: ');
-
-% Verarbeitung und Ausgabe
-if zahl < 0
-    disp('Die Zahl ist negativ.');
-end
-if zahl == 0
-    disp('Die Zahl ist Null.');
-end
-if zahl > 0
-    disp('Die Zahl ist positiv.');
-end
-```
-
-Der Code erfordert drei if-Blöcke.
-````
-
-````{solution} part02_miniexercise05
-:label: part02_minisolution05
-:class: dropdown
-Schreiben Sie ein Skript, das nach dem aktuellen Monat fragt (1 für Januar, 2 für Februar, 3 für März, usw.). Wenn der aktuelle Monat Januar bis Juni ist, soll ausgegeben werden: "Dieser Monat gehört zur 1. Jahreshälfte." Ansonsten soll ausgegeben werden: "Dieser Monat gehört zur 2. Jahreshälfte."
-
-```matlab
-% Eingabe
-monat = input('Geben Sie bitte den aktuellen Monat ein, 1 für Januar, 2 für Februar usw.');
-
-% Verarbeitung und Ausgabe
-if monat <= 6
-    disp('Dieser Monat gehört zur 1. Jahreshälfte.');
-else
-    disp('Dieser Monat gehört zur 2. Jahreshälfte.');
-end
-```
-````
-
-````{solution} part02_miniexercise06
-:label: part02_minisolution06
-:class: dropdown
-Schreiben Sie ein Skript, das nach der aktuellen Temperatur fragt. Wenn die aktuelle Temperatur kleiner gleich 3 ˚C ist, dann lassen Sie ausgeben: "Vorsicht, es besteht Glatteisgefahr!" und ansonsten "Kein Grund zur Sorge."
-
-```matlab
-% Eingabe
-temperatur = input('Welche Temperatur haben wir aktuell?');
-
-% Verarbeitung und Ausgabe
-if temperatur <= 3
-    disp('Vorsicht, es besteht Glatteisgefahr!');
-else
-    disp('Kein Grund zur Sorge.')
-end
-```
-````
-
 ````{solution} part02_miniexercise07
 :label: part02_minisolution07
 :class: dropdown
-Sie finden den aktuellen Bußgeldkatalog für Geschwindigkeitsüberschreitungen mit dem PKW im Internet auf der Seite: https://www.bussgeldkatalog.org/geschwindigkeitsueberschreitung/ 
-
-Schreiben Sie ein MATLAB-Skript, dass abhängig von der Geschwindigkeitsüberschreitung ausgibt, welche Strafe in Euro verhängt wird. 
-
 ```matlab
 % Eingabe
 verstoss = input('Wieviel zu schnell ist die Person gefahren? ')
@@ -529,17 +483,20 @@ end
 ```
 ````
 
+```{exercise}
+:label: part02_miniexercise08
+Schreiben Sie ein Skript, das die aktuelle Temperatur von einem Benutzer oder einer Benutzerin abfragt. Wenn die Temperatur
+* <= - 10 ˚C ist, dann Ausgabe: "Es ist bitterkalt."
+* <= 0 ˚C ist, dann Ausgabe: "Es ist kalt."
+* <= 10 ˚C ist, dann Ausgabe: "Es ist kühl, aber OK."
+* <= 20 ˚C ist, dann Ausgabe: "Es ist frühlingshaft."
+* <= 30 ˚C ist, dann Ausgabe: "Es ist heiß!"
+* \> 30 ˚C ist, dann Ausgabe: "Das ist ja nicht mehr auszuhalten heiß!!!"
+```
+
 ````{solution} part02_miniexercise08
 :label: part02_minisolution08
 :class: dropdown
-Schreiben Sie ein Skript, das die aktuelle Temperatur von einem Benutzer oder einer Benutzerin abfragt. Wenn die Temperatur
-* \<= - 10 ˚C ist, dann Ausgabe: "Es ist bitterkalt."
-* \<= 0 ˚C ist, dann Ausgabe: "Es ist kalt."
-* \<= 10 ˚C ist, dann Ausgabe: "Es ist kühl, aber OK."
-* \<= 20 ˚C ist, dann Ausgabe: "Es ist frühlingshaft."
-* \<= 30 ˚C ist, dann Ausgabe: "Es ist heiß!"
-* < 30 ˚C ist, dann Ausgabe: "Das ist ja nicht mehr auszuhalten heiß!!!"
-
 ```matlab
 % Eingabe
 temperatur = input('Welche Temperatur haben wir aktuell? ');
@@ -560,3 +517,13 @@ else
 end
 ```
 ````
+
+## Zusammenfassung
+
+In diesem MATLAB Live Skript haben Sie die erste Kontrollstruktur kennengelernt, um ein lineares MATLAB-Programm in ein nicht-lineares MATLAB-Programm zu verwandeln, das auf Eingaben von Benutzer:innen oder Zustände von Variablen reagiert. Mit Hilfe von if, elseif und else können Sie nun beliebig viele Verzweigungen programmieren. Damit der MATLAB-Interpreter den Programm-Code in einer Verzweigung ausführt, muss die Bedingung für diese Verzweigung erfült sein. Bedingungen sind entweder wahr oder falsch, was MATLAB in einem booleschen Datentyp abspeichert. Für die Auswertung der Bedingung haben wir bisher Vergleiche von Zahlen betrachtet. Andere Bedingungen beispielsweise auch für Texte werden wir noch kennenlernen.
+
+
+
+
+
+
