@@ -52,6 +52,13 @@ Alles was nach einem Prozentzeichen kommt, wird von MATLAB ignoriert. Die sogena
 :label: part01_miniexercise01
 Lassen Sie MATLAB den Term $3\cdot (7-10)+5$ berechnen.
 ```
+````{solution} part01_miniexercise01
+:label: part01_minisolution01
+:class: dropdown
+```matlab
+3 * (7-10) + 5
+```
+````
 
 ## MATLAB als Programmiersprache
 
@@ -77,6 +84,17 @@ Tragen Sie hier die Hardware ein, die Sie gerade sehen oder die Ihnen generell e
 * xxx
 * xxx
 ```
+````{solution} part01_miniexercise02
+:label: part01_minisolution02
+:class: dropdown
+* Monitor
+* Maus
+* Tastatur
+* PC
+* Webcam (Kamera)
+* Headset
+* ...
+````
 
 Nachdem Sie Ihre Komponenten notiert haben, können Sie den Begriff Hardware noch einmal bei Wikipedia nachlesen: 
 https://de.wikipedia.org/wiki/Hardware
@@ -114,8 +132,14 @@ disp('Hallo Welt')
 ```{exercise}
 :label: part01_miniexercise03
 Kopieren Sie die Zeile `disp('Hallo Welt')` in die nächste Code-Zelle unter die Kommentarzeile und ersetzen Sie Welt durch Ihren Namen. Ihr erstes Computerprogramm in MATLAB :-)
-
 ```
+````{solution} part01_miniexercise03
+:label: part01_minisolution03
+:class: dropdown
+```matlab
+disp('Hallo Simone')
+```
+````
 
 Heute werden nur noch die sogenannten höheren Programmiersprachen verwendet (wie Python, MATLAB oder C++), die für Menschen leichter verständlich sind. Dafür müssen dann Programme, die in höheren Programmiersprachen geschrieben sind, in **Maschinensprache** übersetzt werden. Verschiedene Programmiersprachen verwenden dazu unterschiedliche Prinzipien. Die beiden wichtigsten Vertreter sind **Compiler-Programmiersprachen** und **Interpreter-Programmiersprachen**. 
 
@@ -138,6 +162,17 @@ Antwort 2:
 Antwort 3:
 * XXX
 ```
+````{solution} part01_miniexercise04
+:label: part01_minisolution04
+:class: dropdown
+* Antwort 1:
+Compiler-Sprache: C, C++, Fortran
+Interpreter-Sprache: Java, Matlab, Python
+* Antwort 2:
+In der Regel sind Programme, die in einer Compiler-Sprache geschrieben wurden, schneller als interpretierte Programme. 
+* Antwort 3:
+In der Regel sind interpretierte Programmiersprachen leichter zu lernen, da beispielsweise Code zeilenweise auf seine Korrektheit hin überprüft werden kann.
+````
 
 Die wichtigste Software eines jeden Computersystems ist das **Betriebssystem**. Das Betriebssystem umfasst alle Computerprogramme, die notwendig sind, um überhaupt den Computer zu betreiben, zu starten oder zu benutzen. Das Betriebssystem hat laut Wikipedia (siehe https://de.wikipedia.org/wiki/Betriebssystem) folgende Aufgaben: 
 > ... Benutzerkommunikation; Laden, Ausführen, Unterbrechen und Beenden von Programmen; Verwaltung und Zuteilung der Prozessorzeit; Verwaltung des internen Speicherplatzes für Anwendungen; Verwaltung und Betrieb der angeschlossenen Geräte; Schutzfunktionen z. B. durch Zugriffsbeschränkungen."
@@ -224,6 +259,14 @@ Variablen müssen initialisiert (erstmalig mit einem Wert versehen) werden, bevo
 :label: part01_miniexercise05
 Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben `n` unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit `Run Section` vom MATLAB-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung. 
 ```
+````{solution} part01_miniexercise05
+:label: part01_minisolution05
+:class: dropdown
+```matlab
+n
+```
+Der MATLAB-Interpreter zeigt in rot eine Fehlermeldung an: "Unrecognized function or variable 'n'." Damit weist der MATLAB-Interpreter darauf hin, dass die Variable bisher nicht mit einem Wert versehen wurde, sie ist nicht intialisiert worden. Daher kann damit auch nicht gearbeitet werden.
+````
 
 Sehr häufig findet man Code wie
 
@@ -276,6 +319,15 @@ Verwenden Sie für Variablennamen nur ASCII-Zeichen, also keine Umlaute wie ö, 
 :label: part01_miniexercise06
 Initialisieren Sie eine Variable namens alter mit Ihrem aktuellen Alter, eine Variable ``rentenalter`` mit dem Zahlenwert ``67`` und berechnen Sie dann, wie viele Jahre es noch bis zum Renteneintritt dauert. 
 ```
+````{solution} part01_miniexercise06
+:label: part01_minisolution06
+:class: dropdown
+```matlab
+alter = 21;
+rentenalter = 67;
+disp(rentenalter - alter);
+```
+````
 
 ## Ein- und Ausgabe sowie das EVA-Prinzip
 
@@ -333,84 +385,9 @@ Die fünfte Potenz davon ist:
 32
 ```
 ````
-
-## Zusammenfassung und Ausblick
-
-Der Einstieg in die wissenschaftliche Programmierung mit MATLAB ist zunächst theoretisch. Zuerst haben wir uns mit grundlegenden Fachbegriffen der theoretischen Informatik und dem EVA-Prinzip beschäftigt. Aber bereits mit den ersten Kommandos in MATLAB wie `input()` und `disp()` sowie der Benutzung von Variablen können wir erste MATLAB-Skripte programmieren.
-
-## Lösungen zu den Mini-Übungen
-
-````{solution} part01_miniexercise01
-:label: part01_minisolution01
-:class: dropdown
-```matlab
-3 * (7-10) + 5
-```
-````
-
-````{solution} part01_miniexercise02
-:label: part01_minisolution02
-:class: dropdown
-Tragen Sie hier die Hardware ein, die Sie gerade sehen oder die Ihnen generell einfällt:
-* Monitor
-* Maus
-* Tastatur
-* PC
-* Webcam (Kamera)
-* Headset
-* ...
-````
-
-````{solution} part01_miniexercise03
-:label: part01_minisolution03
-:class: dropdown
-Kopieren Sie die Zeile `disp('Hallo Welt')` in die nächste Code-Zelle unter die Kommentarzeile und ersetzen Sie Welt durch Ihren Namen. Ihr erstes Computerprogramm in MATLAB :-)
-```matlab
-disp('Hallo Simone')
-```
-````
-
-````{solution} part01_miniexercise04
-:label: part01_minisolution04
-:class: dropdown
-Recherchieren Sie im Internet und schreiben Sie Ihre Antworten in diese Text-Zelle.
-Ordnen Sie folgende Programmiersprachen den beiden Kategorien Compiler-Sprache oder Interpreter-Sprache zu: C, C++, Fortran, Java, Matlab und Python.
-Stellen Sie eine Vermutung auf: in welcher Programmiersprache können die schnelleren Programme geschrieben werden?
-Raten Sie: welche Programmiersprachen sind leichter zu lernen und warum?
-* Antwort 1:
-Compiler-Sprache: C, C++, Fortran
-Interpreter-Sprache: Java, Matlab, Python
-* Antwort 2:
-In der Regel sind Programme, die in einer Compiler-Sprache geschrieben wurden, schneller als interpretierte Programme. 
-* Antwort 3:
-In der Regel sind interpretierte Programmiersprachen leichter zu lernen, da beispielsweise Code zeilenweise auf seine Korrektheit hin überprüft werden kann.
-````
-
-````{solution} part01_miniexercise05
-:label: part01_minisolution05
-:class: dropdown
-Schreiben Sie in die nächste Code-Zelle einfach den Buchstaben `n` unter die Kommentarzeile und lassen Sie dann die Code-Zelle mit `Run Section` vom MATLAB-Interpreter ausführen. Was beobachten Sie? Recherchieren Sie im Internet nach der Fehlermeldung. 
-```matlab
-n
-```
-Der MATLAB-Interpreter zeigt in rot eine Fehlermeldung an: "Unrecognized function or variable 'n'." Damit weist der MATLAB-Interpreter darauf hin, dass die Variable bisher nicht mit einem Wert versehen wurde, sie ist nicht intialisiert worden. Daher kann damit auch nicht gearbeitet werden.
-````
-
-````{solution} part01_miniexercise06
-:label: part01_minisolution06
-:class: dropdown
-Initialisieren Sie eine Variable namens `alter` mit Ihrem aktuellen Alter, eine Variable `rentenalter` mit dem Zahlenwert `67` und berechnen Sie dann, wie viele Jahre es noch bis zum Renteneintritt dauert. 
-```matlab
-alter = 21;
-rentenalter = 67;
-disp(rentenalter- alter);
-```
-````
-
 ````{solution} part01_miniexercise07
 :label: part01_minisolution07
 :class: dropdown
-Schreiben Sie ein Skript, das nach einer Zahl fragt. Anschließend gibt das Skript die 5. Potenz dieser Zahl aus. 
 ```matlab
 % Eingabe
 x = input('Bitte geben Sie eine Zahl ein: ');
@@ -422,3 +399,20 @@ disp('Die fünfte Potenz davon ist: ');
 disp(x^5);
 ```
 ````
+
+## Zusammenfassung und Ausblick
+
+Der Einstieg in die wissenschaftliche Programmierung mit MATLAB ist zunächst theoretisch. Zuerst haben wir uns mit grundlegenden Fachbegriffen der theoretischen Informatik und dem EVA-Prinzip beschäftigt. Aber bereits mit den ersten Kommandos in MATLAB wie `input()` und `disp()` sowie der Benutzung von Variablen können wir erste MATLAB-Skripte programmieren.
+
+
+
+
+
+
+
+
+
+
+
+
+
