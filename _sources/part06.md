@@ -170,7 +170,19 @@ hier, indem Sie die folgende Code-Zelle ausführen:
 % Test der Funktion gruessen() 
 gruessen();
 ```
-`````
+````
+````{solution} part06_miniexercise01
+:label: part06_minisolution01
+:class: dropdown
+```matlab
+% Implementierung der Funktion gruessen()
+function gruessen()  
+    for i = 1:5
+        disp('Hallo!')
+    end
+end
+```
+````
 
 ````{exercise}
 :label: part06_miniexercise02
@@ -181,6 +193,19 @@ Funktion dann hier, indem Sie die folgende Code-Zelle ausführen:
 ```matlab
 % Test der Funktion lotto()
 lotto();
+```
+````
+````{solution} part06_miniexercise02
+:label: part06_minisolution02
+:class: dropdown
+```matlab
+% Implementierung der Funktion lotto()
+function lotto()
+    lottozahlen = randi( [1, 49], 1, 6);
+    for i = 1:6
+        disp(lottozahlen(i));
+    end
+end
 ```
 ````
 
@@ -239,6 +264,17 @@ so oft wiederholt ausgegeben, wie in dem Argument angegeben wurde.
 wiederholtes_hallo(7);
 ``` 
 ````
+````{solution} part06_miniexercise03
+:label: part06_minisolution03
+:class: dropdown
+```matlab
+function wiederholtes_hallo(anzahl)
+    for i = 1:anzahl
+        disp('Hallo!');
+    end
+end
+``` 
+````
 
 ````{exercise}
 :label: part06_miniexercise04
@@ -249,6 +285,15 @@ Quadratzahl stehen.)
 ```matlab
 % Testen Sie Ihre Funktion hier, Funktionscode separat
 quadratzahlen(5);
+``` 
+````
+````{solution} part06_miniexercise04
+:label: part06_minisolution04
+:class: dropdown
+```matlab
+function quadratzahlen(x)
+    fprintf('Das Quadrat der Zahl %d ist $d.\n', x, x^2);
+end
 ``` 
 ````
 
@@ -323,6 +368,16 @@ die Summe der vier Zahlen und den Mittelwert der vier Zahlen zurückgibt. Testen
 Sie anschließend Ihre Funktion hier mit den Beispielzahlen 3.5, 6.3, -17.7 und 2
 (Ergebnis sollte sein: Summe -5.900 und Mittelwert -1.475).
 ```
+````{solution} part06_miniexercise05
+:label: part06_minisolution05
+:class: dropdown
+```matlab
+function [summe, mittelwert] = summe_mittelwert(z1, z2, z3, z4)
+    summe = z1 + z2 + z3 + z4;
+    mittelwert = summe / 4;
+end
+```
+````
 
 ```{exercise}
 :label: part06_miniexercise06
@@ -331,7 +386,16 @@ entgegennimmt und dann den Umfang und die Fläche des Kreises zurückgibt. Teste
 Sie anschließend Ihre Funktion hier mit dem Beispielradius r = 5 (Ergebnis
 sollte sein: Umfang 31.4159, Fläche 78.5398).
 ```
-
+````{solution} part06_miniexercise06
+:label: part06_minisolution06
+:class: dropdown
+```matlab
+function [umfang, flaeche] = umfang_flaeche(radius)
+    umfang = 2 * pi * radius;
+    flaeche = pi * radius^2;
+end
+```
+````
 
 ## Zusammenfassung
 
@@ -351,73 +415,7 @@ in diesen Skripten jedoch nicht mehr gehen werden.
 
 
 
-## Lösungen zu den Mini-Übungen
 
-````{solution} part06_miniexercise01
-:label: part06_minisolution01
-:class: dropdown
-Schreiben Sie eine Funktion mit dem Namen `gruessen()`, die 5x hintereinander
-das Wort "Hallo!" schreibt. Fügen Sie die Funktion ganz am Ende in das MATLAB
-Live Script in die letzte Code-Zelle ein, aber testen Sie die Funktion dann
-hier, indem Sie die folgende Code-Zelle ausführen:
-```matlab
-% Test der Funktion gruessen() 
-gruessen();
-```
-`````
 
-````{solution} part06_miniexercise02
-:label: part06_minisolution02
-:class: dropdown
-Schreiben Sie eine Funktion mit dem Namen `lotto()`, die sechs Zufallszahlen
-zwischen 1 und 49 erzeugt und anzeigt. Fügen Sie die Funktion ganz am Ende in
-das MATLAB Live Script in die letzte Code-Zelle ein, aber testen Sie die
-Funktion dann hier, indem Sie die folgende Code-Zelle ausführen:
-```matlab
-% Test der Funktion lotto()
-lotto();
-```
-````
 
-````{solution} part06_miniexercise03
-:label: part06_minisolution03
-:class: dropdown
-Schreiben Sie eine Funktion, die das Wort Hallo mehrfach ausgibt. Dabei soll die
-Funktion als Parameter eine ganze Zahl entgegennehmen. Dann wird das Wort Hallo
-so oft wiederholt ausgegeben, wie in dem Argument angegeben wurde.
-```matlab
-% Testen Sie Ihre Funktion hier, Funktionscode separat 
-wiederholtes_hallo(7);
-``` 
-````
 
-````{solution} part06_miniexercise04
-:label: part06_minisolution04
-:class: dropdown
-Schreiben Sie eine Funktion, die als Parameter eine Zahl entgegennimmt. Dann
-produziert diese Funktion die folgende Ausgabe: Das Quadrat der Zahl xx ist xx.
-(Natürlich soll anstatt xx hier jeweils die richtige Zahl und die richtige
-Quadratzahl stehen.)
-```matlab
-% Testen Sie Ihre Funktion hier, Funktionscode separat
-quadratzahlen(5);
-``` 
-````
-
-```{solution} part06_miniexercise05
-:label: part06_minisolution05
-:class: dropdown
-Schreiben Sie eine Funktion, die vier Zahlen als Argument entgegennimmt und dann
-die Summe der vier Zahlen und den Mittelwert der vier Zahlen zurückgibt. Testen
-Sie anschließend Ihre Funktion hier mit den Beispielzahlen 3.5, 6.3, -17.7 und 2
-(Ergebnis sollte sein: Summe -5.900 und Mittelwert -1.475).
-```
-
-```{solution} part06_miniexercise06
-:label: part06_minisolution06
-:class: dropdown
-Schreiben Sie eine Funktion, die den Radius eines Kreises als Argument
-entgegennimmt und dann den Umfang und die Fläche des Kreises zurückgibt. Testen
-Sie anschließend Ihre Funktion hier mit dem Beispielradius r = 5 (Ergebnis
-sollte sein: Umfang 31.4159, Fläche 78.5398).
-```

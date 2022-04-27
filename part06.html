@@ -247,11 +247,6 @@ const thebe_selector_output = ".output, .cell_output"
    Zusammenfassung
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#losungen-zu-den-mini-ubungen">
-   Lösungen zu den Mini-Übungen
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -300,11 +295,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#zusammenfassung">
    Zusammenfassung
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#losungen-zu-den-mini-ubungen">
-   Lösungen zu den Mini-Übungen
   </a>
  </li>
 </ul>
@@ -467,6 +457,20 @@ hier, indem Sie die folgende Code-Zelle ausführen:</p>
 </div>
 </div>
 </div>
+<div class="solution dropdown admonition" id="part06_minisolution01">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part06_miniexercise01"> Exercise 40</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Implementierung der Funktion gruessen()</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span><span class="nf">gruessen</span><span class="p">()</span><span class="w">  </span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="w"></span>
+<span class="w">        </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Hallo!&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">end</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="exercise admonition" id="part06_miniexercise02">
 
 <p class="admonition-title"><span class="caption-number">Exercise 41 </span></p>
@@ -477,6 +481,21 @@ das MATLAB Live Script in die letzte Code-Zelle ein, aber testen Sie die
 Funktion dann hier, indem Sie die folgende Code-Zelle ausführen:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Test der Funktion lotto()</span><span class="w"></span>
 <span class="n">lotto</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part06_minisolution02">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part06_miniexercise02"> Exercise 41</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Implementierung der Funktion lotto()</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span><span class="nf">lotto</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="n">lottozahlen</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">randi</span><span class="p">(</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">49</span><span class="p">],</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="w"></span>
+<span class="w">        </span><span class="nb">disp</span><span class="p">(</span><span class="n">lottozahlen</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="k">end</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -527,6 +546,19 @@ so oft wiederholt ausgegeben, wie in dem Argument angegeben wurde.</p>
 </div>
 </div>
 </div>
+<div class="solution dropdown admonition" id="part06_minisolution03">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part06_miniexercise03"> Exercise 42</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">wiederholtes_hallo</span><span class="p">(</span>anzahl<span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">anzahl</span><span class="w"></span>
+<span class="w">        </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Hallo!&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">end</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="exercise admonition" id="part06_miniexercise04">
 
 <p class="admonition-title"><span class="caption-number">Exercise 43 </span></p>
@@ -537,6 +569,17 @@ produziert diese Funktion die folgende Ausgabe: Das Quadrat der Zahl xx ist xx.
 Quadratzahl stehen.)</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Testen Sie Ihre Funktion hier, Funktionscode separat</span><span class="w"></span>
 <span class="n">quadratzahlen</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part06_minisolution04">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part06_miniexercise04"> Exercise 43</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">quadratzahlen</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Das Quadrat der Zahl %d ist $d.\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">x</span>^<span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -602,6 +645,18 @@ Sie anschließend Ihre Funktion hier mit den Beispielzahlen 3.5, 6.3, -17.7 und 
 (Ergebnis sollte sein: Summe -5.900 und Mittelwert -1.475).</p>
 </div>
 </div>
+<div class="solution dropdown admonition" id="part06_minisolution05">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part06_miniexercise05"> Exercise 44</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[summe, mittelwert] = summe_mittelwert</span><span class="p">(</span>z1, z2, z3, z4<span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">summe</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">z1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">z2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">z3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">z4</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">mittelwert</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">summe</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="exercise admonition" id="part06_miniexercise06">
 
 <p class="admonition-title"><span class="caption-number">Exercise 45 </span></p>
@@ -610,6 +665,18 @@ Sie anschließend Ihre Funktion hier mit den Beispielzahlen 3.5, 6.3, -17.7 und 
 entgegennimmt und dann den Umfang und die Fläche des Kreises zurückgibt. Testen
 Sie anschließend Ihre Funktion hier mit dem Beispielradius r = 5 (Ergebnis
 sollte sein: Umfang 31.4159, Fläche 78.5398).</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part06_minisolution06">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part06_miniexercise06"> Exercise 45</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[umfang, flaeche] = umfang_flaeche</span><span class="p">(</span>radius<span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">umfang</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">flaeche</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span>^<span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -627,84 +694,6 @@ Funktionen zusammen.</p>
 <p>Funktionen sind der erste Schritt zur Modularisierung von Code.
 Objektorientierte Programmierung mit Klassen wäre der nächste Schritt, den wir
 in diesen Skripten jedoch nicht mehr gehen werden.</p>
-</div>
-<div class="section" id="losungen-zu-den-mini-ubungen">
-<h2>Lösungen zu den Mini-Übungen<a class="headerlink" href="#losungen-zu-den-mini-ubungen" title="Permalink to this headline">¶</a></h2>
-<div class="solution dropdown admonition" id="part06_minisolution01">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part06_miniexercise01"> Exercise 40</a></p>
-<div class="section" id="solution-content">
-<p>Schreiben Sie eine Funktion mit dem Namen <code class="docutils literal notranslate"><span class="pre">gruessen()</span></code>, die 5x hintereinander
-das Wort “Hallo!” schreibt. Fügen Sie die Funktion ganz am Ende in das MATLAB
-Live Script in die letzte Code-Zelle ein, aber testen Sie die Funktion dann
-hier, indem Sie die folgende Code-Zelle ausführen:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Test der Funktion gruessen() </span><span class="w"></span>
-<span class="n">gruessen</span><span class="p">();</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part06_minisolution02">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part06_miniexercise02"> Exercise 41</a></p>
-<div class="section" id="solution-content">
-<p>Schreiben Sie eine Funktion mit dem Namen <code class="docutils literal notranslate"><span class="pre">lotto()</span></code>, die sechs Zufallszahlen
-zwischen 1 und 49 erzeugt und anzeigt. Fügen Sie die Funktion ganz am Ende in
-das MATLAB Live Script in die letzte Code-Zelle ein, aber testen Sie die
-Funktion dann hier, indem Sie die folgende Code-Zelle ausführen:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Test der Funktion lotto()</span><span class="w"></span>
-<span class="n">lotto</span><span class="p">();</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part06_minisolution03">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part06_miniexercise03"> Exercise 42</a></p>
-<div class="section" id="solution-content">
-<p>Schreiben Sie eine Funktion, die das Wort Hallo mehrfach ausgibt. Dabei soll die
-Funktion als Parameter eine ganze Zahl entgegennehmen. Dann wird das Wort Hallo
-so oft wiederholt ausgegeben, wie in dem Argument angegeben wurde.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Testen Sie Ihre Funktion hier, Funktionscode separat </span><span class="w"></span>
-<span class="n">wiederholtes_hallo</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part06_minisolution04">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part06_miniexercise04"> Exercise 43</a></p>
-<div class="section" id="solution-content">
-<p>Schreiben Sie eine Funktion, die als Parameter eine Zahl entgegennimmt. Dann
-produziert diese Funktion die folgende Ausgabe: Das Quadrat der Zahl xx ist xx.
-(Natürlich soll anstatt xx hier jeweils die richtige Zahl und die richtige
-Quadratzahl stehen.)</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Testen Sie Ihre Funktion hier, Funktionscode separat</span><span class="w"></span>
-<span class="n">quadratzahlen</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part06_minisolution05">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part06_miniexercise05"> Exercise 44</a></p>
-<div class="section" id="solution-content">
-<p>Schreiben Sie eine Funktion, die vier Zahlen als Argument entgegennimmt und dann
-die Summe der vier Zahlen und den Mittelwert der vier Zahlen zurückgibt. Testen
-Sie anschließend Ihre Funktion hier mit den Beispielzahlen 3.5, 6.3, -17.7 und 2
-(Ergebnis sollte sein: Summe -5.900 und Mittelwert -1.475).</p>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part06_minisolution06">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part06_miniexercise06"> Exercise 45</a></p>
-<div class="section" id="solution-content">
-<p>Schreiben Sie eine Funktion, die den Radius eines Kreises als Argument
-entgegennimmt und dann den Umfang und die Fläche des Kreises zurückgibt. Testen
-Sie anschließend Ihre Funktion hier mit dem Beispielradius r = 5 (Ergebnis
-sollte sein: Umfang 31.4159, Fläche 78.5398).</p>
-</div>
-</div>
 </div>
 </div>
 
