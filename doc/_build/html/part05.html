@@ -265,11 +265,6 @@ const thebe_selector_output = ".output, .cell_output"
    Zusammenfassung
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#losungen-zu-den-mini-ubungen">
-   Lösungen zu den Mini-Übungen
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -337,11 +332,6 @@ const thebe_selector_output = ".output, .cell_output"
    Zusammenfassung
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#losungen-zu-den-mini-ubungen">
-   Lösungen zu den Mini-Übungen
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -390,7 +380,22 @@ Jedes Element der Menge <code class="docutils literal notranslate"><span class="
 
 <p class="admonition-title"><span class="caption-number">Exercise 32 </span></p>
 <div class="section" id="exercise-content">
-<p>Schreiben Sie eine For-Schleife mit Array, die die klassischen Schulnoten “sehr gut”  bis “ungenügend” einzeln ausgibt. Zur Erinnerung: die deutschen Schulnotenlauten sehr gut, gut, befriedigend, ausreichend, mangelhaft und ungenügend.</p>
+<p>Schreiben Sie eine For-Schleife mit Array, die die klassischen Schulnoten “sehr gut”  bis “ungenügend” einzeln ausgibt. Zur Erinnerung: die deutschen Schulnotenlauten lauten sehr gut, gut, befriedigend, ausreichend, mangelhaft und ungenügend.</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part05_minisolution01">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part05_miniexercise01"> Exercise 32</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Array</span><span class="w"></span>
+<span class="n">noten</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;sehr gut&quot;</span><span class="p">,</span><span class="s">&quot;gut&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;befriedigend&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ausreichend&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mangelhaft&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ungenügend&quot;</span><span class="p">];</span><span class="w"></span>
+
+<span class="c">% Ausgabe Array</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="n">note</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">noten</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">note</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="exercise admonition" id="part05_miniexercise02">
@@ -402,6 +407,18 @@ Jedes Element der Menge <code class="docutils literal notranslate"><span class="
 <p>2 : 7 = 0.28</p>
 <p>usw.
 Dabei soll das Ergebnis zwei Nachkommastellen haben.</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part05_minisolution02">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part05_miniexercise02"> Exercise 33</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Ausgabe </span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%g : %g = %.2f \n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">zahl</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">7</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -431,7 +448,20 @@ Dabei soll das Ergebnis zwei Nachkommastellen haben.</p>
 
 <p class="admonition-title"><span class="caption-number">Exercise 34 </span></p>
 <div class="section" id="exercise-content">
-<p>Erzeugen Sie einen Vektor mit 3, 6, 9,  12, …, 99 und lassen Sie ihn auch ausgeben.</p>
+<p>Erzeugen Sie ein Array mit 3, 6, 9,  12, …, 99 und lassen Sie es auch ausgeben.</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part05_minisolution03">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part05_miniexercise03"> Exercise 34</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe Array</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">;</span><span class="w"></span>
+
+<span class="c">% Ausgabe</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
 </div>
 </div>
 <p>Praktischerweise darf <code class="docutils literal notranslate"><span class="pre">step</span></code> auch negativ sein. Dann muss aber auch die erste Zahl <code class="docutils literal notranslate"><span class="pre">start</span></code> größer als die letzte Zahl <code class="docutils literal notranslate"><span class="pre">stopp</span></code> sein, den negatives step bedeutet, dass MATLAB rückwärts zählt. Auch hier ein Beispiel, bei der ein Countdown von 10 an rückwärts läuft, bis 0 erreicht ist:</p>
@@ -454,6 +484,19 @@ Dabei soll das Ergebnis zwei Nachkommastellen haben.</p>
 <p class="admonition-title"><span class="caption-number">Exercise 35 </span></p>
 <div class="section" id="exercise-content">
 <p>Erzeugen Sie einen Vektor mit 100 Punkten zwischen -1 und 1 und lassen Sie den Vektor ausgeben.</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part05_minisolution04">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part05_miniexercise04"> Exercise 35</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe Array</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Ausgabe</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -485,6 +528,28 @@ Dabei soll das Ergebnis zwei Nachkommastellen haben.</p>
 </ol>
 </div>
 </div>
+<div class="solution dropdown admonition" id="part05_minisolution05">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part05_miniexercise05"> Exercise 36</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung und Ausgabe von X </span><span class="w"></span>
+<span class="n">X</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">ones</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="w"></span>
+
+<span class="c">% Erzeugung und Ausgabe von Y </span><span class="w"></span>
+<span class="n">Y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span><span class="w"></span>
+
+<span class="c">% For-Schleife mit Addition und Ausgabe des jeweils i-ten Elements</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">X</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Y</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%d + %.2f = %d \n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="erzeugungsmethode-randi">
 <h3>Erzeugungsmethode randi<a class="headerlink" href="#erzeugungsmethode-randi" title="Permalink to this headline">¶</a></h3>
@@ -507,6 +572,21 @@ Dabei soll das Ergebnis zwei Nachkommastellen haben.</p>
 <p>Die 5. Lottozahl ist xx.</p>
 <p>Die 6. Lottozahl ist xx.</p>
 <p>Dabei soll natürlich xx ersetzt werden durch die 1., 2., 3. usw Lottozahl.</p>
+</div>
+</div>
+<div class="solution dropdown admonition" id="part05_minisolution06">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part05_miniexercise06"> Exercise 37</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Lottozahlen</span><span class="w"></span>
+<span class="n">lottozahlen</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">randi</span><span class="p">(</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">49</span><span class="p">],</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Ausgabe</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Die %d. Lottozahl ist %d. \n&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">i</span><span class="p">,</span><span class="w"> </span><span class="n">lottozahlen</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -565,6 +645,38 @@ Dabei soll das Ergebnis zwei Nachkommastellen haben.</p>
 <p>Geben Sie die Zahlen auch jeweils aus.</p>
 </div>
 </div>
+<div class="solution dropdown admonition" id="part05_minisolution07">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part05_miniexercise07"> Exercise 38</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% 3 bis 13</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="n">zahl1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl1</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+
+<span class="c">% -4 bis 4</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="n">zahl2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">-</span><span class="mi">4</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl2</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+
+<span class="c">% alle geraden Zahlen von 20 bis 30</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="n">zahl3</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl3</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+
+<span class="c">% jede fünfte Zahl von -100 bis -60</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="n">zahl4</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">-</span><span class="mi">100</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">60</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl4</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+
+<span class="c">% von 100 rückwärts bis 1</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="n">zahl5</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl5</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Bis jetzt haben wir die Elemente der Menge mit der <code class="docutils literal notranslate"><span class="pre">disp()</span></code>-Funktion angezeigt, aber natürlich können wir damit auch weitere Daten verarbeiten. Das folgende Programm zeigt beispielsweise, wie man so die Summe der ersten 100 Zahlen berechnen kann.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">summe</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">100</span><span class="w"></span>
@@ -617,6 +729,18 @@ Dabei soll das Ergebnis zwei Nachkommastellen haben.</p>
 <p>usw.</p>
 </div>
 </div>
+<div class="solution dropdown admonition" id="part05_minisolution08">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#part05_miniexercise08"> Exercise 39</a></p>
+<div class="section" id="solution-content">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Ausgabe</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">20</span><span class="w"></span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Die Quadratzahl von %d ist %d.\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">i</span><span class="p">,</span><span class="w"> </span><span class="nb">i</span>^<span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="zusammenfassung">
 <h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">¶</a></h2>
@@ -634,178 +758,6 @@ Dabei soll das Ergebnis zwei Nachkommastellen haben.</p>
 <li><p>Zählschleifen (for).</p></li>
 </ul>
 <p>Eine fortgeschrittene Technik, die sogenannten Funktionen, werden wir im nächsten MATLAB Live Skript kennenlernen.</p>
-</div>
-<div class="section" id="losungen-zu-den-mini-ubungen">
-<h2>Lösungen zu den Mini-Übungen<a class="headerlink" href="#losungen-zu-den-mini-ubungen" title="Permalink to this headline">¶</a></h2>
-<div class="solution dropdown admonition" id="part05_minisolution01">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part05_miniexercise01"> Exercise 32</a></p>
-<div class="section" id="solution-content">
-<p>Schreiben Sie eine For-Schleife mit Array, die die klassischen Schulnoten “sehr gut”  bis “mangelhaft” einzeln ausgibt.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Array</span><span class="w"></span>
-<span class="n">noten</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;sehr gut&quot;</span><span class="p">,</span><span class="s">&quot;gut&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;befriedigend&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ausreichend&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mangelhaft&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ungenügend&quot;</span><span class="p">];</span><span class="w"></span>
-
-<span class="c">% Ausgabe Array</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="n">note</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">noten</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">note</span><span class="p">);</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part05_minisolution02">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part05_miniexercise02"> Exercise 33</a></p>
-<div class="section" id="solution-content">
-<p>Schreiben Sie ein For-Schleife, die nacheinander die Elemente der Menge <code class="docutils literal notranslate"><span class="pre">[1,2,3,4,5,6,7]</span></code> durch 7 teilt. Lassen Sie die Rechnung mit Ergebnis ausgeben, also z.B. so</p>
-<p>1 : 7 = 0.14</p>
-<p>2 : 7 = 0.28</p>
-<p>usw.
-Dabei soll das Ergebnis zwei Nachkommastellen haben.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Ausgabe </span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span><span class="w"></span>
-<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%g : %g = %.2f \n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">zahl</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">7</span><span class="p">);</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part05_minisolution03">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part05_miniexercise03"> Exercise 34</a></p>
-<div class="section" id="solution-content">
-<p>Erzeugen Sie ein Array mit 3, 6, 9,  12, …, 99 und lassen Sie es ausgeben.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe Array</span><span class="w"></span>
-<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">;</span><span class="w"></span>
-
-<span class="c">% Ausgabe</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part05_minisolution04">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part05_miniexercise04"> Exercise 35</a></p>
-<div class="section" id="solution-content">
-<p>Erzeugen Sie ein eindimensionales Array mit 100 Punkten zwischen -1 und 1 und lassen Sie das Array ausgeben.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Eingabe Array</span><span class="w"></span>
-<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
-
-<span class="c">% Ausgabe</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part05_minisolution05">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part05_miniexercise05"> Exercise 36</a></p>
-<div class="section" id="solution-content">
-<ol class="simple">
-<li><p>Erzeugen Sie zuerst ein eindimensionales Array X mit 1 Zeile und 5 Spalten gefüllt mit Einsen. Geben Sie X zur Kontrolle aus.</p></li>
-<li><p>Erzeugen Sie dann ein eindimensionales Array Y mit 1 Zeile und 5 Spalten gefüllt mit gleichmäßigem Abstand von 5 bis 10. Geben Sie Y zur Kontrolle aus.</p></li>
-<li><p>Schreiben Sie dann eine For-Schleife, die das 1. Element von X und das 1. Element von Y addiert und das Ergebnis ausgibt, dann das 2. Element von X und das 2. Element von Y addiert und ausgibt und das alles wiederholt bis zum jeweils 5. Element.</p></li>
-</ol>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung und Ausgabe von X </span><span class="w"></span>
-<span class="n">X</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">ones</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="w"></span>
-
-<span class="c">% Erzeugung und Ausgabe von Y </span><span class="w"></span>
-<span class="n">Y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span><span class="w"></span>
-
-<span class="c">% For-Schleife mit Addition und Ausgabe des jeweils i-ten Elements</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span><span class="w"></span>
-<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">X</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Y</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;%d + %.2f = %d \n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part05_minisolution06">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part05_miniexercise06"> Exercise 37</a></p>
-<div class="section" id="solution-content">
-<p>Erzeugen Sie ein eindimensionales Array mit sechs ganzzahligen Lottozahlen zwischen 1 und 49. Lassen Sie dann mit einer For-Schleife den folgenden Text ausgeben:</p>
-<p>Die 1. Lottozahl ist xx.</p>
-<p>Die 2. Lottozahl ist xx.</p>
-<p>Die 3. Lottozahl ist xx.</p>
-<p>Die 4. Lottozahl ist xx.</p>
-<p>Die 5. Lottozahl ist xx.</p>
-<p>Die 6. Lottozahl ist xx.</p>
-<p>Dabei soll natürlich xx ersetzt werden durch die 1., 2., 3. usw Lottozahl.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Lottozahlen</span><span class="w"></span>
-<span class="n">lottozahlen</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">randi</span><span class="p">(</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">49</span><span class="p">],</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span><span class="w"></span>
-
-<span class="c">% Ausgabe</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">]</span><span class="w"></span>
-<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Die %d. Lottozahl ist %d. \n&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">i</span><span class="p">,</span><span class="w"> </span><span class="n">lottozahlen</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">i</span><span class="p">));</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part05_minisolution07">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part05_miniexercise07"> Exercise 38</a></p>
-<div class="section" id="solution-content">
-<p>Schreiben Sie fünf for-Schleifen, die folgendermaßen zählen:</p>
-<ul class="simple">
-<li><p>3 bis 13</p></li>
-<li><p>-4 bis 4</p></li>
-<li><p>alle geraden Zahlen von 20 bis 30</p></li>
-<li><p>jede fünfte Zahl von -100 bis -60</p></li>
-<li><p>von 100 rückwärts bis 1</p></li>
-</ul>
-<p>Geben Sie die Zahlen auch jeweils aus.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% 3 bis 13</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="n">zahl1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl1</span><span class="p">);</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-
-<span class="c">% -4 bis 4</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="n">zahl2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">-</span><span class="mi">4</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl2</span><span class="p">);</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-
-<span class="c">% alle geraden Zahlen von 20 bis 30</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="n">zahl3</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl3</span><span class="p">);</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-
-<span class="c">% jede fünfte Zahl von -100 bis -60</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="n">zahl4</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">-</span><span class="mi">100</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">60</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl4</span><span class="p">);</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-
-<span class="c">% von 100 rückwärts bis 1</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="n">zahl5</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="n">zahl5</span><span class="p">);</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="solution dropdown admonition" id="part05_minisolution08">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#part05_miniexercise08"> Exercise 39</a></p>
-<div class="section" id="solution-content">
-<p>Schreiben Sie ein Skript mit einer For-Schleife, das die Quadratzahlen der Zahlen 1 bis 20 ausgibt. Die Ausgabe solte folgendermaßen aussehen:</p>
-<p>Die Quadratzahl von 1 ist 1.</p>
-<p>Die Quadratzahl von 2 ist 4.</p>
-<p>Die Quadratzahl von 3 ist 9.</p>
-<p>usw.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Ausgabe</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">20</span><span class="w"></span>
-<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Die Quadratzahl von %d ist %d.\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">i</span><span class="p">,</span><span class="w"> </span><span class="nb">i</span>^<span class="mi">2</span><span class="p">);</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 

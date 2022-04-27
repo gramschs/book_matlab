@@ -37,8 +37,21 @@ disp('Ich bin fertig!');
 
 ```{exercise}
 :label: part05_miniexercise01
-Schreiben Sie eine For-Schleife mit Array, die die klassischen Schulnoten "sehr gut"  bis "ungenügend" einzeln ausgibt. Zur Erinnerung: die deutschen Schulnotenlauten sehr gut, gut, befriedigend, ausreichend, mangelhaft und ungenügend.
+Schreiben Sie eine For-Schleife mit Array, die die klassischen Schulnoten "sehr gut"  bis "ungenügend" einzeln ausgibt. Zur Erinnerung: die deutschen Schulnotenlauten lauten sehr gut, gut, befriedigend, ausreichend, mangelhaft und ungenügend.
 ```
+````{solution} part05_miniexercise01
+:label: part05_minisolution01
+:class: dropdown
+```matlab
+% Erzeugung Array
+noten = ["sehr gut","gut", "befriedigend", "ausreichend", "mangelhaft", "ungenügend"];
+
+% Ausgabe Array
+for note = noten
+    disp(note);
+end
+```
+````
 
 ```{exercise}
 :label: part05_miniexercise02
@@ -51,6 +64,16 @@ Schreiben Sie ein For-Schleife, die nacheinander die Elemente der Menge `[1,2,3,
 usw.
 Dabei soll das Ergebnis zwei Nachkommastellen haben.
 ```
+````{solution} part05_miniexercise02
+:label: part05_minisolution02
+:class: dropdown
+```matlab
+% Ausgabe 
+for zahl = [1,2,3,4,5,6,7]
+    fprintf('%g : %g = %.2f \n', zahl, 7, zahl / 7);
+end
+```
+````
 
 ## MATLAB-Methoden zur Erzeugung von Zahlen-Arrays (Vektor und Matrix)
 
@@ -83,8 +106,19 @@ Jetzt wird nur noch jede zweite Zahl erzeugt. Genaugenommen fängt der MATLAB-In
 
 ```{exercise}
 :label: part05_miniexercise03
-Erzeugen Sie einen Vektor mit 3, 6, 9,  12, ..., 99 und lassen Sie ihn auch ausgeben.
+Erzeugen Sie ein Array mit 3, 6, 9,  12, ..., 99 und lassen Sie es auch ausgeben.
 ```
+````{solution} part05_miniexercise03
+:label: part05_minisolution03
+:class: dropdown
+```matlab
+% Eingabe Array
+x = 3 : 3 : 99;
+
+% Ausgabe
+disp(x);
+```
+````
 
 Praktischerweise darf `step` auch negativ sein. Dann muss aber auch die erste Zahl `start` größer als die letzte Zahl `stopp` sein, den negatives step bedeutet, dass MATLAB rückwärts zählt. Auch hier ein Beispiel, bei der ein Countdown von 10 an rückwärts läuft, bis 0 erreicht ist:
 ```matlab
@@ -108,6 +142,17 @@ disp(x);
 :label: part05_miniexercise04
 Erzeugen Sie einen Vektor mit 100 Punkten zwischen -1 und 1 und lassen Sie den Vektor ausgeben.
 ```
+````{solution} part05_miniexercise04
+:label: part05_minisolution04
+:class: dropdown
+```matlab
+% Eingabe Array
+x = linspace(-1, 1, 100);
+
+% Ausgabe
+disp(x);
+```
+````
 
 ### Erzeugungsmethode zeros und ones für Vektoren und Matrizen
 
@@ -137,6 +182,26 @@ whos X
 2. Erzeugen Sie dann einen Vektor Y mit 1 Zeile und 5 Spalten gefüllt mit gleichmäßigem Abstand von 5 bis 10. Geben Sie Y zur Kontrolle aus.
 3. Schreiben Sie dann eine For-Schleife, die das 1. Element von X und das 1. Element von Y addiert und das Ergebnis ausgibt, dann das 2. Element von X und das 2. Element von Y addiert und ausgibt und das alles wiederholt bis zum jeweils 5. Element.
 ```
+````{solution} part05_miniexercise05
+:label: part05_minisolution05
+:class: dropdown
+```matlab
+% Erzeugung und Ausgabe von X 
+X = ones(1,5);
+disp(X)
+
+% Erzeugung und Ausgabe von Y 
+Y = linspace(5, 10, 5);
+disp(Y)
+
+% For-Schleife mit Addition und Ausgabe des jeweils i-ten Elements
+for i = [1,2,3,4,5]
+    x = X(i);
+    y = Y(i);
+    fprintf('%d + %.2f = %d \n', x, y, x+y);
+end
+```
+````
 
 ### Erzeugungsmethode randi
 
@@ -168,6 +233,19 @@ Die 6. Lottozahl ist xx.
 
 Dabei soll natürlich xx ersetzt werden durch die 1., 2., 3. usw Lottozahl.
 ```
+````{solution} part05_miniexercise06
+:label: part05_minisolution06
+:class: dropdown
+```matlab
+% Erzeugung Lottozahlen
+lottozahlen = randi( [1, 49], 1, 6);
+
+% Ausgabe
+for i = [1, 2, 3, 4, 5, 6]
+    fprintf('Die %d. Lottozahl ist %d. \n', i, lottozahlen(1,i));
+end
+```
+````
 
 ## Zählschleife ("for") mit MATLAB-erzeugten Arrays
 
@@ -226,6 +304,36 @@ Schreiben Sie fünf for-Schleifen, die folgendermaßen zählen:
 
 Geben Sie die Zahlen auch jeweils aus.
 ```
+````{solution} part05_miniexercise07
+:label: part05_minisolution07
+:class: dropdown
+```matlab
+% 3 bis 13
+for zahl1 = 3 : 13
+    disp(zahl1);
+end
+
+% -4 bis 4
+for zahl2 = -4 : 4
+    disp(zahl2);
+end
+
+% alle geraden Zahlen von 20 bis 30
+for zahl3 = 20 : 2 : 30
+    disp(zahl3);
+end
+
+% jede fünfte Zahl von -100 bis -60
+for zahl4 = -100 : 5: -60
+    disp(zahl4);
+end
+
+% von 100 rückwärts bis 1
+for zahl5 = 100 : -1 : 1
+    disp(zahl5);
+end
+```
+````
 
 Bis jetzt haben wir die Elemente der Menge mit der `disp()`-Funktion angezeigt, aber natürlich können wir damit auch weitere Daten verarbeiten. Das folgende Programm zeigt beispielsweise, wie man so die Summe der ersten 100 Zahlen berechnen kann.
 ```matlab
@@ -285,6 +393,16 @@ Die Quadratzahl von 3 ist 9.
 
 usw.
 ```
+````{solution} part05_miniexercise08
+:label: part05_minisolution08
+:class: dropdown
+```matlab
+% Ausgabe
+for i = 1:20
+    fprintf('Die Quadratzahl von %d ist %d.\n', i, i^2);
+end
+```
+````
 
 ## Zusammenfassung
 
@@ -301,176 +419,5 @@ behandelt. Danach haben wir uns verschiedenen Kontrollstrukturen gewidmet, um Pr
 
 Eine fortgeschrittene Technik, die sogenannten Funktionen, werden wir im nächsten MATLAB Live Skript kennenlernen. 
 
-## Lösungen zu den Mini-Übungen
 
-````{solution} part05_miniexercise01
-:label: part05_minisolution01
-:class: dropdown
-Schreiben Sie eine For-Schleife mit Array, die die klassischen Schulnoten "sehr gut"  bis "mangelhaft" einzeln ausgibt.
-```matlab
-% Erzeugung Array
-noten = ["sehr gut","gut", "befriedigend", "ausreichend", "mangelhaft", "ungenügend"];
 
-% Ausgabe Array
-for note = noten
-    disp(note);
-end
-```
-````
-
-````{solution} part05_miniexercise02
-:label: part05_minisolution02
-:class: dropdown
-Schreiben Sie ein For-Schleife, die nacheinander die Elemente der Menge `[1,2,3,4,5,6,7]` durch 7 teilt. Lassen Sie die Rechnung mit Ergebnis ausgeben, also z.B. so
-
-1 : 7 = 0.14
-
-2 : 7 = 0.28
-
-usw.
-Dabei soll das Ergebnis zwei Nachkommastellen haben.
-```matlab
-% Ausgabe 
-for zahl = [1,2,3,4,5,6,7]
-    fprintf('%g : %g = %.2f \n', zahl, 7, zahl / 7);
-end
-```
-````
-
-````{solution} part05_miniexercise03
-:label: part05_minisolution03
-:class: dropdown
-Erzeugen Sie ein Array mit 3, 6, 9,  12, ..., 99 und lassen Sie es ausgeben.
-```matlab
-% Eingabe Array
-x = 3 : 3 : 99;
-
-% Ausgabe
-disp(x);
-```
-````
-
-````{solution} part05_miniexercise04
-:label: part05_minisolution04
-:class: dropdown
-Erzeugen Sie ein eindimensionales Array mit 100 Punkten zwischen -1 und 1 und lassen Sie das Array ausgeben.
-```matlab
-% Eingabe Array
-x = linspace(-1, 1, 100);
-
-% Ausgabe
-disp(x);
-```
-````
-
-````{solution} part05_miniexercise05
-:label: part05_minisolution05
-:class: dropdown
-1. Erzeugen Sie zuerst ein eindimensionales Array X mit 1 Zeile und 5 Spalten gefüllt mit Einsen. Geben Sie X zur Kontrolle aus. 
-2. Erzeugen Sie dann ein eindimensionales Array Y mit 1 Zeile und 5 Spalten gefüllt mit gleichmäßigem Abstand von 5 bis 10. Geben Sie Y zur Kontrolle aus.
-3. Schreiben Sie dann eine For-Schleife, die das 1. Element von X und das 1. Element von Y addiert und das Ergebnis ausgibt, dann das 2. Element von X und das 2. Element von Y addiert und ausgibt und das alles wiederholt bis zum jeweils 5. Element.
-```matlab
-% Erzeugung und Ausgabe von X 
-X = ones(1,5);
-disp(X)
-
-% Erzeugung und Ausgabe von Y 
-Y = linspace(5, 10, 5);
-disp(Y)
-
-% For-Schleife mit Addition und Ausgabe des jeweils i-ten Elements
-for i = [1,2,3,4,5]
-    x = X(i);
-    y = Y(i);
-    fprintf('%d + %.2f = %d \n', x, y, x+y);
-end
-```
-````
-
-````{solution} part05_miniexercise06
-:label: part05_minisolution06
-:class: dropdown
-Erzeugen Sie ein eindimensionales Array mit sechs ganzzahligen Lottozahlen zwischen 1 und 49. Lassen Sie dann mit einer For-Schleife den folgenden Text ausgeben:
-
-Die 1. Lottozahl ist xx.
-
-Die 2. Lottozahl ist xx.
-
-Die 3. Lottozahl ist xx.
-
-Die 4. Lottozahl ist xx.
-
-Die 5. Lottozahl ist xx.
-
-Die 6. Lottozahl ist xx.
-
-Dabei soll natürlich xx ersetzt werden durch die 1., 2., 3. usw Lottozahl.
-```matlab
-% Erzeugung Lottozahlen
-lottozahlen = randi( [1, 49], 1, 6);
-
-% Ausgabe
-for i = [1, 2, 3, 4, 5, 6]
-    fprintf('Die %d. Lottozahl ist %d. \n', i, lottozahlen(1,i));
-end
-```
-````
-
-````{solution} part05_miniexercise07
-:label: part05_minisolution07
-:class: dropdown
-Schreiben Sie fünf for-Schleifen, die folgendermaßen zählen:
-* 3 bis 13
-* -4 bis 4
-* alle geraden Zahlen von 20 bis 30
-* jede fünfte Zahl von -100 bis -60
-* von 100 rückwärts bis 1
-
-Geben Sie die Zahlen auch jeweils aus.
-```matlab
-% 3 bis 13
-for zahl1 = 3 : 13
-    disp(zahl1);
-end
-
-% -4 bis 4
-for zahl2 = -4 : 4
-    disp(zahl2);
-end
-
-% alle geraden Zahlen von 20 bis 30
-for zahl3 = 20 : 2 : 30
-    disp(zahl3);
-end
-
-% jede fünfte Zahl von -100 bis -60
-for zahl4 = -100 : 5: -60
-    disp(zahl4);
-end
-
-% von 100 rückwärts bis 1
-for zahl5 = 100 : -1 : 1
-    disp(zahl5);
-end
-```
-````
-
-````{solution} part05_miniexercise08
-:label: part05_minisolution08
-:class: dropdown
-Schreiben Sie ein Skript mit einer For-Schleife, das die Quadratzahlen der Zahlen 1 bis 20 ausgibt. Die Ausgabe solte folgendermaßen aussehen:
-
-Die Quadratzahl von 1 ist 1.
-
-Die Quadratzahl von 2 ist 4.
-
-Die Quadratzahl von 3 ist 9.
-
-usw.
-```matlab
-% Ausgabe
-for i = 1:20
-    fprintf('Die Quadratzahl von %d ist %d.\n', i, i^2);
-end
-```
-````
