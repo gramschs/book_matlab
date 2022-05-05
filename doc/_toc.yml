@@ -18,4 +18,5 @@ parts:
     title: 5. Schleifen zum Zählen (for)
   - file: part06
     title: 6. Funktionen
-
+  - file: part07
+    title: 7. Datenvisualisierung
