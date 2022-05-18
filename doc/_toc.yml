@@ -20,3 +20,5 @@ parts:
     title: 6. Funktionen
   - file: part07
     title: 7. Datenvisualisierung
+  - file: part08
+    title: 8. Regression
