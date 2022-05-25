@@ -43,8 +43,6 @@ gesamtfehler_mittelwert = 1/N * sum( (y_blau - y_mittelwert).^2 );
 
 fprintf('Der Gesamtfehler für den Mittelwert als Schätzung ist %g.', gesamtfehler_mittelwert);
 
-
-
 relativer_fehler = gesamtfehler / gesamtfehler_mittelwert;
 
 fprintf('Der relative Fehler der Modellfunktion im Verhältnis zum Fehler beim Mittelwert ist: %.4f', relativer_fehler);

@@ -3,7 +3,6 @@
 
 title: MATLAB für Studierende der Ingenieurwissenschaften
 author: Simone Gramsch
-copyright: "2022"  # Copyright year to be placed in the footer
 logo: pics/book_matlab_logo.png
 
 # Force re-execution of notebooks on each build.
@@ -38,6 +37,8 @@ html:
 
 # https://ebp-sphinx-exercise.readthedocs.io/en/latest/
 sphinx:
+  config:
+    html_show_copyright: false
   extra_extensions:
     - sphinx_exercise
     - sphinx_togglebutton
