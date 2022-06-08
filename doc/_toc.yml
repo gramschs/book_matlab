@@ -22,3 +22,5 @@ parts:
     title: 7. Datenvisualisierung
   - file: part08
     title: 8. Regression
+  - file: part09
+    title: 9. GUI und Fehlersuche
