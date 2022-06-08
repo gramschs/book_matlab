@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,23 +34,24 @@
     
   <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Visualisierung von Messwerten und lineare Regression" href="part08.html" />
@@ -98,7 +99,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Programmierung
  </span>
@@ -142,6 +143,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="part08.html">
    8. Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="part09.html">
+   9. GUI und Fehlersuche
   </a>
  </li>
 </ul>
@@ -354,7 +360,7 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="einfuhrung-und-lernziele">
+  <div class="section" id="einfuhrung-und-lernziele">
 <h1>Einführung und Lernziele<a class="headerlink" href="#einfuhrung-und-lernziele" title="Permalink to this headline">¶</a></h1>
 <p>Bei der Datenvisualisierung geht es darum, Daten durch eine Grafik so aufzubereiten, dass Muster oder Unregelmäßigkeiten in den Daten entdeckt werden können. Dabei kann die visuelle Darstellung der Daten helfen, Muster in den Daten zu entdecken, aber sie kann auch irreführend sein. In diesem MATLAB Live Skript werden wir einen ersten Einblick in die Datenvisualisierung mit MATLAB verschaffen. Abhängig davon, wie die Art der Daten ist, die wir visualisieren wollen, gibt es verschiedene Darstellungsformen, die sogenannten <strong>Diagrammtypen</strong>. Im Folgenden betrachten wir die Diagrammtypen</p>
 <ul class="simple">
@@ -440,8 +446,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Erzeugen wir uns eine Liste mit x-Werten und dazugehörigen y-Werten als Listen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">];</span><span class="w"></span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">];</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -449,29 +455,21 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Um die Wertetabelle jetzt zeichnen zu lassen, bereiten wir die Grafik erst einmal vor, indem wir den Befehl <code class="docutils literal notranslate"><span class="pre">figure</span></code> zum Erzeugen eines Fensters ausführen, in das nachher die Grafik gezeichnet werden soll. Im interaktiven MATLAB Live Skript ist dieser Befehl optional, aber für reine MATLAB Skripte notwendig. Danach kommt die Funktion zum Zeichen der Werte als Liniendiagramm namens <code class="docutils literal notranslate"><span class="pre">plot(x,y)</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figure</span><span class="p">();</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span><span class="p">();</span><span class="w"></span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">figure</span><span class="p">();</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;figure&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/part07_12_0.png" src="_images/part07_12_0.png" />
 </div>
 </div>
 <p>Sieht ziemlich krakelig aus. Eigentlich sollte dies eine Parabel werden im Intervall <span class="math notranslate nohighlight">\([-2,2]\)</span> werden. Mit nur 5 Punkten und der Tatsache, dass diese 5 Punkte mit geraden Linien verbunden werden, sieht es etwas unschön aus. Besser wird es mit mehr Punkten, aber die wollen wir jetzt nicht von Hand erzeugen.</p>
 <p>In den vorangegangenen MATLAB Live Skripten haben wir die Erzeugungsmethode <code class="docutils literal notranslate"><span class="pre">linspace()</span></code> kennengelernt. Zur Erinnerung, die Funktion <code class="docutils literal notranslate"><span class="pre">linspace(a,b,</span> <span class="pre">Anzahl)</span></code> erzeugt Punkte im Intervall <span class="math notranslate nohighlight">\([a,b]\)</span> je nach eingestellter Anzahl.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">);</span>
-<span class="n">whos</span> <span class="n">x</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">);</span><span class="w"></span>
+<span class="n">whos</span><span class="w"> </span><span class="s">x</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -486,8 +484,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Der resultierende Datentyp von <code class="docutils literal notranslate"><span class="pre">linspace</span></code> ist ein eindimensionales Feld (1D-Array), wovon wir uns mit dem Befehl whos überzeugen könnten. Wenn wir jetzt zu jedem Element im Array das Quadrat des Elementes bilden sollen, könnten wir eine For-Schleife programmieren, die durch das eindimensionale Array geht und jedes Element quadriert. Glücklicherweise stellt MATLAB für Zahlen-Arrays, also Vektoren oder Matrizen, zusätzliche Funktionen zur Verfügung, die aus der Mathematik stammen. Wenn jedes einzelne Element eines Vektors oder einer Matrix quadriert werden soll,  müssen wir den <strong>Punktoperator</strong> vor der mathematischen Operation benutzen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
-<span class="n">disp</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -506,8 +504,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Damit können wir nun wiederum ein Liniendiagramm visualisieren:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figure</span><span class="p">();</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span><span class="p">();</span><span class="w"></span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -518,13 +516,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Schon besser, aber noch ein paar mehr Punkte wären noch schöner…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Erzeugung</span> <span class="n">Wertetabelle</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">101</span><span class="p">);</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Wertetabelle</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">);</span><span class="w"></span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
 
-<span class="o">%</span> <span class="n">Visualisierung</span>
-<span class="n">figure</span><span class="p">;</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+<span class="c">% Visualisierung</span><span class="w"></span>
+<span class="nb">figure</span><span class="p">;</span><span class="w"></span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -576,15 +574,15 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Mit den Funktionen <code class="docutils literal notranslate"><span class="pre">xlabel()</span></code> und <code class="docutils literal notranslate"><span class="pre">ylabel()</span></code> beschriften Sie die x- und y-Achse.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Erzeugung</span> <span class="n">Wertetabelle</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">200</span><span class="p">);</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Wertetabelle</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
 
-<span class="o">%</span> <span class="n">Visualisierung</span>
-<span class="n">figure</span><span class="p">();</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Zeit in Sekunden&#39;</span><span class="p">);</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Stromstärke in Ampere&#39;</span><span class="p">);</span>
+<span class="c">% Visualisierung</span><span class="w"></span>
+<span class="nb">figure</span><span class="p">();</span><span class="w"></span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Zeit in Sekunden&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Stromstärke in Ampere&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -595,16 +593,16 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Fehlt noch ein Titel für unsere Grafik, das erledigt die Funktion <code class="docutils literal notranslate"><span class="pre">title()</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Erzeugung</span> <span class="n">Wertetabelle</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">200</span><span class="p">);</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Wertetabelle</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
 
-<span class="o">%</span> <span class="n">Visualisierung</span>
-<span class="n">figure</span><span class="p">();</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Zeit in Sekunden&#39;</span><span class="p">);</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Stromstärke in Ampere&#39;</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Wechselstrom&#39;</span><span class="p">);</span>
+<span class="c">% Visualisierung</span><span class="w"></span>
+<span class="nb">figure</span><span class="p">();</span><span class="w"></span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Zeit in Sekunden&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Stromstärke in Ampere&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Wechselstrom&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -615,17 +613,17 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Manchmal ist es auch hilfreich, die Gitterlinien des Koordinatensystems anzeigen zu lassen, um so die Werte besser ablesen zu können. Dazu wird der Befehl <code class="docutils literal notranslate"><span class="pre">grid</span> <span class="pre">on</span></code> verwendet (<code class="docutils literal notranslate"><span class="pre">grid</span> <span class="pre">off</span></code> schaltet die Gitterlinien wieder aus):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Erzeugung</span> <span class="n">Wertetabelle</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">200</span><span class="p">);</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Wertetabelle</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
 
-<span class="o">%</span> <span class="n">Visualisierung</span>
-<span class="n">figure</span><span class="p">();</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Zeit in Sekunden&#39;</span><span class="p">);</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Stromstärke in Ampere&#39;</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Wechselstrom&#39;</span><span class="p">);</span>
-<span class="n">grid</span> <span class="n">on</span><span class="p">;</span>
+<span class="c">% Visualisierung</span><span class="w"></span>
+<span class="nb">figure</span><span class="p">();</span><span class="w"></span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Zeit in Sekunden&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Stromstärke in Ampere&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Wechselstrom&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -668,9 +666,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Wir erzeugen jetzt zufällige Messwerte, indem wir zu einer linearen Funktion <span class="math notranslate nohighlight">\(f(x)=-3x+7\)</span> eine zufällige Störung addieren. Dazu nutzen wir sogenannte normalverteilte Zufallszahlen, die über den Befehl <code class="docutils literal notranslate"><span class="pre">randn(zeilen,</span> <span class="pre">spalten)</span></code> erzeugt werden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Erzeugung</span> <span class="n">Wertetabelle</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
-<span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span> <span class="o">.*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">7</span> <span class="o">+</span> <span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Wertetabelle</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">];</span><span class="w"></span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="w"> </span><span class="o">.*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -678,8 +676,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Danach können wir mit dem scatter-Befehl die (x,y)-Paare zeichnen lassen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figure</span><span class="p">();</span>
-<span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span><span class="p">();</span><span class="w"></span>
+<span class="nb">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -690,17 +688,17 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Die Befehle zur Beschriftung der Achsen, des Titels und zur Anzeige der Gitterlinien funktionieren wie gewohnt, so dass wir insgesamt den folgenden Code haben:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Erzeugung</span> <span class="n">Wertetabelle</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
-<span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span> <span class="o">.*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">7</span> <span class="o">+</span> <span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Wertetabelle</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">];</span><span class="w"></span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="w"> </span><span class="o">.*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">);</span><span class="w"></span>
 
-<span class="o">%</span> <span class="n">Visualisierung</span>
-<span class="n">figure</span><span class="p">();</span>
-<span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
-<span class="n">grid</span> <span class="n">on</span><span class="p">;</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(x)&#39;</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s1">&#39;f(x)=-3x+7 mit normalverteilter Störung&#39;</span><span class="p">);</span>
+<span class="c">% Visualisierung</span><span class="w"></span>
+<span class="nb">figure</span><span class="p">();</span><span class="w"></span>
+<span class="nb">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w"></span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;f(x)&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;f(x)=-3x+7 mit normalverteilter Störung&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -749,17 +747,17 @@ Damit Sie nicht die Daten abschreiben müssen, können Sie die nachfolgende Code
 <p>Variieren Sie die Größe händisch mit Werten zwischen 10 und 500:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Erzeugung</span> <span class="n">Wertetabelle</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">];</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">randi</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">49</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Wertetabelle</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">];</span><span class="w"></span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">randi</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">49</span><span class="p">],</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span><span class="w"></span>
 
-<span class="o">%</span> <span class="n">Visualisierung</span>
-<span class="n">figure</span><span class="p">();</span>
-<span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Lottozahlen&#39;</span><span class="p">);</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Nummer&#39;</span><span class="p">);</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;gezogene Lottozahl&#39;</span><span class="p">);</span>
-<span class="n">grid</span> <span class="n">on</span><span class="p">;</span>
+<span class="c">% Visualisierung</span><span class="w"></span>
+<span class="nb">figure</span><span class="p">();</span><span class="w"></span>
+<span class="nb">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Lottozahlen&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Nummer&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;gezogene Lottozahl&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -798,15 +796,15 @@ Damit Sie nicht die Daten abschreiben müssen, können Sie die nachfolgende Code
 <p>Wenn jetzt die Marker rot gefärbt werden sollen, setzen wir als viertes Argument <code class="docutils literal notranslate"><span class="pre">'red'</span></code>. Manchmal möchten wir die Größe bei der Voreinstellung belassen, aber trotzdem die Farbe ändern. In diesem Fall können wir nicht einfach das dritte Argument weglassen, sondern kennzeichnen es als Standard, indem wir leere eckige Klammern als drittes Argument für die Größe verwenden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Erzeugung</span> <span class="n">Wertetabelle</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">];</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">randi</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">49</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Wertetabelle</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">];</span><span class="w"></span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">randi</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">49</span><span class="p">],</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span><span class="w"></span>
 
-<span class="o">%</span> <span class="n">Visualisierung</span>
-<span class="n">figure</span><span class="p">();</span>
-<span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="p">[],</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s1">&#39;Lottozahlen&#39;</span><span class="p">);</span>
-<span class="n">grid</span> <span class="n">on</span><span class="p">;</span>
+<span class="c">% Visualisierung</span><span class="w"></span>
+<span class="nb">figure</span><span class="p">();</span><span class="w"></span>
+<span class="nb">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="s">&#39;red&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Lottozahlen&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -862,16 +860,16 @@ Damit Sie nicht die Daten abschreiben müssen, können Sie die nachfolgende Code
 <p>Der folgende Code zeigt Ihnen Zufallszahlen mit verschiedenen Markersymbolen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Erzeugung</span> <span class="n">Wertetabelle</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">randi</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Wertetabelle</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">randi</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
 
-<span class="k">for</span> <span class="n">marker</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">]</span>
-    <span class="n">fprintf</span><span class="p">(</span><span class="s1">&#39;Jetzt kommt Markersymbol: </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="p">);</span>
-    
-    <span class="n">figure</span><span class="p">();</span>
-    <span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="p">);</span>
-<span class="n">end</span>
+<span class="k">for</span><span class="w"> </span><span class="n">marker</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#39;*&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;d&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;p&#39;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Jetzt kommt Markersymbol: %s&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">marker</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nb">figure</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nb">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">marker</span><span class="p">);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -891,16 +889,16 @@ Damit Sie nicht die Daten abschreiben müssen, können Sie die nachfolgende Code
 <p>Möchte man zwei oder gar mehrere Funktionen oder Messdaten in einer Grafik darstellen, verwendet man den plot- oder scatter-Befehl mehrfach, setzt aber den Befehl <code class="docutils literal notranslate"><span class="pre">hold</span> <span class="pre">on;</span></code> dazwischen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Erzeugung</span> <span class="n">Wertetabelle</span>
-<span class="n">x</span>  <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
-<span class="n">y1</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Wertetabelle</span><span class="w"></span>
+<span class="n">x</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
+<span class="n">y1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
+<span class="n">y2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
 
-<span class="o">%</span> <span class="n">Visualisierung</span>
-<span class="n">figure</span><span class="p">();</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">);</span>
-<span class="n">hold</span> <span class="n">on</span><span class="p">;</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">);</span>
+<span class="c">% Visualisierung</span><span class="w"></span>
+<span class="nb">figure</span><span class="p">();</span><span class="w"></span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">);</span><span class="w"></span>
+<span class="n">hold</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w"></span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -911,17 +909,17 @@ Damit Sie nicht die Daten abschreiben müssen, können Sie die nachfolgende Code
 <p>Dann ist es aber auch gut, die Kurven zu beschriften. Dazu verwendet man die Funktion <code class="docutils literal notranslate"><span class="pre">legend(name1,</span> <span class="pre">name2,</span> <span class="pre">...)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Erzeugung</span> <span class="n">Wertetabelle</span>
-<span class="n">x</span>  <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
-<span class="n">y1</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Wertetabelle</span><span class="w"></span>
+<span class="n">x</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
+<span class="n">y1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
+<span class="n">y2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
 
-<span class="o">%</span> <span class="n">Visualisierung</span>
-<span class="n">figure</span><span class="p">();</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">);</span>
-<span class="n">hold</span> <span class="n">on</span><span class="p">;</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">);</span>
-<span class="n">legend</span><span class="p">(</span><span class="s1">&#39;Sinus&#39;</span><span class="p">,</span><span class="s1">&#39;Kosinus&#39;</span><span class="p">);</span>
+<span class="c">% Visualisierung</span><span class="w"></span>
+<span class="nb">figure</span><span class="p">();</span><span class="w"></span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">);</span><span class="w"></span>
+<span class="n">hold</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w"></span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">);</span><span class="w"></span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&#39;Sinus&#39;</span><span class="p">,</span><span class="s">&#39;Kosinus&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1022,12 +1020,12 @@ Damit Sie nicht die Daten abschreiben müssen, können Sie die nachfolgende Code
 Mit der Funktion <code class="docutils literal notranslate"><span class="pre">bar()</span></code> kann nun ein Balkendiagramm erstellt werden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Erzeugung</span> <span class="n">Wertetabelle</span>
-<span class="n">anzahl_views</span> <span class="o">=</span> <span class="p">[</span><span class="mf">8.58</span><span class="p">,</span> <span class="mf">7.53</span><span class="p">,</span> <span class="mf">5.31</span><span class="p">,</span> <span class="mf">5.31</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="mf">4.44</span><span class="p">,</span> <span class="mf">4.18</span><span class="p">,</span> <span class="mf">4.06</span><span class="p">,</span> <span class="mf">4.05</span><span class="p">,</span> <span class="mf">4.03</span><span class="p">];</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Wertetabelle</span><span class="w"></span>
+<span class="n">anzahl_views</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mf">8.58</span><span class="p">,</span><span class="w"> </span><span class="mf">7.53</span><span class="p">,</span><span class="w"> </span><span class="mf">5.31</span><span class="p">,</span><span class="w"> </span><span class="mf">5.31</span><span class="p">,</span><span class="w"> </span><span class="mf">5.1</span><span class="p">,</span><span class="w"> </span><span class="mf">4.44</span><span class="p">,</span><span class="w"> </span><span class="mf">4.18</span><span class="p">,</span><span class="w"> </span><span class="mf">4.06</span><span class="p">,</span><span class="w"> </span><span class="mf">4.05</span><span class="p">,</span><span class="w"> </span><span class="mf">4.03</span><span class="p">];</span><span class="w"></span>
 
-<span class="o">%</span> <span class="n">Visualisierung</span>
-<span class="n">figure</span><span class="p">();</span>
-<span class="n">bar</span><span class="p">(</span><span class="n">anzahl_views</span><span class="p">);</span>
+<span class="c">% Visualisierung</span><span class="w"></span>
+<span class="nb">figure</span><span class="p">();</span><span class="w"></span>
+<span class="nb">bar</span><span class="p">(</span><span class="n">anzahl_views</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1042,14 +1040,14 @@ Mit der Funktion <code class="docutils literal notranslate"><span class="pre">ba
 <p>Schade, dass wir nur die Nummer des YouTubers ablesen können. Wenn wir anstatt der Nummern die ursprünglichen Kategorien verwenden wollen, müssen wir ein Datenobjekt mit den Kategorien erzeugen. Dazu benutzten wir die Funktion <code class="docutils literal notranslate"><span class="pre">categorical(</span> <span class="pre">{kategorie1,</span> <span class="pre">kategorie2,</span> <span class="pre">...,</span> <span class="pre">kategorieN}</span> <span class="pre">)</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Erzeugung</span> <span class="n">Wertetabelle</span>
-<span class="n">youtuber</span> <span class="o">=</span> <span class="n">categorical</span><span class="p">({</span><span class="s1">&#39;Pinkfong&#39;</span><span class="p">,</span> <span class="s1">&#39;Lius Fonsi&#39;</span><span class="p">,</span> <span class="s1">&#39;LooLoo Kids&#39;</span><span class="p">,</span> <span class="s1">&#39;Ed Sheeran&#39;</span><span class="p">,</span><span class="o">...</span>
-    <span class="s1">&#39;Wiz Khalifa&#39;</span><span class="p">,</span> <span class="s1">&#39;Get Movies&#39;</span><span class="p">,</span> <span class="s1">&#39;Mark Ronson&#39;</span><span class="p">,</span> <span class="s1">&#39;Psy&#39;</span><span class="p">,</span> <span class="s1">&#39;Miroshka TV&#39;</span><span class="p">,</span> <span class="s1">&#39;Cocomelon&#39;</span><span class="p">});</span>
-<span class="n">anzahl_views</span> <span class="o">=</span> <span class="p">[</span><span class="mf">8.58</span><span class="p">,</span> <span class="mf">7.53</span><span class="p">,</span> <span class="mf">5.31</span><span class="p">,</span> <span class="mf">5.31</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="mf">4.44</span><span class="p">,</span> <span class="mf">4.18</span><span class="p">,</span> <span class="mf">4.06</span><span class="p">,</span> <span class="mf">4.05</span><span class="p">,</span> <span class="mf">4.03</span><span class="p">];</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Wertetabelle</span><span class="w"></span>
+<span class="n">youtuber</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">categorical</span><span class="p">({</span><span class="s">&#39;Pinkfong&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Lius Fonsi&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;LooLoo Kids&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Ed Sheeran&#39;</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;Wiz Khalifa&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Get Movies&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Mark Ronson&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Psy&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Miroshka TV&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Cocomelon&#39;</span><span class="p">});</span><span class="w"></span>
+<span class="n">anzahl_views</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mf">8.58</span><span class="p">,</span><span class="w"> </span><span class="mf">7.53</span><span class="p">,</span><span class="w"> </span><span class="mf">5.31</span><span class="p">,</span><span class="w"> </span><span class="mf">5.31</span><span class="p">,</span><span class="w"> </span><span class="mf">5.1</span><span class="p">,</span><span class="w"> </span><span class="mf">4.44</span><span class="p">,</span><span class="w"> </span><span class="mf">4.18</span><span class="p">,</span><span class="w"> </span><span class="mf">4.06</span><span class="p">,</span><span class="w"> </span><span class="mf">4.05</span><span class="p">,</span><span class="w"> </span><span class="mf">4.03</span><span class="p">];</span><span class="w"></span>
 
-<span class="o">%</span> <span class="n">Visualisierung</span>
-<span class="n">figure</span><span class="p">();</span>
-<span class="n">bar</span><span class="p">(</span><span class="n">youtuber</span><span class="p">,</span> <span class="n">anzahl_views</span><span class="p">);</span>
+<span class="c">% Visualisierung</span><span class="w"></span>
+<span class="nb">figure</span><span class="p">();</span><span class="w"></span>
+<span class="nb">bar</span><span class="p">(</span><span class="n">youtuber</span><span class="p">,</span><span class="w"> </span><span class="n">anzahl_views</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1060,15 +1058,15 @@ Mit der Funktion <code class="docutils literal notranslate"><span class="pre">ba
 <p>Wie Sie sehen, hat sich die Reihenfolge der Kategorien und damit der Balken geändert. In der ersten Visualisierung waren die Kategorien implizit mit 1, 2, 3, … durchnummeriert. Bei der zweiten Visualisierung, in der wir die Kategoriennamen verwendet haben, wurden die Kategorien alphabetisch sortiert. Dadurch hat sich die Reihenfolge geändert. Dies können wir verhindern, indem wir die ursprüngliche Reihenfolge wieder mit der <code class="docutils literal notranslate"><span class="pre">reordercats()</span></code>-Funktion erzwingen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Erzeugung</span> <span class="n">Wertetabelle</span>
-<span class="n">anzahl_views</span> <span class="o">=</span> <span class="p">[</span><span class="mf">8.58</span><span class="p">,</span> <span class="mf">7.53</span><span class="p">,</span> <span class="mf">5.31</span><span class="p">,</span> <span class="mf">5.31</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="mf">4.44</span><span class="p">,</span> <span class="mf">4.18</span><span class="p">,</span> <span class="mf">4.06</span><span class="p">,</span> <span class="mf">4.05</span><span class="p">,</span> <span class="mf">4.03</span><span class="p">];</span>
-<span class="n">youtuber</span> <span class="o">=</span> <span class="n">reordercats</span><span class="p">(</span><span class="n">categorical</span><span class="p">({</span><span class="s1">&#39;Pinkfong&#39;</span><span class="p">,</span> <span class="s1">&#39;Lius Fonsi&#39;</span><span class="p">,</span> <span class="s1">&#39;LooLoo Kids&#39;</span><span class="p">,</span> <span class="s1">&#39;Ed Sheeran&#39;</span><span class="p">,</span><span class="o">...</span>
-    <span class="s1">&#39;Wiz Khalifa&#39;</span><span class="p">,</span> <span class="s1">&#39;Get Movies&#39;</span><span class="p">,</span> <span class="s1">&#39;Mark Ronson&#39;</span><span class="p">,</span> <span class="s1">&#39;Psy&#39;</span><span class="p">,</span> <span class="s1">&#39;Miroshka TV&#39;</span><span class="p">,</span> <span class="s1">&#39;Cocomelon&#39;</span><span class="p">})</span> <span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Ed Sheeran&#39;</span><span class="p">,</span> <span class="s1">&#39;Pinkfong&#39;</span><span class="p">,</span> <span class="s1">&#39;Lius Fonsi&#39;</span><span class="p">,</span> <span class="s1">&#39;LooLoo Kids&#39;</span><span class="p">,</span><span class="o">...</span>
-    <span class="s1">&#39;Wiz Khalifa&#39;</span><span class="p">,</span> <span class="s1">&#39;Get Movies&#39;</span><span class="p">,</span> <span class="s1">&#39;Mark Ronson&#39;</span><span class="p">,</span> <span class="s1">&#39;Psy&#39;</span><span class="p">,</span> <span class="s1">&#39;Miroshka TV&#39;</span><span class="p">,</span> <span class="s1">&#39;Cocomelon&#39;</span><span class="p">});</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Wertetabelle</span><span class="w"></span>
+<span class="n">anzahl_views</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mf">8.58</span><span class="p">,</span><span class="w"> </span><span class="mf">7.53</span><span class="p">,</span><span class="w"> </span><span class="mf">5.31</span><span class="p">,</span><span class="w"> </span><span class="mf">5.31</span><span class="p">,</span><span class="w"> </span><span class="mf">5.1</span><span class="p">,</span><span class="w"> </span><span class="mf">4.44</span><span class="p">,</span><span class="w"> </span><span class="mf">4.18</span><span class="p">,</span><span class="w"> </span><span class="mf">4.06</span><span class="p">,</span><span class="w"> </span><span class="mf">4.05</span><span class="p">,</span><span class="w"> </span><span class="mf">4.03</span><span class="p">];</span><span class="w"></span>
+<span class="n">youtuber</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">reordercats</span><span class="p">(</span><span class="nb">categorical</span><span class="p">({</span><span class="s">&#39;Pinkfong&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Lius Fonsi&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;LooLoo Kids&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Ed Sheeran&#39;</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;Wiz Khalifa&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Get Movies&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Mark Ronson&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Psy&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Miroshka TV&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Cocomelon&#39;</span><span class="p">})</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;Ed Sheeran&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Pinkfong&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Lius Fonsi&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;LooLoo Kids&#39;</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;Wiz Khalifa&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Get Movies&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Mark Ronson&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Psy&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Miroshka TV&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Cocomelon&#39;</span><span class="p">});</span><span class="w"></span>
 
-<span class="o">%</span> <span class="n">Visualisierung</span>
-<span class="n">figure</span><span class="p">();</span>
-<span class="n">bar</span><span class="p">(</span><span class="n">youtuber</span><span class="p">,</span> <span class="n">anzahl_views</span><span class="p">);</span>
+<span class="c">% Visualisierung</span><span class="w"></span>
+<span class="nb">figure</span><span class="p">();</span><span class="w"></span>
+<span class="nb">bar</span><span class="p">(</span><span class="n">youtuber</span><span class="p">,</span><span class="w"> </span><span class="n">anzahl_views</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1079,11 +1077,11 @@ Mit der Funktion <code class="docutils literal notranslate"><span class="pre">ba
 <p>Natürlich funktionieren auch hier die Funktionen <code class="docutils literal notranslate"><span class="pre">xlabel()</span></code>, <code class="docutils literal notranslate"><span class="pre">ylabel()</span></code> und <code class="docutils literal notranslate"><span class="pre">title()</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figure</span><span class="p">();</span>
-<span class="n">bar</span><span class="p">(</span><span class="n">youtuber</span><span class="p">,</span> <span class="n">anzahl_views</span><span class="p">);</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;YouTuber&#39;</span><span class="p">);</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Anzahl Views in Mrd.&#39;</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s1">&#39;YouTube-Streams 2021&#39;</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span><span class="p">();</span><span class="w"></span>
+<span class="nb">bar</span><span class="p">(</span><span class="n">youtuber</span><span class="p">,</span><span class="w"> </span><span class="n">anzahl_views</span><span class="p">);</span><span class="w"></span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;YouTuber&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Anzahl Views in Mrd.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;YouTube-Streams 2021&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1168,16 +1166,16 @@ Mit der Funktion <code class="docutils literal notranslate"><span class="pre">ba
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "matlab_connect"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "matlab_connect",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'matlab_connect'</script>
 
               </div>
               
