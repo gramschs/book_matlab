@@ -2,13 +2,13 @@
 
 ## Lernziele
 
-Dieses MATLAB Live Script ist der Einstieg in die wissenschafltiche Programmierung mit MATLAB. Zuerst werden wir MATLAB als Taschenrechner benutzen. Danach beschäftigen wir uns mit grundlegenden Begriffen der Informatik, nämlich
+Dieses MATLAB Live Script ist der Einstieg in die wissenschaftliche Programmierung mit MATLAB. Zuerst werden wir MATLAB als Taschenrechner benutzen. Danach beschäftigen wir uns mit grundlegenden Begriffen der Informatik, nämlich
 * Hardware und Software,
 * Programm und Skript,
 * kompilierte und interpretierte Programmiersprachen sowie
 * Betriebssystem, Anwendungssoftware (App) und Bibliotheken (Toolbox).
 
-Nach dem kurzen Ausflug in die Theorie der Informatik widmen wir uns einfachen Datentypen und Variablen. Zusammen mit einfachen MATLAB-Kommandos, um Eingaben einer Benutzerin oder eines Benutzers abzufragen und auf dem Bildschirm auszugeben, wird es uns möglich, erste kleinere MATLAB-Skript zu schreiben.  Das entspricht auch dem grundlegenden Ablauf in der Datenverarbeitung, dem EVA-Prinzip, das für Eingabe, Verarbeitung und Ausgabe steht.
+Nach dem kurzen Ausflug in die Theorie der Informatik widmen wir uns einfachen Datentypen und Variablen. Zusammen mit einfachen MATLAB-Kommandos, um Eingaben einer Benutzerin oder eines Benutzers abzufragen und auf dem Bildschirm auszugeben, wird es uns möglich, erste kleinere MATLAB-Skripte zu schreiben.  Das entspricht auch dem grundlegenden Ablauf in der Datenverarbeitung, dem EVA-Prinzip, das für Eingabe, Verarbeitung und Ausgabe steht.
 
 ## MATLAB als Taschenrechner
 

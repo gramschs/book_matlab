@@ -24,3 +24,5 @@ parts:
     title: 8. Regression
   - file: part09
     title: 9. GUI und Fehlersuche
+  - file: part10
+    title: 10. Simulink
