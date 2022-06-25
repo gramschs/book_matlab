@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,23 +34,21 @@
     
   <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -98,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Programmierung
  </span>
@@ -132,6 +130,21 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="part06.html">
    6. Funktionen
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="part07.html">
+   7. Datenvisualisierung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="part08.html">
+   8. Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="part09.html">
+   9. GUI und Fehlersuche
   </a>
  </li>
  <li class="toctree-l1">
@@ -262,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="willkommen-zum-lernkurs-matlab-fur-studierende-der-ingenieurwissenschaften">
+  <div class="section" id="willkommen-zum-lernkurs-matlab-fur-studierende-der-ingenieurwissenschaften">
 <h1>Willkommen zum Lernkurs MATLAB für Studierende der Ingenieurwissenschaften<a class="headerlink" href="#willkommen-zum-lernkurs-matlab-fur-studierende-der-ingenieurwissenschaften" title="Permalink to this headline">¶</a></h1>
 <p>Verfasst von <a class="reference external" href="https://www.frankfurt-university.de/de/erweiterungen/ansprechpartner/detail/simone-gramsch-1/?no_cache=1">Simone Gramsch</a> // Powered by <a class="reference external" href="https://jupyterbook.org/">Jupyter Book</a></p>
 <p>Die Digitalisierung in den Ingenieurwissenschaften nimmt immer stärker zu. Daher bietet dieser MATLAB-Kurs zukünftigen Ingenieur:innen einen Einstieg in die grundlegenden Programmiertechniken mit <a class="reference external" href="https://de.mathworks.com/">MATLAB</a>. Jedes Kapitel entspricht dabei einer Vorlesung von 90 min Dauer.</p>
@@ -278,7 +291,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="inhaltsverzeichnis">
 <h2>Inhaltsverzeichnis<a class="headerlink" href="#inhaltsverzeichnis" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programmierung</span></p>
+<p class="caption"><span class="caption-text">Programmierung</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="part01.html">1. Einstieg in die Programmierung</a></li>
 <li class="toctree-l1"><a class="reference internal" href="part02.html">2. Programmverzweigung (if - elseif - else)</a></li>
@@ -286,6 +299,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="part04.html">4. Array, String und formatierte Ausgaben (fprintf)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="part05.html">5. Schleifen zum Zählen (for)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="part06.html">6. Funktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part07.html">7. Datenvisualisierung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part08.html">8. Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part09.html">9. GUI und Fehlersuche</a></li>
 <li class="toctree-l1"><a class="reference internal" href="part10.html">10. Simulink</a></li>
 </ul>
 </div>
