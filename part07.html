@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Einführung und Lernziele &#8212; MATLAB für Studierende der Ingenieurwissenschaften</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Visualisierung von Messwerten und lineare Regression" href="part08.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,170 +108,251 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Willkommen zum Lernkurs MATLAB für Studierende der Ingenieurwissenschaften
-  </a>
- </li>
-</ul>
-<p class="caption">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Willkommen zum Lernkurs MATLAB für Studierende der Ingenieurwissenschaften
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Programmierung
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="part01.html">
-   1. Einstieg in die Programmierung
+   Einstieg in die Programmierung
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="part02.html">
-   2. Programmverzweigung (if - elseif - else)
+   Programmverzweigung (if - elseif - else)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="part03.html">
-   3. Digitale Logik und Schleifen mit Bedingungen (while)
+   Digitale Logik und Schleifen mit Bedingungen (while)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="part04.html">
-   4. Array, String und formatierte Ausgaben (fprintf)
+   Array, String und formatierte Ausgaben (fprintf)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="part05.html">
-   5. Schleifen zum Zählen (for)
+   Schleifen zum Zählen (for)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="part06.html">
-   6. Funktionen
+   Funktionen
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Wissenschaftliche Anwendungen
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   7. Datenvisualisierung
+   Datenvisualisierung
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="part08.html">
-   8. Regression
+   Lineare Regression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="part09.html">
-   9. GUI und Fehlersuche
+   GUI und Fehlersuche
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="part10.html">
-   10. Simulink
+   Simulink
   </a>
  </li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/part07.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/gramschs/book_matlab"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/gramschs/book_matlab/master?urlpath=tree/docs/part07.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/gramschs/book_matlab/master?urlpath=tree/docs/part07.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/gramschs/book_matlab"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/part07.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#diagramm-und-haufige-diagrammtypen">
    Diagramm und häufige Diagrammtypen
@@ -298,12 +395,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Einführung und Lernziele</h1>
@@ -362,11 +458,12 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="einfuhrung-und-lernziele">
-<h1>Einführung und Lernziele<a class="headerlink" href="#einfuhrung-und-lernziele" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="einfuhrung-und-lernziele">
+<h1>Einführung und Lernziele<a class="headerlink" href="#einfuhrung-und-lernziele" title="Permalink to this headline">#</a></h1>
 <p>Bei der Datenvisualisierung geht es darum, Daten durch eine Grafik so aufzubereiten, dass Muster oder Unregelmäßigkeiten in den Daten entdeckt werden können. Dabei kann die visuelle Darstellung der Daten helfen, Muster in den Daten zu entdecken, aber sie kann auch irreführend sein. In diesem MATLAB Live Skript werden wir einen ersten Einblick in die Datenvisualisierung mit MATLAB verschaffen. Abhängig davon, wie die Art der Daten ist, die wir visualisieren wollen, gibt es verschiedene Darstellungsformen, die sogenannten <strong>Diagrammtypen</strong>. Im Folgenden betrachten wir die Diagrammtypen</p>
 <ul class="simple">
 <li><p>Liniendiagramm,</p></li>
@@ -382,8 +479,8 @@
 <li><p>Farbskalen.</p></li>
 </ul>
 <p>Um uns zunächst das Einlesen von echten Messdaten zu ersparen, werden wir in diesem MATLAB Live Skript entweder die Graphen von mathematischen Funktionen visualisieren oder uns künstliche Messdaten per Zufallsgenerator erzeugen.</p>
-<div class="section" id="diagramm-und-haufige-diagrammtypen">
-<h2>Diagramm und häufige Diagrammtypen<a class="headerlink" href="#diagramm-und-haufige-diagrammtypen" title="Permalink to this headline">¶</a></h2>
+<section id="diagramm-und-haufige-diagrammtypen">
+<h2>Diagramm und häufige Diagrammtypen<a class="headerlink" href="#diagramm-und-haufige-diagrammtypen" title="Permalink to this headline">#</a></h2>
 <p>Wikipedia (siehe <a class="reference external" href="https://de.wikipedia.org/wiki/Diagramm">https://de.wikipedia.org/wiki/Diagramm</a>) definiert den Fachbegriff <strong>Diagramm</strong> folgendermaßen:</p>
 <blockquote>
 <div><p>“Ein <strong>Diagramm</strong>, genannt auch <strong>(grafisches) Schaubild</strong>, ist eine grafische Darstellung von Daten, Sachverhalten oder Informationen. Je nach der Zielsetzung des Diagramms werden höchst unterschiedliche Typen eingesetzt.”</p>
@@ -397,56 +494,64 @@
 <li><p>10 Datteln.</p></li>
 </ul>
 <p>Wenn wir jetzt die Zutatenliste visualisieren wollen, können wir ein Balkendiagramm verwenden, denn man kann nicht den Mittelwert zwischen Apfel und Banane bilden. So könnte beispielsweise das zugehörige Balkendiagramm aussehen:</p>
-<div class="figure align-default" id="part07-balkendiagramm-obstsalat">
+<figure class="align-default" id="part07-balkendiagramm-obstsalat">
 <a class="reference internal image-reference" href="_images/part07_balkendiagramm_obstsalat.png"><img alt="_images/part07_balkendiagramm_obstsalat.png" src="_images/part07_balkendiagramm_obstsalat.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Balkendiagramm für die Zutatenliste eines Obstsalates</span><a class="headerlink" href="#part07-balkendiagramm-obstsalat" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Balkendiagramm für die Zutatenliste eines Obstsalates</span><a class="headerlink" href="#part07-balkendiagramm-obstsalat" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>In der Schule kommt am häufigsten das <strong>x-y-Diagramm</strong> vor. Damit soll die Wirkung y einer Ursache x beschreiben werden. Ein typisches Beispiel ist in der Physik ein Weg-Zeit-Diagramm, bei dem die Zeit auf der x-Achse und der Weg, den ein bewegter Körper in dieser Zeit zurückgelegt hat, auf der y-Achse dargestellt wird. Auch die Schaubilder bzw. Graphen von Funktionen werden so dargestellt. Normalerweise sind die Daten au der x-Achse <strong>kontinuierlich</strong>. Vielleicht wird der zurückgelegte Weg eines Autos nur nach 1 Sekunde, 2 Sekunden, 3 Sekunden usw. gemessen. Aber dazwischen hat ist das Auto ja nicht im Nirwana verschwunden, zwischen den Werten auf der x-Achse existieren weitere Zeitpunkte, zu denen der zurückgelegte Weg ermittelt werden kann. Um diesen Unterschied zwischen Messwerten, die diskret gemessen werden, aber zu einer kontinuierlichen Größe gehören und echten kontinuierlichen Größen besser darstellen zu können, werden x-y-Diagramme als</p>
 <ul class="simple">
 <li><p><strong>Liniendiagramme</strong> und</p></li>
 <li><p><strong>Streudiagramme</strong></p></li>
 </ul>
 <p>dargestellt. Im Folgenden wird einmal das Zeit-Weg-Diagramm eines bewegten Körpers aufgrund der Messwerte als Streudiagramm gezeigt und einmal aufgrund der physikalischen Formel <span class="math notranslate nohighlight">\(s=\frac{1}{2}at^2\)</span> für eine konstante Beschleunigung von <span class="math notranslate nohighlight">\(a=5 m/s\)</span> als Liniendiagramm:</p>
-<div class="figure align-default" id="part07-streudiagramm">
+<figure class="align-default" id="part07-streudiagramm">
 <a class="reference internal image-reference" href="_images/part07_streudiagramm.png"><img alt="_images/part07_streudiagramm.png" src="_images/part07_streudiagramm.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Messungen Weg-Zeit eines bewegten Körpers als Streudiagramm</span><a class="headerlink" href="#part07-streudiagramm" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="part07-liniendiagramm">
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Messungen Weg-Zeit eines bewegten Körpers als Streudiagramm</span><a class="headerlink" href="#part07-streudiagramm" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="part07-liniendiagramm">
 <a class="reference internal image-reference" href="_images/part07_liniendiagramm.png"><img alt="_images/part07_liniendiagramm.png" src="_images/part07_liniendiagramm.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Formel Weg-Zeit eines bewegten Körpers als Liniendiagramm</span><a class="headerlink" href="#part07-liniendiagramm" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Formel Weg-Zeit eines bewegten Körpers als Liniendiagramm</span><a class="headerlink" href="#part07-liniendiagramm" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Bei Messungen kann es sehr interessant sein, die Messwerte und der Messung zugrunde liegende Formel gleichzeitig zu visualisieren. Da wird erreicht, indem die Messwerte als Streudiagramm und die Formel als Liniendiagramm dargestellt wird. Damit können Ursache und Wirkung gut herausgearbeitet werden, die Güte der Messung beurteilt werden oder überhaupt neue Gesetzmäßigkeiten entdeckt werden. Für unser Weg-Zeit-Diagramm könnte das beispielsweise so aussehen:</p>
-<div class="figure align-default" id="part07-wegzeit">
+<figure class="align-default" id="part07-wegzeit">
 <a class="reference internal image-reference" href="_images/part07_wegzeit.png"><img alt="_images/part07_wegzeit.png" src="_images/part07_wegzeit.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Weg-Zeit-Diagramm eines bewegten Körpers (Messungen und Formel)</span><a class="headerlink" href="#part07-wegzeit" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Weg-Zeit-Diagramm eines bewegten Körpers (Messungen und Formel)</span><a class="headerlink" href="#part07-wegzeit" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Nachdem wir die drei wichtigsten Diagrammtypen kennengelernt haben, werden wir uns nun erarbeiten, wie diese in MATLAB umgesetzt werden können. Für weitere Details über Datenvisualisierung (unabhängig von Programmiersprache oder Software) empfehle ich das Buch: Datenvisualisierung - Grundlagen &amp; Praxis von Claus O. Wilke erschienen im O’Reilly-Verlag bzw. bei dpunkt.verlag GmBH.</p>
 <div class="exercise admonition" id="exercise_07_01">
 
 <p class="admonition-title"><span class="caption-number">Exercise 46 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Welchen Diagrammtyp würden Sie für die folgenden Szenarien benutzen?</p>
 <ol class="simple">
 <li><p>Aktienkurs</p></li>
 <li><p>Notenspiegel</p></li>
 <li><p>Messung der Fallgeschwindigkeit zu gegebenen Höhen</p></li>
 </ol>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="solution_07_01">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#exercise_07_01"> Exercise 46</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <ol class="simple">
 <li><p>Aktienkurs –&gt; Liniendiagramm</p></li>
 <li><p>Notenspiegel –&gt; Balkendiagramm</p></li>
 <li><p>Messung der Fallgeschwindigkeit zu gegebenen Höhen –&gt; Streudiagramm</p></li>
 </ol>
+</section>
 </div>
-</div>
-</div>
-<div class="section" id="liniendiagramm-zur-visualisierung-von-ursache-wirkung">
-<h2>Liniendiagramm zur Visualisierung von Ursache - Wirkung<a class="headerlink" href="#liniendiagramm-zur-visualisierung-von-ursache-wirkung" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="liniendiagramm-zur-visualisierung-von-ursache-wirkung">
+<h2>Liniendiagramm zur Visualisierung von Ursache - Wirkung<a class="headerlink" href="#liniendiagramm-zur-visualisierung-von-ursache-wirkung" title="Permalink to this headline">#</a></h2>
 <p>Schaubilder bzw. Graphen von Funktionen werden duch x-y-Diagramm dargestellt. Da in der Regel eine mathematische Funktion für alle x-Werte eines bestimmten Intervalles definiert wird, verwenden wir zur Darstellungen von mathematischen Funktionen das Liniendiagramm. Da MATLAB numerisch arbeitet, wird dazu eine Wertetabelle von (x,y)-Paaren angelegt. Zu jedem x-Wert wird der entsprechende y-Wert über die gegebene Funktion als <span class="math notranslate nohighlight">\(y=f(x)\)</span> berechnet und dann als Punkt in ein Koordinatensystem mit x- und y-Achse eingetragen. Anschließend werden die Punkte mit einer geraden Linie verbunden.</p>
 <p>Erzeugen wir uns eine Liste mit x-Werten und dazugehörigen y-Werten als Listen.</p>
 <div class="cell docutils container">
@@ -538,7 +643,7 @@
 <div class="exercise admonition" id="exercise_07_02">
 
 <p class="admonition-title"><span class="caption-number">Exercise 47 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Bitte plotten Sie folgende Funktionen als Liniendiagramm:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(f(x)=7x+2\)</span>,</p></li>
@@ -548,12 +653,12 @@
 <li><p>Wurzelfunktion.</p></li>
 </ul>
 <p>Verändern Sie auch das Definitionsgebiet der Funktionen, also das Intervall für <span class="math notranslate nohighlight">\(x\)</span>.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="solution_07_02">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#exercise_07_02"> Exercise 47</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung x-Werte</span><span class="w"></span>
 <span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
 
@@ -568,11 +673,11 @@
 <span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
+</section>
 </div>
-</div>
-</div>
-<div class="section" id="beschriftung-und-gitterlinien">
-<h2>Beschriftung und Gitterlinien<a class="headerlink" href="#beschriftung-und-gitterlinien" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="beschriftung-und-gitterlinien">
+<h2>Beschriftung und Gitterlinien<a class="headerlink" href="#beschriftung-und-gitterlinien" title="Permalink to this headline">#</a></h2>
 <blockquote>
 <div><p>Ein Diagramm muss immer beschriftet sein!</p>
 </div></blockquote>
@@ -639,14 +744,14 @@
 <div class="exercise admonition" id="exercise_07_03">
 
 <p class="admonition-title"><span class="caption-number">Exercise 48 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Erzeugen Sie ein Weg-Zeit-Diagramm gemäß der physikalischen Formel <span class="math notranslate nohighlight">\(s=\frac{1}{2}at^2\)</span> mit einer konstanten Beschleunigung von <span class="math notranslate nohighlight">\(a = 5 \frac{\text{m}}{\text{s}}\)</span> für das Intervall <span class="math notranslate nohighlight">\(t\in[0, 10]\)</span> als Liniendiagramm. Beschriften Sie das Diagramm und lassen Sie die Gitterlinien anzeigen. Vergleichen Sie Ihr Ergebnis mit der dritten Grafik dieses MATLAB Live Skriptes.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="solution_07_03">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#exercise_07_03"> Exercise 48</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Daten</span><span class="w"></span>
 <span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
 <span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">.*</span><span class="w"> </span><span class="n">t</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
@@ -660,11 +765,11 @@
 <span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
+</section>
 </div>
-</div>
-</div>
-<div class="section" id="streudiagramm-zur-visualisierung-von-messwerten">
-<h2>Streudiagramm zur Visualisierung von Messwerten<a class="headerlink" href="#streudiagramm-zur-visualisierung-von-messwerten" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="streudiagramm-zur-visualisierung-von-messwerten">
+<h2>Streudiagramm zur Visualisierung von Messwerten<a class="headerlink" href="#streudiagramm-zur-visualisierung-von-messwerten" title="Permalink to this headline">#</a></h2>
 <p>Das Streudiagramm kommt vor allem bei Messungen zum Einsatz, bei denen zwar nur diskrete Daten zur Verfügung stehen, aber eigentlich von einem kontinuierlichen Ursache-Wirkungsprinzip ausgegangen wird. Außerdem kann es bei Messungen vorkommen, dass für einen x-Wert mehrere y-Werte vorkommen, weil zum Beispiel die Messung mehrfach wiederholt wurde. Daher verwenden wir für Messwerte einen neuen Diagrammtyp, das sogenannte <strong>Streudiagramm</strong> bzw. auf Englisch <strong>Scatterplot</strong>.</p>
 <p>Die entsprechende MATLAB-Funktion heißt <code class="docutils literal notranslate"><span class="pre">scatter()</span></code>. Mehr Details finden Sie hier:
 <a class="reference external" href="https://de.mathworks.com/help/matlab/ref/scatter.html">https://de.mathworks.com/help/matlab/ref/scatter.html</a></p>
@@ -714,7 +819,7 @@
 <div class="exercise admonition" id="exercise_07_04">
 
 <p class="admonition-title"><span class="caption-number">Exercise 49 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Visualisieren Sie Messungen des weltweiten CO2-Ausstoßes. Die Beschreibung der Daten finden Sie hier:
 <a class="reference external" href="https://de.statista.com/statistik/daten/studie/37187/umfrage/der-weltweite-co2-ausstoss-seit-1751/">https://de.statista.com/statistik/daten/studie/37187/umfrage/der-weltweite-co2-ausstoss-seit-1751/</a>
 Damit Sie nicht die Daten abschreiben müssen, können Sie die nachfolgende Code-Zelle ausführen, die die Daten bereits enthält. Im x-Vektor stehen die Jahreszahlen, im y-Vektor der weltweite CO2-Ausstoß gemessen in Millionen Tonnen.</p>
@@ -726,20 +831,20 @@ Damit Sie nicht die Daten abschreiben müssen, können Sie die nachfolgende Code
 </pre></div>
 </div>
 <p>Beschriften Sie auch beide Achsen, setzen Sie einen Titel und lassen Sie Gitterlinien zeichnen.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="solution_07_04">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#exercise_07_04"> Exercise 49</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">TODO</span><span class="w"></span>
 </pre></div>
 </div>
+</section>
 </div>
-</div>
-</div>
-<div class="section" id="zusatzliche-gestaltungsmoglichkeiten-grosze-farbe-und-symbole-von-markern">
-<h2>Zusätzliche Gestaltungsmöglichkeiten: Größe, Farbe und Symbole von Markern<a class="headerlink" href="#zusatzliche-gestaltungsmoglichkeiten-grosze-farbe-und-symbole-von-markern" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="zusatzliche-gestaltungsmoglichkeiten-grosze-farbe-und-symbole-von-markern">
+<h2>Zusätzliche Gestaltungsmöglichkeiten: Größe, Farbe und Symbole von Markern<a class="headerlink" href="#zusatzliche-gestaltungsmoglichkeiten-grosze-farbe-und-symbole-von-markern" title="Permalink to this headline">#</a></h2>
 <p>Gerade bei Messwerten ist es oft sinnvoll, zwischen Versuchsreihen zu unterscheiden. Dementsprechend bietet das Streudiagramm zahlreiche Einstellmöglichkeiten. Wir betrachten im Folgenden drei verschiedene Optionen, um Messwerte in Streudiagrammen zu visualisieren:</p>
 <ul class="simple">
 <li><p>Größe des Markers,</p></li>
@@ -774,14 +879,14 @@ Damit Sie nicht die Daten abschreiben müssen, können Sie die nachfolgende Code
 <div class="exercise admonition" id="exercise_07_05">
 
 <p class="admonition-title"><span class="caption-number">Exercise 50 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Erzeugen Sie drei Vektoren x, y und s. x soll die Zahlen von 1 bis 10 enthalten und y soll ganzzahlige Zufallszahlen zwischen -3 und 3 enthalten. Die einzelnen Elemente <span class="math notranslate nohighlight">\(s_i\)</span> in s sollen nach der Formel <span class="math notranslate nohighlight">\(s_i = 100 + 100 \cdot y_i^2\)</span> berechnet werden. Visualisieren Sie diese Daten als Streudiagramm mit <span class="math notranslate nohighlight">\(s\)</span> als variable Größe.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="solution_07_05">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#exercise_07_05"> Exercise 50</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung der Wertetabelle</span><span class="w"></span>
 <span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
 <span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">randi</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
@@ -792,7 +897,7 @@ Damit Sie nicht die Daten abschreiben müssen, können Sie die nachfolgende Code
 <span class="nb">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
+</section>
 </div>
 <p>Die Farbe des Markers wird als viertes Argument gesetzt:</p>
 <p><code class="docutils literal notranslate"><span class="pre">scatter(x,</span> <span class="pre">y,</span> <span class="pre">size,</span> <span class="pre">color)</span></code>.</p>
@@ -820,14 +925,14 @@ Damit Sie nicht die Daten abschreiben müssen, können Sie die nachfolgende Code
 <div class="exercise admonition" id="exercise_07_06">
 
 <p class="admonition-title"><span class="caption-number">Exercise 51 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Erzeugen Sie einen Vektor mit ganzen Zahlen von 1 bis 25 (Nummern der Schüler:innen einer Klasse). Erzeugen Sie dann einen Vektor mit 25 Elementen (also Size 1x25), der zufällige Schulnoten von 1 bis 6 beinhaltet. Lassen Sie dann (Tipp: beispielsweise in einer For-Schleife) die einzelnen Noten nach dem folgenden Muster visualisieren:  Wenn die Schulnote des i-ten Schülers eine 1 oder 2 ist, soll der Marker <code class="docutils literal notranslate"><span class="pre">'green'</span></code> angezeigt werden, bei 3 oder 4 <code class="docutils literal notranslate"><span class="pre">'yellow'</span></code>  und ansonsten <code class="docutils literal notranslate"><span class="pre">'red'</span></code>. Visualisieren Sie die Daten als Streudiagramm.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="solution_07_06">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#exercise_07_06"> Exercise 51</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Wertetabelle</span><span class="w"></span>
 <span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">);</span><span class="w"></span>
 <span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">randi</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">],</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">);</span><span class="w"></span>
@@ -855,13 +960,15 @@ Damit Sie nicht die Daten abschreiben müssen, können Sie die nachfolgende Code
 <span class="nb">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="n">c</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
+</section>
 </div>
 <p>Zuletzt variieren wir noch die Marker selbst. Das folgende Bild ist ein Ausschnitt aus der MATLAB-Dokumentation und zeigt das Aussehen der verschiedenen Markersymbole und ihre Bezeichnung.</p>
-<div class="figure align-default" id="part07-markersymbole">
+<figure class="align-default" id="part07-markersymbole">
 <a class="reference internal image-reference" href="_images/part07_markersymbole.png"><img alt="_images/part07_markersymbole.png" src="_images/part07_markersymbole.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Markersymbole</span><a class="headerlink" href="#part07-markersymbole" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Markersymbole</span><a class="headerlink" href="#part07-markersymbole" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Der folgende Code zeigt Ihnen Zufallszahlen mit verschiedenen Markersymbolen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -879,18 +986,27 @@ Damit Sie nicht die Daten abschreiben müssen, können Sie die nachfolgende Code
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jetzt kommt Markersymbol: *Jetzt kommt Markersymbol: +Jetzt kommt Markersymbol: dJetzt kommt Markersymbol: p
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jetzt kommt Markersymbol: *
 </pre></div>
 </div>
-<img alt="_images/part07_44_1.png" src="_images/part07_44_1.png" />
-<img alt="_images/part07_44_2.png" src="_images/part07_44_2.png" />
-<img alt="_images/part07_44_3.png" src="_images/part07_44_3.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jetzt kommt Markersymbol: +
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jetzt kommt Markersymbol: d
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jetzt kommt Markersymbol: p
+</pre></div>
+</div>
 <img alt="_images/part07_44_4.png" src="_images/part07_44_4.png" />
+<img alt="_images/part07_44_5.png" src="_images/part07_44_5.png" />
+<img alt="_images/part07_44_6.png" src="_images/part07_44_6.png" />
+<img alt="_images/part07_44_7.png" src="_images/part07_44_7.png" />
 </div>
 </div>
-</div>
-<div class="section" id="mehrere-diagramme-in-einer-grafik">
-<h2>Mehrere Diagramme in einer Grafik<a class="headerlink" href="#mehrere-diagramme-in-einer-grafik" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="mehrere-diagramme-in-einer-grafik">
+<h2>Mehrere Diagramme in einer Grafik<a class="headerlink" href="#mehrere-diagramme-in-einer-grafik" title="Permalink to this headline">#</a></h2>
 <p>Möchte man zwei oder gar mehrere Funktionen oder Messdaten in einer Grafik darstellen, verwendet man den plot- oder scatter-Befehl mehrfach, setzt aber den Befehl <code class="docutils literal notranslate"><span class="pre">hold</span> <span class="pre">on;</span></code> dazwischen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -935,7 +1051,7 @@ Damit Sie nicht die Daten abschreiben müssen, können Sie die nachfolgende Code
 <div class="exercise admonition" id="exercise_07_07">
 
 <p class="admonition-title"><span class="caption-number">Exercise 52 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Stellen Sie die Funktionen</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(f_1(x)=\sin(x)\)</span>,</p></li>
@@ -943,12 +1059,12 @@ Damit Sie nicht die Daten abschreiben müssen, können Sie die nachfolgende Code
 <li><p><span class="math notranslate nohighlight">\(f_3(x)=\sin(3x)\)</span></p></li>
 </ul>
 <p>als Linien-Diagramm im Intervall <span class="math notranslate nohighlight">\([-2\pi, 2\pi]\)</span> dar und beschriften Sie die Kurven mit einer geeigneten Legende.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="solution_07_07">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#exercise_07_07"> Exercise 52</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Erzeugung Wertetabelle</span><span class="w"></span>
 <span class="n">x</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">);</span><span class="w"></span>
 <span class="n">y1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
@@ -965,11 +1081,11 @@ Damit Sie nicht die Daten abschreiben müssen, können Sie die nachfolgende Code
 <span class="nb">legend</span><span class="p">(</span><span class="s">&#39;sin(x)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;sin(2x)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;sin(3x)&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
+</section>
 </div>
-</div>
-</div>
-<div class="section" id="balkendiagramm-zur-visualisierung-von-diskreten-daten-kategorien">
-<h2>Balkendiagramm zur Visualisierung von diskreten Daten / Kategorien<a class="headerlink" href="#balkendiagramm-zur-visualisierung-von-diskreten-daten-kategorien" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="balkendiagramm-zur-visualisierung-von-diskreten-daten-kategorien">
+<h2>Balkendiagramm zur Visualisierung von diskreten Daten / Kategorien<a class="headerlink" href="#balkendiagramm-zur-visualisierung-von-diskreten-daten-kategorien" title="Permalink to this headline">#</a></h2>
 <p>Balkendiagramme oder Säulendiagramme werden zur Visualisierung von quantitativen Daten verwendet. Damit ist gemeint, dass auf der x-Achse Kategorien oder Klassen eingetragen werden, zwischen denen auch kein Mittelwert gebildet werden kann. Angenommen, wir haben folgende Daten über die beliebtesten YouTube-Streams (hier bis Mai 2021 ausgewertet) gesammelt:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1097,14 +1213,14 @@ Mit der Funktion <code class="docutils literal notranslate"><span class="pre">ba
 <div class="exercise admonition" id="exercise_07_08">
 
 <p class="admonition-title"><span class="caption-number">Exercise 53 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Wie viele Semesterwochenstunden an Veranstaltungen haben Sie laut Stundenplan in diesem Semester. Visualisieren Sie die Anzahl der Stunden für jeden Wochentag in einem Balkendiagramm mit passenden Beschriftungen.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="solution_07_08">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#exercise_07_08"> Exercise 53</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Daten</span><span class="w"></span>
 <span class="n">sws</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">];</span><span class="w"></span>
 <span class="n">woche</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">categorical</span><span class="p">({</span><span class="s">&#39;Mo&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Di&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Mi&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Do&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Fr&#39;</span><span class="p">});</span><span class="w"></span>
@@ -1117,12 +1233,12 @@ Mit der Funktion <code class="docutils literal notranslate"><span class="pre">ba
 <span class="nb">title</span><span class="p">(</span><span class="s">&#39;Mein Stundenplan&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
+</section>
 </div>
 <div class="exercise admonition" id="exercise_07_09">
 
 <p class="admonition-title"><span class="caption-number">Exercise 54 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Visualisieren Sie die Anzahl der Sitze, die die einzelnen Parteien bei der Bundestagswahl 2021 gewonnen haben in einem Balkendiagramm (Quelle: <a class="reference external" href="https://www.bundeswahlleiter.de/bundestagswahlen/2021/ergebnisse/bund-99.html">https://www.bundeswahlleiter.de</a>):</p>
 <ul class="simple">
 <li><p>CDU: 152</p></li>
@@ -1134,12 +1250,12 @@ Mit der Funktion <code class="docutils literal notranslate"><span class="pre">ba
 <li><p>CSU: 45</p></li>
 </ul>
 <p>Den SSW mit einem Sitz lassen Sie bitte weg. Ordnen Sie die Balken nach der aktuellen <a class="reference external" href="https://de.wikipedia.org/wiki/Sitzzuteilungsverfahren_nach_der_Wahl_zum_Deutschen_Bundestag">Sitzordnung im Bundestag</a>. Ergänzen Sie passende Beschriftungen.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="solution_07_089">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#exercise_07_09"> Exercise 54</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Daten</span><span class="w"></span>
 <span class="n">anzahl_sitze</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">152</span><span class="p">,</span><span class="w"> </span><span class="mi">206</span><span class="p">,</span><span class="w"> </span><span class="mi">83</span><span class="p">,</span><span class="w"> </span><span class="mi">92</span><span class="p">,</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w"> </span><span class="mi">118</span><span class="p">,</span><span class="w"> </span><span class="mi">45</span><span class="p">];</span><span class="w"></span>
 <span class="n">parteien</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">categorical</span><span class="p">({</span><span class="s">&#39;CDU&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;SPD&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;AfD&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;FDP&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;DIE LINKE&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;GRÜNE&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;CSU&#39;</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
@@ -1153,14 +1269,14 @@ Mit der Funktion <code class="docutils literal notranslate"><span class="pre">ba
 <span class="nb">title</span><span class="p">(</span><span class="s">&#39;Bundestagswahl 2021&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
+</section>
 </div>
-</div>
-</div>
-<div class="section" id="zusammenfassung-und-ausblick">
-<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="zusammenfassung-und-ausblick">
+<h2>Zusammenfassung und Ausblick<a class="headerlink" href="#zusammenfassung-und-ausblick" title="Permalink to this headline">#</a></h2>
 <p>Die Visualisierung der Daten in Form von Balken- oder Streudiagrammen ist normalerweise der erste Schritt bei einer Datenanalyse. Durch die Visualisierung gewinnen wir einen ersten Eindruck darüber, ob statistische Ausreißer vorliegen oder in den Daten ein Muster erkennbar ist. Mit der Erkennung von Mustern und Gesetzmäßigkeiten in Form der linearen Regression werden wir uns im nächsten Skript beschäftigen.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1184,9 +1300,11 @@ Mit der Funktion <code class="docutils literal notranslate"><span class="pre">ba
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="part06.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1202,29 +1320,33 @@ Mit der Funktion <code class="docutils literal notranslate"><span class="pre">ba
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
-    
-      By Simone Gramsch<br/>
-    
-      <div class="extra_footer">
-        <div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Simone Gramsch<br/>
+  
+    <div class="extra_footer">
+      <div>
 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>.
 </div>
 
-      </div>
-  </p>
-</footer>
-</main>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

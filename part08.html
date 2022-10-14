@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Visualisierung von Messwerten und lineare Regression &#8212; MATLAB für Studierende der Ingenieurwissenschaften</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,40 +20,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="GUI und Fehlersuche" href="part09.html" />
@@ -63,7 +64,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -72,9 +87,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,170 +108,251 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Willkommen zum Lernkurs MATLAB für Studierende der Ingenieurwissenschaften
-  </a>
- </li>
-</ul>
-<p class="caption">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Willkommen zum Lernkurs MATLAB für Studierende der Ingenieurwissenschaften
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Programmierung
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="part01.html">
-   1. Einstieg in die Programmierung
+   Einstieg in die Programmierung
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="part02.html">
-   2. Programmverzweigung (if - elseif - else)
+   Programmverzweigung (if - elseif - else)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="part03.html">
-   3. Digitale Logik und Schleifen mit Bedingungen (while)
+   Digitale Logik und Schleifen mit Bedingungen (while)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="part04.html">
-   4. Array, String und formatierte Ausgaben (fprintf)
+   Array, String und formatierte Ausgaben (fprintf)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="part05.html">
-   5. Schleifen zum Zählen (for)
+   Schleifen zum Zählen (for)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="part06.html">
-   6. Funktionen
+   Funktionen
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Wissenschaftliche Anwendungen
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="part07.html">
-   7. Datenvisualisierung
+   Datenvisualisierung
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   8. Regression
+   Lineare Regression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="part09.html">
-   9. GUI und Fehlersuche
+   GUI und Fehlersuche
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="part10.html">
-   10. Simulink
+   Simulink
   </a>
  </li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/part08.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/gramschs/book_matlab"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/gramschs/book_matlab/master?urlpath=tree/docs/part08.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/gramschs/book_matlab/master?urlpath=tree/docs/part08.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/gramschs/book_matlab"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/part08.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-von-messdaten">
    Import von Messdaten
@@ -278,12 +375,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Visualisierung von Messwerten und lineare Regression</h1>
@@ -322,14 +418,15 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="visualisierung-von-messwerten-und-lineare-regression">
-<h1>Visualisierung von Messwerten und lineare Regression<a class="headerlink" href="#visualisierung-von-messwerten-und-lineare-regression" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="visualisierung-von-messwerten-und-lineare-regression">
+<h1>Visualisierung von Messwerten und lineare Regression<a class="headerlink" href="#visualisierung-von-messwerten-und-lineare-regression" title="Permalink to this headline">#</a></h1>
 <p>Nachdem wir uns mit Datenvisualisierung beschäftigt haben, werden wir in diesem Vorlesungsskript das Gelernte auf Messdaten anwenden. Dazu erarbeiten wir uns, wie MATLAB Messdaten importiert und verarbeitet werden. Darüber hinaus versuchen wir, in den Messdaten Muster zu finden, oder mathematisch ausgedrückt, an die Messdaten ein Regressionspolynom anzupassen.</p>
-<div class="section" id="import-von-messdaten">
-<h2>Import von Messdaten<a class="headerlink" href="#import-von-messdaten" title="Permalink to this headline">¶</a></h2>
+<section id="import-von-messdaten">
+<h2>Import von Messdaten<a class="headerlink" href="#import-von-messdaten" title="Permalink to this headline">#</a></h2>
 <p>Messwerte werden normalerweise nicht händisch in ein MATLAB Live Script eingegeben. Meist werden Daten durch einen Sensor in eine Textdatei gespeichert oder in einer Excel-Datei erfasst. In der Wissenschaft ist es üblich, Messdaten im csv-Format abzuspeichern. Dabei steht <strong>csv</strong> für <strong>comma separated values</strong>, d.h. in einer Textdatei wird pro Messung eine Zeile verwendet und alle Daten pro Messung werden in diese Zeile durch Komma getrennt geschrieben.</p>
 <p>In einer  csv-Datei können auch Kommentare stehen. Das ist beispielsweise sinnvoll, um die Quelle der Daten zu notieren. MATLAB interpretiert die ersten Zeile nach eventuellen Kommentaren als Spaltenüberschriften, wenn beim Import dort Strings vorgefunden werden. Dabei dürfen keine Leerzeichen oder Umlaute in den Strings vorkommen, sonst gibt es eine Fehlermeldung und MATLAB konvertiert die Spaltenüberschriften eigenmächtig.</p>
 <p>Im Folgenden betrachten wir uns den weltweiten CO2-Ausstoß bis 2020 in metrischen Tonnen pro Einwohner (Quelle: <a class="reference external" href="https://data.worldbank.org/indicator/EN.ATM.CO2E.PC">https://data.worldbank.org</a>.</p>
@@ -357,6 +454,92 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">readtable</span><span class="p">(</span><span class="s">&#39;data/co2_emissionen_worldwide.csv&#39;</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data =
+
+  29x2 table
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Jahr    Metrische_Tonnen_pro_Einwohner
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    ____    ______________________________
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    1990                 3.903            
+    1991                3.8746            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    1992                 3.804            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    1993                3.7693            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    1994                3.7324            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    1995                 3.782            
+    1996                3.8067            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    1997                3.8135            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    1998                3.7806            
+    1999                3.7478            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    2000                3.8127            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    2001                3.8277            
+    2002                3.8348            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    2003                3.9585            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    2004                4.0923            
+    2005                4.1963            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    2006                 4.281            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    2007                4.3919            
+    2008                4.3769            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    2009                4.2771            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    2010                4.4832            
+    2011                4.5695            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    2012                4.5765            
+    2013                4.6065            
+    2014                 4.556            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    2015                4.4835            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    2016                4.4313            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    2017                4.4355            
+    2018                4.4777            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -402,8 +585,9 @@
         2016
         2017
         2018
-
-    3.9030
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    3.9030
     3.8746
     3.8040
     3.7693
@@ -439,19 +623,19 @@
 <div class="exercise admonition" id="exercise_08_01">
 
 <p class="admonition-title"><span class="caption-number">Exercise 55 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Speichern Sie nur die Messungen der Jahre 2010 bis 2020 in einem x- und einem y-Array.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="solution_08_01">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#exercise_08_01"> Exercise 55</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">data</span><span class="p">{</span><span class="mi">11</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span><span class="s">&#39;Jahr&#39;</span><span class="p">};</span><span class="w"></span>
 <span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">data</span><span class="p">{</span><span class="mi">11</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span><span class="s">&#39;Metrische_Tonnen_pro_Einwohner&#39;</span><span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
+</section>
 </div>
 <p>Sobald die Messdaten in einem normalen MATLAB-Array vorliegen, können wir sie wie gewohnt weiterverarbeiten. Als erstes visualisieren wir die Messdaten und nehmen dazu ein Streudiagramm.</p>
 <div class="cell docutils container">
@@ -471,18 +655,18 @@
 <div class="exercise admonition" id="exercise_08_02">
 
 <p class="admonition-title"><span class="caption-number">Exercise 56 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Importieren Sie den Datensatz zur Bundesligasaison 2020/21 von Bayern München (Dateiname ‘bayern_muenchen_2020.csv’). Visualisieren Sie, wie viele Minuten jeder Spieler in dieser Saison auf dem Platz gestanden hat (x ist die Spalte ‘Name’, y die Spalte ‘Mins’ ).</p>
 <ul class="simple">
 <li><p>Welches Diagramm passt am besten, Linien-, Balken- oder Streudiagramm?</p></li>
 <li><p>Welcher Spieler hatte die meiste Spielzeit?</p></li>
 </ul>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="solution_08_02">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#exercise_08_02"> Exercise 56</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Import Messdaten</span><span class="w"></span>
 <span class="n">data</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">readtable</span><span class="p">(</span><span class="s">&#39;bayern_muenchen_2020.csv&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">categorical</span><span class="p">(</span><span class="n">data</span><span class="p">{:,</span><span class="s">&#39;Name&#39;</span><span class="p">});</span><span class="w"></span>
@@ -496,11 +680,11 @@
 <span class="nb">title</span><span class="p">(</span><span class="s">&#39;Bundesligasaison 2020/21&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
+</section>
 </div>
-</div>
-</div>
-<div class="section" id="regression-ein-wenig-theorie">
-<h2>Regression - ein wenig Theorie<a class="headerlink" href="#regression-ein-wenig-theorie" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="regression-ein-wenig-theorie">
+<h2>Regression - ein wenig Theorie<a class="headerlink" href="#regression-ein-wenig-theorie" title="Permalink to this headline">#</a></h2>
 <p>Kehren wir zu unserem Beispiel mit dem weltweiten CO2-Austoß zurück. Bisher haben wir nur die Messwerte visualisiert. Wenn wir jetzt eine Prognose für das Jahr 2030 wagen wollen, brauchen wir ein Modell. Lassen wir CO2-Emissionen noch einmal zeichnen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -527,14 +711,14 @@ In der Statistik beschäftigen sich Mathematikerinnen und Mathematiker bereits s
 <div class="exercise admonition" id="exercise_08_03">
 
 <p class="admonition-title"><span class="caption-number">Exercise 57 </span></p>
-<div class="section" id="exercise-content">
+<section id="exercise-content">
 <p>Denken Sie sich Werte für die Steigung m und den y-Achsenabschnitt b einer linearen Funktion  aus. Erzeugen Sie einen Vektor mit 100 x-Werten von 1990 bis 2018 und einen Vektor y mit <span class="math notranslate nohighlight">\(y=mx+b\)</span>. Lassen Sie diese lineare Funktion als durchgezogene rote Linie in den gleichen Plot wie die gepunkteten Messwerte zeichnen. Welche Werte für m und b müssen Sie wählen, damit die rote Linie passend zu den blauen Punkten ist? Spielen Sie mit m und b herum, bis es passen könnte.</p>
-</div>
+</section>
 </div>
 <div class="solution dropdown admonition" id="solution_08_03">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#exercise_08_03"> Exercise 57</a></p>
-<div class="section" id="solution-content">
+<section id="solution-content">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x_modell</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span><span class="w"> </span><span class="mi">2018</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
 
 <span class="n">m</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.0344</span><span class="p">;</span><span class="w"></span>
@@ -549,17 +733,19 @@ In der Statistik beschäftigen sich Mathematikerinnen und Mathematiker bereits s
 <span class="nb">title</span><span class="p">(</span><span class="s">&#39;Weltweiter CO2-Ausstoß von 1990 bis 2018&#39;</span><span class="p">);</span><span class="w"> </span>
 </pre></div>
 </div>
-</div>
+</section>
 </div>
 <p>Wenn wir jetzt eine Prognose für das Jahr 2030 wagen wollen, können wir den Wert  in die lineare Funktion einsetzen und erhalten für 2030 einen CO2-Ausstoß von 5.1 metrischen Tonnen pro Einwohner :-(</p>
 <p>Woher wissen wir eigentlich, dass diese Steigung <span class="math notranslate nohighlight">\(m\)</span> und dieser y-Achsenabschnitt <span class="math notranslate nohighlight">\(b\)</span> am besten passen? Dazu berechnen wir, wie weit weg die Gerade von den Messpunkten ist. Wie das geht, veranschaulichen wir uns mit der folgenden Grafik.</p>
-<div class="figure align-default" id="part08-regression">
+<figure class="align-default" id="part08-regression">
 <a class="reference internal image-reference" href="_images/part08_regression.png"><img alt="_images/part08_regression.png" src="_images/part08_regression.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Messpunkte (blau) und der Abstand (grün) zu einer Modellfunktion (rot)</span><a class="headerlink" href="#part08-regression" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Messpunkte (blau) und der Abstand (grün) zu einer Modellfunktion (rot)</span><a class="headerlink" href="#part08-regression" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>(<a class="reference external" href="https://de.wikipedia.org/wiki/Methode_der_kleinsten_Quadrate#/media/Datei:MDKQ1.svg">Quelle:</a> Autor: Christian Schirm, Lizenz: CC0)</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>Unsere rote Modellfunktion trifft die Messpunkte mal mehr und mal weniger gut. Wir können jetzt für jeden Messpunkt berechnen, wie weit die rote Kurve von ihm weg ist (= grüne Strecke), indem wir die Differenz der y-Koordinaten errechnen: <span class="math notranslate nohighlight">\(r = y_{\text{blau}}-y_{\text{rot}}\)</span>. Diese Differenz nennt man <strong>Residuum</strong>. Danach summieren wir die Fehler (also die Residuen) auf und erhalten den Gesamtfehler. Leider kann es dabei passieren, dass am Ende als Gesamtfehler 0 herauskommt, weil beispielsweise für den 1. Messpunkt die blaue y-Koordinate unter der roten y-Koordinate liegt und damit ein negatives Residuum herauskommt, aber für den 5. Messpunkt ein positives Residuum. Daher quadrieren wir die Residuen. Und damit nicht der Gesamtfehler größer wird nur, weil wir mehr Messpunkte dazunehmen, teilen wir noch durch die Anzahl der Messpunkte <span class="math notranslate nohighlight">\(N\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -612,7 +798,10 @@ In der Statistik beschäftigen sich Mathematikerinnen und Mathematiker bereits s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Der relative Fehler der Modellfunktion im Verhältnis zum Fehler beim Mittelwert ist: 0.2211In Prozent umgerechnet ist das: 22.11 %.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Der relative Fehler der Modellfunktion im Verhältnis zum Fehler beim Mittelwert ist: 0.2211
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>In Prozent umgerechnet ist das: 22.11 %.
 </pre></div>
 </div>
 </div>
@@ -626,9 +815,9 @@ Nachdem der <span class="math notranslate nohighlight">\(R^2\)</span>-Wert ausge
 <li><p>Wenn <span class="math notranslate nohighlight">\(R^2 = 1\)</span>  ist, dann gibt es den perfekten linearen Zusammenhang und die Modellfunktion ist eine sehr gute Anpassung an die Messdaten.</p></li>
 <li><p>Wenn <span class="math notranslate nohighlight">\(R^2 = 0\)</span> oder gar negativ ist, dann funktioniert die lineare Modellfunktion überhaupt nicht.</p></li>
 </ul>
-</div>
-<div class="section" id="regression-mit-matlab-polyfit">
-<h2>Regression mit MATLAB: polyfit<a class="headerlink" href="#regression-mit-matlab-polyfit" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="regression-mit-matlab-polyfit">
+<h2>Regression mit MATLAB: polyfit<a class="headerlink" href="#regression-mit-matlab-polyfit" title="Permalink to this headline">#</a></h2>
 <p>MATLAB unterstützt die Suche nach der Regressionspolynomen mit der Funktion <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code>. Eine detaillierte Bechreibung finden Sieìn der <a class="reference external" href="https://de.mathworks.com/help/matlab/ref/polyfit.html">MATLAB-Dokumentation (polyfit)</a>. Aufgerufen wird polyfit mit</p>
 <p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">polyfit(x,y,n)</span></code></p>
 <p>Dabei sind x und y die Arrays (Vektoren) der Messdaten und n ist der Polynomgrad. Für eine lineare Funktion setzen wir n = 1. Das Ergebnis ist ein Vektor p. Im ersten Eintrag des Vektors steht die Steigung, im zweiten der y-Achsenabschnitt.
@@ -715,13 +904,13 @@ Wir setzen in der <code class="docutils literal notranslate"><span class="pre">p
 </div>
 </div>
 <p>Der gute visuelle Eindruck bestätigt sich, das Regressionsmodell ist sehr gut.</p>
-</div>
-<div class="section" id="zusammenfassung">
-<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="zusammenfassung">
+<h2>Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permalink to this headline">#</a></h2>
 <p>Eine wichtige Anwendung von MATLAB ist die Analyse von Messdaten. Dazu haben wir uns in diesem Part mit dem Import von Messdaten, der Theorie der Regression und der Umsetzung der Regression in MATLAB mit Polyfit beschäftigt.</p>
 <p>Darüber hinaus bietet MATLAB die Curve Fitting Toolbox an, um Messdaten zu modellieren.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -745,9 +934,11 @@ Wir setzen in der <code class="docutils literal notranslate"><span class="pre">p
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="part07.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -763,29 +954,33 @@ Wir setzen in der <code class="docutils literal notranslate"><span class="pre">p
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
-    
-      By Simone Gramsch<br/>
-    
-      <div class="extra_footer">
-        <div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Simone Gramsch<br/>
+  
+    <div class="extra_footer">
+      <div>
 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="license" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> This book is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>.
 </div>
 
-      </div>
-  </p>
-</footer>
-</main>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
