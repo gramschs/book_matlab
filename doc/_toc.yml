@@ -7,22 +7,24 @@ parts:
 - caption: Programmierung
   chapters:
   - file: part01
-    title: 1. Einstieg in die Programmierung
+    title: Einstieg in die Programmierung
   - file: part02
-    title: 2. Programmverzweigung (if - elseif - else)
+    title: Programmverzweigung (if - elseif - else)
   - file: part03
-    title: 3. Digitale Logik und Schleifen mit Bedingungen (while)
+    title: Digitale Logik und Schleifen mit Bedingungen (while)
   - file: part04
-    title: 4. Array, String und formatierte Ausgaben (fprintf)
+    title: Array, String und formatierte Ausgaben (fprintf)
   - file: part05
-    title: 5. Schleifen zum Zählen (for)
+    title: Schleifen zum Zählen (for)
   - file: part06
-    title: 6. Funktionen
+    title: Funktionen
+- caption: Wissenschaftliche Anwendungen
+  chapters:
   - file: part07
-    title: 7. Datenvisualisierung
+    title: Datenvisualisierung
   - file: part08
-    title: 8. Lineare Regression
+    title: Lineare Regression
   - file: part09
-    title: 9. GUI und Fehlersuche
+    title: GUI und Fehlersuche
   - file: part10
-    title: 10. Simulink
+    title: Simulink

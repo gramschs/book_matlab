@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 # project specific settings
 doc/_build/
 doc/_build/.doctrees
+=======
+# project specific
+doc/_build
+
+
+>>>>>>> 0c34d5968af18142f2ebb4ec986629a971076f3b
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
