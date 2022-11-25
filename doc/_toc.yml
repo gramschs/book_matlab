@@ -24,6 +24,8 @@ parts:
     title: Datenvisualisierung
   - file: part08
     title: Lineare Regression
+  - file: part11
+    title: Exponentielle Regression
   - file: part09
     title: GUI und Fehlersuche
   - file: part10
